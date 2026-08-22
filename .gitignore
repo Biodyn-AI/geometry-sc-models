@@ -61,3 +61,7 @@ env/
 .DS_Store
 ._*
 Thumbs.db
+
+# md2tex intermediates
+paper/_supp_pre.md
+paper/_supp_raw.tex

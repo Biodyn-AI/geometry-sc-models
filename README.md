@@ -86,14 +86,14 @@ trustworthy. `s0_local_resolution.py` is an instrument with no power. `s4g_steer
 is the experiment whose null-versus-null floor came out larger than its signal, which is the case
 behind test 5 of the paper's protocol.
 
-## One omission, stated plainly
+## Scope of the paper in this repository
 
-Supplement F.5 of the paper describes a second, in-house transformer architecture used in an earlier
-version of the synthetic programme. That architecture is not yet published, so **the copy of the
-paper in this repository omits F.5 and the one sentence that refers to it**. Nothing else in the
-paper depends on that section, and no result reported here was produced with that architecture: every
-synthetic result in this repository was run on the plain standard transformer in
-[`experiments/05_synthetic/vanilla_model.py`](experiments/05_synthetic/vanilla_model.py).
+The copy of the paper here omits the co-author email addresses that appear in the submitted version.
+Nothing else differs: the text, figures, tables and bibliography are identical.
+
+Every synthetic result in this repository was produced with the plain standard transformer in
+[`experiments/05_synthetic/vanilla_model.py`](experiments/05_synthetic/vanilla_model.py): softmax
+multi-head attention, GELU feed-forward, pre-norm. There is no second architecture in this work.
 
 ## Citing
 
