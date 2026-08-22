@@ -1,0 +1,19 @@
+{
+ "n_genes": 15897,
+ "n_cells": 25000,
+ "chance": 0.045454545454545456,
+ "variants": {
+  "PPMI-SVD 256d": {
+   "logistic_random": 0.06989276184904335,
+   "MLP_random": 0.05864199767022435,
+   "logistic_group": 0.05095116022382676,
+   "MLP_group": 0.042635140404093545
+  },
+  "PPMI-SVD 512d": {
+   "logistic_random": 0.06536976322891981,
+   "MLP_random": 0.06192052123325435,
+   "logistic_group": 0.05016449225139719,
+   "MLP_group": 0.04093086738395058
+  }
+ }
+}

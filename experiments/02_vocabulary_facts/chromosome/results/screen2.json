@@ -1,0 +1,165 @@
+[
+ {
+  "name": "chromosome",
+  "kind": "categorical",
+  "meta": {
+   "source": "UCE species_chrom",
+   "expect": "POSITIVE (validated: model-specific vs NORMAL panels)",
+   "unfair_refs": [
+    "coexpr_k562"
+   ],
+   "unfair_reason": "K562 is an aneuploid cancer line: subclonal copy-number variation makes same-chromosome genes co-vary across cells (verified: same-chr correlation excess +0.0074 vs +0.0003 in normal panels), so it decodes chromosome (0.585) through DNA DOSAGE, a different physical mechanism from the co-regulation this hypothesis tests. Reported, not gated on. NB this is itself a live alternative mechanism for the finding -- see memory cnv-alternative-mechanism."
+  },
+  "unfair_refs": [
+   "coexpr_k562",
+   "coexpr_k562_fact"
+  ],
+  "per_reference": {
+   "coexpr_fact": {
+    "n_genes": 8000,
+    "model": 0.4617180266774209,
+    "model_probe": "linsvc",
+    "ref": 0.08509775048696748,
+    "ref_probe": "logistic",
+    "margin": 0.3766202761904534,
+    "ci": [
+     0.3637823578941143,
+     0.39433252929806545
+    ],
+    "z": 206.46356266421205,
+    "beats": true,
+    "fair": true
+   },
+   "coexpr_devel_fact": {
+    "n_genes": 8000,
+    "model": 0.48280519315133985,
+    "model_probe": "linsvc",
+    "ref": 0.5865328791281279,
+    "ref_probe": "linsvc",
+    "margin": -0.10372768597678805,
+    "ci": [
+     -0.12501915610869865,
+     -0.08413906798289841
+    ],
+    "z": 276.9977948288258,
+    "beats": false,
+    "fair": true
+   },
+   "coexpr_k562_fact": {
+    "n_genes": 6149,
+    "model": 0.6100709246587234,
+    "model_probe": "linsvc",
+    "ref": 0.8976600145664324,
+    "ref_probe": "linsvc",
+    "margin": -0.28758908990770904,
+    "ci": [
+     -0.3116687731128959,
+     -0.26951706633316386
+    ],
+    "z": 208.45877694042724,
+    "beats": false,
+    "fair": false
+   },
+   "esm2": {
+    "n_genes": 8000,
+    "model": 0.3978193780000374,
+    "model_probe": "linsvc",
+    "ref": 0.1509875390229761,
+    "ref_probe": "logistic",
+    "margin": 0.24683183897706132,
+    "ci": [
+     0.22863831420164868,
+     0.26935813695341965
+    ],
+    "z": 192.50812261338874,
+    "beats": true,
+    "fair": true
+   }
+  },
+  "decodable": true,
+  "model_specific": false,
+  "n_fair_refs": 3
+ },
+ {
+  "name": "position",
+  "kind": "continuous",
+  "meta": {
+   "source": "UCE species_chrom",
+   "group_by": "chromosome",
+   "unfair_refs": [
+    "coexpr_k562"
+   ],
+   "unfair_reason": "same copy-number confound as h_chromosome",
+   "expect": "POSITIVE (validated: model-specific, scored within chromosome)"
+  },
+  "unfair_refs": [
+   "coexpr_k562",
+   "coexpr_k562_fact"
+  ],
+  "per_reference": {
+   "coexpr_fact": {
+    "n_genes": 8000,
+    "model": 0.11734372800882577,
+    "model_probe": "ridge",
+    "ref": 0.0940508883655053,
+    "ref_probe": "ridge",
+    "margin": 0.023292839643320462,
+    "ci": [
+     -0.009212328868746665,
+     0.05967890011205838
+    ],
+    "z": 7.836776699015897,
+    "beats": false,
+    "fair": true
+   },
+   "coexpr_devel_fact": {
+    "n_genes": 8000,
+    "model": 0.14629760798837343,
+    "model_probe": "ridge",
+    "ref": 0.10257437569474596,
+    "ref_probe": "ridge",
+    "margin": 0.04372323229362747,
+    "ci": [
+     -0.0005148244855393228,
+     0.09052165727002082
+    ],
+    "z": 8.851063029364802,
+    "beats": false,
+    "fair": true
+   },
+   "coexpr_k562_fact": {
+    "n_genes": 6149,
+    "model": 0.15935843006484232,
+    "model_probe": "ridge",
+    "ref": 0.248566332253868,
+    "ref_probe": "ridge",
+    "margin": -0.08920790218902569,
+    "ci": [
+     -0.14592764866531596,
+     -0.03483255222497036
+    ],
+    "z": 14.494280444216862,
+    "beats": false,
+    "fair": false
+   },
+   "esm2": {
+    "n_genes": 8000,
+    "model": 0.14775488236329248,
+    "model_probe": "ridge",
+    "ref": 0.09695557275142173,
+    "ref_probe": "ridge",
+    "margin": 0.05079930961187075,
+    "ci": [
+     -0.021958691349886962,
+     0.06202346454093007
+    ],
+    "z": 9.621745088287295,
+    "beats": false,
+    "fair": true
+   }
+  },
+  "decodable": true,
+  "model_specific": false,
+  "n_fair_refs": 3
+ }
+]

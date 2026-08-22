@@ -1,0 +1,31 @@
+{
+ "real_single_copy_gain": 0.2027325540540822,
+ "real_single_copy_loss": 0.34657359027997264,
+ "diverse_ref": {
+  "fibroblast": {
+   "max_abs_shift": 0.011206498369574547,
+   "n_chrom_over_half_single_copy": 0,
+   "pct_of_real_loss": 3.2335118602095965
+  },
+  "enterocyte": {
+   "max_abs_shift": 0.03509274870157242,
+   "n_chrom_over_half_single_copy": 0,
+   "pct_of_real_loss": 10.125627162558205
+  },
+  "enteric smooth muscle cell": {
+   "max_abs_shift": 0.009755424223840237,
+   "n_chrom_over_half_single_copy": 0,
+   "pct_of_real_loss": 2.814820440649391
+  },
+  "mesodermal cell": {
+   "max_abs_shift": 0.005850145127624273,
+   "n_chrom_over_half_single_copy": 0,
+   "pct_of_real_loss": 1.6879950996931434
+  },
+  "neural crest cell": {
+   "max_abs_shift": 0.019755100831389427,
+   "n_chrom_over_half_single_copy": 0,
+   "pct_of_real_loss": 5.70011730783055
+  }
+ }
+}

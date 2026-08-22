@@ -1,0 +1,23 @@
+{
+ "model": "scgpt",
+ "dataset": "setty",
+ "steer_layer": 6,
+ "read_layer": 11,
+ "n_cells": 48,
+ "base_norm": 20.218103408813477,
+ "steer_frac": 0.5,
+ "clean_pseudotime_r2": 0.3306089313984363,
+ "lam_pos": 1.336332055956007,
+ "lam_neg": -1.422549056524945,
+ "predicted_aQb": 1.3794405562404761,
+ "d_real": -0.4384436353847725,
+ "d_random": [
+  0.8422853675795288
+ ],
+ "d_random_absmean": 0.8422853675795288,
+ "d_random_absmax": 0.8422853675795288,
+ "z_score": -403841732194.7563,
+ "p_emp": 1.0,
+ "diag_curvature_a": 1.2912492415792616,
+ "seconds": 72.05822205543518
+}

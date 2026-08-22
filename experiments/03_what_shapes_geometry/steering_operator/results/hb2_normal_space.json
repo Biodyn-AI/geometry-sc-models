@@ -1,0 +1,146 @@
+{
+ "model": "scgptbin",
+ "n_branch": 300,
+ "n_genes_decodable": 13356,
+ "tfs": [
+  "CEBPA",
+  "FLI1",
+  "GATA1",
+  "GATA2",
+  "IRF8",
+  "KLF1",
+  "SPI1",
+  "TAL1",
+  "ZFPM1"
+ ],
+ "antagonist": {
+  "GATA1/SPI1": {
+   "comov_tan": -0.1249884716787689,
+   "comov_full": -0.26596743367625675,
+   "co_normal_frac": 0.9995128229151531
+  },
+  "KLF1/FLI1": {
+   "comov_tan": 0.5535148213730413,
+   "comov_full": 0.18415232461046918,
+   "co_normal_frac": 0.9990306517572224
+  },
+  "GATA1/CEBPA": {
+   "comov_tan": -0.12348743950298001,
+   "comov_full": -0.12076989743451327,
+   "co_normal_frac": 0.9993619481020045
+  },
+  "TAL1/SPI1": {
+   "comov_tan": 0.28237166257042307,
+   "comov_full": 0.09189575349754482,
+   "co_normal_frac": 0.9993213688309476
+  },
+  "KLF1/SPI1": {
+   "comov_tan": -0.09647557676361075,
+   "comov_full": -0.3992014967654106,
+   "co_normal_frac": 0.9994782072761589
+  },
+  "GATA1/IRF8": {
+   "comov_tan": -0.48399255829779964,
+   "comov_full": -0.7580103860279039,
+   "co_normal_frac": 0.9994549659946249
+  },
+  "GATA2/CEBPA": {
+   "comov_tan": 0.32009385111425864,
+   "comov_full": 0.26360273583667443,
+   "co_normal_frac": 0.9985363213526499
+  }
+ },
+ "cooperative": {
+  "GATA1/KLF1": {
+   "comov_tan": 0.907984284360131,
+   "comov_full": 0.9466726292177761,
+   "co_normal_frac": 0.9980957535302527
+  },
+  "GATA1/TAL1": {
+   "comov_tan": 0.6461349807825782,
+   "comov_full": 0.8265420217594817,
+   "co_normal_frac": 0.9990818715860589
+  },
+  "GATA1/ZFPM1": {
+   "comov_tan": 0.11701566105807854,
+   "comov_full": 0.3325469165412826,
+   "co_normal_frac": 0.9994170023419608
+  },
+  "SPI1/CEBPA": {
+   "comov_tan": 0.6824119872121712,
+   "comov_full": 0.7116499180079662,
+   "co_normal_frac": 0.9987807272007617
+  },
+  "SPI1/IRF8": {
+   "comov_tan": 0.46438013729792593,
+   "comov_full": 0.5996828157727123,
+   "co_normal_frac": 0.9972630050429113
+  },
+  "KLF1/TAL1": {
+   "comov_tan": 0.6646276368294698,
+   "comov_full": 0.7706493928067979,
+   "co_normal_frac": 0.998824900524574
+  },
+  "CEBPA/IRF8": {
+   "comov_tan": 0.5318683124458149,
+   "comov_full": 0.45874342535422363,
+   "co_normal_frac": 0.9982613856634791
+  }
+ },
+ "summary": {
+  "antag_comov_tan_mean": 0.04671946983065195,
+  "coop_comov_tan_mean": 0.5734889999980243,
+  "antag_comov_full_mean": -0.14347119999419947,
+  "coop_comov_full_mean": 0.6637838742086057,
+  "auroc_labeled_tan": 0.8979591836734694,
+  "auroc_labeled_full": 1.0
+ },
+ "screen": {
+  "n_pairs": 36,
+  "n_antagonist": 7,
+  "auroc_antagonist": 0.7487684729064039,
+  "most_antagonistic_top8": [
+   [
+    "GATA1/IRF8",
+    -0.484
+   ],
+   [
+    "GATA2/IRF8",
+    -0.368
+   ],
+   [
+    "IRF8/KLF1",
+    -0.272
+   ],
+   [
+    "IRF8/TAL1",
+    -0.184
+   ],
+   [
+    "GATA1/SPI1",
+    -0.125
+   ],
+   [
+    "CEBPA/GATA1",
+    -0.123
+   ],
+   [
+    "KLF1/SPI1",
+    -0.096
+   ],
+   [
+    "CEBPA/KLF1",
+    0.081
+   ]
+  ],
+  "antagonist_ranks": [
+   1,
+   5,
+   6,
+   7,
+   16,
+   18,
+   26
+  ]
+ }
+}

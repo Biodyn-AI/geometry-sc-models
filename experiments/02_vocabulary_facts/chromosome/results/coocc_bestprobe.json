@@ -1,0 +1,90 @@
+{
+ "n_genes": 15135,
+ "chance": 0.045454545454545456,
+ "grid": {
+  "MaxToki-217M | logistic C=0.1": {
+   "rep": "MaxToki-217M",
+   "probe": "logistic C=0.1",
+   "width": 1232,
+   "random": 0.5468094011256206,
+   "group": 0.42441633311003585
+  },
+  "MaxToki-217M | LinearSVC C=0.01": {
+   "rep": "MaxToki-217M",
+   "probe": "LinearSVC C=0.01",
+   "width": 1232,
+   "random": 0.563784323800096,
+   "group": 0.4538653475883351
+  },
+  "MaxToki-217M | MLP (517, 129)": {
+   "rep": "MaxToki-217M",
+   "probe": "MLP (517, 129)",
+   "width": 1232,
+   "random": 0.6096199406141136,
+   "group": 0.5061650058467506
+  },
+  "MaxToki-1B | logistic C=0.1": {
+   "rep": "MaxToki-1B",
+   "probe": "logistic C=0.1",
+   "width": 2304,
+   "random": 0.9010985220854967,
+   "group": 0.795718432119691
+  },
+  "MaxToki-1B | LinearSVC C=0.01": {
+   "rep": "MaxToki-1B",
+   "probe": "LinearSVC C=0.01",
+   "width": 2304,
+   "random": 0.9300180234350376,
+   "group": 0.8804211806875052
+  },
+  "MaxToki-1B | MLP (967, 241)": {
+   "rep": "MaxToki-1B",
+   "probe": "MLP (967, 241)",
+   "width": 2304,
+   "random": 0.8935861331921601,
+   "group": 0.7882627744436639
+  },
+  "shallow LSA-256 (full corpus) | logistic C=0.1": {
+   "rep": "shallow LSA-256 (full corpus)",
+   "probe": "logistic C=0.1",
+   "width": 256,
+   "random": 0.77070297390942,
+   "group": 0.6916205542593848
+  },
+  "shallow LSA-256 (full corpus) | LinearSVC C=0.01": {
+   "rep": "shallow LSA-256 (full corpus)",
+   "probe": "LinearSVC C=0.01",
+   "width": 256,
+   "random": 0.763077187842024,
+   "group": 0.687561920354046
+  },
+  "shallow LSA-256 (full corpus) | MLP (256, 64)": {
+   "rep": "shallow LSA-256 (full corpus)",
+   "probe": "MLP (256, 64)",
+   "width": 256,
+   "random": 0.7967029469979334,
+   "group": 0.7196526890518996
+  },
+  "shallow LSA-512 (full corpus) | logistic C=0.1": {
+   "rep": "shallow LSA-512 (full corpus)",
+   "probe": "logistic C=0.1",
+   "width": 512,
+   "random": 0.764213529332118,
+   "group": 0.6768881154824534
+  },
+  "shallow LSA-512 (full corpus) | LinearSVC C=0.01": {
+   "rep": "shallow LSA-512 (full corpus)",
+   "probe": "LinearSVC C=0.01",
+   "width": 512,
+   "random": 0.7841599406667856,
+   "group": 0.7114138790661445
+  },
+  "shallow LSA-512 (full corpus) | MLP (256, 64)": {
+   "rep": "shallow LSA-512 (full corpus)",
+   "probe": "MLP (256, 64)",
+   "width": 512,
+   "random": 0.7756267016305795,
+   "group": 0.695186648548054
+  }
+ }
+}

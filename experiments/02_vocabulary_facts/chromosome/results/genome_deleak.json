@@ -1,0 +1,27 @@
+{
+ "token_id_alone": {
+  "linear": 0.045454545454545456,
+  "adjacency": 0.4892814174778519,
+  "chance": 0.05625645529603424
+ },
+ "block_cv": {
+  "maxtoki_lmhead": {
+   "standard": 0.4332301245651174,
+   "token_block": 0.41454372719397786
+  },
+  "geneformer_we": {
+   "standard": 0.17345330782854548,
+   "token_block": 0.1610508614821914
+  }
+ },
+ "parity": {
+  "maxtoki_lmhead": {
+   "recodes_token_id": 0.45790202725227624,
+   "chromosome": 0.4332301245651174
+  },
+  "geneformer_we": {
+   "recodes_token_id": 0.4404675791247731,
+   "chromosome": 0.17345330782854548
+  }
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "n": 14671,
+ "chance": 0.045454545454545456,
+ "scores": {
+  "maxtoki_lmhead": 0.48255671569353015,
+  "maxtoki_we": 0.48753175772527774,
+  "geneformer_we": 0.18560684665700816,
+  "geneformer_v1_we": 0.136627552099911,
+  "scgpt_we": 0.08891797102336672,
+  "coexpr": 0.08514788630817961,
+  "coexpr_devel": 0.05482191907144149,
+  "esm2": 0.10502898530697896
+ },
+ "verdict": {
+  "maxtoki_lmhead": {
+   "score": 0.48255671569353015,
+   "beats_all": true,
+   "margin_over_esm2": 0.3775277303865512
+  },
+  "maxtoki_we": {
+   "score": 0.48753175772527774,
+   "beats_all": true,
+   "margin_over_esm2": 0.3825027724182988
+  },
+  "geneformer_we": {
+   "score": 0.18560684665700816,
+   "beats_all": true,
+   "margin_over_esm2": 0.0805778613500292
+  },
+  "geneformer_v1_we": {
+   "score": 0.136627552099911,
+   "beats_all": true,
+   "margin_over_esm2": 0.03159856679293205
+  },
+  "scgpt_we": {
+   "score": 0.08891797102336672,
+   "beats_all": false,
+   "margin_over_esm2": -0.016111014283612238
+  }
+ }
+}

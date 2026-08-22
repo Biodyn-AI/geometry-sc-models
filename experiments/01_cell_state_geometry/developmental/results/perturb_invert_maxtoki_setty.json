@@ -1,0 +1,220 @@
+{
+ "model": "maxtoki",
+ "n_src": 16,
+ "n_tfs": 601,
+ "drivers": {
+  "ery": [
+   "GATA1",
+   "KLF1",
+   "TAL1",
+   "GATA2",
+   "LMO2",
+   "NFE2"
+  ],
+  "myeloid": [
+   "SPI1",
+   "CEBPA",
+   "CEBPB",
+   "CEBPE",
+   "IRF8",
+   "RUNX1",
+   "KLF4",
+   "EGR1"
+  ],
+  "lymphoid": [
+   "EBF1",
+   "PAX5",
+   "IKZF1",
+   "FOXO1",
+   "GATA3",
+   "LEF1",
+   "TCF7"
+  ],
+  "mega": [
+   "FLI1",
+   "RUNX1",
+   "GATA1",
+   "NFE2",
+   "MEIS1",
+   "TAL1",
+   "GATA2"
+  ]
+ },
+ "fates": {
+  "ery": {
+   "n_drivers": 6,
+   "auroc_align": 0.4106442577030812,
+   "p_align": 0.7591204397801099,
+   "auroc_de": 0.984313725490196,
+   "auroc_align_resid_de": 0.19551820728291316,
+   "p_align_resid_de": 0.9980009995002499,
+   "auroc_de_plus_align": 0.9336134453781513,
+   "auroc_random_dir": 0.4669467787114846,
+   "r_align_de": 0.19688109958075994,
+   "top10": [
+    "HDGF",
+    "DEK",
+    "HNRNPR",
+    "XRCC5",
+    "DNMT1",
+    "SALL4",
+    "CDCA7L",
+    "PDCD11",
+    "FUBP1",
+    "MBD3"
+   ],
+   "driver_ranks": {
+    "GATA1": 375,
+    "KLF1": 324,
+    "TAL1": 430,
+    "GATA2": 529,
+    "LMO2": 97,
+    "NFE2": 370
+   },
+   "q_align": 0.7591204397801099,
+   "q_align_resid_de": 0.9980009995002499
+  },
+  "myeloid": {
+   "n_drivers": 8,
+   "auroc_align": 0.47365092748735244,
+   "p_align": 0.584207896051974,
+   "auroc_de": 0.987141652613828,
+   "auroc_align_resid_de": 0.4529932546374368,
+   "p_align_resid_de": 0.657671164417791,
+   "auroc_de_plus_align": 0.8653035413153457,
+   "auroc_random_dir": 0.4730185497470489,
+   "r_align_de": 0.04443853926186752,
+   "top10": [
+    "CEBPA",
+    "FOXK2",
+    "ZNF589",
+    "TRIM22",
+    "SMARCA4",
+    "TRPS1",
+    "ESR1",
+    "HDAC4",
+    "BTF3",
+    "MLLT10"
+   ],
+   "driver_ranks": {
+    "SPI1": 448,
+    "CEBPA": 1,
+    "CEBPB": 525,
+    "CEBPE": 429,
+    "IRF8": 47,
+    "RUNX1": 19,
+    "KLF4": 517,
+    "EGR1": 547
+   },
+   "q_align": 0.7591204397801099,
+   "q_align_resid_de": 0.8768948858903881
+  },
+  "lymphoid": {
+   "n_drivers": 7,
+   "auroc_align": 0.4961519961519962,
+   "p_align": 0.5292353823088456,
+   "auroc_de": 0.8012265512265512,
+   "auroc_align_resid_de": 0.5632515632515632,
+   "p_align_resid_de": 0.31434282858570717,
+   "auroc_de_plus_align": 0.6885521885521886,
+   "auroc_random_dir": 0.6111111111111112,
+   "r_align_de": -0.11702798266296513,
+   "top10": [
+    "HDGF",
+    "ILF2",
+    "XRCC6",
+    "ZNF639",
+    "WDR5",
+    "NELFB",
+    "MTA2",
+    "TFAP4",
+    "MBD3",
+    "DEK"
+   ],
+   "driver_ranks": {
+    "EBF1": 100,
+    "PAX5": 194,
+    "IKZF1": 521,
+    "FOXO1": 188,
+    "GATA3": 571,
+    "LEF1": 287,
+    "TCF7": 262
+   },
+   "q_align": 0.7591204397801099,
+   "q_align_resid_de": 0.6286856571714143
+  },
+  "mega": {
+   "n_drivers": 7,
+   "auroc_align": 0.7000962000962001,
+   "p_align": 0.034482758620689655,
+   "auroc_de": 0.9523809523809523,
+   "auroc_align_resid_de": 0.7227032227032227,
+   "p_align_resid_de": 0.01899050474762619,
+   "auroc_de_plus_align": 0.9600769600769601,
+   "auroc_random_dir": 0.22967772967772968,
+   "r_align_de": -0.029874394537987996,
+   "top10": [
+    "EGR3",
+    "NCOA4",
+    "GTF2B",
+    "GATA2",
+    "GATA3",
+    "ATF5",
+    "EGR4",
+    "TRIB3",
+    "HOXB2",
+    "ID2"
+   ],
+   "driver_ranks": {
+    "FLI1": 273,
+    "RUNX1": 231,
+    "GATA1": 167,
+    "NFE2": 292,
+    "MEIS1": 287,
+    "TAL1": 21,
+    "GATA2": 4
+   },
+   "q_align": 0.13793103448275862,
+   "q_align_resid_de": 0.07596201899050475
+  }
+ },
+ "diagonal": {
+  "matrix": [
+   [
+    0.4106442577030812,
+    0.16294266441821248,
+    0.341991341991342,
+    0.30832130832130833
+   ],
+   [
+    0.27535014005602243,
+    0.47365092748735244,
+    0.6154401154401155,
+    0.36892736892736894
+   ],
+   [
+    0.3795518207282913,
+    0.3655143338954469,
+    0.4961519961519962,
+    0.32202982202982205
+   ],
+   [
+    0.6820728291316527,
+    0.637858347386172,
+    0.5079365079365079,
+    0.7000962000962001
+   ]
+  ],
+  "fates": [
+   "ery",
+   "myeloid",
+   "lymphoid",
+   "mega"
+  ],
+  "hits": "3/4"
+ },
+ "verdict": {
+  "n_fates_sig_after_bh": 0,
+  "fates_beating_DE": []
+ }
+}

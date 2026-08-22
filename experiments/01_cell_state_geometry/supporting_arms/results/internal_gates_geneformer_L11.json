@@ -1,0 +1,104 @@
+{
+ "model": "geneformer_L11",
+ "ruler": "cellcycle",
+ "n_cells": 2000,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "operators": {
+  "linear_drift": {
+   "dim": 2304,
+   "trustworthiness": 0.8055137986848762,
+   "trustworthiness_sd": 0.03083303065056839,
+   "geodesic_ruler_rho": 0.8950564704824867,
+   "geodesic_ruler_rho_sd": 0.013312538114363495,
+   "blocked_perm": {
+    "real": 0.9132582025872638,
+    "null_mean": 0.42906399859351424,
+    "null_std": 0.009207281129612792,
+    "margin": 0.4841942039937495,
+    "p": 0.004975124378109453,
+    "n_perm": 200
+   },
+   "matched_null_rho": 0.13748650752756233,
+   "pass_trust": true,
+   "pass_null": true
+  },
+  "linear_sae": {
+   "dim": 4608,
+   "trustworthiness": 0.7639307840161862,
+   "trustworthiness_sd": 0.0386725324235525,
+   "geodesic_ruler_rho": 0.8860966541060279,
+   "geodesic_ruler_rho_sd": 0.03420846476714128,
+   "blocked_perm": {
+    "real": 0.9242651917207653,
+    "null_mean": 0.4207861698174056,
+    "null_std": 0.009677850789448515,
+    "margin": 0.5034790219033597,
+    "p": 0.004975124378109453,
+    "n_perm": 200
+   },
+   "matched_null_rho": 0.7885855702493565,
+   "pass_trust": false,
+   "pass_null": true
+  },
+  "bilinear": {
+   "dim": 4608,
+   "trustworthiness": 0.8599851390996459,
+   "trustworthiness_sd": 0.04829557998525232,
+   "geodesic_ruler_rho": 0.7964380273477785,
+   "geodesic_ruler_rho_sd": 0.08892177034336567,
+   "blocked_perm": {
+    "real": 0.897416501913603,
+    "null_mean": 0.41370473995889206,
+    "null_std": 0.009225682555537802,
+    "margin": 0.48371176195471094,
+    "p": 0.004975124378109453,
+    "n_perm": 200
+   },
+   "matched_null_rho": 0.16646874825133795,
+   "pass_trust": true,
+   "pass_null": true
+  },
+  "svd50": {
+   "dim": 50,
+   "trustworthiness": 0.7436727061203843,
+   "trustworthiness_sd": 0.007724844922450663,
+   "geodesic_ruler_rho": 0.6415350242910215,
+   "geodesic_ruler_rho_sd": 0.02576062012780299,
+   "blocked_perm": {
+    "real": 0.6858826235781965,
+    "null_mean": 0.315365062095164,
+    "null_std": 0.00955865477134077,
+    "margin": 0.3705175614830325,
+    "p": 0.004975124378109453,
+    "n_perm": 200
+   },
+   "matched_null_rho": 0.03083024532061386,
+   "pass_trust": false,
+   "pass_null": true
+  },
+  "raw_mean": {
+   "dim": 1152,
+   "trustworthiness": 0.7504621210588434,
+   "trustworthiness_sd": 0.051780963188172026,
+   "geodesic_ruler_rho": 0.8839934447884212,
+   "geodesic_ruler_rho_sd": 0.029128791510846592,
+   "blocked_perm": {
+    "real": 0.9051372002470021,
+    "null_mean": 0.42148698491955455,
+    "null_std": 0.008978375872376612,
+    "margin": 0.4836502153274475,
+    "p": 0.004975124378109453,
+    "n_perm": 200
+   },
+   "matched_null_rho": 0.26848031182607923,
+   "pass_trust": false,
+   "pass_null": true
+  }
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "model": "state_se_L11",
+ "test": "cell_cycle_curvature",
+ "n_cells": 1200,
+ "n_ctrl": 389,
+ "n_markers": 87,
+ "reps": {
+  "raw_mean_all": {
+   "dim": 2048,
+   "n": 1200,
+   "linear_full_circ_r2": 0.77434143336588,
+   "bilinear_circ_r2": 0.6456632169744634,
+   "bilinear_gain": -0.12867821639141663,
+   "linear_20d": 0.9088763116520701,
+   "knn_20d": 0.8236601713964634,
+   "curvature": -0.08521614025560664,
+   "loop_align_rho": 0.6032256758689989
+  },
+  "raw_mean_ctrl": {
+   "dim": 2048,
+   "n": 385,
+   "linear_full_circ_r2": 0.8383924698114755,
+   "bilinear_circ_r2": 0.5209348012546235,
+   "bilinear_gain": -0.317457668556852,
+   "linear_20d": 0.9053389894839132,
+   "knn_20d": 0.6868487852896432,
+   "curvature": -0.21849020419427,
+   "loop_align_rho": 0.5812301758943136
+  },
+  "synthetic_linear_control": {
+   "dim": 2048,
+   "n": 1200,
+   "linear_full_circ_r2": 0.9657420468268917,
+   "bilinear_circ_r2": 0.8471084096403287,
+   "bilinear_gain": -0.11863363718656295,
+   "linear_20d": 0.9814667379224942,
+   "knn_20d": 0.9342445261644776,
+   "curvature": -0.04722221175801655,
+   "loop_align_rho": 0.8708810505822482
+  }
+ },
+ "verdict": {
+  "curvature_all": -0.08521614025560664,
+  "curvature_ctrl": -0.21849020419427,
+  "synthetic_control_curvature": -0.04722221175801655,
+  "curved": false
+ }
+}

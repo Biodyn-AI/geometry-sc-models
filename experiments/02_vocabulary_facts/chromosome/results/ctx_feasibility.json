@@ -1,0 +1,70 @@
+{
+ "n_contexts": 24,
+ "total_tokens": 52002539,
+ "cells_per_context": {
+  "B cell": 4463,
+  "plasma cell": 917,
+  "neutrophil": 2586,
+  "macrophage": 7559,
+  "CD8-positive, alpha-beta T cell": 3672,
+  "monocyte": 1098,
+  "CD4-positive, alpha-beta T cell": 4289,
+  "natural killer cell": 983,
+  "naive thymus-derived CD4-positive, alpha-beta T cell": 316,
+  "classical monocyte": 1142,
+  "erythrocyte": 506,
+  "intermediate monocyte": 1012,
+  "basophil": 435,
+  "kidney epithelial cell": 9278,
+  "endothelial cell of artery": 510,
+  "pulmonary alveolar type 1 cell": 967,
+  "pulmonary alveolar type 2 cell": 3560,
+  "alveolar adventitial fibroblast": 342,
+  "capillary endothelial cell": 2178,
+  "lung multiciliated epithelial cell": 386,
+  "club cell": 551,
+  "basal cell": 1217,
+  "vein endothelial cell": 419,
+  "respiratory tract goblet cell": 317
+ },
+ "floors": {
+  "12": {
+   "genes_per_ctx_median": 9899.0,
+   "all_intersection": 1140,
+   "pairwise_median": 7697.0,
+   "pairwise_max": 12017,
+   "imbalance_median": 3.1198996011448057
+  },
+  "25": {
+   "genes_per_ctx_median": 8241.5,
+   "all_intersection": 231,
+   "pairwise_median": 5677.0,
+   "pairwise_max": 10863,
+   "imbalance_median": 2.7582369525308152
+  },
+  "50": {
+   "genes_per_ctx_median": 6243.0,
+   "all_intersection": 17,
+   "pairwise_median": 2968.5,
+   "pairwise_max": 9722,
+   "imbalance_median": 2.4626157443411
+  },
+  "100": {
+   "genes_per_ctx_median": 3795.5,
+   "all_intersection": 0,
+   "pairwise_median": 612.5,
+   "pairwise_max": 8167,
+   "imbalance_median": 2.04071965339571
+  }
+ },
+ "equalised": {
+  "floor": 25,
+  "median_genes": 5677.0,
+  "token_retention": 0.4090967907966433
+ },
+ "cost": {
+  "cells": 48703,
+  "tokens": 52002539
+ },
+ "verdict": "Pairwise design gives a median 5677 shared genes per context pair at floor 25, versus 231 for the all-context intersection that sank the scGPT pilot. Residual count imbalance 2.8x is handled by equalised subsampling."
+}

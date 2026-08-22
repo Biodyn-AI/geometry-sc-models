@@ -1,0 +1,52 @@
+{
+ "dataset": "Setty CD34+ bone marrow (developmental states)",
+ "taps": {
+  "L02": {
+   "n_ctx": 8,
+   "n_genes": 5000,
+   "excess": 0.6404270529747009,
+   "excess_ci": [
+    0.6346863895654679,
+    0.6460352882742881
+   ],
+   "diff_null": 0.004423223901540041,
+   "main_rep": 0.9752847243238378,
+   "func_z": {
+    "nuclear_vs_surface": {
+     "z": 9.086407453007583,
+     "poleA": 1101,
+     "poleB": 539
+    },
+    "mito_vs_cytoskeleton": {
+     "z": 8.382210691764051,
+     "poleA": 437,
+     "poleB": 68
+    }
+   }
+  },
+  "L04": {
+   "n_ctx": 8,
+   "n_genes": 5000,
+   "excess": 0.5840902328491211,
+   "excess_ci": [
+    0.5791253969073296,
+    0.5889997854828835
+   ],
+   "diff_null": 0.0033671772107481956,
+   "main_rep": 0.9834616250462003,
+   "func_z": {
+    "nuclear_vs_surface": {
+     "z": 7.6280517103999195,
+     "poleA": 1101,
+     "poleB": 539
+    },
+    "mito_vs_cytoskeleton": {
+     "z": 9.536062730045117,
+     "poleA": 437,
+     "poleB": 68
+    }
+   }
+  }
+ },
+ "verdict": "REPLICATES on an independent dataset (Setty bone marrow, developmental states): EXCESS +0.584 (TS was +0.758), diff-null +0.0034, functional-z +7.6. Contextualisation + functional organisation are not a Tabula-Sapiens or adult-cell-type artefact."
+}

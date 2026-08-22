@@ -1,0 +1,181 @@
+{
+ "secretory_pathway": {
+  "best_model_basis": "maxtoki_we",
+  "kind": "order",
+  "role": "test",
+  "vs": {
+   "coexpr": {
+    "margin": 0.21860473071159514,
+    "ci_lo": -0.3302936370811636,
+    "ci_hi": 0.3899047034545617,
+    "frac_le0": 0.383,
+    "n_shared": 28,
+    "model_stat": 0.7232057142140291,
+    "ref_stat": 0.504600983502434
+   },
+   "coexpr_k562": {
+    "margin": -0.1621370845401231,
+    "ci_lo": -0.42963874273374,
+    "ci_hi": 0.22812505293736182,
+    "frac_le0": 0.727,
+    "n_shared": 26,
+    "model_stat": 0.5021019392210264,
+    "ref_stat": 0.6642390237611495
+   },
+   "esm2": {
+    "margin": 0.09245448483598673,
+    "ci_lo": -0.3420247255128115,
+    "ci_hi": 0.4313127498426179,
+    "frac_le0": 0.471,
+    "n_shared": 28,
+    "model_stat": 0.7232057142140291,
+    "ref_stat": 0.6307512293780424
+   }
+  },
+  "survives_all": false,
+  "refs_tested": [
+   "coexpr",
+   "coexpr_k562",
+   "esm2"
+  ]
+ },
+ "complement_cascade": {
+  "best_model_basis": "maxtoki_we",
+  "kind": "order",
+  "role": "test",
+  "vs": {
+   "coexpr": {
+    "margin": 0.12468977412211979,
+    "ci_lo": -0.34317421325594405,
+    "ci_hi": 0.3989586188041739,
+    "frac_le0": 0.443,
+    "n_shared": 16,
+    "model_stat": 0.717726504702933,
+    "ref_stat": 0.5930367305808132
+   },
+   "coexpr_k562": {
+    "error": "only 0 shared genes"
+   },
+   "esm2": {
+    "margin": 0.05170063805063496,
+    "ci_lo": -0.4597977070536812,
+    "ci_hi": 0.29632645871382246,
+    "frac_le0": 0.612,
+    "n_shared": 16,
+    "model_stat": 0.717726504702933,
+    "ref_stat": 0.666025866652298
+   }
+  },
+  "survives_all": false,
+  "refs_tested": [
+   "coexpr",
+   "esm2"
+  ]
+ },
+ "hox_grid": {
+  "best_model_basis": "maxtoki_we",
+  "kind": "grid",
+  "role": "test",
+  "vs": {
+   "coexpr": {
+    "margin": 0.21175278716184975,
+    "ci_lo": -0.13391245524197498,
+    "ci_hi": 0.5401925810258376,
+    "frac_le0": 0.093,
+    "n_shared": 29,
+    "model_stat": 0.4815580734933296,
+    "ref_stat": 0.2698052863314798
+   },
+   "coexpr_k562": {
+    "error": "only 0 shared genes"
+   },
+   "esm2": {
+    "margin": 0.1237137754654962,
+    "ci_lo": -0.22383785959141225,
+    "ci_hi": 0.49820029496321033,
+    "frac_le0": 0.228,
+    "n_shared": 39,
+    "model_stat": 0.35848759281126036,
+    "ref_stat": 0.23477381734576416
+   }
+  },
+  "survives_all": false,
+  "refs_tested": [
+   "coexpr",
+   "esm2"
+  ]
+ },
+ "cellcycle_circle": {
+  "best_model_basis": "maxtoki_we",
+  "kind": "circle",
+  "role": "positive_control",
+  "vs": {
+   "coexpr": {
+    "margin": 0.27205756313922935,
+    "ci_lo": -0.3624607127373041,
+    "ci_hi": 0.84563174861703,
+    "frac_le0": 0.159,
+    "n_shared": 46,
+    "model_stat": 0.7667657560468102,
+    "ref_stat": 0.49470819290758083
+   },
+   "coexpr_k562": {
+    "margin": -0.5203217546831416,
+    "ci_lo": -0.5983539217465983,
+    "ci_hi": 0.38447625160751225,
+    "frac_le0": 0.458,
+    "n_shared": 43,
+    "model_stat": 0.35848066397696915,
+    "ref_stat": 0.8788024186601107
+   },
+   "esm2": {
+    "margin": 0.655061127015705,
+    "ci_lo": -0.15376517290703715,
+    "ci_hi": 0.8978068046723684,
+    "frac_le0": 0.093,
+    "n_shared": 46,
+    "model_stat": 0.7667657560468102,
+    "ref_stat": 0.11170462903110522
+   }
+  },
+  "survives_all": false,
+  "refs_tested": [
+   "coexpr",
+   "coexpr_k562",
+   "esm2"
+  ]
+ },
+ "histone_blob": {
+  "best_model_basis": "maxtoki_lmhead",
+  "kind": "blob",
+  "role": "negative_control",
+  "vs": {
+   "coexpr": {
+    "margin": 0.1877111579179761,
+    "ci_lo": -0.3168230285961026,
+    "ci_hi": 0.4621961051908814,
+    "frac_le0": 0.428,
+    "n_shared": 13,
+    "model_stat": 0.9525640849568938,
+    "ref_stat": 0.7648529270389177
+   },
+   "coexpr_k562": {
+    "error": "only 0 shared genes"
+   },
+   "esm2": {
+    "margin": 0.201103681854929,
+    "ci_lo": -0.4310331355759196,
+    "ci_hi": 0.3260979464453262,
+    "frac_le0": 0.635,
+    "n_shared": 13,
+    "model_stat": 0.9525640849568938,
+    "ref_stat": 0.7514604031019648
+   }
+  },
+  "survives_all": false,
+  "refs_tested": [
+   "coexpr",
+   "esm2"
+  ]
+ }
+}

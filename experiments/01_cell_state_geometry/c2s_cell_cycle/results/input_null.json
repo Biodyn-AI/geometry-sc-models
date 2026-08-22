@@ -1,0 +1,50 @@
+{
+ "expr_cc": {
+  "decodability": {
+   "metric": "circular_corr",
+   "value": 0.9777431506009799,
+   "median_abs_err_deg": 4.246967016013235,
+   "null_mean": -0.006349491597197715,
+   "null_sd": 0.02133666457408835,
+   "z": 46.1221383810448
+  },
+  "ring": {
+   "planar_frac": 0.9498380490808176,
+   "inplane_radius_cv": 0.25230298026998754,
+   "phase_monotone": true
+  },
+  "d": 87
+ },
+ "expr_all": {
+  "decodability": {
+   "metric": "circular_corr",
+   "value": 0.5768195100436526,
+   "median_abs_err_deg": 34.189252551308,
+   "null_mean": -0.002597793513267876,
+   "null_sd": 0.012821450737958581,
+   "z": 45.19124007163129
+  },
+  "ring": {
+   "planar_frac": 0.7942163618184838,
+   "inplane_radius_cv": 0.29020138915976174,
+   "phase_monotone": true
+  },
+  "d": 2304
+ },
+ "expr_rank": {
+  "decodability": {
+   "metric": "circular_corr",
+   "value": 0.5122306374487653,
+   "median_abs_err_deg": 39.541453614292486,
+   "null_mean": 0.00537991399820977,
+   "null_sd": 0.0317981772473151,
+   "z": 15.93961514110802
+  },
+  "ring": {
+   "planar_frac": 0.925542886406069,
+   "inplane_radius_cv": 0.37305086987921554,
+   "phase_monotone": false
+  },
+  "d": 2304
+ }
+}

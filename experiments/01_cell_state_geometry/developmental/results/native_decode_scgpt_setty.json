@@ -1,0 +1,14 @@
+{
+ "model": "scgpt",
+ "dataset": "setty",
+ "stage1": {
+  "within_cell_spearman_hvg": 0.08495832523841614,
+  "within_cell_spearman_all": 0.19133366306190963,
+  "across_cell_r_markers_median": 0.10004645635175381,
+  "across_cell_r_markers_frac_pos": 0.8235294117647058,
+  "across_cell_r_hvg_median": 0.13299729390260645,
+  "ridge_r2_markers_median": 0.26099236802952486,
+  "gate_passed": false
+ },
+ "gate_passed": false
+}

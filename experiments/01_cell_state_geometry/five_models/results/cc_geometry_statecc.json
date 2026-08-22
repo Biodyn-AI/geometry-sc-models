@@ -1,0 +1,49 @@
+{
+ "model": "statecc",
+ "n": 3000,
+ "dim": 20,
+ "linear_circ_r2": 0.8942336241077272,
+ "knn_circ_r2": 0.8193513683843592,
+ "decodability_gap": -0.07488225572336804,
+ "real": {
+  "total_turning": 567.4853083800778,
+  "planarity": 0.8640701380145602,
+  "out_of_plane_deg": 19.543850705324946,
+  "theta_far_broken": 28.568497420942602,
+  "monotonicity_broken": 0.6041077222392239
+ },
+ "bin_n": [
+  183,
+  533,
+  213,
+  86,
+  70,
+  363,
+  267,
+  253,
+  342,
+  298,
+  229,
+  163
+ ],
+ "flat_null": {
+  "total_turning_mean": 599.1741227619668,
+  "total_turning_sd": 27.07011194129488,
+  "planarity_mean": 0.8116036213383842,
+  "planarity_sd": 0.0252609237870144,
+  "out_of_plane_mean": 24.72014790994712,
+  "out_of_plane_sd": 1.7824505464864386,
+  "theta_far_mean": 48.562337780857185,
+  "n_draws": 20
+ },
+ "out_of_plane_excess": -5.176297204622173,
+ "p_out_of_plane": 1.0,
+ "H_flat_rejected": false,
+ "h1_in_plane": {
+  "h1_real": 0.21165239810943604,
+  "h1_null_mean": 0.25099927335977557,
+  "h1_null_sd": 0.0671904079222355,
+  "h1_z": -0.585602556696427,
+  "h1_p": 0.8181818181818182
+ }
+}

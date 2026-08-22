@@ -1,0 +1,18 @@
+{
+ "axis": "nuclear(+)/surface(-)",
+ "per_context_loading": {
+  "CD8-positive, alpha-beta T cell": 4.055090427398682,
+  "CD4-positive, alpha-beta T cell": 3.6543612480163574,
+  "B cell": 3.381082534790039,
+  "capillary endothelial cell": 0.6751190423965454,
+  "kidney epithelial cell": 0.6560096144676208,
+  "intermediate monocyte": 0.5518003106117249,
+  "classical monocyte": -0.21460455656051636,
+  "basal cell": -0.8716319799423218,
+  "neutrophil": -2.076575517654419,
+  "macrophage": -3.192112922668457,
+  "pulmonary alveolar type 1 cell": -3.732759952545166,
+  "pulmonary alveolar type 2 cell": -5.2506890296936035
+ },
+ "note": "context main effect projected on the frozen nuclear/surface axis (\u00a74.4)"
+}

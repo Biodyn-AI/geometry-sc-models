@@ -1,0 +1,15 @@
+{
+ "n": 96,
+ "rho": -0.22168284694588627,
+ "p_rho": 0.9851007449627519,
+ "tertiles": {
+  "low": 0.05881578947368421,
+  "mid": 0.011732456140350879,
+  "high": 0.006436403508771933
+ },
+ "coh_pos": 0.0011211926878554725,
+ "coh_neg": 0.002223394841272303,
+ "p_mwu": 0.9464991531430553,
+ "verdict": "NOT SUPPORTED: working domains are no more co-regulated than failing ones -- the minority that works is not explained by domain coherence",
+ "post_hoc": true
+}

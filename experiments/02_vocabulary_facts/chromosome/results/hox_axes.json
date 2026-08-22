@@ -1,0 +1,56 @@
+{
+ "maxtoki1b_lmhead": {
+  "n": 39,
+  "cluster_only": 0.21184054461657742,
+  "paralog_only": 0.38842675731298415,
+  "additive_both": 0.5325549820275453,
+  "paralog_transfer": 0.8496212121212121,
+  "paralog_offset_cos": 0.1605778711960445,
+  "cluster_offset_cos": 0.20350950925225697
+ },
+ "maxtoki_lmhead": {
+  "n": 39,
+  "cluster_only": 0.1932842043443329,
+  "paralog_only": 0.3985238624077808,
+  "additive_both": 0.5295242113881968,
+  "paralog_transfer": 0.8401515151515151,
+  "paralog_offset_cos": 0.16646127684498546,
+  "cluster_offset_cos": 0.17804613310149073
+ },
+ "maxtoki_we": {
+  "n": 39,
+  "cluster_only": 0.13612299199857325,
+  "paralog_only": 0.38811686041506144,
+  "additive_both": 0.47826634850351046,
+  "paralog_transfer": 0.7999999999999999,
+  "paralog_offset_cos": 0.12535070809104912,
+  "cluster_offset_cos": 0.08483357018519817
+ },
+ "scgpt_we": {
+  "n": 39,
+  "cluster_only": 0.1146612703061195,
+  "paralog_only": 0.34973150127611796,
+  "additive_both": 0.43287978511629543,
+  "paralog_transfer": 0.6083333333333333,
+  "paralog_offset_cos": 0.061833690053835356,
+  "cluster_offset_cos": 0.05088583263506982
+ },
+ "coexpr_devel": {
+  "n": 36,
+  "cluster_only": 0.1324525766094793,
+  "paralog_only": 0.3698101599823358,
+  "additive_both": 0.4540374809273021,
+  "paralog_transfer": 0.4167748917748918,
+  "paralog_offset_cos": 0.07386009179871063,
+  "cluster_offset_cos": 0.05179858872065138
+ },
+ "esm2": {
+  "n": 39,
+  "cluster_only": 0.09388360835362253,
+  "paralog_only": 0.6155398076378158,
+  "additive_both": 0.6592111299189622,
+  "paralog_transfer": 0.9049242424242424,
+  "paralog_offset_cos": 0.47826873318193924,
+  "cluster_offset_cos": 0.08935841955316526
+ }
+}

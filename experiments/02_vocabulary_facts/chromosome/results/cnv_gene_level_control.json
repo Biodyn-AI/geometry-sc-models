@@ -1,0 +1,53 @@
+{
+ "n_genes": 2500,
+ "mean_true_prob": {
+  "model": 0.35090976975569793,
+  "K562 (aneuploid)": 0.31499118382355507,
+  "TS (normal)": 0.08721439680409968
+ },
+ "covariates": [
+  "coexpr_k562_mean",
+  "coexpr_k562_sd",
+  "coexpr_mean",
+  "coexpr_sd"
+ ],
+ "tests": {
+  "raw / no detectability control": {
+   "partial_k562": 0.2142553579288573,
+   "partial_ts": 0.26029286647885863,
+   "contrast": -0.04603750855000133,
+   "ci": [
+    -0.10569891017910663,
+    0.012418993790246729
+   ]
+  },
+  "raw / + detectability control": {
+   "partial_k562": 0.2515217597954816,
+   "partial_ts": 0.2395022836963654,
+   "contrast": 0.012019476099116189,
+   "ci": [
+    -0.0494108950477978,
+    0.0699257040342777
+   ]
+  },
+  "within-chromosome / no detectability control": {
+   "partial_k562": 0.048781205116992826,
+   "partial_ts": 0.1400990009758402,
+   "contrast": -0.09131779585884736,
+   "ci": [
+    -0.1518964901019909,
+    -0.031184034496993248
+   ]
+  },
+  "within-chromosome / + detectability control": {
+   "partial_k562": 0.07303735005397602,
+   "partial_ts": 0.13924028467844557,
+   "contrast": -0.06620293462446955,
+   "ci": [
+    -0.12337488253670109,
+    -0.008024589371327936
+   ]
+  }
+ },
+ "verdict": "contrast -0.091 -> -0.066 after conditioning on detectability (72% retained). SURVIVES: the model's fingerprint resembles the NORMAL panel's for reasons not reducible to shared measurement quality, which is evidence against the CNV account."
+}

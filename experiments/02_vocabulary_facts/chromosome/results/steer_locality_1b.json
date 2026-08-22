@@ -1,0 +1,55 @@
+{
+ "model": "1b",
+ "alpha": 0.5,
+ "window_mb": 5.0,
+ "n_windows": 39,
+ "n_cells": 20,
+ "curve": {
+  "<2.5Mb": {
+   "n": 35,
+   "mean": 2.566604429909161,
+   "sd": 0.8210408275822421
+  },
+  "2.5-7.5": {
+   "n": 37,
+   "mean": 2.4892865491879954,
+   "sd": 0.8134069919290331
+  },
+  "7.5-15": {
+   "n": 38,
+   "mean": 2.4631587665430024,
+   "sd": 0.8388164937756506
+  },
+  "15-30": {
+   "n": 39,
+   "mean": 2.384204781972445,
+   "sd": 0.7324551653969636
+  },
+  "30-60": {
+   "n": 38,
+   "mean": 2.4304246322104803,
+   "sd": 0.790108466110874
+  },
+  ">60Mb": {
+   "n": 33,
+   "mean": 2.411519411838416,
+   "sd": 0.6676560981080268
+  },
+  "other_chrom": {
+   "n": 39,
+   "mean": 0.4409078622762209
+  }
+ },
+ "near_minus_far": {
+  "diff": 0.1618729861396732,
+  "ci": [
+   -0.0949822088195519,
+   0.4089369747674826
+  ],
+  "n": 33,
+  "n_pos": 20
+ },
+ "far_minus_other": 1.9706115495621952,
+ "regional": false,
+ "verdict": "CHROMOSOME-LEVEL ONLY: the push lifts the whole chromosome about equally -> a bare chromosome label, no usable sub-chromosomal locality in the response"
+}

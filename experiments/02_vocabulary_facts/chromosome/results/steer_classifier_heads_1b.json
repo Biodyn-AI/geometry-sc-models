@@ -1,0 +1,30 @@
+{
+ "cell_type": {
+  "cv_acc": 0.8759420400478334,
+  "majority": 0.3040847201210287,
+  "n": 1983,
+  "n_classes": 18,
+  "usable": true
+ },
+ "cell_type_group": {
+  "cv_acc": 0.9915,
+  "majority": 0.62,
+  "n": 2000,
+  "n_classes": 4,
+  "usable": true
+ },
+ "tissue": {
+  "cv_acc": 0.6465,
+  "majority": 0.356,
+  "n": 2000,
+  "n_classes": 3,
+  "usable": true
+ },
+ "cyc": {
+  "cv_acc": 0.797,
+  "majority": 0.5,
+  "n": 2000,
+  "n_classes": 2,
+  "usable": true
+ }
+}

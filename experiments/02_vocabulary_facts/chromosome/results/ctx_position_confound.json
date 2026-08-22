@@ -1,0 +1,23 @@
+{
+ "taps": {
+  "L04": {
+   "rho_mag_vs_rank": 0.35508975451242203,
+   "excess_rank_stable": 0.7589366436004639,
+   "excess_rank_moving": 0.755103588104248,
+   "excess_residualised": 0.727527997348743
+  },
+  "L08": {
+   "rho_mag_vs_rank": 0.3128197747738465,
+   "excess_rank_stable": 0.6739479899406433,
+   "excess_rank_moving": 0.6579867601394653,
+   "excess_residualised": 0.6274491555923405
+  },
+  "L11": {
+   "rho_mag_vs_rank": 0.3527543156705064,
+   "excess_rank_stable": 0.6205354332923889,
+   "excess_rank_moving": 0.6312349438667297,
+   "excess_residualised": 0.549574112242712
+  }
+ },
+ "verdict": "residualised EXCESS +0.7275. SURVIVES rank control \u2014 the gene-specific context response is not merely token-position encoding."
+}

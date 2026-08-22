@@ -1,0 +1,80 @@
+{
+ "n_shared_genes": 6544,
+ "n_src": 3000,
+ "n_tgt": 3000,
+ "src_orientation": {
+  "n_cc_genes": 87,
+  "pc12_var_ratio": 0.30622318099734036,
+  "flipped": true,
+  "rotation_deg": 135.9,
+  "s_peak_deg": 45.0,
+  "g2m_peak_deg": 153.8,
+  "s_g2m_separation_deg": 108.8
+ },
+ "tgt_orientation": {
+  "n_cc_genes": 93,
+  "pc12_var_ratio": 0.3492807411777897,
+  "flipped": false,
+  "rotation_deg": 124.9,
+  "s_peak_deg": 45.0,
+  "g2m_peak_deg": 142.1,
+  "s_g2m_separation_deg": 97.1
+ },
+ "true_phase": {
+  "src_R": 0.07907296262121885,
+  "tgt_R": 0.04274725291249987,
+  "src_mean_deg": 28.51465603892596,
+  "tgt_mean_deg": 11.841284943681137
+ },
+ "arms": {
+  "CONSTANT (target mean)": {
+   "circ_corr": -1.1011688879648304e-17,
+   "median_err_deg": 86.04333622357908,
+   "pred_R": 0.9999999999999994,
+   "pred_mean_deg": 11.84128494368114
+  },
+  "RANDOM (uniform)": {
+   "circ_corr": -0.036789964582153126,
+   "median_err_deg": 90.38462031192265,
+   "pred_R": 0.005402812930103635,
+   "pred_mean_deg": 79.25529203415331
+  },
+  "MODEL frozen (src scaler)": {
+   "circ_corr": -0.8141593513101555,
+   "median_err_deg": 23.954657901389492,
+   "pred_R": 0.34104767035417133,
+   "pred_mean_deg": 226.68097808260947
+  },
+  "MODEL target-recentered": {
+   "circ_corr": 0.9201032567067491,
+   "median_err_deg": 14.188877577804647,
+   "pred_R": 0.08231395240663178,
+   "pred_mean_deg": 17.14543904727602
+  },
+  "EXPRESSION frozen (src scaler)": {
+   "circ_corr": -0.7955523610649601,
+   "median_err_deg": 16.04908137741253,
+   "pred_R": 0.21522866189479828,
+   "pred_mean_deg": 235.15882323641677
+  },
+  "EXPRESSION target-recentered": {
+   "circ_corr": 0.9207624337969043,
+   "median_err_deg": 10.225020825805798,
+   "pred_R": 0.06896501034498215,
+   "pred_mean_deg": 3.1441962624755644
+  },
+  "MODEL ORACLE (refit on tgt)": {
+   "circ_corr": 0.9275439684889116,
+   "median_err_deg": 10.459602523380617,
+   "pred_R": 0.04853838311184811,
+   "pred_mean_deg": 11.700051511465878
+  },
+  "EXPRESSION ORACLE (refit on tgt)": {
+   "circ_corr": 0.9579541625720434,
+   "median_err_deg": 7.851404799370983,
+   "pred_R": 0.048088687812098574,
+   "pred_mean_deg": 11.422838502681989
+  }
+ },
+ "verdict_note": "Transfer is judged on circ_corr only; median error is confounded by target concentration, as the CONSTANT arm shows."
+}

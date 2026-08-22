@@ -1,0 +1,9 @@
+{
+ "consistency": 1.0,
+ "seed": 0,
+ "real": 0.8533552566725413,
+ "zeroed": 0.08424339497127678,
+ "shuffled": 0.004658914807880906,
+ "frozen_gene_emb": 0.6117973879018805,
+ "verdict": "table is load-bearing"
+}

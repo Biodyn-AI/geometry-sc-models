@@ -1,0 +1,42 @@
+{
+ "n_per_set": 4986,
+ "tau_hi": 0.8088167309761047,
+ "tau_lo": 0.43148931860923767,
+ "det_hi": 0.09533279850247346,
+ "det_lo": 0.16641472790479295,
+ "det_ratio_after_matching": 1.7456188270868314,
+ "chance": 0.045454545454545456,
+ "cell_types_used": [
+  "stem cell",
+  "fibroblast",
+  "mesothelial cell",
+  "enteroendocrine cell",
+  "myofibroblast cell",
+  "mesodermal cell",
+  "enterocyte",
+  "pericyte",
+  "erythroblast",
+  "hematopoietic cell",
+  "interstitial cell of Cajal",
+  "enteric smooth muscle cell",
+  "vein endothelial cell",
+  "enteric neuron",
+  "neural crest cell",
+  "progenitor cell",
+  "colon epithelial cell",
+  "intestine goblet cell",
+  "endothelial cell of artery"
+ ],
+ "runs": {
+  "HIGH-spec": {
+   "chromosome": 0.38632589471004036,
+   "n_genes": 4986,
+   "detection": 0.09533279850247346
+  },
+  "LOW-spec": {
+   "chromosome": 0.4309233144326184,
+   "n_genes": 4986,
+   "detection": 0.16641472790479295
+  }
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "taps": {
+  "L04": {
+   "null_beta_mean": 0.015152584943743785,
+   "axes": {
+    "nuclear_vs_surface": {
+     "beta": -0.1611085750136721,
+     "z_vs_null": -0.6089261173652879,
+     "z_above_coexpr": -0.5363196481551487,
+     "coherence": 0.027804989367723465
+    },
+    "mito_vs_cytoskeleton": {
+     "beta": -0.13930143117268687,
+     "z_vs_null": -0.5335893872931289,
+     "z_above_coexpr": -0.5054689736943052,
+     "coherence": 0.04080326668918133
+    },
+    "transcription_vs_transport": {
+     "beta": -0.012549960389917885,
+     "z_vs_null": -0.09570346283456845,
+     "z_above_coexpr": -0.056746872049113516,
+     "coherence": 0.03798544220626354
+    }
+   }
+  },
+  "L08": {
+   "null_beta_mean": 0.015227098883622074,
+   "axes": {
+    "nuclear_vs_surface": {
+     "beta": -0.0851149743652608,
+     "z_vs_null": -0.44813364038860687,
+     "z_above_coexpr": -0.5202817286030625,
+     "coherence": 0.027804989367723465
+    },
+    "mito_vs_cytoskeleton": {
+     "beta": -0.08303821015955448,
+     "z_vs_null": -0.4388586884806116,
+     "z_above_coexpr": -0.46414081918989697,
+     "coherence": 0.04080326668918133
+    },
+    "transcription_vs_transport": {
+     "beta": 0.2029359066046289,
+     "z_vs_null": 0.8383186495297607,
+     "z_above_coexpr": 0.809670142000499,
+     "coherence": 0.03798544220626354
+    }
+   }
+  }
+ },
+ "verdict": "strongest: L08/transcription_vs_transport beta=+0.203, +0.8 sigma above the co-expression-beta curve (z_vs_null +0.8). NO SPARK \u2014 the directional congruence does not exceed co-expression (or is absent). The movement is functionally organised (Level 1) but not context-APPROPRIATE beyond co-expression. Level 2 likely not reachable for this expression-only model; do NOT spend the re-extraction."
+}

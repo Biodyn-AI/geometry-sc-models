@@ -1,0 +1,25 @@
+# Core: everything in experiments/05_synthetic and the figure scripts need only these.
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+torch>=2.2
+matplotlib>=3.7
+
+# Reading single-cell data. Needed only by the experiments that touch real datasets
+# (everything outside experiments/05_synthetic). See docs/DATA.md.
+anndata>=0.10
+scanpy>=1.9
+pandas>=2.0
+h5py>=3.8
+
+# Statistics used by the control battery: BH-FDR, Wilcoxon, permutation tests.
+statsmodels>=0.14
+
+# Loading published model checkpoints. Needed only if you re-extract activations
+# rather than starting from cached ones.
+transformers>=4.42
+safetensors>=0.4
+tqdm>=4.65
+
+# Tests
+pytest>=7.4

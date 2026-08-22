@@ -1,0 +1,60 @@
+{
+ "switchers_on_panel": [
+  "RUNX1"
+ ],
+ "taps": {
+  "L04": {
+   "n_switchers": 1,
+   "median_L_switchers": 89.42604382832845,
+   "vs_all_genes": {
+    "delta": 45.24068612766516,
+    "p": 0.010997800439912017,
+    "n_ctrl": 1392
+   },
+   "vs_abundance_matched": {
+    "delta": 26.58926327175564,
+    "p": 0.16276744651069786,
+    "n_ctrl": 5
+   },
+   "vs_abundance_plus_neighdiv_matched": {
+    "delta": -8.307800091637517,
+    "p": 0.5072985402919417,
+    "n_ctrl": 5
+   },
+   "vs_other_TFs_abundance_matched": {
+    "delta": 17.757243335511944,
+    "p": 0.34653069386122776,
+    "n_ctrl": 5
+   },
+   "neighdiv_switchers": 0.33521103858947754,
+   "neighdiv_all": 0.4405286908149719
+  },
+  "L08": {
+   "n_switchers": 1,
+   "median_L_switchers": 125.52292717827692,
+   "vs_all_genes": {
+    "delta": 29.202891100070886,
+    "p": 0.14237152569486103,
+    "n_ctrl": 1392
+   },
+   "vs_abundance_matched": {
+    "delta": -0.4772537231445142,
+    "p": 0.5018996200759848,
+    "n_ctrl": 5
+   },
+   "vs_abundance_plus_neighdiv_matched": {
+    "delta": -59.05973214043513,
+    "p": 1.0,
+    "n_ctrl": 5
+   },
+   "vs_other_TFs_abundance_matched": {
+    "delta": -6.135636306338824,
+    "p": 0.8288342331533693,
+    "n_ctrl": 5
+   },
+   "neighdiv_switchers": 0.33521103858947754,
+   "neighdiv_all": 0.4405286908149719
+  }
+ },
+ "verdict": "L4 switchers vs abundance+neighbourhood-matched controls: \u0394 -8.308, p=0.5073. NOT beyond co-expression \u2014 any switcher signal is explained once abundance and co-expression-neighbourhood change are matched. Per pre-registered asymmetry this null is WEAK evidence: the switch may be post-translational and invisible to an expression-only model. The axis-level result (ctx_coexpr_null) remains the stronger positive."
+}

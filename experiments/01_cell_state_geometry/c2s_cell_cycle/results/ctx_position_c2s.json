@@ -1,0 +1,59 @@
+{
+ "L00": {
+  "tap": 0,
+  "rho_mag_vs_rank": 0.42946922271809107,
+  "excess_rank_stable": 0.7139696478843689,
+  "excess_rank_moving": 0.8036797642707825,
+  "excess_residualised": 0.7201958360998627
+ },
+ "L01": {
+  "tap": 1,
+  "rho_mag_vs_rank": 0.34008210133318756,
+  "excess_rank_stable": 0.7938963174819946,
+  "excess_rank_moving": 0.8416193723678589,
+  "excess_residualised": 0.800811448000619
+ },
+ "L02": {
+  "tap": 2,
+  "rho_mag_vs_rank": 0.3471094949701226,
+  "excess_rank_stable": 0.7924315929412842,
+  "excess_rank_moving": 0.8403156995773315,
+  "excess_residualised": 0.7988534965080961
+ },
+ "L04": {
+  "tap": 4,
+  "rho_mag_vs_rank": 0.42357883267602564,
+  "excess_rank_stable": 0.7224099636077881,
+  "excess_rank_moving": 0.7965289950370789,
+  "excess_residualised": 0.7251569638636274
+ },
+ "L06": {
+  "tap": 6,
+  "rho_mag_vs_rank": 0.47577895490463273,
+  "excess_rank_stable": 0.7476039528846741,
+  "excess_rank_moving": 0.8333735466003418,
+  "excess_residualised": 0.7501194623848411
+ },
+ "L09": {
+  "tap": 9,
+  "rho_mag_vs_rank": 0.34524931952699667,
+  "excess_rank_stable": 0.9062277674674988,
+  "excess_rank_moving": 0.9258208870887756,
+  "excess_residualised": 0.911207262364985
+ },
+ "L13": {
+  "tap": 13,
+  "rho_mag_vs_rank": 0.3435244531420883,
+  "excess_rank_stable": 0.8834473490715027,
+  "excess_rank_moving": 0.9020799398422241,
+  "excess_residualised": 0.8890691317769029
+ },
+ "L17": {
+  "tap": 17,
+  "rho_mag_vs_rank": 0.2857612296959182,
+  "excess_rank_stable": 0.8769239783287048,
+  "excess_rank_moving": 0.8878561854362488,
+  "excess_residualised": 0.8795500167540702
+ },
+ "_verdict": "SURVIVES rank control"
+}

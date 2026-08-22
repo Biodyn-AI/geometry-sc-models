@@ -1,0 +1,63 @@
+# ---------------------------------------------------------------- data & models
+# Nothing large or third-party belongs in this repository. See docs/DATA.md.
+*.h5ad
+*.h5
+*.hdf5
+*.loom
+*.mtx
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.parquet
+*.feather
+*.zarr/
+data/
+raw/
+cache/
+caches/
+activations/
+checkpoints/
+models/
+weights/
+
+# ---------------------------------------------------------------- run artefacts
+runs/
+wandb/
+lightning_logs/
+*.log
+!results/**/*.json
+
+# ---------------------------------------------------------------- python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------------------------------------------------------------- latex
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
+!paper/*.pdf
+
+# ---------------------------------------------------------------- os
+.DS_Store
+._*
+Thumbs.db

@@ -1,0 +1,35 @@
+[
+ {
+  "name": "tokenizer_rank",
+  "kind": "continuous",
+  "n_genes": 5000,
+  "meta": {
+   "source": "Raw MaxToki token-ID (embedding/unembedding row). symbol->token row via gm_lib's own idiom (gm_lib.py:110-126): MT_TOK (ensembl id -> token row, JSON) x ENSMAP (gene_name_id_dict, symbol -> ensembl, pickle), row<vocab(20275) filter, argsort + np.unique first-occurrence. VERIFIED byte-exact against G.basis('maxtoki_lmhead'): 20,271 symbols, ZERO row-vector mismatches, so the label IS the row the maxtoki_lmhead/maxtoki_we bases decode. label = float(token_row); kind=continuous, no group_by (this is a genome-WIDE index, not a within-chromosome coordinate); label-permutation null, the screen's KFold ridge. MEASURED DIAGNOSTICS (diagnostics(), 5-fold ridge, abs Spearman, per-basis common set, cap 4000): maxtoki_lmhead 0.499, maxtoki_we 0.467; geneformer_we 0.471 (UNFAIR, shared tokenizer); scgpt_we 0.353, esm2 0.343, coexpr 0.260, coexpr_devel 0.158, coexpr_k562 0.143. The spec predicted every reference at ~0; MEASUREMENT REFUTES THAT \u2014 the token-ID is assigned in Ensembl-accession order, which runs in chromosome/position-correlated blocks, so the raw token-ID is a monotone GENOMIC-RANK proxy that every genome-position-aware basis reads (chromosome eta^2 = 0.0254; within-chromosome mean |Spearman(token_id, start)| = 0.067). scgpt_we's 0.353 on a DISJOINT vocabulary is the proof: it cannot share an index, so the channel is genome position, not a shared row number. Sibling control to chrom_tokenblock_shifted (that one stress-tests the categorical chromosome gate with a pseudo-partition; this one stress-tests the continuous gate with the bare index).",
+   "unfair_refs": [
+    "geneformer_we"
+   ],
+   "unfair_reason": "Geneformer shares MaxToki's exact tokenizer (20,274/20,275 identical ensembl->row mappings, same lab; gm_lib.py:54-58), so a gene lands on the SAME token-ID row in both tables. Decoding MaxToki's token-ID from Geneformer's embeddings (measured 0.471) is therefore decoding Geneformer's OWN row index \u2014 the identical arbitrary bookkeeping channel, carried by a shared vocabulary construction, not by independent biology. Used as a cross-model REPLICATION basis it would falsely certify the token-ID signal as generalising across models when it is one tokenizer counted twice; that is the mechanism that makes it unfair. (NB the screen's REF_BASES do not include geneformer_we, so this declaration is a forward-looking guard for any cross-model use, not a live gate exclusion \u2014 and it is the anti-selective direction: geneformer would PASS, and it is declared unfair to prevent an inflated generalisation claim, never to rescue the hypothesis.) The four screen references (coexpr, coexpr_devel, coexpr_k562, esm2) are ALL FAIR and are all scored; scgpt_we is FAIR too (disjoint vocab). The spurious Gate-2 pass over those fair references is exactly the point of the row.",
+   "expect": "EXPECTED PASS, BY DESIGN MEANINGLESS \u2014 the calibration control the ATLAS lacked. Prediction: decodable (maxtoki ~0.50, z enormous vs the label-permutation null) AND model_specific (beats the hardest fair reference esm2 0.343 by margin +0.156 > MIN_MARGIN). Both gates pass. THE PASS IS NOT A FINDING: it proves 'decodable + beats expression + beats sequence' is NECESSARY but NOT SUFFICIENT \u2014 the model's own vocabulary index clears both gates. NEVER promote this row to the ATLAS whatever it scores. MEASURED CORRECTION carried in META['source']: the references are NOT at ~0 as the spec assumed; the token-ID is a genome-position proxy (scgpt_we 0.353 on a disjoint vocab proves the channel is genome position, not a shared index). The lesson survives and sharpens: a label that is decodable-from-the-model AND truly content-free cannot exist, because whatever the table encodes about its row order is structured (here, genome order). CAUSAL FOLLOW-UP \u2014 this is the pre-registered Gate-3 NEGATIVE control for the chromosome headline, and here the negative is the finding. Build the token-ID centroid direction from the model table, push it at one set of gene positions, read MaxToki's OWN next-gene logits at DISJOINT positions, norm-matched random control, monotone alpha ladder, effect quoted against the substitution ceiling (memory steering-magnitude-deflation). PREDICTION: no coherent logit shift and no chromosome-enrichment shift. IF token-ID steering DOES move logits by ~+0.05, that is a RED ALERT that chromosome's +0.055 is not chromosome-specific but a generic vocabulary-neighbourhood / genome-order effect, and the headline plus both Stage-3 steering results must be re-adjudicated."
+  },
+  "maxtoki_lmhead": 0.24567420589096817,
+  "maxtoki_we": 0.23949568442782734,
+  "coexpr": 0.12301212127248484,
+  "coexpr_devel": 0.10392757884510313,
+  "coexpr_k562": 0.1469634477345379,
+  "esm2": 0.17219701418388053,
+  "best_model_basis": "maxtoki_lmhead",
+  "null_mean": 0.015294094024563758,
+  "null_sd": 0.011113381899860128,
+  "z": 20.72997159751456,
+  "p_perm": 0.047619047619047616,
+  "p_floor": 0.047619047619047616,
+  "decodable": true,
+  "unfair_refs": [
+   "geneformer_we"
+  ],
+  "margin_over_refs": 0.07347719170708764,
+  "margin_all_refs": 0.07347719170708764,
+  "model_specific": true,
+  "tie": false
+ }
+]

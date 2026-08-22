@@ -1,0 +1,76 @@
+{
+ "n_genes": 18287,
+ "chance_chrom": 0.045454545454545456,
+ "native": {
+  "217M_input": {
+   "width": 1232,
+   "chrom_random": 0.41090344965110065,
+   "chrom_group": 0.3407075796138565,
+   "position_rho": 0.31807588850390595
+  },
+  "217M_output": {
+   "width": 1232,
+   "chrom_random": 0.48518657928987013,
+   "chrom_group": 0.36811787188729733,
+   "position_rho": 0.41189352613030566
+  },
+  "1B_input": {
+   "width": 2304,
+   "chrom_random": 0.7360698666145442,
+   "chrom_group": 0.6655831993083237,
+   "position_rho": 0.4579978241939283
+  },
+  "1B_output": {
+   "width": 2304,
+   "chrom_random": 0.8372278210877407,
+   "chrom_group": 0.7034701003588991,
+   "position_rho": 0.6258537658754627
+  }
+ },
+ "projected": {
+  "512": {
+   "217M_input": {
+    "chrom_random": 0.31047953302122466,
+    "chrom_group": 0.254038173220101,
+    "position_rho": 0.20928239763702267
+   },
+   "217M_output": {
+    "chrom_random": 0.28939673374395547,
+    "chrom_group": 0.21272032309652839,
+    "position_rho": 0.29641996606517185
+   },
+   "1B_input": {
+    "chrom_random": 0.5192252728205969,
+    "chrom_group": 0.46886787400964636,
+    "position_rho": 0.28558423001504213
+   },
+   "1B_output": {
+    "chrom_random": 0.337565774363352,
+    "chrom_group": 0.2430705260444281,
+    "position_rho": 0.39075564064250706
+   }
+  },
+  "1024": {
+   "217M_input": {
+    "chrom_random": 0.3919303559470799,
+    "chrom_group": 0.32363958500182083,
+    "position_rho": 0.26220833029737456
+   },
+   "217M_output": {
+    "chrom_random": 0.4333599223472222,
+    "chrom_group": 0.32788132425675937,
+    "position_rho": 0.343374273774761
+   },
+   "1B_input": {
+    "chrom_random": 0.6111856524022942,
+    "chrom_group": 0.5507305183967846,
+    "position_rho": 0.3381540108534052
+   },
+   "1B_output": {
+    "chrom_random": 0.5208095458363937,
+    "chrom_group": 0.40149192811460294,
+    "position_rho": 0.47399019745883453
+   }
+  }
+ }
+}

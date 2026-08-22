@@ -1,0 +1,53 @@
+{
+ "model": "state_se_L11",
+ "test": "cell_type_curvature",
+ "n_cells": 630,
+ "n_types": 7,
+ "tissues": [
+  "immune",
+  "kidney",
+  "lung"
+ ],
+ "celltype_knn": {
+  "bal_acc": 0.9673469387755101,
+  "null": 0.14795918367346936,
+  "margin": 0.8193877551020408,
+  "n": 630
+ },
+ "tissue_knn": {
+  "bal_acc": 1.0,
+  "null": 0.33809523809523806,
+  "margin": 0.661904761904762,
+  "n": 630
+ },
+ "curvature": {
+  "dim": 20,
+  "chance": 0.2222222222222222,
+  "linear_acc": 0.9634920634920634,
+  "linear_f1": 0.9657517231049569,
+  "quad_acc": 0.9682539682539681,
+  "quad_f1": 0.9700637024067266,
+  "knn_acc": 0.9587301587301587,
+  "knn_f1": 0.960160158741958,
+  "curvature_acc": -0.004761904761904745,
+  "quad_gain_acc": 0.004761904761904745
+ },
+ "synthetic_linear_control": {
+  "dim": 20,
+  "chance": 0.2650793650793651,
+  "linear_acc": 0.8825396825396826,
+  "linear_f1": 0.8653217265663816,
+  "quad_acc": 0.7603174603174603,
+  "quad_f1": 0.717731155605404,
+  "knn_acc": 0.6063492063492064,
+  "knn_f1": 0.49633052161883906,
+  "curvature_acc": -0.2761904761904762,
+  "quad_gain_acc": -0.12222222222222234
+ },
+ "verdict": {
+  "celltype_recovered": true,
+  "curvature_acc": -0.004761904761904745,
+  "synthetic_control_curvature": -0.2761904761904762,
+  "curved": false
+ }
+}

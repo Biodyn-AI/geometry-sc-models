@@ -1,0 +1,42 @@
+{
+ "model": "scgpt",
+ "dataset": "lung",
+ "n": 3600,
+ "d": 512,
+ "quick": true,
+ "r2_lin": 0.8529130664080434,
+ "r2_quad": 0.935519357754773,
+ "delta_q": 0.08260629134672959,
+ "delta_q_ci": [
+  0.06999223511784904,
+  0.0949723567164017
+ ],
+ "cfgs": [
+  [
+   4,
+   1e-05
+  ],
+  [
+   4,
+   1e-05
+  ],
+  [
+   4,
+   1e-05
+  ],
+  [
+   4,
+   0.0001
+  ],
+  [
+   4,
+   0.0001
+  ]
+ ],
+ "modal_r": 4,
+ "modal_lam": 1e-05,
+ "delta_q_no_abundance": null,
+ "r2_lin_no_abundance": null,
+ "rank_sweep": null,
+ "seconds": 533.2477588653564
+}

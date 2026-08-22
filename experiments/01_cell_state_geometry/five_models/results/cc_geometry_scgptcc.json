@@ -1,0 +1,49 @@
+{
+ "model": "scgptcc",
+ "n": 3000,
+ "dim": 20,
+ "linear_circ_r2": 0.891628087220116,
+ "knn_circ_r2": 0.8071075946861556,
+ "decodability_gap": -0.08452049253396043,
+ "real": {
+  "total_turning": 587.9732312223964,
+  "planarity": 0.8296273353887649,
+  "out_of_plane_deg": 22.715021779851842,
+  "theta_far_broken": 37.462360315115774,
+  "monotonicity_broken": 0.6391894226429083
+ },
+ "bin_n": [
+  183,
+  533,
+  213,
+  86,
+  70,
+  363,
+  267,
+  253,
+  342,
+  298,
+  229,
+  163
+ ],
+ "flat_null": {
+  "total_turning_mean": 613.0736679139642,
+  "total_turning_sd": 34.68660458639885,
+  "planarity_mean": 0.7994992782015803,
+  "planarity_sd": 0.03220649104009306,
+  "out_of_plane_mean": 25.64039165426712,
+  "out_of_plane_sd": 2.2914373001224737,
+  "theta_far_mean": 54.1788422935982,
+  "n_draws": 20
+ },
+ "out_of_plane_excess": -2.925369874415278,
+ "p_out_of_plane": 0.9047619047619048,
+ "H_flat_rejected": false,
+ "h1_in_plane": {
+  "h1_real": 0.22722528874874115,
+  "h1_null_mean": 0.25126745700836184,
+  "h1_null_sd": 0.06315607126680992,
+  "h1_z": -0.38067864888829456,
+  "h1_p": 0.5454545454545454
+ }
+}

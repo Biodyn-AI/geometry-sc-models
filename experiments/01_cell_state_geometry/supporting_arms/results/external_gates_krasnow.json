@@ -1,0 +1,46 @@
+{
+ "panel": "krasnow",
+ "n_cells": 1500,
+ "tissues": {
+  "lung": 1500
+ },
+ "n_cell_types": 36,
+ "operators": {
+  "linear_drift": {
+   "dim": 1024,
+   "trustworthiness": 0.936225110960656,
+   "geodesic_ruler_rho": 0.3208422448146928,
+   "pass_trust": true
+  },
+  "linear_sae": {
+   "dim": 2048,
+   "trustworthiness": 0.7848331904009629,
+   "geodesic_ruler_rho": 0.10880287615973144,
+   "pass_trust": false
+  },
+  "bilinear": {
+   "dim": 2048,
+   "trustworthiness": 0.9479987361769352,
+   "geodesic_ruler_rho": 0.2514823614224444,
+   "pass_trust": true
+  },
+  "bilinear_drift": {
+   "dim": 4096,
+   "trustworthiness": 0.9663071390957647,
+   "geodesic_ruler_rho": 0.28944599215417144,
+   "pass_trust": true
+  },
+  "svd50": {
+   "dim": 50,
+   "trustworthiness": 0.9526485819604303,
+   "geodesic_ruler_rho": 0.242266006149189,
+   "pass_trust": true
+  },
+  "raw_mean": {
+   "dim": 512,
+   "trustworthiness": 0.9578186413902053,
+   "geodesic_ruler_rho": 0.29370718665894513,
+   "pass_trust": true
+  }
+ }
+}

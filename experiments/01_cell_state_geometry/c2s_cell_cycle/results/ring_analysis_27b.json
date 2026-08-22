@@ -1,0 +1,176 @@
+{
+ "phase_info": {
+  "n_cc_genes": 87,
+  "pc12_var_ratio": 0.30622318099734036
+ },
+ "layers": {
+  "L00": {
+   "normal": {
+    "circ_corr": 0.024764541575140256,
+    "median_err_deg": 83.11996001771026,
+    "z": 0.9454441140518693
+   },
+   "radial": {
+    "radius_cv": 1.1425285863140426,
+    "frac_inside_half_median": 0.188,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   }
+  },
+  "L04": {
+   "normal": {
+    "circ_corr": -0.01592293449516251,
+    "median_err_deg": 88.54606184952569,
+    "z": -0.6275751770708246
+   },
+   "radial": {
+    "radius_cv": 0.46073737022810674,
+    "frac_inside_half_median": 0.16866666666666666,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   }
+  },
+  "L07": {
+   "normal": {
+    "circ_corr": -0.00033116182154492953,
+    "median_err_deg": 87.8325680568867,
+    "z": 0.16450884840880137
+   },
+   "radial": {
+    "radius_cv": 0.46460412066558926,
+    "frac_inside_half_median": 0.162,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   }
+  },
+  "L11": {
+   "normal": {
+    "circ_corr": 0.22522521758041844,
+    "median_err_deg": 67.07269906881181,
+    "z": 11.647041039379829
+   },
+   "radial": {
+    "radius_cv": 0.5166642621600446,
+    "frac_inside_half_median": 0.167,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   }
+  },
+  "L16": {
+   "normal": {
+    "circ_corr": 0.580631217453063,
+    "median_err_deg": 37.70872867710283,
+    "z": 56.78757639909918
+   },
+   "radial": {
+    "radius_cv": 0.5684585278884443,
+    "frac_inside_half_median": 0.16566666666666666,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   },
+   "nocc": {
+    "circ_corr": 0.4560070669089252,
+    "median_err_deg": 49.299514395581134,
+    "z": 34.0342472694158
+   },
+   "retention": 0.7853643641628733
+  },
+  "L21": {
+   "normal": {
+    "circ_corr": 0.7098359273180982,
+    "median_err_deg": 28.22633990426398,
+    "z": 26.061970497245117
+   },
+   "radial": {
+    "radius_cv": 0.5433163215806963,
+    "frac_inside_half_median": 0.161,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   }
+  },
+  "L27": {
+   "normal": {
+    "circ_corr": 0.879715280710809,
+    "median_err_deg": 13.634671546497142,
+    "z": 33.46592086390978
+   },
+   "radial": {
+    "radius_cv": 0.4078107690880854,
+    "frac_inside_half_median": 0.12133333333333333,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   },
+   "nocc": {
+    "circ_corr": 0.8350928507946748,
+    "median_err_deg": 16.384459969324315,
+    "z": 37.57897487524603
+   },
+   "retention": 0.9492762818885804
+  },
+  "L32": {
+   "normal": {
+    "circ_corr": 0.892097355064363,
+    "median_err_deg": 12.354438567756794,
+    "z": 41.524534978465915
+   },
+   "radial": {
+    "radius_cv": 0.3799938931667184,
+    "frac_inside_half_median": 0.107,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   }
+  },
+  "L37": {
+   "normal": {
+    "circ_corr": 0.8914336422730222,
+    "median_err_deg": 12.854305798232119,
+    "z": 47.765697052007596
+   },
+   "radial": {
+    "radius_cv": 0.38665396078564446,
+    "frac_inside_half_median": 0.12,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   },
+   "nocc": {
+    "circ_corr": 0.8415405761668157,
+    "median_err_deg": 16.3226630328981,
+    "z": 54.0864967076251
+   },
+   "retention": 0.9440305326822412
+  },
+  "L44": {
+   "normal": {
+    "circ_corr": 0.9024480154838314,
+    "median_err_deg": 12.774210785619271,
+    "z": 31.58950236202013
+   },
+   "radial": {
+    "radius_cv": 0.38472851704510613,
+    "frac_inside_half_median": 0.11033333333333334,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   }
+  }
+ }
+}

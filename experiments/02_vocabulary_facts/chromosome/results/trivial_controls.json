@@ -1,0 +1,11 @@
+{
+ "train_seen_genes": 0.993,
+ "heldout": 0.489,
+ "shuffled_labels": 0.045,
+ "random_embeddings": 0.042,
+ "real": 0.485,
+ "real_group_split": 0.368,
+ "chance": 0.045454545454545456,
+ "n_genes": 18287,
+ "basis": "maxtoki_217M_output"
+}

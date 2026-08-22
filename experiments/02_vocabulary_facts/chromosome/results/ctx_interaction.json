@@ -1,0 +1,87 @@
+{
+ "layers": {
+  "L00": {
+   "n_contexts": 7,
+   "n_genes": 65,
+   "dims": 512,
+   "cells_per_ctx": {
+    "B_cell": 17801,
+    "CD4-positive_alpha-beta_T_cell": 6811,
+    "CD8-positive_alpha-beta_T_cell": 9743,
+    "macrophage": 52653,
+    "neutrophil": 8029,
+    "kidney_epithelial_cell": 108738,
+    "pulmonary_alveolar_type_2_cell": 14456
+   },
+   "anisotropy": 0.7869290639453912,
+   "var_share": {
+    "gene": 0.9831454845860795,
+    "context": 0.010633063484106356,
+    "interaction": 0.006221451929814147
+   },
+   "split_half_rho": 0.9847925897427405,
+   "null_mean": 0.8234848133549735,
+   "null_sd": 0.015476261988041569,
+   "z": 10.422915177417751,
+   "top_context_responsive": [
+    "FTH1",
+    "FTL",
+    "BTG1",
+    "TXNIP",
+    "TMSB4X",
+    "RPL41",
+    "MT-ATP6",
+    "MT-CYB",
+    "HLA-B",
+    "ZFAND3",
+    "B2M",
+    "MT-CO1",
+    "ACTB",
+    "MBNL1",
+    "HLA-A"
+   ]
+  },
+  "L08": {
+   "n_contexts": 7,
+   "n_genes": 65,
+   "dims": 512,
+   "cells_per_ctx": {
+    "B_cell": 17801,
+    "CD4-positive_alpha-beta_T_cell": 6811,
+    "CD8-positive_alpha-beta_T_cell": 9743,
+    "macrophage": 52653,
+    "neutrophil": 8029,
+    "kidney_epithelial_cell": 108738,
+    "pulmonary_alveolar_type_2_cell": 14456
+   },
+   "anisotropy": 0.9276282127436881,
+   "var_share": {
+    "gene": 0.8531665800285416,
+    "context": 0.11405425345998152,
+    "interaction": 0.032779166511476825
+   },
+   "split_half_rho": 0.9815431496396024,
+   "null_mean": 0.9106815390730301,
+   "null_sd": 0.006987307826693228,
+   "z": 10.141473967182284,
+   "top_context_responsive": [
+    "FAM107B",
+    "ZFAND3",
+    "MBNL1",
+    "FTL",
+    "ZBTB20",
+    "FTH1",
+    "ITSN2",
+    "TXNIP",
+    "JAK1",
+    "BTG1",
+    "RPL41",
+    "LRRFIP1",
+    "TMA7",
+    "DDX17",
+    "RPL39"
+   ]
+  }
+ },
+ "verdict": "PROCEED \u2014 the gene x context interaction is reproducible across disjoint representation dimensions (best z = +10.4), so there is gene-specific context structure beyond the averaging null. Next: does it align with FUNCTION (moonlighting genes, functional axes)?"
+}

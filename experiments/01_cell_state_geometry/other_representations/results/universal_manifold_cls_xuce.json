@@ -1,0 +1,75 @@
+{
+ "rep": "cls",
+ "src": "xuce",
+ "integration": {
+  "k": 30,
+  "n": 18000,
+  "datasets": [
+   "cellcycle",
+   "gut",
+   "immune",
+   "lung",
+   "pancreas",
+   "setty"
+  ],
+  "share": {
+   "cellcycle": 0.16666666666666666,
+   "gut": 0.16666666666666666,
+   "immune": 0.16666666666666666,
+   "lung": 0.16666666666666666,
+   "pancreas": 0.16666666666666666,
+   "setty": 0.16666666666666666
+  },
+  "knn_same_dataset_frac": {
+   "cellcycle": 1.0,
+   "gut": 0.9962888888888889,
+   "immune": 0.9999222222222223,
+   "lung": 0.9999666666666667,
+   "pancreas": 1.0,
+   "setty": 0.9998
+  },
+  "excess_over_chance": {
+   "cellcycle": 0.8333333333333334,
+   "gut": 0.8296222222222223,
+   "immune": 0.8332555555555556,
+   "lung": 0.8333,
+   "pancreas": 0.8333333333333334,
+   "setty": 0.8331333333333334
+  },
+  "mean_purity": 0.9993296296296297
+ },
+ "shared_axis": {
+  "setty": {
+   "species": "human",
+   "n": 3000,
+   "within_tissue_r2": 0.8292113208096775,
+   "transfer_linear_r2": -0.24515852537919391,
+   "transfer_knn_r2": -0.6167254990707278,
+   "transfer_linear_centered_r2": -0.26374418214485695
+  },
+  "lung": {
+   "species": "human",
+   "n": 3000,
+   "within_tissue_r2": 0.905637841345909,
+   "transfer_linear_r2": -1.8612207608225124,
+   "transfer_knn_r2": -0.22459452939039304,
+   "transfer_linear_centered_r2": -0.3954389691110656
+  },
+  "gut": {
+   "species": "human",
+   "n": 3000,
+   "within_tissue_r2": 0.5371516489289649,
+   "transfer_linear_r2": -0.6593162841046647,
+   "transfer_knn_r2": -1.2800157446226939,
+   "transfer_linear_centered_r2": -0.7326329562252478
+  },
+  "pancreas": {
+   "species": "mouse",
+   "n": 3000,
+   "within_tissue_r2": 0.9397245875792399,
+   "transfer_linear_r2": -2.5641462338343706,
+   "transfer_knn_r2": -0.9921958472870172,
+   "transfer_linear_centered_r2": -1.5855976872806048
+  }
+ }
+}

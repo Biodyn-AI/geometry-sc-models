@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the paper."
+title: "The geometry of single-cell foundation models: what they inherit, what they add, and what shapes it"
+authors:
+  - family-names: Kendiukhov
+    given-names: Ihor
+    affiliation: "Institute of Medical Genetics and Applied Genomics, University of Tübingen; Pivotal Research"
+    email: kenduhov.ig@gmail.com
+  - family-names: Smith
+    given-names: Logan Riggs
+    affiliation: "Cambridge Boston Alignment Initiative"
+  - family-names: Dooms
+    given-names: Thomas
+    affiliation: "Goodfire"
+year: 2026
+license: MIT
+repository-code: "https://github.com/Biodyn-AI/geometry-sc-models"
+abstract: >-
+  Code and results for a study of representational geometry in single-cell foundation models.
+  Cell-level geometry is shown to be a re-description of the model's input; gene-vocabulary facts
+  such as chromosome membership are shown to be genuinely learned and causally used; and a mechanism
+  is given for what determines the shape a representation takes.

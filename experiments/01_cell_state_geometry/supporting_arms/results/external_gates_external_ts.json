@@ -1,0 +1,48 @@
+{
+ "panel": "external_ts",
+ "n_cells": 2100,
+ "tissues": {
+  "immune": 700,
+  "kidney": 700,
+  "lung": 700
+ },
+ "n_cell_types": 50,
+ "operators": {
+  "linear_drift": {
+   "dim": 1024,
+   "trustworthiness": 0.9172432461349168,
+   "geodesic_ruler_rho": 0.6280750814098353,
+   "pass_trust": true
+  },
+  "linear_sae": {
+   "dim": 2048,
+   "trustworthiness": 0.8612505674393012,
+   "geodesic_ruler_rho": 0.6317081252535566,
+   "pass_trust": true
+  },
+  "bilinear": {
+   "dim": 2048,
+   "trustworthiness": 0.8975708706849775,
+   "geodesic_ruler_rho": 0.5473057654310096,
+   "pass_trust": true
+  },
+  "bilinear_drift": {
+   "dim": 4096,
+   "trustworthiness": 0.9208076361663265,
+   "geodesic_ruler_rho": 0.5890094601041963,
+   "pass_trust": true
+  },
+  "svd50": {
+   "dim": 50,
+   "trustworthiness": 0.8673615792007703,
+   "geodesic_ruler_rho": 0.5574162161068045,
+   "pass_trust": true
+  },
+  "raw_mean": {
+   "dim": 512,
+   "trustworthiness": 0.8922914612803876,
+   "geodesic_ruler_rho": 0.6089110170537144,
+   "pass_trust": true
+  }
+ }
+}

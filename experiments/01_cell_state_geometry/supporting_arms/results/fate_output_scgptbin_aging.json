@@ -1,0 +1,351 @@
+{
+ "n_donors": 8,
+ "rows": [
+  {
+   "donor": "elderly1",
+   "fate": "ery",
+   "model": -0.7073313011363689,
+   "access": 0.5546439059983158,
+   "marker": -0.30927491188049316,
+   "truth": 0.6986910348234132,
+   "young": false
+  },
+  {
+   "donor": "elderly1",
+   "fate": "myeloid",
+   "model": 0.11035469348473259,
+   "access": 0.44021466369211804,
+   "marker": -0.356573224067688,
+   "truth": 0.17782168436651025,
+   "young": false
+  },
+  {
+   "donor": "elderly1",
+   "fate": "lymphoid",
+   "model": -0.26517093849535717,
+   "access": 0.4460483248296746,
+   "marker": -0.28162240982055664,
+   "truth": 0.11583106939985181,
+   "young": false
+  },
+  {
+   "donor": "elderly1",
+   "fate": "mega",
+   "model": 0.6259512303494342,
+   "access": 0.3086802391170185,
+   "marker": -0.1713927984237671,
+   "truth": 0.007656211410224747,
+   "young": false
+  },
+  {
+   "donor": "elderly2",
+   "fate": "ery",
+   "model": -0.7584003276926828,
+   "access": 0.5953202478958087,
+   "marker": -0.3112778067588806,
+   "truth": 0.7075818917924181,
+   "young": false
+  },
+  {
+   "donor": "elderly2",
+   "fate": "myeloid",
+   "model": 0.5036921984884962,
+   "access": 0.5303744001339833,
+   "marker": -0.3544684946537018,
+   "truth": 0.2165991902834008,
+   "young": false
+  },
+  {
+   "donor": "elderly2",
+   "fate": "lymphoid",
+   "model": -0.8398644467424781,
+   "access": 0.41299003087287817,
+   "marker": -0.28454113006591797,
+   "truth": 0.058520426941479575,
+   "young": false
+  },
+  {
+   "donor": "elderly2",
+   "fate": "mega",
+   "model": 0.529156750913415,
+   "access": 0.3012875087040941,
+   "marker": -0.13953295350074768,
+   "truth": 0.01729849098270151,
+   "young": false
+  },
+  {
+   "donor": "elderly3",
+   "fate": "ery",
+   "model": -0.9096384988269449,
+   "access": 0.4958248857098085,
+   "marker": -0.27517980337142944,
+   "truth": 0.5274544385655496,
+   "young": false
+  },
+  {
+   "donor": "elderly3",
+   "fate": "myeloid",
+   "model": -0.3830539577590865,
+   "access": 0.44518712807632405,
+   "marker": -0.2126823365688324,
+   "truth": 0.2718400940623163,
+   "young": false
+  },
+  {
+   "donor": "elderly3",
+   "fate": "lymphoid",
+   "model": -0.012393741701205793,
+   "access": 0.39051089832549696,
+   "marker": -0.26439785957336426,
+   "truth": 0.16002351557907113,
+   "young": false
+  },
+  {
+   "donor": "elderly3",
+   "fate": "mega",
+   "model": 0.7344859765629929,
+   "access": 0.4050847834335223,
+   "marker": -0.13920257985591888,
+   "truth": 0.0406819517930629,
+   "young": false
+  },
+  {
+   "donor": "young1",
+   "fate": "ery",
+   "model": 0.29541240009602837,
+   "access": 0.545266910181418,
+   "marker": -0.2638348639011383,
+   "truth": 0.31303288672350793,
+   "young": true
+  },
+  {
+   "donor": "young1",
+   "fate": "myeloid",
+   "model": -0.31635938397378777,
+   "access": 0.44780022042696915,
+   "marker": -0.20166310667991638,
+   "truth": 0.34652862362971987,
+   "young": true
+  },
+  {
+   "donor": "young1",
+   "fate": "lymphoid",
+   "model": -0.7525934563821944,
+   "access": 0.46376280337946113,
+   "marker": -0.2683526873588562,
+   "truth": 0.32399512789281365,
+   "young": true
+  },
+  {
+   "donor": "young1",
+   "fate": "mega",
+   "model": 0.5688400623692377,
+   "access": 0.3037342112496542,
+   "marker": -0.18390358984470367,
+   "truth": 0.016443361753958587,
+   "young": true
+  },
+  {
+   "donor": "young2",
+   "fate": "ery",
+   "model": -0.9642055426532017,
+   "access": 0.5987459993679066,
+   "marker": -0.33387795090675354,
+   "truth": 0.30855495033643066,
+   "young": true
+  },
+  {
+   "donor": "young2",
+   "fate": "myeloid",
+   "model": 0.4940550048608382,
+   "access": 0.5678120907396659,
+   "marker": -0.3096871078014374,
+   "truth": 0.412367830823454,
+   "young": true
+  },
+  {
+   "donor": "young2",
+   "fate": "lymphoid",
+   "model": -0.18763678187329974,
+   "access": 0.4873735660246424,
+   "marker": -0.2407054454088211,
+   "truth": 0.2649791733418776,
+   "young": true
+  },
+  {
+   "donor": "young2",
+   "fate": "mega",
+   "model": 0.6166885382492473,
+   "access": 0.3411703473682947,
+   "marker": -0.18416261672973633,
+   "truth": 0.014098045498237744,
+   "young": true
+  },
+  {
+   "donor": "young3",
+   "fate": "ery",
+   "model": -0.32345908545131674,
+   "access": 0.5047182322492453,
+   "marker": -0.3250388205051422,
+   "truth": 0.2736647276573242,
+   "young": true
+  },
+  {
+   "donor": "young3",
+   "fate": "myeloid",
+   "model": -0.49688443423340084,
+   "access": 0.46949311234703095,
+   "marker": -0.33261293172836304,
+   "truth": 0.39185616076150187,
+   "young": true
+  },
+  {
+   "donor": "young3",
+   "fate": "lymphoid",
+   "model": -0.291625391779518,
+   "access": 0.4989376267750631,
+   "marker": -0.2523665428161621,
+   "truth": 0.31940772078265467,
+   "young": true
+  },
+  {
+   "donor": "young3",
+   "fate": "mega",
+   "model": 0.7084024872812298,
+   "access": 0.31910134711191235,
+   "marker": -0.18537910282611847,
+   "truth": 0.015071390798519302,
+   "young": true
+  },
+  {
+   "donor": "young4",
+   "fate": "ery",
+   "model": -0.4689360867672392,
+   "access": 0.5465121379337595,
+   "marker": -0.2862760126590729,
+   "truth": 0.4075046904315197,
+   "young": true
+  },
+  {
+   "donor": "young4",
+   "fate": "myeloid",
+   "model": 0.0034239701132517055,
+   "access": 0.4213672021098227,
+   "marker": -0.3174295127391815,
+   "truth": 0.41332082551594745,
+   "young": true
+  },
+  {
+   "donor": "young4",
+   "fate": "lymphoid",
+   "model": -0.1835356809616869,
+   "access": 0.4615483882938298,
+   "marker": -0.28188276290893555,
+   "truth": 0.15178236397748593,
+   "young": true
+  },
+  {
+   "donor": "young4",
+   "fate": "mega",
+   "model": 0.41527389268849496,
+   "access": 0.37908160260358453,
+   "marker": -0.1485978066921234,
+   "truth": 0.027392120075046905,
+   "young": true
+  },
+  {
+   "donor": "young5",
+   "fate": "ery",
+   "model": -0.8177405638254837,
+   "access": 0.4767970633119796,
+   "marker": -0.2375946044921875,
+   "truth": 0.376370139610015,
+   "young": true
+  },
+  {
+   "donor": "young5",
+   "fate": "myeloid",
+   "model": -0.5609347210472388,
+   "access": 0.4117075562420475,
+   "marker": -0.13965140283107758,
+   "truth": 0.304257528556594,
+   "young": true
+  },
+  {
+   "donor": "young5",
+   "fate": "lymphoid",
+   "model": -0.2706661588051772,
+   "access": 0.49753358823561955,
+   "marker": -0.20687220990657806,
+   "truth": 0.3006807430483443,
+   "young": true
+  },
+  {
+   "donor": "young5",
+   "fate": "mega",
+   "model": 1.0924484902336324,
+   "access": 0.38502110706494774,
+   "marker": -0.14320535957813263,
+   "truth": 0.018691588785046728,
+   "young": true
+  }
+ ],
+ "rho_model": -0.17521994134897356,
+ "p_model": 0.33745469704169995,
+ "rho_marker": 0.43768328445747795,
+ "p_marker": 0.012237262024570398,
+ "rho_access": 0.4164222873900293,
+ "p_access": 0.01775261286806454,
+ "partial_rho_model_given_marker": -0.12573313782991202,
+ "partial_p": 0.49291176706541545,
+ "partial_rho_access_given_marker": 0.4963343108504399,
+ "partial_p_access": 0.003861462504170125,
+ "p_perm_position": 0.774022597740226,
+ "p_perm_direction": 0.0017998200179982,
+ "p_perm_partial_direction": 0.0008999100089991,
+ "per_fate": {
+  "ery": {
+   "rho_model": -0.19047619047619052,
+   "p_model": 0.6514014957024813,
+   "rho_access": 0.19047619047619052,
+   "p_access": 0.6514014957024813,
+   "rho_marker": 0.19047619047619052,
+   "p_marker": 0.6514014957024813
+  },
+  "myeloid": {
+   "rho_model": -0.14285714285714288,
+   "p_model": 0.7357648598798119,
+   "rho_access": 0.09523809523809526,
+   "p_access": 0.8225054302036114,
+   "rho_marker": 0.30952380952380953,
+   "p_marker": 0.4556448907375821
+  },
+  "lymphoid": {
+   "rho_model": -0.1666666666666667,
+   "p_model": 0.6932388117283949,
+   "rho_access": 0.7142857142857144,
+   "p_access": 0.046528232284167276,
+   "rho_marker": 0.6666666666666669,
+   "p_marker": 0.07098765432098757
+  },
+  "mega": {
+   "rho_model": 0.04761904761904763,
+   "p_model": 0.9108491685195836,
+   "rho_access": 0.5714285714285715,
+   "p_access": 0.13895995716070678,
+   "rho_marker": 0.7380952380952381,
+   "p_marker": 0.03655276105286082
+  }
+ },
+ "h3_young_rho_model": -0.23308270676691725,
+ "h3_young_p": 0.3226780250046228,
+ "h3_young_rho_access": 0.31127819548872177,
+ "h3_young_p_access": 0.18157577037037334,
+ "h3_young_rho_marker": 0.3488721804511278,
+ "verdict": {
+  "position_beats_marker": false,
+  "direction_beats_marker": false,
+  "any_beats_marker": false,
+  "direction_ADDS_to_marker": true
+ }
+}

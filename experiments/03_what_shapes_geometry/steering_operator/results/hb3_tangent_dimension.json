@@ -1,0 +1,130 @@
+{
+ "scgptbin": {
+  "model": "scgptbin",
+  "n": 3000,
+  "model_space": {
+   "tag": "model",
+   "mean_dim": 10.745697277699563,
+   "rho_dim_pt": -0.5431765234640581,
+   "p_blocked": 0.04247876061969016,
+   "dim_multipotent": 11.30757923599359,
+   "dim_terminal": 10.42041988493911,
+   "cohen_d": 0.8289085637279832,
+   "transition_width_frac": 0.500681686644491,
+   "transition_midpoint": 0.7351582869327709,
+   "r2_lin": 0.2860052985939726,
+   "r2_sig": 0.4143616161664191,
+   "bic_gap": 578.5063688111958
+  },
+  "counts_space": {
+   "tag": "counts",
+   "mean_dim": 10.867729943911234,
+   "rho_dim_pt": -0.6358774222086023,
+   "p_blocked": 0.0544727636181909,
+   "dim_multipotent": 11.62901668733507,
+   "dim_terminal": 10.324991656579398,
+   "cohen_d": 1.1851412310981637,
+   "transition_width_frac": 0.6905670907709754,
+   "transition_midpoint": 0.8114284911543898,
+   "r2_lin": 0.37277007722492406,
+   "r2_sig": 0.4870391376686922,
+   "bic_gap": 587.328142551017
+  }
+ },
+ "geneformer": {
+  "model": "geneformer",
+  "n": 2519,
+  "model_space": {
+   "tag": "model",
+   "mean_dim": 9.292717643540067,
+   "rho_dim_pt": -0.4879415402808544,
+   "p_blocked": 0.6006996501749126,
+   "dim_multipotent": 9.904077121742294,
+   "dim_terminal": 8.717431471267304,
+   "cohen_d": 0.7872897008497844,
+   "transition_width_frac": 0.8288974456769832,
+   "transition_midpoint": 0.7302432674723541,
+   "r2_lin": 0.23505005410593316,
+   "r2_sig": 0.26834773806895873,
+   "bic_gap": 96.44499244392443
+  },
+  "counts_space": {
+   "tag": "counts",
+   "mean_dim": 10.801727633194206,
+   "rho_dim_pt": -0.6634281235233837,
+   "p_blocked": 0.11144427786106946,
+   "dim_multipotent": 11.666380162629142,
+   "dim_terminal": 10.148752777516341,
+   "cohen_d": 1.2061521179612729,
+   "transition_width_frac": 0.580988311377548,
+   "transition_midpoint": 0.7681834573938126,
+   "r2_lin": 0.3858801932065107,
+   "r2_sig": 0.5341720981711311,
+   "bic_gap": 680.5223113451273
+  }
+ },
+ "state": {
+  "model": "state",
+  "n": 2515,
+  "model_space": {
+   "tag": "model",
+   "mean_dim": 11.984948126449135,
+   "rho_dim_pt": -0.7511237359358237,
+   "p_blocked": 0.0024987506246876563,
+   "dim_multipotent": 13.064716990900617,
+   "dim_terminal": 11.14902605217164,
+   "cohen_d": 1.3933294156813578,
+   "transition_width_frac": 0.45776554687816234,
+   "transition_midpoint": 0.649991496917228,
+   "r2_lin": 0.4443306524809285,
+   "r2_sig": 0.5652769045554589,
+   "bic_gap": 601.6822872201988
+  },
+  "counts_space": {
+   "tag": "counts",
+   "mean_dim": 10.833966995565365,
+   "rho_dim_pt": -0.6518832171285834,
+   "p_blocked": 0.14342828585707146,
+   "dim_multipotent": 11.707781665910266,
+   "dim_terminal": 10.179358427279313,
+   "cohen_d": 1.197889959984503,
+   "transition_width_frac": 0.5803937531443921,
+   "transition_midpoint": 0.7791305248645602,
+   "r2_lin": 0.3836835651158589,
+   "r2_sig": 0.5368939081326292,
+   "bic_gap": 703.1379009144982
+  }
+ },
+ "maxtoki": {
+  "model": "maxtoki",
+  "n": 3000,
+  "model_space": {
+   "tag": "model",
+   "mean_dim": 7.5815560186368085,
+   "rho_dim_pt": -0.30951310016812217,
+   "p_blocked": 0.07446276861569215,
+   "dim_multipotent": 7.971960304988867,
+   "dim_terminal": 7.229811212287824,
+   "cohen_d": 0.7125847399778967,
+   "transition_width_frac": 0.2658229132596509,
+   "transition_midpoint": 0.6608629508630547,
+   "r2_lin": 0.08319051047785853,
+   "r2_sig": 0.25371278263662544,
+   "bic_gap": 601.3547467550584
+  },
+  "counts_space": {
+   "tag": "counts",
+   "mean_dim": 10.867729943911234,
+   "rho_dim_pt": -0.6358774222086023,
+   "p_blocked": 0.0544727636181909,
+   "dim_multipotent": 11.62901668733507,
+   "dim_terminal": 10.324991656579398,
+   "cohen_d": 1.1851412310981637,
+   "transition_width_frac": 0.6905670907709754,
+   "transition_midpoint": 0.8114284911543898,
+   "r2_lin": 0.37277007722492406,
+   "r2_sig": 0.4870391376686922,
+   "bic_gap": 587.328142551017
+  }
+ }
+}

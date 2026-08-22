@@ -1,0 +1,1991 @@
+[
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "gm_lib.py",
+  "purpose": "Shared library: loads every gene representation basis (maxtoki_we, maxtoki_lmhead, geneformer_we, geneformer_v1_we, scgpt_we, esm2, coexpr, coexpr_devel, coexpr_k562, scGPT contextual ctx_L*), builds co-expression panels from h5ad, caches to data/genemanifold, and supplies the permutation-null statistics.",
+  "kind": "library",
+  "claim": "underpins every number in \u00a74.1",
+  "needs": "model safetensors (MaxToki-217M, Geneformer V1/V2, scGPT), ESM-2 .pt from the UCE misc HF snapshot, and Tabula Sapiens / fetal-gut h5ad panels; writes a 9 GB cache",
+  "origin": "biotensor/codebase/route_genemanifold/gm_lib.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "gene_sets.py",
+  "purpose": "Hand-written registry of the 17 early geometric hypotheses (HOX grid, cell-cycle circle, secretory order, ...) with their external coordinates.",
+  "kind": "library",
+  "claim": "none (pre-\u00a74.1 exploration)",
+  "needs": "nothing",
+  "origin": "biotensor/codebase/route_genemanifold/gene_sets.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "genome_wide.py",
+  "purpose": "THE genome-wide 22-way chromosome probe on every basis, on each basis's own gene set, with and without HOX+protocadherin removed.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 decoding row: MaxToki 0.43, Geneformer 0.17, scGPT 0.09, ESM-2 0.19, raw co-expression ~0.05, chance 0.045; also 'removing HOX and the protocadherin array changes nothing'",
+  "needs": "gm_lib bases + species_chrom.csv coordinate table",
+  "origin": "biotensor/codebase/route_genemanifold/genome_wide.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "genome_intersection.py",
+  "purpose": "Re-scores the same 22-way probe on the gene set common to all bases (n=14,671) so the beat-both comparison is not a coverage artefact.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 supporting; explains why ESM-2's own-set 0.19 drops to 0.105 on shared genes",
+  "needs": "gm_lib bases + species_chrom.csv",
+  "origin": "biotensor/codebase/route_genemanifold/genome_intersection.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "genome_groupsplit.py",
+  "purpose": "The 10-Mb genomic-neighbourhood holdout (GroupKFold over 10-Mb blocks), identical folds for every representation.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 / Fig 3a: MaxToki lm_head 0.433->0.347 (78% retained), W_E 0.433->0.373 (85%), Geneformer 51%, scGPT 24%, ESM-2 0.190->0.074 (20%, the collapse)",
+  "needs": "gm_lib bases + species_chrom.csv",
+  "origin": "biotensor/codebase/route_genemanifold/genome_groupsplit.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "genome_deleak.py",
+  "purpose": "The tokeniser-ID deleak done honestly: kNN on token_id alone (0.489 at k=1), whole-1000-token accession-block CV, and the Geneformer parity dissociation.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 'holding out whole token-ID blocks retains 96%' (0.4332 -> 0.4145)",
+  "needs": "gm_lib bases + token dictionaries",
+  "origin": "biotensor/codebase/route_genemanifold/genome_deleak.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "genome_seq_mechanism.py",
+  "purpose": "Why ESM-2 predicts chromosome at all: nearest protein neighbour is same-chromosome 22.3% vs 5.6% chance, and only 7.7% for HOX.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 'its signal was tandem-duplicate family resemblance'",
+  "needs": "esm2 basis + coordinates",
+  "origin": "biotensor/codebase/route_genemanifold/genome_seq_mechanism.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "coocc_strongest.py",
+  "purpose": "The strongest training-free co-occurrence factorisation baseline (PPMI/LSA over top-2048-gene documents, panel and dimension swept) vs both models, matched genes, each representation given its own best probe under the 10-Mb holdout.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 / Fig 3c headline: MaxToki-1B 0.880, strongest factorisation 0.720, MaxToki-217M 0.506, chance 0.045, n=15,135",
+  "needs": "expression panels (fetal gut 62,849 cells, Tabula Sapiens) + both model tables",
+  "origin": "biotensor/codebase/route_genemanifold/coocc_strongest.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "coocc_bestprobe.py",
+  "purpose": "Best-probe-vs-best-probe grid (logistic / LinearSVC / MLP) for the two models and the shallow LSA baseline.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 feeds the 0.880 / 0.720 / 0.506 numbers",
+  "needs": "cached panels + model tables",
+  "origin": "biotensor/codebase/route_genemanifold/coocc_bestprobe.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "coocc_matched.py",
+  "purpose": "Matched-gene verdict table: raw expression profile (0.044) vs LSA-64/256/1024 of the identical cells vs both models, plus cell-shuffle and label-shuffle nulls.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 'raw expression profile 0.044' and 'permuted labels 0.045'",
+  "needs": "expression panels + model tables",
+  "origin": "biotensor/codebase/route_genemanifold/coocc_matched.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "coocc_final.py",
+  "purpose": "Full-corpus shallow factorisation at its best dimension vs both models at native width, plus a PCA compression-bias control.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 factorisation baseline 0.692 group-split at LSA-256",
+  "needs": "62,849-cell fetal gut panel + model tables",
+  "origin": "biotensor/codebase/route_genemanifold/coocc_final.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "coocc_fair.py",
+  "purpose": "Width-matched and corpus-size-swept version of the shallow baseline (8k / 25k / 62,849 cells).",
+  "kind": "entrypoint",
+  "claim": "supporting; its width-matched block is explicitly retracted inside coocc_final.py",
+  "needs": "expression panels",
+  "origin": "biotensor/codebase/route_genemanifold/coocc_fair.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "coocc_diagnose.py",
+  "purpose": "Diagnoses why fetal gut factorises to 0.551 while Tabula Sapiens sits at 0.081 (kills preprocessing, file-order, frequency and single-chromosome explanations).",
+  "kind": "entrypoint",
+  "claim": "Supp S4 panel-dependence of the co-occurrence baseline",
+  "needs": "expression panels",
+  "origin": "biotensor/codebase/route_genemanifold/coocc_diagnose.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "coocc_position.py",
+  "purpose": "Same factorised baseline applied to the within-chromosome position claim.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 last sentence / Supp S2: factorisation beats both models on position (rho +0.762 vs +0.622 and +0.374)",
+  "needs": "expression panels + model tables",
+  "origin": "biotensor/codebase/route_genemanifold/coocc_position.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "coexpr_fact.py",
+  "purpose": "Builds the PPMI-weighted truncated-SVD co-occurrence bases for every panel (the correct null the Stage-1 screen never used) and self-tests them.",
+  "kind": "entrypoint",
+  "claim": "\u00a73.2 baseline construction for \u00a74.1",
+  "needs": "h5ad panels; writes bases into the data cache",
+  "origin": "biotensor/codebase/route_genemanifold/coexpr_fact.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "panel_sweep.py",
+  "purpose": "What makes a tissue carry chromosome-scale co-expression: sweeps panels matched at 3,500 cells (fetal gut 0.720 vs adult 0.497 vs CD34 0.080 vs TS kidney 0.08).",
+  "kind": "entrypoint",
+  "claim": "Supp S4 panel dependence",
+  "needs": "many h5ad panels",
+  "origin": "biotensor/codebase/route_genemanifold/panel_sweep.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "purity_decomposition.py",
+  "purpose": "Shows cell-type heterogeneity specifically manufactures chromosome-scale co-expression (k=1 0.284 -> k=12 0.524 at fixed N, matched-difficulty control flat).",
+  "kind": "entrypoint",
+  "claim": "Supp S4 / mechanism discussion",
+  "needs": "h5ad panels with cell-type labels",
+  "origin": "biotensor/codebase/route_genemanifold/purity_decomposition.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "specificity_mechanism.py",
+  "purpose": "Which genes manufacture the chromosome signal: splits by cell-type specificity (Tau), matched on set size and chromosome composition.",
+  "kind": "entrypoint",
+  "claim": "Supp S4",
+  "needs": "h5ad panels",
+  "origin": "biotensor/codebase/route_genemanifold/specificity_mechanism.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "specificity_matched.py",
+  "purpose": "Confound-controlled rerun of specificity_mechanism.py (detection-rate matched).",
+  "kind": "entrypoint",
+  "claim": "Supp S4; supersedes specificity_mechanism.py",
+  "needs": "h5ad panels",
+  "origin": "biotensor/codebase/route_genemanifold/specificity_matched.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "synteny_transfer.py",
+  "purpose": "Label-free retrieval test: are two genes >=20 Mb apart on the same chromosome closer than a matched pair, per basis (AUROC).",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 'Two limits': the ranking inverts, factorisation 0.565 vs both models 0.529",
+  "needs": "model tables + LSA basis + coordinates",
+  "origin": "biotensor/codebase/route_genemanifold/synteny_transfer.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "classifier_sweep.py",
+  "purpose": "Linear probe-family sweep (logistic C, LDA-Ledoit-Wolf, LinearSVC, whitening) for the 22-class chromosome task, per model.",
+  "kind": "entrypoint",
+  "claim": "\u00a73.2 'each given its own best probe'",
+  "needs": "model tables + coordinates",
+  "origin": "biotensor/codebase/route_genemanifold/classifier_sweep.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "nonlinear_sweep.py",
+  "purpose": "Non-linear probe families (kNN, cosine, Nystroem RBF, MLP) for the same task.",
+  "kind": "entrypoint",
+  "claim": "\u00a73.2 probe family",
+  "needs": "model tables + coordinates",
+  "origin": "biotensor/codebase/route_genemanifold/nonlinear_sweep.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "final_probe_grid.py",
+  "purpose": "Best linear vs best non-linear probe on both models AND both baselines on matched genes, to check the beat-both margin survives at higher probe capacity.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 probe-capacity control",
+  "needs": "all bases + coordinates",
+  "origin": "biotensor/codebase/route_genemanifold/final_probe_grid.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "table_grid.py",
+  "purpose": "Full 2x2 of input embed_tokens vs output lm_head x 217M vs 1B on identical genes, at native width and dimension-controlled.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 'strong in the vocabulary tables (0.516 output, 0.453 input)'",
+  "needs": "both model safetensors",
+  "origin": "biotensor/codebase/route_genemanifold/table_grid.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "model_scale.py",
+  "purpose": "Matched 217M vs 1B comparison for chromosome and position on the identical 18,287 genes, plus random-projection dimension controls.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 scale: 1B 0.837 random / 0.703 group vs 217M 0.485 / 0.368; and Fig 3b 1B matched-width 0.813 -> 0.066",
+  "needs": "both model safetensors + coordinates",
+  "origin": "biotensor/codebase/route_genemanifold/model_scale.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "maxtoki_layers.py",
+  "purpose": "Depth profile: decodes chromosome and position from the contextual hidden state at every layer, plus the two static tables as reference lines.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 'Where the variable lives': 0.453 W_E, 0.516 lm_head, decaying monotonically to 0.088 at L11",
+  "needs": "MaxToki-217M forward passes over 600 cells (transformers venv)",
+  "origin": "biotensor/codebase/route_genemanifold/maxtoki_layers.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "genome_causal.py",
+  "purpose": "THE causal steering test: build the chr-C direction in embed_tokens space, add it to a random half of a cell's gene tokens, read chr-C mass in the next-gene logits at the other half; norm-matched random push as control.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 causal use: +0.055, bootstrap CI [+0.013, +0.108], 18/22 chromosomes positive, random push -0.0004",
+  "needs": "MaxToki-217M forward passes (transformers venv) + Setty CD34 h5ad",
+  "origin": "biotensor/codebase/route_genemanifold/genome_causal.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "genome_causal_sweep.py",
+  "purpose": "Robustness for genome_causal.py: alpha sweep x 3 seeds, dose-response, sub-natural alpha=0.5.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 'genuine dose-response, significant across three seeds even at a sub-natural strength'; Fig 2a of the route paper",
+  "needs": "MaxToki-217M forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/genome_causal_sweep.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_lib.py",
+  "purpose": "Shared activation-steering harness for MaxToki: Direction objects with provenance tags, hooks to inject at embed_tokens or after any decoder layer, logits/hidden readouts, both checkpoints.",
+  "kind": "library",
+  "claim": "\u00a73.4 protocol for all of \u00a74.1's causal results",
+  "needs": "MaxToki-217M / 1B HF safetensors via projects/maxtoki/setup/maxtoki_adapter.py",
+  "origin": "biotensor/codebase/route_genemanifold/steer_lib.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_propagation.py",
+  "purpose": "Generalised split-half causal-propagation test for any categorical gene property; the independent reimplementation of genome_causal.py, with alpha sweep and multiple seeds.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 '132 of 132 chromosome x strength x seed combinations in the 1B (116/132 in the 217M)' and Fig 3c",
+  "needs": "MaxToki-217M and 1B forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/steer_propagation.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_layers2.py",
+  "purpose": "Depth of the causal effect with the chromosome direction rebuilt natively at each layer and pushes scaled to the local residual norm.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 'Steering works at the input embedding (+0.0801, 22/22) and is indistinguishable from zero by layer 5'; Supp S6 depth",
+  "needs": "MaxToki-1B forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/steer_layers2.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "karyotype_sim.py",
+  "purpose": "Karyotype validation: derive a per-chromosome shift from aneuploid K562 minus lineage-matched CD34+, steer all 22 chromosomes at once, correlate the model's induced per-gene change against the real signature's chromosome-level and gene-level parts.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 external validation: r_chrom = +0.434 vs shuffled -0.028 +/- 0.19 (z = +2.40), gene-level residual r = -0.02",
+  "needs": "MaxToki-1B forward passes + K562 and CD34 h5ad",
+  "origin": "biotensor/codebase/route_genemanifold/karyotype_sim.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_units.py",
+  "purpose": "What is +0.055 worth in the model's own units: baseline-relative, and against the real intervention it imitates (substituting actual chr-C genes).",
+  "kind": "entrypoint",
+  "claim": "Supp S6 magnitude: substitution ceiling +0.0082 (+0.37x baseline) vs the vector's +0.055",
+  "needs": "MaxToki forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/steer_units.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_algebra.py",
+  "purpose": "What kind of object the chromosome channel is: bidirectionality, additivity, cross-talk across all 22 chromosomes.",
+  "kind": "entrypoint",
+  "claim": "Supp S6 'algebra': 22 independent, signed, saturating lookups, not one continuous manifold",
+  "needs": "MaxToki-1B forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/steer_algebra.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_signed.py",
+  "purpose": "Is chromosome a signed dosage quantity or a category label: negative-alpha (suppression) sweep, coarse and fine.",
+  "kind": "entrypoint",
+  "claim": "Supp S6 'bidirectional but asymmetric'",
+  "needs": "MaxToki-1B forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/steer_signed.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_dosage.py",
+  "purpose": "Spatial profile of the steering response along the chromosome, separating a dosage mechanism from a co-regulated-program mechanism.",
+  "kind": "entrypoint",
+  "claim": "Supp C.1 'the causal response is flat along a chromosome, so fine position is readable but not used'",
+  "needs": "MaxToki-1B forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/steer_dosage.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_locality.py",
+  "purpose": "Decay curve of a local push: how far along the chromosome the effect reaches.",
+  "kind": "entrypoint",
+  "claim": "Supp C.1 characteristic scale",
+  "needs": "MaxToki forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/steer_locality.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_local.py",
+  "purpose": "Steering toward 5-Mb local genomic domains rather than whole chromosomes, and whether the destination cell type over-expresses that domain.",
+  "kind": "entrypoint",
+  "claim": "Supp C.1 'the one positive mechanism result, 5-Mb local domains at +0.049 and +0.037, both p <= 0.0001'",
+  "needs": "MaxToki forward passes + h5ad panels",
+  "origin": "biotensor/codebase/route_genemanifold/steer_local.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_coherence.py",
+  "purpose": "Are the 5-Mb domains that respond the biologically real ones (only 26 of 96 move the right way).",
+  "kind": "entrypoint",
+  "claim": "Supp C.1 caveat on steer_local",
+  "needs": "MaxToki forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/steer_coherence.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_mechanism.py",
+  "purpose": "Does the steering destination match real biology: does chr-C steering send cells to the cell type that over-expresses chr-C genes (answer: no).",
+  "kind": "entrypoint",
+  "claim": "Supp C.1 'fail against expression enrichment in both (p = 0.92 and 0.115)'",
+  "needs": "MaxToki forward passes + h5ad",
+  "origin": "biotensor/codebase/route_genemanifold/steer_mechanism.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_where.py",
+  "purpose": "Where the classifier's predictions go when the chromosome variable is pushed (destination, not distance).",
+  "kind": "entrypoint",
+  "claim": "Supp C.1 'steering destinations do not replicate across models (3/22 modal agreement)'",
+  "needs": "MaxToki forward passes + trained heads",
+  "origin": "biotensor/codebase/route_genemanifold/steer_where.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_classifier.py",
+  "purpose": "Trains the shared multi-head classifier on the pooled final cell embedding and runs the specificity test (does steering chromosome disturb unrelated heads).",
+  "kind": "entrypoint",
+  "claim": "Supp C.1 'chromosome is entangled with cell identity' (+0.541 disturbance in the 1B vs +0.208)",
+  "needs": "MaxToki forward passes + h5ad panels",
+  "origin": "biotensor/codebase/route_genemanifold/steer_classifier.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_relative.py",
+  "purpose": "Tests a source-relative push (centroid(C) minus centroid(chrom of g)) against the global push.",
+  "kind": "entrypoint",
+  "claim": "Supp S6 operator check (did not beat global)",
+  "needs": "MaxToki forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/steer_relative.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "steer_swap.py",
+  "purpose": "Assumption-free ceiling for the operator objection: literally swap genes rather than add a vector.",
+  "kind": "entrypoint",
+  "claim": "Supp S6 substitution ceiling",
+  "needs": "MaxToki forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/steer_swap.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "genome_position2.py",
+  "purpose": "Within-chromosome fine position, artefact-corrected: signed Spearman with a per-basis within-chromosome position-shuffle null subtracted.",
+  "kind": "entrypoint",
+  "claim": "Supp S2: MaxToki excess +0.396 (22/22 chromosomes) vs ESM-2 +0.253 vs co-expression +0.063",
+  "needs": "all bases + coordinates",
+  "origin": "biotensor/codebase/route_genemanifold/genome_position2.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "genome_position_direction.py",
+  "purpose": "Is position a linear direction, non-linear, or curved: dimensionality and alignment of the ridge weight vector, per chromosome.",
+  "kind": "entrypoint",
+  "claim": "Supp S2 geometry",
+  "needs": "MaxToki lm_head + coordinates",
+  "origin": "biotensor/codebase/route_genemanifold/genome_position_direction.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "genome_position_geometry.py",
+  "purpose": "How position is encoded: per-gene leakage-clean linear evidence, chromosome-specific gradients, orthogonality to top PCs. Writes the one large (1.3 MB) result file.",
+  "kind": "entrypoint",
+  "claim": "Supp S2 'a chromosome-specific linear gradient'",
+  "needs": "MaxToki tables + coordinates",
+  "origin": "biotensor/codebase/route_genemanifold/genome_position_geometry.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "position_improve.py",
+  "purpose": "Can the position read-out be improved: per-interval directions, per-chromosome probes, alternative regressors.",
+  "kind": "entrypoint",
+  "claim": "Supp S2",
+  "needs": "MaxToki tables + coordinates",
+  "origin": "biotensor/codebase/route_genemanifold/position_improve.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "chrom_cnv_origin.py",
+  "purpose": "Did the model learn chromosome from copy-number variation: contrasts aneuploid K562 against normal panels as the source of chromosome-scale co-expression.",
+  "kind": "entrypoint",
+  "claim": "Supp S5 DNA-dosage alternative",
+  "needs": "K562 + normal h5ad panels",
+  "origin": "biotensor/codebase/route_genemanifold/chrom_cnv_origin.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "cnv_gene_level_test.py",
+  "purpose": "Per-gene chromosome-placement fingerprint: does it resemble the normal panel or the aneuploid panel (within-chromosome contrast -0.091, CI [-0.152,-0.033]).",
+  "kind": "entrypoint",
+  "claim": "Supp S5 'its per-gene success pattern tracks the normal panel over the aneuploid one'",
+  "needs": "K562 + normal panels + model tables",
+  "origin": "biotensor/codebase/route_genemanifold/cnv_gene_level_test.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "cnv_gene_level_control.py",
+  "purpose": "Kills the domain-shift alternative explanation for the gene-level fingerprint result.",
+  "kind": "entrypoint",
+  "claim": "Supp S5 control",
+  "needs": "K562 + normal panels",
+  "origin": "biotensor/codebase/route_genemanifold/cnv_gene_level_control.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "corpus_s1_audit.py",
+  "purpose": "Audits MaxToki's Genecorpus-175M constituent studies (from the published supplementary xlsx) for tumour / cell-line content.",
+  "kind": "entrypoint",
+  "claim": "Supp S5 'only ~5-6% of its cells come from studies that sampled cancer'",
+  "needs": "a third-party supplementary spreadsheet hardcoded to ~/Downloads/media-1.xlsx",
+  "origin": "biotensor/codebase/route_genemanifold/corpus_s1_audit.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "infercnv_confound.py",
+  "purpose": "Does cell-type composition manufacture spurious CNV calls in karyotypically normal cells (and the diverse-reference mitigation).",
+  "kind": "entrypoint",
+  "claim": "an applied side result, not cited in main \u00a74.1",
+  "needs": "h5ad panels",
+  "origin": "biotensor/codebase/route_genemanifold/infercnv_confound.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "hox_causal_locus.py",
+  "purpose": "Observational causal test at the HOX locus: regress the model's own logit for an absent gene on whether other genes from its cluster are in context, controlling for gene identity, cell HOX-friendliness and paralog. Runs per tissue.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.3 of the route paper: beta = +0.093 (t=7.9) fetal gut, +0.146 (t=6.1) aging marrow; HOXB +0.26/+0.25, HOXA null in both",
+  "needs": "MaxToki forward passes + fetal-gut and aging-marrow h5ad (row cache in results/cache_rows_*.npz)",
+  "origin": "biotensor/codebase/route_genemanifold/hox_causal_locus.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "hox_within.py",
+  "purpose": "Within-cluster paralog: leave-one-cluster-out transfer of the paralog coordinate, and the PC2 correction to hox_shape.py.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.3 'the paralog coordinate transfers to it at held-out rho=+0.833, correct sign in 4 of 4 clusters (p=0.005)'",
+  "needs": "model tables + co-expression panels",
+  "origin": "biotensor/codebase/route_genemanifold/hox_within.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "hox_analogy_null.py",
+  "purpose": "The strict shuffled-grid null for the word2vec analogy that hox_analogy.py promised and omitted, plus the per-cluster breakdown.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.3 'HOXA9 - HOXA1 + HOXB1 lands on HOXB9 at 3.95x a strict within-cluster null (z=+13.5)'",
+  "needs": "model tables + esm2 + co-expression",
+  "origin": "biotensor/codebase/route_genemanifold/hox_analogy_null.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "hox_axes.py",
+  "purpose": "Decomposes the HOX analogy into a paralog offset and a cluster offset and measures how parallel-transportable each is.",
+  "kind": "entrypoint",
+  "claim": "route paper Supp S7 'approximately a bilinear grid, not a rigid one' (R^2 = 0.53)",
+  "needs": "model tables",
+  "origin": "biotensor/codebase/route_genemanifold/hox_axes.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "hox_crossmodel.py",
+  "purpose": "The HOX 4-class cluster task across the model portfolio, adding the Geneformer V1/V2 loaders.",
+  "kind": "entrypoint",
+  "claim": "RESULTS.md \u00a711: Geneformer 0.81, scGPT 0.57; UCE/STATE cannot be asked",
+  "needs": "all model tables",
+  "origin": "biotensor/codebase/route_genemanifold/hox_crossmodel.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "run_probe.py",
+  "purpose": "The supervised cross-validated ridge probe battery over gene_sets.py hypotheses; the instrument change that revived HOX (0.19 -> 0.884).",
+  "kind": "entrypoint",
+  "claim": "RESULTS.md \u00a71 (methodology origin of \u00a74.1)",
+  "needs": "all bases",
+  "origin": "biotensor/codebase/route_genemanifold/run_probe.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "verify_probe.py",
+  "purpose": "Paired bootstrap over genes on the supervised-probe revivals; only HOX survives.",
+  "kind": "entrypoint",
+  "claim": "RESULTS.md \u00a71",
+  "needs": "all bases",
+  "origin": "biotensor/codebase/route_genemanifold/verify_probe.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "antipodal_subspace.py",
+  "purpose": "Re-tests the antagonistic-TF antipodal hypothesis inside a marker-defined subspace instead of full space (global-PC ablation, lineage-subspace cosine, marker-axis projection).",
+  "kind": "entrypoint",
+  "claim": "\u00a74.3 'GATA1/SPI1 separation 0.818, subspace cosine -0.394 model vs +0.007 co-expression vs +0.699 ESM-2'",
+  "needs": "model tables + esm2 + co-expression",
+  "origin": "biotensor/codebase/route_genemanifold/antipodal_subspace.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "lineage_steer.py",
+  "purpose": "Causal steering of the lineage bistable switches (GATA1/SPI1, PAX5/PRDM1, RORC/FOXP3), reciprocity read through the model's own logits.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.3 '+4.211 [+3.892,+4.539] for GATA1/SPI1 and +5.565 for PAX5/PRDM1'",
+  "needs": "MaxToki forward passes + h5ad",
+  "origin": "biotensor/codebase/route_genemanifold/lineage_steer.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "causal_ablate.py",
+  "purpose": "Causal ablation of the secretory axis - a well-powered negative (n=14,696) used as the control case for what a used axis should look like.",
+  "kind": "entrypoint",
+  "claim": "RESULTS.md \u00a76 negative",
+  "needs": "MaxToki forward passes + Setty h5ad",
+  "origin": "biotensor/codebase/route_genemanifold/causal_ablate.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "cellcycle_steer.py",
+  "purpose": "Can you move around the gene-level cell-cycle circle by steering (no phase tracking at any dose).",
+  "kind": "entrypoint",
+  "claim": "RESULTS.md \u00a714 negative",
+  "needs": "MaxToki forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/cellcycle_steer.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "cellcycle_geometry.py",
+  "purpose": "Diagnostic for the steering negative: the gene-level cell-cycle geometry is an axis, not a circle.",
+  "kind": "entrypoint",
+  "claim": "RESULTS.md \u00a714",
+  "needs": "model tables + phase annotation",
+  "origin": "biotensor/codebase/route_genemanifold/cellcycle_geometry.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "hypotheses.py",
+  "purpose": "Hand-written registry of 40+ gene-property hypotheses (symbol -> label, kind, provenance, expectation) for the steerable-directions screen.",
+  "kind": "library",
+  "claim": "none (screening program)",
+  "needs": "various annotation files at hardcoded external paths",
+  "origin": "biotensor/codebase/route_genemanifold/hypotheses.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "make_figures.py",
+  "purpose": "Builds figures/fig1_decoding.pdf .. fig4_rotation.pdf for PAPER_chromosome_variable.md from results/*.json.",
+  "kind": "entrypoint",
+  "claim": "produces the route paper's Figures 1-4 (Fig 1c is the 0.880/0.720/0.506 panel)",
+  "needs": "results/*.json only",
+  "origin": "biotensor/codebase/route_genemanifold/make_figures.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "make_fig5.py",
+  "purpose": "Three-panel figure showing position is a linear direction orthogonal to top variance.",
+  "kind": "entrypoint",
+  "claim": "route paper Supp S2 figure",
+  "needs": "results/genome_position_geometry.json",
+  "origin": "biotensor/codebase/route_genemanifold/make_fig5.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "make_fig6.py",
+  "purpose": "Layer figure separating contextual hidden states from static weight tables.",
+  "kind": "entrypoint",
+  "claim": "route paper Supp S3 figure; main-paper Fig 3b data",
+  "needs": "results/maxtoki_layers.json",
+  "origin": "biotensor/codebase/route_genemanifold/make_fig6.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "make_graphical_abstract.py",
+  "purpose": "Composite graphical abstract (setup -> encoded -> causally used).",
+  "kind": "entrypoint",
+  "claim": "route paper front matter",
+  "needs": "results/*.json",
+  "origin": "biotensor/codebase/route_genemanifold/make_graphical_abstract.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_extract_maxtoki.py",
+  "purpose": "Extracts MaxToki per-gene contextual representations stratified by cell type, with a pairwise noise control. Writes the 1.2 GB ctx_maxtoki_L*.npz.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1 - belongs to the separate gene-context paper",
+  "needs": "MaxToki forward passes over Tabula Sapiens; writes very large npz",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_extract_maxtoki.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_extract_scgpt.py",
+  "purpose": "Reformats the cached scGPT contextual atlas into the shared ctx schema.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "external scGPT activation atlas (subproject_42)",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_extract_scgpt.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_extract_state.py",
+  "purpose": "Extracts STATE-SE (Arc SE-600M) per-gene contextual representations in the same schema.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "STATE-SE weights + a 4 GB local cache",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_extract_state.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_extract_devel.py",
+  "purpose": "Same extraction across hematopoietic differentiation branches (Setty CD34).",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "MaxToki forward passes + Setty h5ad",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_extract_devel.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_extract_random.py",
+  "purpose": "Random-weights control extraction for the contextualisation phenomenon.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "randomly initialised MaxToki",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_extract_random.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_feasibility.py",
+  "purpose": "Pre-extraction feasibility: gene counts and balance, and the housekeeping-stopword trap check.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "tokenizer + h5ad only",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_feasibility.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_polysemy.py",
+  "purpose": "Is a gene's contextual shift gene-specific rather than crowd drift (EXCESS +0.758 at L4, 0.000 at L0).",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctx_*_L*.npz",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_polysemy.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_position_confound.py",
+  "purpose": "Is the gene-specific context response just rank-position encoding.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctx npz",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_position_confound.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_functional_axes.py",
+  "purpose": "Do genes move along functionally meaningful directions (nuclear/surface, mito/cyto, transcription/transport).",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctx npz + GO sets",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_functional_axes.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_coexpr_null_v2.py",
+  "purpose": "Definitive co-expression null for the functional-axis modulation, resolving the +1.7 sigma vs +8 sigma discrepancy.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1 (relevant to \u00a74.3's function-beyond-co-expression logic)",
+  "needs": "ctx npz + expression panels",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_coexpr_null_v2.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_tightness_null.py",
+  "purpose": "Representation-compactness null for the same modulation.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctx npz",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_tightness_null.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_causal.py",
+  "purpose": "Is the functional-context direction causally used (push some genes along the axis, read others).",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "MaxToki forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_causal.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_directional_probe.py",
+  "purpose": "Level-2 feasibility: does a gene move toward its own functional pole in contexts sharing that function.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctx npz",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_directional_probe.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_curated_targets.py",
+  "purpose": "Do TFs sit near their ChIP/literature targets beyond co-expression, and more where the target programme is active.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctx npz + curated TF-target tables",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_curated_targets.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_switcher_test.py",
+  "purpose": "Do documented context-switching TFs move more across contexts than matched controls.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctx npz",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_switcher_test.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_cross_model.py",
+  "purpose": "Cross-model / scaling comparison of the contextualisation phenomenon.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctx npz for all models",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_cross_model.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_independent.py",
+  "purpose": "Independent-dataset replication of the Level-1 context claims on Setty CD34.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctx_devel npz",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_independent.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_layer_curve.py",
+  "purpose": "Full 12-layer depth profile of the gene-specific context response.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctxscan_L00..L11 npz (2.4 GB)",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_layer_curve.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_anisotropy.py",
+  "purpose": "Anisotropy and self-similarity metric-validity control (Ethayarajh 2019).",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctx npz",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_anisotropy.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_devel_trajectory.py",
+  "purpose": "Functional-axis trajectory across hematopoietic differentiation.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctx_devel npz",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_devel_trajectory.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_prediction_link.py",
+  "purpose": "Does contextualisation serve the model's next-gene objective.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "MaxToki forward passes",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_prediction_link.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_celltype_loadings.py",
+  "purpose": "Saves per-cell-type projections of the context main effect onto the nuclear/surface axis so quoted loadings are traceable.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "ctx npz",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_celltype_loadings.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "ctx_figures.py",
+  "purpose": "Builds figures/ctx_fig1..6.pdf for the gene-context paper.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "results/ctx_*.json",
+  "origin": "biotensor/codebase/route_genemanifold/ctx_figures.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "h_tokenizer_rank.py",
+  "purpose": "Calibration control: a gene's raw MaxToki token-ID integer as a decodable-but-meaningless label.",
+  "kind": "library",
+  "claim": "none (screen loader)",
+  "needs": "model tables + token dictionary",
+  "origin": "biotensor/codebase/route_genemanifold/auto_hyp/h_tokenizer_rank.py"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "make_pdf.sh",
+  "purpose": "Builds PAPER_chromosome_variable.pdf via pandoc + xelatex.",
+  "kind": "entrypoint",
+  "claim": "build script",
+  "needs": "pandoc, MacTeX at /Library/TeX/texbin",
+  "origin": "biotensor/codebase/route_genemanifold/make_pdf.sh"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "make_paper_pdf.sh",
+  "purpose": "Builds PAPER_context_representation.pdf.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "pandoc + xelatex",
+  "origin": "biotensor/codebase/route_genemanifold/make_paper_pdf.sh"
+ },
+ {
+  "module": "02_vocabulary_facts/chromosome",
+  "file": "make_note_pdf.sh",
+  "purpose": "Builds NOTE_context_representation.pdf.",
+  "kind": "entrypoint",
+  "claim": "none in \u00a74.1",
+  "needs": "pandoc + xelatex",
+  "origin": "biotensor/codebase/route_genemanifold/make_note_pdf.sh"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "cc_phase.py",
+  "purpose": "Tricycle/Revelio cell-cycle phase angle from marker-gene PCA, plus phase_angle_oriented which pins handedness and origin from marker biology (S precedes G2/M) so two datasets can be compared.",
+  "kind": "library",
+  "claim": "underpins every phase number in 3.1, 3.2, 4.2, 5.1; the orientation fix is what makes the 3.1 cross-cell-line transfer interpretable at all",
+  "needs": "an h5ad with gene-symbol var_names; nothing else",
+  "origin": "c2s-scale/route_genemanifold_c2s/cc_phase.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "cell_sentences.py",
+  "purpose": "Builds a C2S cell sentence from an h5ad and maps Gemma-2 subword tokens back to genes via offset_mapping.",
+  "kind": "library",
+  "claim": "the top-512-rank encoding that Table 1 in 3.1 is built around",
+  "needs": "tokenizer only, no model weights needed to build sentences",
+  "origin": "c2s-scale/route_genemanifold_c2s/cell_sentences.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "manifold_fit.py",
+  "purpose": "Fits and characterises the cell-state manifold: cross-validated circular decodability, ring score, radius CV, chord-deviation curvature, intrinsic dimension, per layer; writes the bin knots used by every steering script.",
+  "kind": "entrypoint",
+  "claim": "3.2 the loop lies in a fixed linear 2-plane; supplies the knots whose gap CV becomes the 5.1 result",
+  "needs": "a cached activations dir plus the substrate h5ad; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/manifold_fit.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "ring_analysis.py",
+  "purpose": "Single-cell ring-vs-filled-disk test against matched synthetic ring and disk calibrations, plus the cell-cycle-gene-deletion (compute vs relay) test.",
+  "kind": "entrypoint",
+  "claim": "3.2 'It is a filled disk rather than a ring' \u2014 planted ring 0.15/0.000, planted disk 0.35/0.126, C2S-2B 0.38/0.108, C2S-27B 0.38/0.110",
+  "needs": "two cached activation dirs (normal sentences, and sentences with the 87 cc genes deleted) plus the h5ad; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/ring_analysis.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "orthogonal_props.py",
+  "purpose": "Decomposes each cell-level covariate into what the phase angle explains versus what the radius explains, cross-validated.",
+  "kind": "entrypoint",
+  "claim": "3.2 'Angle is phase; radius is cycling strength' \u2014 cycling strength R2 0.414 radial against 0.040 angular; phase programmes load ~15x more on the angle than non-phase ones",
+  "needs": "cached activations dir plus h5ad; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/orthogonal_props.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "continuity_test.py",
+  "purpose": "Three continuity tests scored 0 (continuous) to 1 (discrete): occupancy density, metric profile against true phase difference, and behavioural interpolation read through the model's own marker logits; also reports the knot-gap CV around the loop.",
+  "kind": "entrypoint",
+  "claim": "3.2 continuity scores 0.17 / 0.10 / 0.00; AND 5.1 the metric warp \u2014 knot-gap CV 0.318 (2B) and 0.295 (27B), largest gaps at bins 5 to 8, the G1 to S restriction point",
+  "needs": "needs the model on GPU for the interpolation arm; the other two arms need only cached activations",
+  "origin": "c2s-scale/route_genemanifold_c2s/continuity_test.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "plateau_test.py",
+  "purpose": "Activation-plateau test in the Shinkle et al. sense: relative output distance along an interpolation, stratified within-phase versus across a real transition, at three layers; plus a phase-resolved output-sensitivity walk.",
+  "kind": "entrypoint",
+  "claim": "3.2 'no plateau, and a plateau statistic that weakens with depth (0.179 to 0.115 to 0.056 across layers 9, 15 and 21)'",
+  "needs": "needs the model on GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/plateau_test.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "cc_benchmark_c2s.py",
+  "purpose": "Puts C2S on the existing matched-dimensionality cell-cycle benchmark (PCA-k, three probes, held out) against the expression baseline on the identical 3,000 K562 cells.",
+  "kind": "entrypoint",
+  "claim": "3.1 'the models beat expression in 0 of 36 (C2S)'; supplies the top and bottom rows of Table 1 (expression 0.929, C2S-2B L21 0.875)",
+  "needs": "cached activations plus the canonical k562 substrate; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/cc_benchmark_c2s.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "encoding_matched_transfer.py",
+  "purpose": "Frozen K562-to-RPE1 transfer across a ladder of expression encodings ending at exactly what the model receives (top-512, rank only), with a paired bootstrap over target cells.",
+  "kind": "entrypoint",
+  "claim": "3.1 the model 0.789; and the spurious encoding-only-matched contrast delta +0.0153, CI [+0.0022, +0.0283], which the paper reports as the wrong answer",
+  "needs": "two h5ads plus two cached activation dirs; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/encoding_matched_transfer.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "surface_forms.py",
+  "purpose": "The surface-form ladder: strip every cell-cycle gene from a real cell, insert one gene symbol at a fixed rank, read which pole of the real-cell phase circle the state lands on; five symbol forms ranked by edit distance.",
+  "kind": "entrypoint",
+  "claim": "the whole of 4.2 \u2014 CCNB1 0.989 (p=0.0002, 40.7 deg separation), Ccnb1 0.782, ccnb1 0.767, CQNB1 0.685, NBCC1 0.511 (p=0.43); Figure 4",
+  "needs": "needs the model on GPU, plus a substrate h5ad, a cached-states dir for the phase frame, and optionally a second panel to widen the not-a-real-gene check",
+  "origin": "c2s-scale/route_genemanifold_c2s/surface_forms.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "lap_walk.py",
+  "purpose": "Iterative steering around the closed loop: fixed direction, fixed-projected, local-tangent and random arms, with geometric (unwrapped decoded phase) and behavioural (model's own marker logits) lap counts.",
+  "kind": "entrypoint",
+  "claim": "5.4 (sec:operator) 'behaviour follows geometry' \u2014 1.579 behavioural laps for local-tangent against 0.212 for fixed, 12 of 12 cells, p=2.4e-4, isometry 0.73 to 0.88; and the C2S rows of the 5.3 stall table",
+  "needs": "needs the model on GPU for the behavioural readout, plus fitted knots",
+  "origin": "c2s-scale/route_genemanifold_c2s/lap_walk.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "manifold_steer.py",
+  "purpose": "Manifold-arc versus linear-chord versus norm-matched-random steering along the fitted knots, read through the model's own next-gene logits, with a two-part instrument gate (correlation AND dynamic range).",
+  "kind": "entrypoint",
+  "claim": "5.4 the dose-sweep half of the representation-to-behaviour isometry (0.73 to 0.88 over three runs)",
+  "needs": "needs the model on GPU plus fitted knots",
+  "origin": "c2s-scale/route_genemanifold_c2s/manifold_steer.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "manifold_steer_poles.py",
+  "purpose": "Same three steering arms but with a two-pole signed marker contrast readout, for ordered (non-cyclic) manifolds where the 12-bin softmax readout is pinned.",
+  "kind": "entrypoint",
+  "claim": "the differentiation/erythroid arm; supporting, not a numbered main-text claim",
+  "needs": "needs the model on GPU plus fitted knots for an ordered variable",
+  "origin": "c2s-scale/route_genemanifold_c2s/manifold_steer_poles.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "synth_sweep.py",
+  "purpose": "Constructive sufficiency test: build a phase-neutral backbone, insert an externally annotated peak-phase gene module at fixed ranks, and ask whether the representation rotates to that phase. Also exports PEAK and insert_at, which surface_forms.py and heldout_v2.py reuse.",
+  "kind": "entrypoint",
+  "claim": "114.3 deg +/- 6.9 against shuffled 13.2 and random 3.5. Not in the main-text sections listed; likely supplement. Its insert_at helper is load-bearing for 4.2",
+  "needs": "needs the model on GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/synth_sweep.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "transfer_test.py",
+  "purpose": "Zero-shot K562-to-RPE1 transfer with a measured constant/random floor, R_diff and rotation-corrected median error; includes the documented rejection of two candidate target datasets.",
+  "kind": "entrypoint",
+  "claim": "superseded by encoding_matched_transfer.py + selection_matched_arm.py; its results/transfer_test.json and transfer_rpe1.json are marked _RETRACTED in place",
+  "needs": "two h5ads plus two cached activation dirs; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/transfer_test.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "steer_c2s.py",
+  "purpose": "Gemma-2 forward-hook steering harness: decoder-layer-site edits, model's-own-next-subword-logit readout, norm-relative doses, split-half propagation test.",
+  "kind": "library",
+  "claim": "the intervention machinery behind the 4.3 lineage-switch steering and the Thread A gate-3 runs",
+  "needs": "needs the model on GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/steer_c2s.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "c2s_gm_lib.py",
+  "purpose": "Thread A machinery: the order/circle/grid/antipodal statistics and their annotation-permutation nulls, copied verbatim from the internal source route, plus the coexpr and esm2 reference bases and the C2S context-activation basis loader.",
+  "kind": "library",
+  "claim": "Thread A; supports 4.1 chromosome and 4.4 function/paralogy indirectly, not the four sections inventoried here",
+  "needs": "needs the raw Tabula Sapiens h5ads, an ESM2 protein-embedding .pt from the UCE-misc HF cache, and a UCE species_chrom.csv",
+  "origin": "c2s-scale/route_genemanifold_c2s/c2s_gm_lib.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "gene_sets.py",
+  "purpose": "The 17 hand-crafted geometric hypotheses (gene set + external non-expression coordinate + honest confound note) for the Thread A screen.",
+  "kind": "library",
+  "claim": "Thread A screen; the cellcycle_circle entry is carried as the positive control and fails its margin bootstrap",
+  "needs": "nothing",
+  "origin": "c2s-scale/route_genemanifold_c2s/gene_sets.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "build_ctx_basis.py",
+  "purpose": "Builds the C2S model basis: per-gene mean residual at that gene's token positions over a Tabula Sapiens panel, streamed so memory is O(genes x layers x d_model). Produces bases/c2s_ctx_L*.npz.",
+  "kind": "entrypoint",
+  "claim": "Thread A infrastructure",
+  "needs": "needs the model on GPU plus the TS panel h5ad",
+  "origin": "c2s-scale/route_genemanifold_c2s/build_ctx_basis.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "run_geometric.py",
+  "purpose": "Runs the 17-hypothesis geometric screen over every c2s_ctx layer against the coexpr and esm2 references, with the paired margin bootstrap over shared genes.",
+  "kind": "entrypoint",
+  "claim": "Thread A negative",
+  "needs": "bases/*.npz plus both reference bases; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/run_geometric.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "run_genome_wide.py",
+  "purpose": "Genome-wide chromosome classification from the C2S activation basis (22-class balanced accuracy), with HOX/protocadherin removed and a genomic-distance-decay arm.",
+  "kind": "entrypoint",
+  "claim": "the C2S counterpoint to 4.1 \u2014 best ctx layer 0.105 but ESM2 sequence decodes it better at 0.190, so not model-specific in a model with no gene table",
+  "needs": "bases/*.npz, both references, and species_chrom.csv; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/run_genome_wide.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "run_steering.py",
+  "purpose": "Thread A gate-3 causal steering: build the axis from the ctx basis, run the split-half propagation test per antipodal hypothesis.",
+  "kind": "entrypoint",
+  "claim": "Thread A gate 3",
+  "needs": "needs the model on GPU plus bases and a panel",
+  "origin": "c2s-scale/route_genemanifold_c2s/run_steering.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "ctx_extract_c2s.py",
+  "purpose": "Thread B extraction cube M[partition, context, gene, dim] with the occurrence cap, cell-level split-half, stored token rank and stopword filter baked in at extraction.",
+  "kind": "entrypoint",
+  "claim": "Thread B infrastructure",
+  "needs": "needs the model on GPU plus the cell-type-stratified panel",
+  "origin": "c2s-scale/route_genemanifold_c2s/ctx_extract_c2s.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "ctx_lib_c2s.py",
+  "purpose": "Shared loaders and normalisation for the Thread B cube: balanced-count masking, per-dimension z-scoring, rank means.",
+  "kind": "library",
+  "claim": "Thread B",
+  "needs": "the ctx cube npz",
+  "origin": "c2s-scale/route_genemanifold_c2s/ctx_lib_c2s.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "ctx_polysemy_c2s.py",
+  "purpose": "Thread B gate 1: is a gene's contextual shift gene-specific and reproducible across disjoint cell halves (the EXCESS metric).",
+  "kind": "entrypoint",
+  "claim": "Thread B gate 1, +0.916 at L09",
+  "needs": "the ctx cube npz; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/ctx_polysemy_c2s.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "ctx_position_c2s.py",
+  "purpose": "Thread B gate 2: is that gene-specific response just token-rank encoding? Residualises on rank and recomputes EXCESS.",
+  "kind": "entrypoint",
+  "claim": "Thread B gate 2, survives at +0.911",
+  "needs": "the ctx cube npz; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/ctx_position_c2s.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "ctx_functional_axes_c2s.py",
+  "purpose": "Thread B gate 3: do genes move along GO-defined functional axes, with a validity AUC and a random-partition null.",
+  "kind": "entrypoint",
+  "claim": "Thread B gate 3, z=+21.3 nuclear vs surface",
+  "needs": "the ctx cube plus a gene2go pickle; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/ctx_functional_axes_c2s.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "ctx_coexpr_null_c2s.py",
+  "purpose": "Thread B gate 4, the load-bearing one: is the functional-axis modulation beyond co-expression, scored as a residual above a power-versus-coherence curve fitted on synthetic module axes.",
+  "kind": "entrypoint",
+  "claim": "Thread B gate 4 FAILS at +2.4 sigma \u2014 the divergence from MaxToki's +8 sigma. This is the honest negative worth shipping",
+  "needs": "the ctx cube plus the panel h5ad; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/ctx_coexpr_null_c2s.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "ctx_causal_c2s.py",
+  "purpose": "Thread B gate 5: is the functional-context axis causally used, via the split-half propagation test.",
+  "kind": "entrypoint",
+  "claim": "Thread B gate 5, passes",
+  "needs": "needs the model on GPU plus the ctx cube",
+  "origin": "c2s-scale/route_genemanifold_c2s/ctx_causal_c2s.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "subset_ts.py",
+  "purpose": "Builds the compact Tabula Sapiens panel h5ad on the same seed-0 cells the coexpr baseline uses, so the two describe identical cells.",
+  "kind": "entrypoint",
+  "claim": "panel construction",
+  "needs": "the raw Tabula Sapiens kidney/lung/immune h5ads at a hardcoded path",
+  "origin": "c2s-scale/route_genemanifold_c2s/subset_ts.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "subset_ts_celltype.py",
+  "purpose": "Builds the 12-cell-type x 1,000-cell stratified panel for Thread B.",
+  "kind": "entrypoint",
+  "claim": "panel construction",
+  "needs": "the raw Tabula Sapiens h5ads at a hardcoded path",
+  "origin": "c2s-scale/route_genemanifold_c2s/subset_ts_celltype.py"
+ },
+ {
+  "module": "01_cell_state_geometry/c2s_cell_cycle",
+  "file": "validate_local.py",
+  "purpose": "Zero-cost pre-flight: builds both reference bases locally, checks every hypothesis has enough genes, executes all four statistics and runs a baseline sanity check before any GPU time.",
+  "kind": "entrypoint",
+  "claim": "none \u2014 a smoke test, and a good one to keep as the repo's CI check",
+  "needs": "the two reference bases; no GPU",
+  "origin": "c2s-scale/route_genemanifold_c2s/validate_local.py"
+ },
+ {
+  "module": "01_cell_state_geometry/five_models",
+  "file": "cc_common.py",
+  "purpose": "Shared substrate builder and circular-statistics toolkit: selects the 3,000 seed-42 Replogle K562 non-targeting controls, computes Tirosh S/G2M scores and the phase angle phi, and supplies wrap/circ_mean/circ_corr/unwrap_path/prep(PCA-20+whiten)/emb_path used by every other file. Also holds the to_lognorm() fix for the double-normalisation bug.",
+  "kind": "library",
+  "claim": "Sec 3.1 / Sec 3.2 substrate: the 3,000 K562 cells and the phase angle every circ-R^2 number is scored against",
+  "needs": "the 30 GB replogle_concat.h5ad; running it as __main__ writes data/cellcycle/k562_cc_substrate.npz",
+  "origin": "biotensor/codebase/route_cellcycle/cc_common.py"
+ },
+ {
+  "module": "01_cell_state_geometry/five_models",
+  "file": "extract_scgpt_cc.py",
+  "purpose": "The single new forward pass of the whole route: scGPT whole-human L11 mean-pooled cell embeddings on the K562 substrate, under scGPT's own 51-bin quantile-binned input convention (MAX_SEQ=1200, descending-expression sort).",
+  "kind": "entrypoint",
+  "claim": "Sec 3.2 and Sec 5.3: produces the scGPT row (H_flat p=0.905, out-of-plane 22.7 deg; fixed_proj 0.34 laps vs local+retract 4.53 laps)",
+  "needs": "scGPT repo + whole-human checkpoint best_model.pt (205 MB) and vocab.json (1.3 MB), torch on MPS, plus the 30 GB replogle h5ad; ~13 min",
+  "origin": "biotensor/codebase/route_cellcycle/extract_scgpt_cc.py"
+ },
+ {
+  "module": "01_cell_state_geometry/five_models",
+  "file": "adapt_cached.py",
+  "purpose": "Pairs already-cached K562 embeddings from four other models (Geneformer L11 .npy by reproducing the seed-42 draw, MaxToki-217M L8 by its own cell_idx, STATE-SE by row order, UCE-100M by cell_barcode join) with the corrected phase, writing them into the cc schema so the analysis scripts run unchanged. Documents and works around a real indexing bug in route_branchpoint/extract_state.py that saves local h5ad row numbers as cell_idx.",
+  "kind": "entrypoint",
+  "claim": "Sec 5.3: supplies the Geneformer / MaxToki / STATE-SE / UCE rows of the stall table; Sec 3.1: supplies the five model panels of the 1-of-45 benchmark",
+  "needs": "four cached embedding files under data/ (route_manifold, maxtoki_acts, cellcycle, state_activations) plus the replogle h5ad; no model forward pass",
+  "origin": "biotensor/codebase/route_cellcycle/adapt_cached.py"
+ },
+ {
+  "module": "01_cell_state_geometry/five_models",
+  "file": "make_expr.py",
+  "purpose": "Builds the model-free control: hands the analysis harness the raw 3000x6546 log1p expression matrix in place of a model embedding, with the identical phi.",
+  "kind": "entrypoint",
+  "claim": "Sec 3.2 and Sec 5.3: the 'raw expression, no model at all' row (circ-R^2 0.929, fixed 0.36 laps vs local 5.08 laps) \u2014 the claim that the loop belongs to the data",
+  "needs": "the 30 GB replogle h5ad; writes a 79 MB npz",
+  "origin": "biotensor/codebase/route_cellcycle/make_expr.py"
+ },
+ {
+  "module": "01_cell_state_geometry/five_models",
+  "file": "cc_geometry.py",
+  "purpose": "Loop geometry against the only null that means anything on a closed curve: H_flat ('the loop lies in a fixed linear 2-plane'), tested by out-of-plane tangent rotation against a noise-calibrated synthetic planar circle; also computes theta_far and monotonicity purely to show they are broken on a loop, and runs H1 persistence inside the fitted cell-cycle 2-plane.",
+  "kind": "entrypoint",
+  "claim": "Sec 3.2 'It is flat': out-of-plane rotation 22.7 deg vs planar null 25.6 +/- 2.3, p = 0.905; and 'Persistent homology inside the fitted phase plane agrees (H1 = 0.227 against a matched-covariance null 0.251 +/- 0.063, z = -0.4)'",
+  "needs": "one per-model npz from data/cellcycle; needs ripser and scikit-learn; no model, no GPU",
+  "origin": "biotensor/codebase/route_cellcycle/cc_geometry.py"
+ },
+ {
+  "module": "01_cell_state_geometry/five_models",
+  "file": "cc_steering.py",
+  "purpose": "The steering ladder and the core of the stall theorem: six arms (fixed, fixed_proj, local, local_proj, transport, oracle_phase) plus retraction variants in 20-D whitened PCA space, step h = 0.25*d0, advance judged by an independent circular kNN regressor fitted on train cells only. Doubles as the library that cc_mechanism.py and cc_synthetic_check.py import.",
+  "kind": "entrypoint",
+  "claim": "Sec 5.3: 'in seven representations including raw expression with no model at all, fixed direction 0.01 to 0.36 laps against local-tangent 4.5 to 6.0'. Sec 5.4: 'On a closed loop the balance reverses and locality dominates' and 'Retraction cures outward drift but never the stall' (fixed 0.34 -> 0.38 laps with retraction vs local 0.67 -> 4.53)",
+  "needs": "one per-model npz; numpy/scikit-learn only, CPU, no model",
+  "origin": "biotensor/codebase/route_cellcycle/cc_steering.py"
+ },
+ {
+  "module": "01_cell_state_geometry/five_models",
+  "file": "cc_synthetic_check.py",
+  "purpose": "Ground-truth calibration with no model and no biology: a circle lying exactly in a linear 2-plane of a 60-D space, where H_flat is true by construction, run through the identical steering ladder.",
+  "kind": "entrypoint",
+  "claim": "Sec 5.3: 'On a synthetic zero-curvature circle, stall at 1.49 rad against the predicted pi/2 = 1.571, with the pre-normalisation step norm collapsing to 0.09 of its initial value'",
+  "needs": "nothing at all \u2014 pure numpy. This is the cheapest and best reproduction entrypoint in the repo",
+  "origin": "biotensor/codebase/route_cellcycle/cc_synthetic_check.py"
+ },
+ {
+  "module": "01_cell_state_geometry/five_models",
+  "file": "cc_mechanism.py",
+  "purpose": "Two follow-ups. Part A measures, cell by cell and with no judge, the angle between the constant direction w0 and the local phase tangent as the cell moves. Part B contrasts steering on the closed K562 cycle against the open Setty hematopoietic tree (winding, closure, reversal symmetry).",
+  "kind": "entrypoint",
+  "claim": "Sec 5.3: 'Measured cell by cell, the phase rate peaks exactly at the perpendicular crossing (90.7 deg), banking 55.3% of total advance before it'. Part B (cycle +7.4/-8.4 laps symmetric vs development saturating at +2.45 SD) supports the closed-curve-vs-open-tree distinction in Sec 2.3 and Sec 5.4",
+  "needs": "the scGPT cell-cycle npz plus data/branchpoint/scgptbin_setty.npz (part of a 1.8 GB tree)",
+  "origin": "biotensor/codebase/route_cellcycle/cc_mechanism.py"
+ },
+ {
+  "module": "01_cell_state_geometry/five_models",
+  "file": "cc_decode.py",
+  "purpose": "Gene-level readout of the steered path through two decoders: scGPT's own pretrained MVC head (zero parameters fitted on K562) and a ridge decoder fitted on real train cells. Reports the native head as a gate-2 failure (decoded vs true phase circ r = +0.191) rather than dressing up noise; the fitted decoder reads the clock at r = +0.909 and gives local_proj 4.07 laps vs fixed_proj 0.22 vs random_proj 0.00.",
+  "kind": "entrypoint",
+  "claim": "Supports Sec 5.4 'Behaviour follows geometry' in spirit but is a negative on this substrate; the number the paper uses for that claim (1.579 vs 0.212 behavioural laps) comes from a different route, not this file",
+  "needs": "scGPT checkpoint best_model.pt (for the MVC head matrix) + the scGPT cell-cycle npz + replogle h5ad",
+  "origin": "biotensor/codebase/route_cellcycle/cc_decode.py"
+ },
+ {
+  "module": "01_cell_state_geometry/five_models",
+  "file": "cc_benchmark.py",
+  "purpose": "Matched-dimensionality benchmark in the style of the L2H5 protocol: PCA each representation to k in {10,20,50}, fit a small probe, evaluate held-out, on three tasks (phase ordering circ-R^2, G1/S/G2M balanced accuracy, S-vs-G2M AUROC), each model against an expression baseline built on that model's own cells. Prints and stores the win count.",
+  "kind": "entrypoint",
+  "claim": "Sec 3.1 exactly: 'On matched-dimensionality benchmarks the models beat expression in 1 of 45 cells'. The stored value is literally \"model_wins_over_expr\": \"1/45\". Best model MaxToki 0.924 ordering vs expression 0.932; the single win is MaxToki classification at k=50, 0.896 vs 0.879",
+  "needs": "all five per-model npz files under data/cellcycle plus the 30 GB replogle h5ad for the expression baseline; scikit-learn only",
+  "origin": "biotensor/codebase/route_cellcycle/cc_benchmark.py"
+ },
+ {
+  "module": "01_cell_state_geometry/five_models",
+  "file": "cc_summary.py",
+  "purpose": "Pure assembly: reads whatever cc_geometry_*.json and cc_steering_*.json exist and prints the five-row cross-model table. No computation, always safe to re-run.",
+  "kind": "entrypoint",
+  "claim": "Sec 5.3 Fig 6b: the bar values in the paper's figure script (scGPT 0.34/4.53, Geneformer 0.14/5.57, MaxToki 0.01/6.03, STATE-SE 0.31/4.70, raw expr 0.36/5.08) are read straight out of results/cc_summary.json",
+  "needs": "only the JSON files already in results/",
+  "origin": "biotensor/codebase/route_cellcycle/cc_summary.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "tangent_diagnostic.py",
+  "purpose": "Core of the route: measures tangent rotation (theta_far, monotonicity) inside pseudotime quintiles against three nulls, and tests global linear-vs-quadratic steering for off-manifold drift; also the shared library (prep/steer/nulls/oracle) every other script imports.",
+  "kind": "entrypoint",
+  "claim": "\u00a73.3 \u2014 theta_far 48\u2013113 deg between first and last pseudotime quintile, exceeding a heteroscedastic residual-permutation null (NULL C) in 16 of 16 cells; 'a direction fitted globally points the wrong way by up to 113 deg'. Also \u00a73.3's 'branching tree of locally-linear segments' (monotonicity clears its null in only 4/16).",
+  "needs": "cached embedding .npz only (data/branchpoint/{model}_{tissue}.npz + data/maxtoki_acts/maxtoki_setty.npz); ~15 s per tissue, no GPU",
+  "origin": "biotensor/codebase/route_steering/tangent_diagnostic.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "local_steering.py",
+  "purpose": "Ladder of steering rules of increasing locality (linear / quadratic / linear_proj / piecewise / local / local_proj / oracle_knn), scored by constrained advance at a fixed off-manifold budget; contains project_constant(), the steering operator the paper releases.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.4 sec:operator \u2014 constrained advance 0.461 \u2192 1.239, positive in 16 of 16 cells, beats the label-using oracle in 12 of 16; ablation projection alone +0.778, local direction alone \u22120.072. All four numbers reproduce exactly from results/local_steering_*.json.",
+  "needs": "cached embedding .npz only; seconds per tissue, no GPU",
+  "origin": "biotensor/codebase/route_steering/local_steering.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "gene_decode.py",
+  "purpose": "Decodes each step of the steered path back to gene expression with a Ridge decoder fit on real train cells and asks whether the swept program is ordered, fate-specific hematopoiesis; also the library holding the blood marker PANEL, N_HVG and load_expression.",
+  "kind": "entrypoint",
+  "claim": "\u00a73.3/\u00a74.4 supporting evidence \u2014 stem program +0.20 \u2192 \u22120.53 (scGPT) under the steer vs +0.20 \u2192 +0.34 under a random direction; the original 4/4 fate diagonal later superseded by native_decode.py.",
+  "needs": "cached .npz + data/hematopoiesis/setty19_cd34_bm.h5ad (170 MB); no GPU",
+  "origin": "biotensor/codebase/route_steering/gene_decode.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "native_decode.py",
+  "purpose": "Reruns the gene decode through scGPT's OWN pretrained MVC head (collapsed to a fixed matrix M with zero parameters fit on our data), removing decoder circularity; stage 1 is a readout gate on real cells; also library (build_native_head, build_spaces, program_z).",
+  "kind": "entrypoint",
+  "claim": "\u00a75 'A note on extraction' \u2014 the gate FAILS on raw-count embeddings (within-cell Spearman +0.085) and PASSES on correctly binned ones (+0.260); this is the defect the paper says 'understates the model and overstates its curvature'. Also the circularity-free fate diagonal D = +0.777, exact p = 0.042.",
+  "needs": "cached .npz + Setty h5ad + scGPT whole-human checkpoint best_model.pt (205 MB) and vocab.json; no GPU for the head itself",
+  "origin": "biotensor/codebase/route_steering/native_decode.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "extract_scgpt_binned.py",
+  "purpose": "Re-extracts scGPT Setty/lung/gut/pancreas cell embeddings under scGPT's own 51-bin pretraining input convention instead of raw counts (changes exactly one thing vs the original extractor).",
+  "kind": "entrypoint",
+  "claim": "\u00a75 'A note on extraction' \u2014 produces the corrected scgptbin_*.npz that every later number uses. The exact deltas the paper quotes (+0.109 decodability, +0.210 linear fit, \u22120.075 curvature gap) are computed elsewhere, not in this folder.",
+  "needs": "needs the scGPT repo on sys.path, the whole-human checkpoint (205 MB), the tissue h5ad, and a GPU/MPS; ~5 min per tissue",
+  "origin": "biotensor/codebase/route_steering/extract_scgpt_binned.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "perturb_invert.py",
+  "purpose": "In-silico activation of 604 TFs in scGPT (force to top expression bin), scores each shift's alignment with the on-manifold fate direction, and asks whether known lineage drivers beat a plain differential-expression baseline \u2014 the inversion negative.",
+  "kind": "entrypoint",
+  "claim": "Not cited in \u00a73.3. Supports the paper's navigation-vs-intervention dissociation (Discussion): AUROC 0.487\u20130.707, 0/4 fates survive BH-FDR, and nothing survives residualisation on differential expression.",
+  "needs": "scGPT checkpoint + Setty h5ad + DoRothEA/TRRUST union TSV; 38,656 forward passes, ~49 min on MPS",
+  "origin": "biotensor/codebase/route_steering/perturb_invert.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "dump_shifts_maxtoki.py",
+  "purpose": "Dumps MaxToki-217M in-silico TF-activation embedding shifts (activation = move the gene to rank 1, the Geneformer-style analogue), statistics deliberately deferred to score_shifts.py.",
+  "kind": "entrypoint",
+  "claim": "Cross-model replication of the inversion negative (PERTURB_INVERT_CROSSMODEL.md). Not a \u00a73.3 number.",
+  "needs": "MaxToki-217M safetensors (868 MB) + its adapter from projects/maxtoki/setup + Setty h5ad + TF TSV + a separate venv; GPU/MPS",
+  "origin": "biotensor/codebase/route_steering/dump_shifts_maxtoki.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "dump_shifts_state.py",
+  "purpose": "Same dump for STATE-SE-600M (activation = set the gene's count to the cell's max), pushed through STATE's own dataloader in one pass.",
+  "kind": "entrypoint",
+  "claim": "Cross-model replication of the inversion negative. Not a \u00a73.3 number.",
+  "needs": "STATE SE-600M weights (3.0 GB) + ESM2 protein embeddings + route_state/state_loader.py + a separate .venv_state; GPU/MPS",
+  "origin": "biotensor/codebase/route_steering/dump_shifts_state.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "score_shifts.py",
+  "purpose": "One scorer applied identically to every model's dumped shifts: fate-specific directions, AUROC of pre-registered driver sets, permutation p, BH-FDR, DE baseline and residual-on-DE.",
+  "kind": "entrypoint",
+  "claim": "Makes the three-model inversion comparison apples-to-apples. Not a \u00a73.3 number.",
+  "needs": "the dumped shifts_*.npz (45\u201376 MB each) + Setty h5ad; no GPU",
+  "origin": "biotensor/codebase/route_steering/score_shifts.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "st_fate_invert.py",
+  "purpose": "Tests STATE-ST, the perturbation-TRAINED model, on whether a CRISPRi knockdown shift points away from the right fate; includes a pre-registered validity gate on perturbation-specificity.",
+  "kind": "entrypoint",
+  "claim": "Closes the 'they are only embedding models' escape hatch: gate passes, yet GATA1 ranks 111/131 for anti-erythroid with the sign backwards. Discussion-level, not \u00a73.3.",
+  "needs": "STATE-ST weights (542 MB) + STATE-SE encoder + cached setty_xstate.h5ad (95 MB) + route_state_st loaders + .venv_state; GPU/MPS",
+  "origin": "biotensor/codebase/route_steering/st_fate_invert.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "common.py",
+  "purpose": "Shared config for the control folder: the four tissue h5ad paths, terminal fate clusters and root clusters per tissue, the canonical marker panels, log1p-CP10k expression loading, Fisher combination.",
+  "kind": "library",
+  "claim": "none directly; carries the fate and marker definitions behind every \u00a73.3 endpoint-purity and fate-diagonal number.",
+  "needs": "nothing on its own",
+  "origin": "biotensor/codebase/route_steering2/common.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "baseline.py",
+  "purpose": "THE missing control: builds a 20-D whitened PCA of log1p-CP10k expression on the exact same cells and runs the identical rotation / steering / endpoint-purity pipeline against all four foundation models, with a pre-stated 'earns its place' bar written in the docstring before any number was computed.",
+  "kind": "entrypoint",
+  "claim": "\u00a73.3 \u2014 'endpoint targeting on hard, low-headroom trajectories (mouse pancreas endpoint purity 0.207 \u2192 0.569, with 4 of 4 models beating expression; lung 0.599 \u2192 0.862, 4 of 4)'. Verified on disk: pancreas expr 0.207 / MaxToki 0.569; lung expr 0.599 / Geneformer 0.862. Also the \u00a75 attribution protocol in practice (the pre-stated bar FAILS: only STATE reaches 3/4).",
+  "needs": "cached .npz for all four models + the four tissue h5ad files (515 MB); ~4 min, no GPU",
+  "origin": "biotensor/codebase/route_steering2/baseline.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "robustness.py",
+  "purpose": "Turns the two knobs that could break the expression-PCA result \u2014 train/test split seed (5) and HVG count (1000/2000/5000) \u2014 on the constrained-advance comparison.",
+  "kind": "entrypoint",
+  "claim": "Supports \u00a73.3's expression-PCA framing: expression beats scGPT 15/15, Geneformer 15/15, MaxToki 15/15, STATE 11/15 = 56/60.",
+  "needs": "same as baseline.py; ~3 min, no GPU",
+  "origin": "biotensor/codebase/route_steering2/robustness.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "fate_matrix.py",
+  "purpose": "Breaks the p = 0.042 permutation floor on the fate diagonal by adding Setty's unused 5th branch (DCs) and transferring scGPT's gene-universal MVC head to three more tissues; adds a bootstrap CI on diagonal dominance and a single pooled exact permutation over the joint assignment space.",
+  "kind": "entrypoint",
+  "claim": "Not quoted numerically in \u00a73.3, but it is the evidence behind the paper's fate-steering framing: 14 of 15 target\u2192fate hits, pooled exact p = 1.93e-05 over 103,680 assignments, four tissues.",
+  "needs": "cached scgptbin .npz for 4 tissues + 4 h5ad + scGPT checkpoint; ~3 min, no GPU",
+  "origin": "biotensor/codebase/route_steering2/fate_matrix.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "maxtoki_native.py",
+  "purpose": "Second independent pretrained readout: pulls MaxToki-217M's untied lm_head (20275 x 1232) and final RMSNorm straight out of the safetensors file (raw header parse, no torch) and reruns the same gate and fate matrix.",
+  "kind": "entrypoint",
+  "claim": "Retires the 'scGPT-only readout' caveat: MaxToki passes the gate better than scGPT (+0.302 vs +0.260) and gives 5/5, D = +0.821, p = 0.0083.",
+  "needs": "MaxToki-217M model.safetensors (868 MB, read by byte offset), token_dictionary.json, a gene-symbol\u2192Ensembl pickle, and the cached maxtoki217L11_setty.npz; ~30 s, no GPU",
+  "origin": "biotensor/codebase/route_steering2/maxtoki_native.py"
+ },
+ {
+  "module": "01_cell_state_geometry/developmental",
+  "file": "lymphoid_ablation.py",
+  "purpose": "Tests whether the weak lymphoid branch was a thin 4-gene marker panel by swapping in 10 canonical B/T-lymphoid markers and changing nothing else.",
+  "kind": "entrypoint",
+  "claim": "Honest negative that the paper's caveat discipline rests on: D moves by +0.003, the caveat stands.",
+  "needs": "same as fate_matrix.py; ~40 s, no GPU",
+  "origin": "biotensor/codebase/route_steering2/lymphoid_ablation.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "manifold_steer.py",
+  "purpose": "The released tool: ManifoldSteer class \u2014 whitened-PCA manifold, local-tangent basis (top-m PCs of k=100 nearest real cells), tangent projection, ascent/fate directions, on-manifold integrator, off-manifold ratio, inverse-PCA decode.",
+  "kind": "library",
+  "claim": "\u00a75.4 (sec:operator): 'Local direction + tangent projection + retraction ... The operator needs only a cell-by-gene matrix, so we release it as a model-free tool.' This file IS that tool.",
+  "needs": "nothing \u2014 numpy + scikit-learn only, zero data dependency, zero project imports",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/manifold_steer/manifold_steer.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "example.py",
+  "purpose": "Self-contained synthetic demo: bent 2-branch toy manifold, shows projected steering keeps off-manifold ratio ~1 while plain-linear cuts the corner and climbs.",
+  "kind": "entrypoint",
+  "claim": "none (documentation/demo for \u00a75.4's released tool)",
+  "needs": "nothing \u2014 pure synthetic, no data, no model",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/manifold_steer/example.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "benchmark_setty.py",
+  "purpose": "Ablation ladder using only ManifoldSteer on model-free Setty counts: linear / linear_proj / retract / random_proj / oracle, scored by constrained advance CA(tau) with an independent kNN judge.",
+  "kind": "entrypoint",
+  "claim": "\u00a75.4 model-free claim; supplement \u00a7D.6 ladder in counts. Produces ca13 linear 1.916, linear_proj 2.187, retract 1.229 -> projection gain +0.271, proj-retract +0.958.",
+  "needs": "Setty h5ad (170 MB) + scgptbin_setty.npz (12 MB, only for pseudotime/cell_idx/clusters), via manifold_steer/_data.py",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/manifold_steer/benchmark_setty.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "benchmark_larry.py",
+  "purpose": "Cross-dataset validation on Weinreb LARRY: steer undifferentiated cells at each of 6 real terminal fates, score by nearest-terminal-cell vote at the endpoint, compare projected vs plain-linear path plausibility.",
+  "kind": "entrypoint",
+  "claim": "\u00a75.4 supporting evidence for the released tool (numbers not quoted in main.tex). Produces 6/6 diagonal hits both arms; mean path off-manifold ratio 1.538 on-manifold vs 1.911 plain-linear (reduction 0.373) \u2014 the path, not the diagonal, is what projection buys.",
+  "needs": "LARRY h5ad (88 MB) via manifold_steer/_data.py",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/manifold_steer/benchmark_larry.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "_data.py",
+  "purpose": "Minimal h5py/scipy loaders for the two benchmarks (Setty log1p CP10k counts; LARRY 40-PC space + clone matrix). Deliberately separate so manifold_steer.py has no data dependency.",
+  "kind": "library",
+  "claim": "none (data plumbing)",
+  "needs": "Setty h5ad, scgptbin_setty.npz, LARRY h5ad \u2014 all by hardcoded absolute path",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/manifold_steer/_data.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "gate0_counts_vs_model.py",
+  "purpose": "Gate 0 \u2014 runs the identical steering ladder in the model's 20-PC whitened embedding space and in the 20-PC whitened space of raw log1p CP10k counts over the SAME cells, and compares the projection gain.",
+  "kind": "entrypoint",
+  "claim": "\u00a75.4 final sentence ('needs only a cell-by-gene matrix ... model-free tool'). Produces projection gain MODEL +0.95/+0.52/+1.18/+0.24 vs COUNTS +1.35/+1.14/+1.24/+1.35 (mean +0.72 vs +1.27); counts >= model in 4/4.",
+  "needs": "4 cached embedding npz (scgptbin/geneformer/state/maxtoki _setty.npz, 12-29 MB each) + Setty h5ad; imports route_steering/geom_common",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/gate0_counts_vs_model.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "gate2_retraction.py",
+  "purpose": "Gate 2 \u2014 adds linear_retract and local_retract (step along w, then pull to the mean of the 30 nearest real cells) to the ladder, to test whether tangent projection is more than graph-walking.",
+  "kind": "entrypoint",
+  "claim": "\u00a75.4 'Retraction cures outward drift but never the stall'; supplement \u00a7D.5/\u00a7D.6 retraction rows. Produces proj-retract +0.29 (scgptbin model), +0.87 (scgptbin counts), +0.84 (state), +0.52 (geneformer), -0.04 (maxtoki); retraction off-ratio 0.68-0.74 (over-smoothed) vs projection 1.17-1.29.",
+  "needs": "same 4 embedding npz + Setty h5ad (counts arm for scgptbin only); imports route_steering",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/gate2_retraction.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "geom_common.py",
+  "purpose": "Shared ladder harness: npz loading with the CAP subsample and fixed seed, run_ladder() over a rule bank (linear / linear_proj / local / local_proj / oracle_knn / linear_retract / local_retract), and the two retraction fields. Thin wrapper over route_steering primitives so numbers stay comparable.",
+  "kind": "library",
+  "claim": "supports \u00a75.4 ladder rows via gate0/gate2; the retraction fields are the new code here",
+  "needs": "needs codebase/route_steering/{tangent_diagnostic,local_steering}.py on sys.path (inserted by hardcoded absolute path) plus the cached npz directories",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/geom_common.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "gate1_within_branch_rotation.py",
+  "purpose": "Gate 1 \u2014 recomputes the theta_far tangent-rotation statistic and its calibrated null restricted to a single non-branching lineage, to separate maturation curvature from branch fan-out.",
+  "kind": "entrypoint",
+  "claim": "Not \u00a75.4. It is the premise check under \u00a75.5 (sec:curv, 'the geometry arrives bent') and \u00a75.4's 'the tree shape says the direction must be local'. Produces within-branch rotation excess retention 107%/90%/144%/57% (scgptbin/geneformer/state/maxtoki), all testable branches z>=2.",
+  "needs": "4 cached embedding npz only (no h5ad, no checkpoint); imports route_steering/tangent_diagnostic",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/gate1_within_branch_rotation.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "hb1_larry_curvature.py",
+  "purpose": "H-B1 \u2014 does local manifold geometry at an undifferentiated LARRY cell predict its clone's neutrophil-vs-monocyte fate beyond the cell's own 40-PC expression position? Clone-split GroupKFold CV, position-matched-stratum test, 2000-draw clone-permuted null.",
+  "kind": "entrypoint",
+  "claim": "supplement \u00a7F.4 'Hidden clonal fate (LARRY)': expression position AUROC 0.767, geometry 0.540 vs clone-permutation null 0.383 +/- 0.061, combined gain -0.006. Exact match to results/hb1_larry_curvature.json. Also supplement data table line: 865 undifferentiated cells / 167 clones.",
+  "needs": "LARRY h5ad (88 MB) read directly with h5py; imports only auroc from route_steering/perturb_invert",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/hb1_larry_curvature.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "ha3_heldout_population.py",
+  "purpose": "H-A3 \u2014 delete the Ery_1 intermediate from the manifold, steer progenitors at Ery_2 on-manifold, decode the path with scGPT's own MVC head, and ask whether the path passes through the held-out transcriptome (with a myeloid specificity control).",
+  "kind": "entrypoint",
+  "claim": "supplement \u00a7F.4 'Reconstructing a deleted intermediate. Held-out peak r = +0.545, rank 5/10, path running through the wrong lineage.' Exact match (0.5445, rank 5, top cluster Mono_1 by T9).",
+  "needs": "scgptbin_setty.npz + Setty h5ad + scGPT checkpoint best_model.pt (205 MB) + torch; imports route_steering/native_decode",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/ha3_heldout_population.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "hb3_tangent_dimension.py",
+  "purpose": "H-B3 \u2014 local tangent dimension as participation ratio of the local covariance spectrum (k=100): tests potency correlation with pseudotime, multipotent-vs-terminal Cohen's d, and whether the decline is a sigmoid STEP or a ramp; run in both model space and counts space.",
+  "kind": "entrypoint",
+  "claim": "supplement \u00a7F.4 'Commitment as a discrete geometric step. No cliff (sigmoid transition width 0.27-0.83 of the pseudotime range), and a counts baseline wins in 3/4 models.' Exact match (widths 0.27/0.46/0.50/0.69/0.83; Cohen d +0.71 to +1.39).",
+  "needs": "4 cached embedding npz + Setty h5ad (counts arm); imports route_steering/gene_decode",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/hb3_tangent_dimension.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "ha2_onmanifold_perturb.py",
+  "purpose": "H-A2 \u2014 decompose each cached in-silico perturbation shift into tangent + normal at the source cell, score only the tangent component against fate directions, and use the normal fraction as a plausibility gate; compared to differential expression.",
+  "kind": "entrypoint",
+  "claim": "supplement \u00a7F.4 'Perturbation inversion' \u2014 this hardens that negative. Produces maxtoki raw 0.475 / tangent 0.474 / DE 0.931; state raw 0.553 / tangent 0.550 / DE 0.933; -normfrac 0.400 and 0.621. Also records the structural difference in shift normal-fraction (maxtoki 0.40 vs state 0.73).",
+  "needs": "maxtoki_setty.npz + state_setty.npz + shifts_maxtoki_setty.npz (47 MB) + shifts_state_setty.npz (79 MB) + Setty h5ad; imports route_steering/{perturb_invert,score_shifts} (perturb_invert imports torch at module level)",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/ha2_onmanifold_perturb.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/steering_operator",
+  "file": "hb2_normal_space.py",
+  "purpose": "H-B2 \u2014 tangent co-movement cos(V.MR[a], V.MR[b]) at branch-point progenitors through scGPT's pretrained MVC head, testing whether known antagonistic TF pairs are more opposed than cooperative ones, with a full-head control and an empirical co-expression control.",
+  "kind": "entrypoint",
+  "claim": "none \u2014 not cited in main.tex or the supplement. Internal negative (labelled AUROC 0.90 local tangent vs 1.00 full head vs 0.92 empirical co-expression), i.e. the standing co-expression confound. Do NOT confuse with \u00a74.3's antipodal-regulator result, which comes from a different route.",
+  "needs": "scgptbin_setty.npz + Setty h5ad + scGPT checkpoint best_model.pt + torch; imports route_steering/native_decode",
+  "origin": "biotensor/codebase/route_geometry_hypotheses/hb2_normal_space.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "qfit.py",
+  "purpose": "Core estimator: closed-form-profiled optimal-ridge linear baseline plus a low-rank symmetric (possibly indefinite) Q fitted on the deflated target, with the nested-CV harness and both null generators.",
+  "kind": "library",
+  "claim": "\u00a75.5 / Table 4 (tab:curv) \u2014 imported UNCHANGED by route_curvature_mech/curvature_mech.py, which is what actually produces angular +0.0480/+0.0598/+0.0552 and radial +0.0209/+0.0252/+0.0050 at K=128 matched width. Also the source of the \u00a75.5 phrase 'a quadratic term merely predicting pseudotime better than a linear one'.",
+  "needs": "a .npz of {emb, pseudotime} per (model, dataset) under data/branchpoint; no model weights",
+  "origin": "biotensor/codebase/route_curvature_q/qfit.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "run_substrate.py",
+  "purpose": "Headline entrypoint for one (model, dataset): nested-CV \u0394_Q, bootstrap CI, rank sweep, abundance-off variant.",
+  "kind": "entrypoint",
+  "claim": "\u0394_Q = +0.0250, CI [+0.0221,+0.0282], R\u00b2_lin 0.8945 \u2192 R\u00b2_quad 0.9195 on scGPT/Setty (RESULTS.md \u00a71). Not quoted verbatim in the paper; it is the precursor \u00a75.5 supersedes.",
+  "needs": "data/branchpoint/<model>_<dataset>.npz",
+  "origin": "biotensor/codebase/route_curvature_q/run_substrate.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "run_nulls.py",
+  "purpose": "Runs the two pre-registered null distributions (label-shuffle and linear-synthetic), refitting the whole nested pipeline per surrogate.",
+  "kind": "entrypoint",
+  "claim": "Both nulls pass: shuffle max \u22120.0024, linear-synthetic max \u22120.0003 against real +0.0250 (~60 sd). Supports paper \u00a76 test 2 (permutation null vs competitor).",
+  "needs": "same .npz plus the q_<model>_<ds>.json/.npz from run_substrate.py",
+  "origin": "biotensor/codebase/route_curvature_q/run_nulls.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "run_generality.sh",
+  "purpose": "Shell driver: 4 models \u00d7 3 human lineages in quick mode plus mouse pancreas in full mode.",
+  "kind": "entrypoint",
+  "claim": "The 16-cell generality table in GENERALITY.md; the pre-registered mouse-pancreas negative control FAILS (4/4 positive).",
+  "needs": "all 16 data/branchpoint .npz files; hardcodes ../../.venv/bin/python",
+  "origin": "biotensor/codebase/route_curvature_q/run_generality.sh"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "spectrum.py",
+  "purpose": "Out-of-fold eigen-truncation curve at r=32: how much held-out curvature survives keeping only the top-j eigen-directions.",
+  "kind": "entrypoint",
+  "claim": "Shows eigen-ordered truncation is not a valid decomposition here (methodological catch, RESULTS.md \u00a72.1).",
+  "needs": "data .npz plus q_<m>_<ds>.json",
+  "origin": "biotensor/codebase/route_curvature_q/spectrum.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "arms.py",
+  "purpose": "Splits Q into positive and negative semidefinite arms (Q = Q\u208a \u2212 Q\u208b) and scores full/plus/minus out-of-fold; also exports split_arms() and qf() used elsewhere.",
+  "kind": "library",
+  "claim": "The 'irreducible saddle' reading \u2014 later falsified. Related to supplement F.1 'The GATA1\u2194PU.1 saddle is a mutual-repression geometry' retraction family.",
+  "needs": "data .npz",
+  "origin": "biotensor/codebase/route_curvature_q/arms.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "arms_identifiability.py",
+  "purpose": "The control that falsified the saddle reading: re-fits Q at six (r, \u03bb) settings with indistinguishable held-out \u0394_Q and shows the arm split flips sign.",
+  "kind": "entrypoint",
+  "claim": "At (r=8, \u03bb=1e-3) both arms are harmful (\u22120.0568/\u22120.0681); at (r=32, \u03bb=1e-2) both are useful (+0.0162/+0.0123) with \u0394_Q +0.0274 vs +0.0238. Instance of the paper's identifiability discipline.",
+  "needs": "data .npz; imports qfit and arms",
+  "origin": "biotensor/codebase/route_curvature_q/arms_identifiability.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "program_stability.py",
+  "purpose": "The control that falsified the gene-level read: scores four a-priori gene sets by the saddle score across six (r, \u03bb) fits, asking only whether the sign is stable.",
+  "kind": "entrypoint",
+  "claim": "Only a coarse program-level read survives; the gene list does not (top-15 overlap 1/15). RESULTS.md \u00a72.3.",
+  "needs": "data .npz plus results/gene_centroids_scgpt.npz (40 MB cache)",
+  "origin": "biotensor/codebase/route_curvature_q/program_stability.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "discriminator.py",
+  "purpose": "The pre-registered redundancy discriminator: out-of-sample R\u00b2 predicting each Q latent from raw x (R\u00b2_x) and from linear-atlas features (R\u00b2_SAE), with prereg thresholds 0.25 / 0.50.",
+  "kind": "entrypoint",
+  "claim": "R\u00b2_SAE = 0.79 for the saddle latent, above the 0.50 novelty threshold \u21d2 fully redundant with the linear atlas. Belongs to supplement F.4 'SAE dictionaries are 73\u201399.7% redundant with linear ones'.",
+  "needs": "data .npz plus results/atlas_feats_scgpt_setty.npz (107 MB)",
+  "origin": "biotensor/codebase/route_curvature_q/discriminator.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "extract_atlas_feats.py",
+  "purpose": "Encodes each cell's gene TOKENS with the linear TopK SAE atlas and mean-pools the feature activations (h_bar), the in-distribution baseline; also the naive h_hat for continuity.",
+  "kind": "entrypoint",
+  "claim": "The domain-shift guard that stops a crippled atlas from inflating the novelty claim. Method note only.",
+  "needs": "scGPT whole-human checkpoint + vocab, the bio-sae TopKSAE source, the trained layer11_x4_k32 atlas, and setty19_cd34_bm.h5ad. Needs MPS/GPU, ~18 min.",
+  "origin": "biotensor/codebase/route_curvature_q/extract_atlas_feats.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "run_features.py",
+  "purpose": "Refits the same Q on the NAMED atlas feature space h_bar instead of raw residual directions, so interactions read as 'feature A \u00d7 feature B'.",
+  "kind": "entrypoint",
+  "claim": "Feature-space \u0394_Q = +0.0293, CI [+0.0262,+0.0327], R\u00b2_lin(atlas) 0.8731 (feat_q.log). Undocumented in RESULTS.md.",
+  "needs": "results/atlas_feats_scgpt_setty.npz (107 MB) plus the atlas annotation JSONs",
+  "origin": "biotensor/codebase/route_curvature_q/run_features.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "feat_identifiability.py",
+  "purpose": "Identifiability check in feature space: Jaccard overlap of top-30 interacting feature pairs and top eigen-feature sets across six (r, \u03bb) configs and two seeds.",
+  "kind": "entrypoint",
+  "claim": "Pair Jaccard 0.43\u20130.50 vs the reference config; eigen-feature Jaccard 0.94\u20131.00. Named products are only partly identified.",
+  "needs": "atlas_feats npz plus qfit",
+  "origin": "biotensor/codebase/route_curvature_q/feat_identifiability.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "summarize.py",
+  "purpose": "Assembles GENERALITY.md (4 models \u00d7 4 datasets) and cross-checks each \u0394_Q against the published kNN/kernel curvature from route_branchpoint.",
+  "kind": "entrypoint",
+  "claim": "Produces the \u0394_kernel column \u2014 the ONLY place either assigned path touches the deprecated kNN-minus-linear family, and only by reading route_branchpoint/results/full_space_curvature.json. NOTE: RESULTS.md:257-258 claims '\u0394_Q \u2265 \u0394_kernel in every cell'; it is false in two cells (maxtoki/lung 0.00956 vs 0.00973, maxtoki/gut 0.01588 vs 0.02216), so the correct count is 14/16.",
+  "needs": "the 16 q_*.json plus route_branchpoint/results/full_space_curvature.json",
+  "origin": "biotensor/codebase/route_curvature_q/summarize.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "make_figure.py",
+  "purpose": "Four-panel summary figure: rank sweep, nulls, arm split, redundancy discriminator.",
+  "kind": "entrypoint",
+  "claim": "figures/route_q_summary.png \u2014 an internal figure, NOT paper Figure 7. Paper Figure 7 is produced by manifolds/paper/make_figures.py fig7() with the angular/radial numbers hardcoded.",
+  "needs": "the route's own JSON results only",
+  "origin": "biotensor/codebase/route_curvature_q/make_figure.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "build_rulers.py",
+  "purpose": "Builds the biological label vectors: scGPT cell-type/tissue from Tabula Sapiens extraction metadata, Geneformer Tirosh S/G2M cell-cycle scores from Replogle K562 non-targeting controls.",
+  "kind": "entrypoint",
+  "claim": "none. CONTAINS A KNOWN BUG at lines 91-92: replogle_concat.h5ad X is already log1p(CP10k), and this applies log1p(X/rowsum\u00b71e4) a second time. This corrupts per-gene cross-cell variance; all downstream K562 cell-cycle numbers in this route should be re-derived.",
+  "needs": "replogle_concat.h5ad and a Tabula Sapiens extraction_metadata.json, both on external absolute paths",
+  "origin": "biotensor/codebase/route_geometry/build_rulers.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "geometry_test.py",
+  "purpose": "Tier-A test: mean-pools four matched per-cell representations (raw_mean, SVD-50, linear TopK SAE, bilinear atomic latents) from L11 tokens and scores kNN ruler recovery against a shuffled-label null.",
+  "kind": "entrypoint",
+  "claim": "SUPERSEDED. Its positive (bilinear 0.643/0.724 S/G2M R\u00b2, 0.394 cell-type bal-acc vs linear 0.586/0.660/0.371) appears nowhere in the paper; supplement F.4 states the opposite verdict for interaction machinery, and GEOMETRY_SYNTHESIS.md records the Tier-B retraction (bilinear loses the geodesic-vs-ruler \u03c1: 0.528 vs linear_sae 0.689 and raw_mean 0.581).",
+  "needs": "17 GB of cached L11 token activations plus trained AEs under route_b/runs (a sibling route, not in either assigned path)",
+  "origin": "biotensor/codebase/route_geometry/geometry_test.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "structure_geometry.py",
+  "purpose": "Multi-seed (10 CV seeds) robustness on the bilinear-minus-linear margin, plus the structure sweep (atomic/composite/block_diag/nnz8/sink) re-scored on the geometry ruler.",
+  "kind": "entrypoint",
+  "claim": "SUPERSEDED, same as geometry_test.py. Produces margins +0.058\u00b10.002 (S), +0.067\u00b10.004 (G2M), +0.024\u00b10.006 (cell-type) and the sweep ranking atomic 0.399 > sink 0.382 > block_diag 0.381 > linear 0.375 > composite 0.361 > nnz8 0.349.",
+  "needs": "same 17 GB activations plus six trained AE run dirs; writes the 212 MB emb_cache",
+  "origin": "biotensor/codebase/route_geometry/structure_geometry.py"
+ },
+ {
+  "module": "03_what_shapes_geometry/curvature",
+  "file": "abundance_control.py",
+  "purpose": "Partials per-cell log total-counts and the raw-mean abundance axis out of both embeddings, then re-scores cell cycle over 10 seeds.",
+  "kind": "entrypoint",
+  "claim": "SUPERSEDED. Reports the margin tripling (S: +0.058 \u2192 +0.186; G2M: +0.067 \u2192 +0.139). Caveat recorded in GEOMETRY_SYNTHESIS.md #15: the covariate is LINEAR abundance, and route_curvature_q showed a linear covariate does not remove quadratically entangled abundance.",
+  "needs": "results/emb_cache/geneformer_L11.npz (74 MB) plus a re-read of replogle_concat.h5ad for total counts",
+  "origin": "biotensor/codebase/route_geometry/abundance_control.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "uce_loader.py",
+  "purpose": "Loads UCE-100M (4-layer, HF mirror minwoosun/uce-100m) via repos/UCE model.py, re-implements UCE's own sample_cell_sentences tokenizer and forward path, and exposes the layer-2 residual stream plus the CLS/X_uce output.",
+  "kind": "library",
+  "claim": "Supplement A.1 representations table, row 'UCE-100M ... transformer ... ESM-2 gene tokens ... L2'; A.1 note that UCE's and STATE-SE's gene tokens are frozen ESM-2 embeddings and so serve as the sequence control",
+  "needs": "UCE repo pinned at 9c416007be15ad6753dc84af4468c1dc10421ab9; pytorch_model.bin (3.4 GB) and minwoosun/uce-misc auxiliary files (ESM-2 human protein embeddings .pt, species_offsets.pkl, species_chrom.csv) from the local HF cache. Has a __main__ smoke test that prints 848.9M params.",
+  "origin": "biotensor/codebase/route_uce/uce_loader.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "extract_branchpoint.py",
+  "purpose": "Per-cell mean-pooled layer-2 UCE residual (+ CLS residual + final X_uce) on the four Setty-schema differentiation trajectories, written to data/branchpoint/uce_{setty,lung,gut,pancreas}.npz.",
+  "kind": "entrypoint",
+  "claim": "Supplies the UCE column of Supplement B.2 'Developmental pseudotime, 0 of 20' (blood -0.139, lung -0.104, gut -0.374, pancreas -0.056) and the UCE rows of Supplement B.4 cross-tissue transfer (within-tissue 0.885/0.594/0.876/0.873; transfer mean +0.087, 4/6 wins, Wilcoxon p=0.562). Both feed \u00a73's 'against a nonlinear expression probe, 0 of 20'.",
+  "needs": "UCE checkpoint + the four trajectory h5ads (Setty CD34+, lung airway, fetal gut, mouse pancreas). Resumable; seeds a per-batch RNG by original row index because UCE's sampling is stochastic. ~5780/3600/4269/3696 cells.",
+  "origin": "biotensor/codebase/route_uce/extract_branchpoint.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "extract_percell.py",
+  "purpose": "Generic per-cell UCE extractor driven by env vars (any h5ad, any obs columns to carry) \u2014 used for Replogle K562 cell cycle and Tabula Sapiens immune cell type.",
+  "kind": "entrypoint",
+  "claim": "Supplies the UCE cells of Supplement B.2 'Five prior models, 1 of 45' \u2014 specifically 'UCE loses all 9 of its cells by the widest margins (ordering 0.77-0.80 vs 0.93)'",
+  "needs": "UCE checkpoint + a source h5ad. Writes data/cellcycle/uce_k562.npz (3,000 cells) and data/celltype/uce_ts_immune.npz (8,000 cells, 43 types). Resumable.",
+  "origin": "biotensor/codebase/route_uce/extract_percell.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "extract_regulatory.py",
+  "purpose": "Per-gene-token layer-2 UCE residual on 1,200 Replogle K562 cells (unique sampled genes only) \u2192 1,008,196 tokens over 6,369 genes, in route_state's storage layout.",
+  "kind": "entrypoint",
+  "claim": "none in the current paper \u2014 this is the Route-B regulatory-logic substrate, background rather than a cited number",
+  "needs": "UCE checkpoint + data/state_activations/replogle_k562_subset.h5ad. Writes a 2.58 GB float16 memmap.",
+  "origin": "biotensor/codebase/route_uce/extract_regulatory.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "train_compare.py",
+  "purpose": "Trains a linear TopK SAE (PolySAE degree 1) and a bilinear autoencoder (degree 2) at matched budget on the UCE layer-2 activations, then runs the pre-registered R2_x / R2_SAE / novel-nonlinear comparison.",
+  "kind": "entrypoint",
+  "claim": "none in the current paper. Result: fidelity gate PASS (0.826 / 0.864), redundancy 81.1%, genuinely nonlinear 24.0%, novel-and-nonlinear 11.3% (170 latents)",
+  "needs": "the 2.4 GB activation cache from extract_regulatory.py, plus route_b/data.py and route_b/poly/poly_sae.py imported read-only. 3,000 steps on MPS. Produces results/uce_L2_comparison.json and two 52-79 MB .pt checkpoints.",
+  "origin": "biotensor/codebase/route_uce/train_compare.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "cellcycle_uce.py",
+  "purpose": "UCE cell-cycle curvature test on K562: Tirosh S/G2M phase angle vs linear/bilinear/kNN decode in a matched 20-D PCA space, with the mandatory synthetic linearly-embedded control.",
+  "kind": "entrypoint",
+  "claim": "not a cited number. Result: curvature -0.127 (control -0.045), curved=False. The paper's own cell-cycle anatomy table (Supplement B.6) is produced by route_cellcycle, not here.",
+  "needs": "data/cellcycle/uce_k562.npz + the K562 h5ad; imports route_state_geometry/common.py (which itself imports route_topology and route_geometry read-only).",
+  "origin": "biotensor/codebase/route_uce/cellcycle_uce.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "celltype_uce.py",
+  "purpose": "UCE cell-type test on Tabula Sapiens immune: kNN balanced-accuracy recovery vs shuffled-label null, plus classification curvature and an argmax-linear synthetic control.",
+  "kind": "entrypoint",
+  "claim": "not a cited number. Result: bal-acc 0.433 vs null 0.031, curvature +0.011 against a synthetic control at -0.310, curved=False",
+  "needs": "data/celltype/uce_ts_immune.npz; imports route_lineage/lineage_manifold.py and route_state_geometry/celltype_state.py read-only.",
+  "origin": "biotensor/codebase/route_uce/celltype_uce.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "manifold_celltoken.py",
+  "purpose": "Experiment 1+2 \u2014 intrinsic geometry (TwoNN ID, PCA participation ratio, dim@90% variance) and trajectory curvature plus tangent rotation for three UCE representations side by side (gene-mean-pool, layer-2 CLS, final X_uce) across all six datasets.",
+  "kind": "entrypoint",
+  "claim": "no cited number, but it is the source of the d90=201 censoring sentinel caveat (only 200 PCs are computed, line 54) that route_celltoken/RESULTS.md corrected. Thematically supports \u00a76 test 4, 'comparing representations at native dimensionality measures width as much as content'.",
+  "needs": "all UCE npz files (data/branchpoint, data/xuce, data/cellcycle, data/celltype). Also serves as a library: route_celltoken/compare_celltoken.py imports global_shape and tangent_rotation from it.",
+  "origin": "biotensor/codebase/route_uce/manifold_celltoken.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "universal_manifold.py",
+  "purpose": "Experiment 3 \u2014 pools all six datasets in the UCE cell-token space and tests (A) kNN dataset purity, (B) leave-one-tissue-out pseudotime transfer raw and per-tissue-centered, (C) cross-species integration of mouse pancreas.",
+  "kind": "entrypoint",
+  "claim": "no cited number; independently reproduces the direction of Supplement B.4, 'Transfer largely fails for every representation'",
+  "needs": "all UCE npz files. Result: kNN dataset purity 0.999-1.000; within-tissue R2 0.69-0.96 but leave-one-out transfer R2 -0.15 to -1.49.",
+  "origin": "biotensor/codebase/route_uce/universal_manifold.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "common.py",
+  "purpose": "Shared helpers for the STATE-SE geometry tests: re-exports decode_phase / decode_phase_knn / loop_alignment from route_topology read-only, computes the Tirosh S+G2M phase angle from raw counts, builds the curvature report, and generates the synthetic linearly-embedded control.",
+  "kind": "library",
+  "claim": "none directly; provides the phase coordinate recipe described in Supplement A.2 ('Tirosh S and G2M marker z-scores \u2192 PCA(2) \u2192 \u03c6 = atan2')",
+  "needs": "route_topology/cellcycle_loop.py and route_geometry/build_rulers.py. Injects a fake `ripser` module into sys.modules so cellcycle_loop imports without the topology dependency.",
+  "origin": "biotensor/codebase/route_state_geometry/common.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "cellcycle_state.py",
+  "purpose": "STATE-SE cell-cycle curvature test on K562, using per-cell mean-pooled L11 residuals streamed from the cached Route-B per-gene activations.",
+  "kind": "entrypoint",
+  "claim": "supports the STATE-SE arm of \u00a73's 'the cell cycle is flat' but is NOT the source of the Supplement B.6 number (STATE-SE L11 linear circ-R2 0.894 on 3,000 cells) \u2014 that comes from route_cellcycle on a larger cell set",
+  "needs": "data/state_activations/state_L11/ (part of a 9.4 GB tree) + replogle_k562_subset.h5ad. Result: curvature -0.085 (all 1,200 cells) / -0.219 (389 controls), synthetic control -0.047, curved=False.",
+  "origin": "biotensor/codebase/route_state_geometry/cellcycle_state.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "ts_extract.py",
+  "purpose": "Fresh forward pass of Tabula Sapiens immune/kidney/lung cells through STATE-SE with a hook on transformer_encoder.layers[11], mean-pooling gene positions (skipping CLS) to one 2048-vector per cell.",
+  "kind": "entrypoint",
+  "claim": "Supplement A.1 STATE-SE row, 'L11, skipping CLS'",
+  "needs": "STATE SE-600M weights via route_state/state_loader.py, STATE's own Inference + create_dataloader, and three private preprocessed Tabula Sapiens h5ads (uses the decontXcounts layer). Per-tissue checkpoint/resume. 630 cells, 7 types.",
+  "origin": "biotensor/codebase/route_state_geometry/ts_extract.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "celltype_state.py",
+  "purpose": "STATE-SE cell-type test: kNN recovery vs shuffled-label null, curvature in a matched 20-D PCA space, and an argmax-linear synthetic control.",
+  "kind": "entrypoint",
+  "claim": "none cited; background for the 'cell-type identity is linearly accessible' line of \u00a73",
+  "needs": "the cached npz from ts_extract.py + route_lineage/lineage_manifold.py. ALSO a live library: route_uce/celltype_uce.py and route_uce/manifold_celltoken.py import knn_recovery and synthetic_linear_control from this file, so it cannot be dropped without breaking route_uce. Result: recovery 0.967 (null 0.148), curvature -0.005, curved=False.",
+  "origin": "biotensor/codebase/route_state_geometry/celltype_state.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "extract_scgpt_cls.py",
+  "purpose": "Extracts scGPT's native <cls> cell token (vocab id 60695, value 0) at L11 together with the gene mean-pool from one forward pass, under scGPT's own 51-bin quantile-binned input convention.",
+  "kind": "entrypoint",
+  "claim": "its docstring and route_celltoken/RESULTS.md pitfall 1 document the defect quantified in Supplement A.3 'Input convention' and quoted in \u00a76 'A note on extraction' \u2014 feeding raw counts to a checkpoint configured for binned input; the binned/raw contrast here is PR 9.2 vs PR 1.5 (PC1 81%). The +0.109 / +0.210 / -0.075 table itself is computed in another route.",
+  "needs": "scGPT whole-human checkpoint + vocab.json from a private external tree, and the Setty h5ad. 5,780 cells at ~5 c/s. Completed.",
+  "origin": "biotensor/codebase/route_celltoken/extract_scgpt_cls.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "extract_geneformer_cls.py",
+  "purpose": "Extracts Geneformer V2-316M's [CLS] token at the tap layer 11 and the final layer 17, plus the gene mean-pool at layer 11, from one forward pass.",
+  "kind": "entrypoint",
+  "claim": "none cited",
+  "needs": "ctheodoris/Geneformer V2-316M from HF, three gene/token pickle dictionaries from a private external tree, and the Setty h5ad. Checkpoint/resume every 250 cells. 3,000 cells at ~0.6 c/s. Completed.",
+  "origin": "biotensor/codebase/route_celltoken/extract_geneformer_cls.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "extract_state_cls.py",
+  "purpose": "Extracts STATE SE-600M's CLS token at tap layer 11 and final layer 15 plus the gene mean-pool, from one forward pass.",
+  "kind": "entrypoint",
+  "claim": "none \u2014 this arm produced no data",
+  "needs": "STATE SE-600M via route_state/state_loader.py + the Setty h5ad. NEVER COMPLETED: <44 cells in 18 min on CPU, killed before its first flush. Code is written and smoke-tested; the blocker was machine memory, not method.",
+  "origin": "biotensor/codebase/route_celltoken/extract_state_cls.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "extract_maxtoki_cls.py",
+  "purpose": "Extracts MaxToki-217M's <eos> token (the only causal position that sees the whole cell) at hidden_states[8] and the final layer, plus the gene mean-pool.",
+  "kind": "entrypoint",
+  "claim": "none \u2014 this arm produced no data",
+  "needs": "MaxToki 217M via an adapter in projects/maxtoki/setup, a gene-name\u2192Ensembl pickle from a private tree, and the Setty h5ad. NEVER COMPLETED: reached 600/3000 then collapsed to 0.04 c/s under memory pressure. Has NO checkpoint/resume, unlike the Geneformer extractor.",
+  "origin": "biotensor/codebase/route_celltoken/extract_maxtoki_cls.py"
+ },
+ {
+  "module": "01_cell_state_geometry/other_representations",
+  "file": "compare_celltoken.py",
+  "purpose": "The cross-model cell-token battery: for each model x representation (gene-mean-pool, cell token at the tap layer, cell token at the final layer) computes TwoNN intrinsic dimension, participation ratio, dim@90% variance, pseudotime linear/kNN decode, curvature, bilinear gain and tangent rotation \u2014 all on the intersection of cell indices across models.",
+  "kind": "entrypoint",
+  "claim": "no cited number. Its finding retracts a cross-model reading of route_uce/RESULTS.md: UCE's cell token is 3rd of 4 on compactness (PR 8.5, d90 38, TwoNN 29.3) and lowest on curvature (+0.022); the real result is that UCE's gene-mean-pool backbone is the diffuse outlier (d90 20 / 80 / >200 for scGPT / Geneformer / UCE). This is a worked instance of the \u00a76 attribution discipline.",
+  "needs": "the celltoken npz files + route_branchpoint/branchpoint_geometry.py and route_uce/manifold_celltoken.py imported read-only. Has an explicit CT_MIN_CELLS floor (default 2,000) that aborts rather than silently producing a weak table from a partial extraction. Ran on 3 of 5 models, n=3,000 common cells.",
+  "origin": "biotensor/codebase/route_celltoken/compare_celltoken.py"
+ },
+ {
+  "module": "01_cell_state_geometry/supporting_arms",
+  "file": "common.py",
+  "purpose": "Shared config for the Tier-B manifold arm: external drive roots, scGPT checkpoint/vocab paths, layer-block boundaries for the drift operator, ruler loading (scGPT cell-type / Geneformer cell-cycle), thread caps.",
+  "kind": "library",
+  "claim": "none directly",
+  "needs": "nothing itself, but every path it defines points at an external drive; the two module-level constants EXP and MI are the single hardest-coded thing in the whole arm",
+  "origin": "biotensor/codebase/route_manifold/common.py"
+ },
+ {
+  "module": "01_cell_state_geometry/supporting_arms",
+  "file": "operators.py",
+  "purpose": "Stage-1 operator library: builds six per-cell feature branches (raw_mean, svd50, linear_sae, bilinear, linear_drift, bilinear_drift) from mean-pooled residual streams, caching each to .npy outside the repo.",
+  "kind": "entrypoint",
+  "claim": "none directly",
+  "needs": "needs 82 GB scGPT + 315 GB Geneformer cached token activations, the trained linear TopK SAE atlas, and the four trained bilinear AE checkpoints route_b/runs/scgpt_L{02,05,08,11}_atomic_muon; run as `python operators.py [scgpt|geneformer]`",
+  "origin": "biotensor/codebase/route_manifold/operators.py"
+ },
+ {
+  "module": "01_cell_state_geometry/supporting_arms",
+  "file": "let.py",
+  "purpose": "Stage-2 LET adaptor: a linear head z = W_enc(x - b), d_latent=10, trained so beta*arccos(cos(z_i,z_j)) matches the biological-ruler distance, with an alpha=0.05 reconstruction regulariser; scaler frozen into the head so external transfer needs zero retraining.",
+  "kind": "library",
+  "claim": "none directly",
+  "needs": "nothing external; pure torch/numpy",
+  "origin": "biotensor/codebase/route_manifold/let.py"
+ },
+ {
+  "module": "01_cell_state_geometry/supporting_arms",
+  "file": "gates.py",
+  "purpose": "The four-gate stack: sklearn trustworthiness, Isomap-style geodesic-vs-ruler Spearman on a k-NN graph, 200-permutation blocked null (shuffled within tissue or within cell-cycle phase), and a matched-null branch that refits LET to a random relabeling and must fail.",
+  "kind": "library",
+  "claim": "none directly",
+  "needs": "nothing external; sklearn + scipy only",
+  "origin": "biotensor/codebase/route_manifold/gates.py"
+ },
+ {
+  "module": "01_cell_state_geometry/supporting_arms",
+  "file": "run_tier_b.py",
+  "purpose": "Internal sweep driver: for each of six operators fit LET over 5 seeds, score all four gates, freeze the best-seed head for the holdout, write results/internal_gates_{model}.json.",
+  "kind": "entrypoint",
+  "claim": "none \u2014 produces geodesic-ruler rho 0.689 (linear_sae) vs 0.528 (bilinear) on scGPT and 0.895 (linear_drift) vs 0.796 (bilinear) vs 0.886/matched-null 0.789 (linear_sae) on Geneformer; none of these numbers appears in main.tex or the supplement",
+  "needs": "needs operators.py caches to exist; `python run_tier_b.py [scgpt|geneformer]`",
+  "origin": "biotensor/codebase/route_manifold/run_tier_b.py"
+ },
+ {
+  "module": "01_cell_state_geometry/supporting_arms",
+  "file": "extract_external.py",
+  "purpose": "Stage-3 holdout extractor: runs strict non-overlap cells through frozen scGPT whole-human (mirrors bio-sae scgpt_src/01_extract_activations.py, including the FlashMHA->MHA weight rename) and stores only compact per-cell operator features, never token dumps.",
+  "kind": "entrypoint",
+  "claim": "none directly",
+  "needs": "needs the 196 MB scGPT whole-human best_model.pt + vocab.json, the three Tabula Sapiens h5ad files, the Krasnow lung Smart-seq2 h5ad, the SAE atlas and bilinear AE checkpoints; MPS or CPU; ~10.6 cells/s, so ~3 min for the 2,100-cell panel",
+  "origin": "biotensor/codebase/route_manifold/extract_external.py"
+ },
+ {
+  "module": "01_cell_state_geometry/supporting_arms",
+  "file": "score_external.py",
+  "purpose": "Scores the frozen LET heads on the external panels with zero retraining; writes results/external_gates_{panel}.json.",
+  "kind": "entrypoint",
+  "claim": "none \u2014 produces external geodesic-ruler rho 0.632 linear_sae vs 0.547 bilinear, and the Krasnow control collapse to 0.109-0.321; not cited in the paper",
+  "needs": "needs the frozen let_heads/*.pkl and the external_*.npz produced by extract_external.py; `python score_external.py [external_ts|krasnow]`",
+  "origin": "biotensor/codebase/route_manifold/score_external.py"
+ },
+ {
+  "module": "01_cell_state_geometry/supporting_arms",
+  "file": "lineage_graph.py",
+  "purpose": "Curated hematopoietic lineage graph: maps each Tabula Sapiens ontology cell_type string to a terminal branch (myeloid/T/B/NK/erythroid/stem), a coarse major axis and a nominal tree depth, by ordered substring rules.",
+  "kind": "library",
+  "claim": "none directly",
+  "needs": "its __main__ audit needs only route_geometry/results/scgpt_L11_ruler.npz (696 KB)",
+  "origin": "biotensor/codebase/route_lineage/lineage_graph.py"
+ },
+ {
+  "module": "01_cell_state_geometry/supporting_arms",
+  "file": "lineage_manifold.py",
+  "purpose": "The full branching-manifold test: (A) linear vs degree-2 vs kNN decode of lineage branch at matched 20-D PCA, (B) LEACE erasure ladder with a linearly-embedded synthetic control, (C) supervised bilinear CP probe with concept-matrix eigendecomposition, (D) TwoNN intrinsic dimension and H0/H1 persistence against a matched-covariance Gaussian null.",
+  "kind": "entrypoint",
+  "claim": "Supplement F.4 'Bilinear/interaction machinery generally' \u2014 'Supervised bilinear CP probes lose to linear (-0.060)' is cp_probe.bilinear_gain = -0.06006 in results/scgpt_L11_linear_sae_lineage.json. Supplement F.4 'Irreducible topology' \u2014 'lineage-tree H0 z = -6.81 (branches tighter than a matched Gaussian)' is geometry.H0.z = -6.8123 in the same file.",
+  "needs": "needs route_geometry/results/emb_cache/scgpt_L11.npz (140.6 MB) and scgpt_L11_ruler.npz; also needs `ripser` for the persistence step; CPU-only, `python lineage_manifold.py [linear_sae] [atomic]`",
+  "origin": "biotensor/codebase/route_lineage/lineage_manifold.py"
+ },
+ {
+  "module": "01_cell_state_geometry/supporting_arms",
+  "file": "preprocess_aging.py",
+  "purpose": "Builds GSE180298 (Ainciburu CD34+ HSPC 10x matrices + author metadata) into the Setty h5ad schema so route_steering/extract_scgpt_binned.py runs on it unchanged; computes each donor's committed-lineage ground truth from the full ~75k-cell metadata, subsamples to <=500 HSC + <=200 other per donor, and stores an unused DPT pseudotime.",
+  "kind": "entrypoint",
+  "claim": "none directly \u2014 it is the data build behind the Supplement F.1 aging retraction",
+  "needs": "needs scanpy (a separate conda env in the recorded reproduce commands), the 449 MB GSE180298_RAW.tar unpacked into data/aging/raw/, and the three metadata .txt.gz files; INCLUDE_MDS=1 switches to the 12-donor build",
+  "origin": "biotensor/codebase/route_aging/preprocess_aging.py"
+ },
+ {
+  "module": "01_cell_state_geometry/supporting_arms",
+  "file": "fate_output.py",
+  "purpose": "The healthy-cohort (n=8) readout: leave-one-donor-out fate directions from stem centroid to committed centroid, then two readouts \u2014 POSITION (projection onto the fate-specific direction) and DIRECTION (norm of that direction projected onto each HSC's local tangent) \u2014 scored against each donor's measured output with a 10k donor-shuffle permutation and a marker-expression baseline.",
+  "kind": "entrypoint",
+  "claim": "Supplement F.1 aging row \u2014 the withdrawn headline. Produces position rho -0.175 (shuffle p 0.774), direction rho +0.416 (p 0.0018), marker baseline +0.438, partial rho +0.496 (p 0.0009). Its own RESULTS.md carries the superseded banner.",
+  "needs": "needs data/aging/aging_setty_schema.h5ad (339 MB), data/branchpoint/scgptbin_aging.npz (40 MB), ground_truth.json, and three modules from codebase/route_steering/ (tangent_diagnostic, local_steering, gene_decode)",
+  "origin": "biotensor/codebase/route_aging/fate_output.py"
+ },
+ {
+  "module": "01_cell_state_geometry/supporting_arms",
+  "file": "mds_test.py",
+  "purpose": "The held-out disease test that withdrew the headline: extends the identical leave-one-donor-out readout to all 12 donors including the 4 never-touched MDS patients, and tests H3 (MDS lymphoid accessibility lower), H4 (is the drop lymphoid-specific) and H5 (are MDS HSCs simply off-manifold).",
+  "kind": "entrypoint",
+  "claim": "Supplement F.1: 'Aging/HSC headline ... Withdrawn by its own held-out test: disease donors sit inside the healthy range (p = 0.23) and the winning lineage flips between runs.' The p = 0.23 is h3_h4_per_fate.lymphoid.p_mds_lower = 0.2303 in results/mds_test_scgptbin.json; the surviving direction-vs-position signal is rho_direction +0.351 vs rho_position -0.137, marker 0.381, H4 lymphoid_specific = false, H5 off-manifold 1.088 MDS vs 1.141 healthy (p 0.47).",
+  "needs": "needs data/aging/agingmds_setty_schema.h5ad (513 MB), data/branchpoint/scgptbin_agingmds.npz (59 MB), ground_truth_mds.json, and the same three route_steering modules",
+  "origin": "biotensor/codebase/route_aging/mds_test.py"
+ },
+ {
+  "module": "06_gap_tests",
+  "file": "g1_cross_dataset.py",
+  "purpose": "Cross-tissue pseudotime transfer: fit a PCA+ridge probe on one of four tissues (blood/Setty, fetal gut, lung airway, mouse pancreas; 10,529 shared genes, 50 components) and apply it unchanged to another; arms are scGPT-binned, Geneformer, STATE-SE, UCE and raw log1p-CP10k expression.",
+  "kind": "entrypoint",
+  "claim": "\u00a73.1 (sec:inherit) lines 241-242: 'within-tissue Spearman 0.87 to 0.95, best cross-tissue 0.63, with 2 of the 3 pairs above 0.5 won by raw expression'; abstract line 44; Supplement B.4 (both tables); Supplement A.3 broken-gut-pseudotime table. NOTE: the script does NOT compute the Wilcoxon p-values (p=0.156/0.438/0.562) or the orientation-invariant |rho| numbers (+0.278 p=0.016 -> +0.094 p=0.23) that \u00a76 control 4 and B.4 quote \u2014 those were done post-hoc from the JSON. It also does not print the gut cluster-mean pseudotime table.",
+  "needs": "Needs data/branchpoint/{scgptbin,geneformer,state,uce}_{setty,gut,lung,pancreas}.npz plus the four source .h5ad files (~1.9 GB of the ~3 GB in data/). No model weights, CPU only, ~1 min.",
+  "origin": "biotensor/manifolds/gaps/g1_cross_dataset.py"
+ },
+ {
+  "module": "06_gap_tests",
+  "file": "g2_scgpt_convention.py",
+  "purpose": "Measures how much the scGPT input-convention bug (raw counts fed to a binned checkpoint) changes the answers, by comparing the already-cached scgpt_* vs scgptbin_* embeddings for gut/lung/pancreas on the same cells across five readouts: pseudotime Spearman, lineage balanced accuracy, linear R2, kNN-minus-linear curvature gap, tangent rotation.",
+  "kind": "entrypoint",
+  "claim": "\u00a76 'A note on extraction' lines 760-765: correcting it 'raises pseudotime decodability by 0.109 and linear fit by 0.210, and lowers the measured curvature gap by 0.075'; Supplement A.3 first table (+0.109 / +0.118 / +0.210 / -0.075 / -4.2 deg, one sign flip). This is the cheapest and most self-contained of the four.",
+  "needs": "Needs data/branchpoint/{scgpt,scgptbin}_{gut,lung,pancreas}.npz only (~48 MB). No .h5ad, no model, CPU, seconds.",
+  "origin": "biotensor/manifolds/gaps/g2_scgpt_convention.py"
+ },
+ {
+  "module": "06_gap_tests",
+  "file": "g4_attention_chromosome.py",
+  "purpose": "Direct test of whether attention is sorted by chromosome: on real Setty cells through MaxToki-217M with eager attention (11 layers x 8 heads), compares same-chromosome vs different-chromosome gene-pair attention within matched |rank-distance| bins, against a label-permutation null holding the attention matrix fixed.",
+  "kind": "entrypoint",
+  "claim": "\u00a74.1 lines 431-435: 'across 11 layers x 8 heads, same-chromosome gene pairs show no attention enrichment once rank-distance is matched, with 0 of 88 heads significant and the strongest head changing identity and flipping sign between samples'; Supplement C.1 'Attention: measured, and negative' table (6 cells L2H5 z=-1.13; 40 cells L2H4 z=+0.53).",
+  "needs": "Needs the MaxToki-217M-HF weights (828 MB), torch + transformers, and four modules from codebase/route_genemanifold (gm_lib, steer_lib, genome_wide, steer_propagation) which in turn need projects/maxtoki/setup/maxtoki_adapter.py. The heaviest of the four to run. INCOMPLETE: the docstring describes a second, causal arm (B) \u2014 steer a chromosome direction on half the tokens and watch attention from the untouched half \u2014 that main() never runs; ALPHA, N_RAND, gm_lib, coords and AUTOSOMES are imported/defined and unused.",
+  "origin": "biotensor/manifolds/gaps/g4_attention_chromosome.py"
+ }
+]

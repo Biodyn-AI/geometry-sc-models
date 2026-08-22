@@ -1,0 +1,57 @@
+{
+ "taps": {
+  "L04": {
+   "coexpr_power_coherence_rho": 0.5217386983668647,
+   "axes": {
+    "nuclear_vs_surface": {
+     "coherence": 0.027804989367723465,
+     "coherence_pctl": 0.3525,
+     "power": 5.304052829742432,
+     "curve_pred": 0.5692967638936897,
+     "z_above_coexpr": 7.998108941688615
+    },
+    "mito_vs_cytoskeleton": {
+     "coherence": 0.04080326668918133,
+     "coherence_pctl": 0.37,
+     "power": 2.507720947265625,
+     "curve_pred": 0.6959781688814959,
+     "z_above_coexpr": 3.060456740390983
+    },
+    "transcription_vs_transport": {
+     "coherence": 0.03798544220626354,
+     "coherence_pctl": 0.3625,
+     "power": 2.094607353210449,
+     "curve_pred": 0.6696789178441949,
+     "z_above_coexpr": 2.4070369627640473
+    }
+   }
+  },
+  "L08": {
+   "coexpr_power_coherence_rho": 0.6361564134775842,
+   "axes": {
+    "nuclear_vs_surface": {
+     "coherence": 0.027804989367723465,
+     "coherence_pctl": 0.2975,
+     "power": 3.221529722213745,
+     "curve_pred": 1.1339238921039936,
+     "z_above_coexpr": 3.55145936130801
+    },
+    "mito_vs_cytoskeleton": {
+     "coherence": 0.04080326668918133,
+     "coherence_pctl": 0.34,
+     "power": 1.7958756685256958,
+     "curve_pred": 1.356202696585109,
+     "z_above_coexpr": 0.7479767825856375
+    },
+    "transcription_vs_transport": {
+     "coherence": 0.03798544220626354,
+     "coherence_pctl": 0.3175,
+     "power": 1.5217890739440918,
+     "curve_pred": 1.3099373036259798,
+     "z_above_coexpr": 0.3604046999937619
+    }
+   }
+  }
+ },
+ "verdict": "strongest: L04/nuclear_vs_surface, +8.0 sigma above the co-expression-coherence curve. BEYOND CO-EXPRESSION \u2014 functional axes carry context modulation exceeding what equally-co-expressed non-functional gene sets produce. The model's per-context gene movement has functional structure not reducible to co-expression coherence."
+}

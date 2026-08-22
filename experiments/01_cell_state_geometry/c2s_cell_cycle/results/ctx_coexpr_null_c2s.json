@@ -1,0 +1,301 @@
+{
+ "taps": {
+  "L00": {
+   "coexpr_power_coherence_rho": 0.775973412333827,
+   "null_coh_range": [
+    0.02480492519183971,
+    0.34974690430126265
+   ],
+   "axes": {
+    "mito_vs_cytoskeleton": {
+     "coherence": 0.05535612341823733,
+     "coherence_pctl": 0.48,
+     "power": 0.20595837449420118,
+     "curve_pred": 0.12325199208631343,
+     "z_above_coexpr": 0.62149048635614
+    },
+    "nuclear_vs_surface": {
+     "coherence": 0.0322610965638207,
+     "coherence_pctl": 0.4375,
+     "power": 0.2078369856562418,
+     "curve_pred": 0.04266662489592803,
+     "z_above_coexpr": 1.241159446852515
+    },
+    "cellcycle_vs_diff": {
+     "coherence": 0.029025336862376693,
+     "coherence_pctl": 0.22,
+     "power": 0.06901393271414433,
+     "curve_pred": 0.03055240004679616,
+     "z_above_coexpr": 0.2890161067080247
+    },
+    "transcription_vs_transport": {
+     "coherence": 0.036636945013644936,
+     "coherence_pctl": 0.445,
+     "power": 0.06276642535918056,
+     "curve_pred": 0.05872716984407235,
+     "z_above_coexpr": 0.03035266204995939
+    }
+   }
+  },
+  "L01": {
+   "coexpr_power_coherence_rho": 0.7907543172144826,
+   "null_coh_range": [
+    0.02480492519183971,
+    0.34974690430126265
+   ],
+   "axes": {
+    "mito_vs_cytoskeleton": {
+     "coherence": 0.05535612341823733,
+     "coherence_pctl": 0.48,
+     "power": 0.3782955823384489,
+     "curve_pred": 0.22607640141868598,
+     "z_above_coexpr": 0.5910759581604296
+    },
+    "nuclear_vs_surface": {
+     "coherence": 0.0322610965638207,
+     "coherence_pctl": 0.4375,
+     "power": 0.38990592407349994,
+     "curve_pred": 0.06699221635555003,
+     "z_above_coexpr": 1.2538927619977989
+    },
+    "cellcycle_vs_diff": {
+     "coherence": 0.029025336862376693,
+     "coherence_pctl": 0.22,
+     "power": 0.1215407183259595,
+     "curve_pred": 0.042975087345487245,
+     "z_above_coexpr": 0.3050749276777392
+    },
+    "transcription_vs_transport": {
+     "coherence": 0.036636945013644936,
+     "coherence_pctl": 0.445,
+     "power": 0.16426437287190754,
+     "curve_pred": 0.09879585637831469,
+     "z_above_coexpr": 0.2542180681959523
+    }
+   }
+  },
+  "L02": {
+   "coexpr_power_coherence_rho": 0.7921228882680517,
+   "null_coh_range": [
+    0.02480492519183971,
+    0.34974690430126265
+   ],
+   "axes": {
+    "mito_vs_cytoskeleton": {
+     "coherence": 0.05535612341823733,
+     "coherence_pctl": 0.48,
+     "power": 0.46499026021712003,
+     "curve_pred": 0.28914738596769346,
+     "z_above_coexpr": 0.5895340596424239
+    },
+    "nuclear_vs_surface": {
+     "coherence": 0.0322610965638207,
+     "coherence_pctl": 0.4375,
+     "power": 0.6341338405166247,
+     "curve_pred": 0.08601896250094147,
+     "z_above_coexpr": 1.8376200375833622
+    },
+    "cellcycle_vs_diff": {
+     "coherence": 0.029025336862376693,
+     "coherence_pctl": 0.22,
+     "power": 0.21208505237622358,
+     "curve_pred": 0.055266442379183454,
+     "z_above_coexpr": 0.5257529608387786
+    },
+    "transcription_vs_transport": {
+     "coherence": 0.036636945013644936,
+     "coherence_pctl": 0.445,
+     "power": 0.2941668417988767,
+     "curve_pred": 0.1267104585153196,
+     "z_above_coexpr": 0.561417355531625
+    }
+   }
+  },
+  "L04": {
+   "coexpr_power_coherence_rho": 0.7818307614422588,
+   "null_coh_range": [
+    0.02480492519183971,
+    0.34974690430126265
+   ],
+   "axes": {
+    "mito_vs_cytoskeleton": {
+     "coherence": 0.05535612341823733,
+     "coherence_pctl": 0.48,
+     "power": 1.2115460802906026,
+     "curve_pred": 0.7722152944729559,
+     "z_above_coexpr": 0.6895422688935349
+    },
+    "nuclear_vs_surface": {
+     "coherence": 0.0322610965638207,
+     "coherence_pctl": 0.4375,
+     "power": 1.7669900032097565,
+     "curve_pred": 0.2661300908828137,
+     "z_above_coexpr": 2.3556426789240104
+    },
+    "cellcycle_vs_diff": {
+     "coherence": 0.029025336862376693,
+     "coherence_pctl": 0.22,
+     "power": 0.7592501888406785,
+     "curve_pred": 0.189011443794858,
+     "z_above_coexpr": 0.8950060655050572
+    },
+    "transcription_vs_transport": {
+     "coherence": 0.036636945013644936,
+     "coherence_pctl": 0.445,
+     "power": 0.9426561855465435,
+     "curve_pred": 0.36799194289062687,
+     "z_above_coexpr": 0.9019520109328727
+    }
+   }
+  },
+  "L06": {
+   "coexpr_power_coherence_rho": 0.7627227045169032,
+   "null_coh_range": [
+    0.02480492519183971,
+    0.34974690430126265
+   ],
+   "axes": {
+    "mito_vs_cytoskeleton": {
+     "coherence": 0.05535612341823733,
+     "coherence_pctl": 0.48,
+     "power": 1.6599888727434535,
+     "curve_pred": 1.2301126581251673,
+     "z_above_coexpr": 0.46705321947993306
+    },
+    "nuclear_vs_surface": {
+     "coherence": 0.0322610965638207,
+     "coherence_pctl": 0.4375,
+     "power": 2.191522843394786,
+     "curve_pred": 0.4809731793854743,
+     "z_above_coexpr": 1.8584832109524263
+    },
+    "cellcycle_vs_diff": {
+     "coherence": 0.029025336862376693,
+     "coherence_pctl": 0.22,
+     "power": 1.118267448886024,
+     "curve_pred": 0.36633722170429417,
+     "z_above_coexpr": 0.8169594443399226
+    },
+    "transcription_vs_transport": {
+     "coherence": 0.036636945013644936,
+     "coherence_pctl": 0.445,
+     "power": 1.2614499746966341,
+     "curve_pred": 0.6322170771286563,
+     "z_above_coexpr": 0.6836508758056549
+    }
+   }
+  },
+  "L09": {
+   "coexpr_power_coherence_rho": 0.7111778823617646,
+   "null_coh_range": [
+    0.02480492519183971,
+    0.34974690430126265
+   ],
+   "axes": {
+    "mito_vs_cytoskeleton": {
+     "coherence": 0.05535612341823733,
+     "coherence_pctl": 0.48,
+     "power": 6.4129106631255,
+     "curve_pred": 8.208392232039293,
+     "z_above_coexpr": -0.31722783413365324
+    },
+    "nuclear_vs_surface": {
+     "coherence": 0.0322610965638207,
+     "coherence_pctl": 0.4375,
+     "power": 5.7539757271430885,
+     "curve_pred": 4.117450574783177,
+     "z_above_coexpr": 0.28914322406687315
+    },
+    "cellcycle_vs_diff": {
+     "coherence": 0.029025336862376693,
+     "coherence_pctl": 0.22,
+     "power": 4.395076215546029,
+     "curve_pred": 3.487765477873096,
+     "z_above_coexpr": 0.16030474786344692
+    },
+    "transcription_vs_transport": {
+     "coherence": 0.036636945013644936,
+     "coherence_pctl": 0.445,
+     "power": 3.7901935618619724,
+     "curve_pred": 4.9469044956026735,
+     "z_above_coexpr": -0.20436907322377337
+    }
+   }
+  },
+  "L13": {
+   "coexpr_power_coherence_rho": 0.6962265389158682,
+   "null_coh_range": [
+    0.02480492519183971,
+    0.34974690430126265
+   ],
+   "axes": {
+    "mito_vs_cytoskeleton": {
+     "coherence": 0.05535612341823733,
+     "coherence_pctl": 0.48,
+     "power": 13.046951470965857,
+     "curve_pred": 11.737280718206462,
+     "z_above_coexpr": 0.17238883958115267
+    },
+    "nuclear_vs_surface": {
+     "coherence": 0.0322610965638207,
+     "coherence_pctl": 0.4375,
+     "power": 6.730850363251595,
+     "curve_pred": 6.294673786947689,
+     "z_above_coexpr": 0.057412883110572424
+    },
+    "cellcycle_vs_diff": {
+     "coherence": 0.029025336862376693,
+     "coherence_pctl": 0.22,
+     "power": 5.553651537986781,
+     "curve_pred": 5.456004144929409,
+     "z_above_coexpr": 0.012853093605257862
+    },
+    "transcription_vs_transport": {
+     "coherence": 0.036636945013644936,
+     "coherence_pctl": 0.445,
+     "power": 5.4199853937273685,
+     "curve_pred": 7.399080724129762,
+     "z_above_coexpr": -0.26050360116060794
+    }
+   }
+  },
+  "L17": {
+   "coexpr_power_coherence_rho": 0.689990437440234,
+   "null_coh_range": [
+    0.02480492519183971,
+    0.34974690430126265
+   ],
+   "axes": {
+    "mito_vs_cytoskeleton": {
+     "coherence": 0.05535612341823733,
+     "coherence_pctl": 0.48,
+     "power": 31.955965221922224,
+     "curve_pred": 26.312785844027353,
+     "z_above_coexpr": 0.39967849270470074
+    },
+    "nuclear_vs_surface": {
+     "coherence": 0.0322610965638207,
+     "coherence_pctl": 0.4375,
+     "power": 21.275891646169534,
+     "curve_pred": 15.734176150605252,
+     "z_above_coexpr": 0.3924923076061535
+    },
+    "cellcycle_vs_diff": {
+     "coherence": 0.029025336862376693,
+     "coherence_pctl": 0.22,
+     "power": 14.449678059612811,
+     "curve_pred": 14.104182470733639,
+     "z_above_coexpr": 0.024469744261587278
+    },
+    "transcription_vs_transport": {
+     "coherence": 0.036636945013644936,
+     "coherence_pctl": 0.445,
+     "power": 14.439204558717217,
+     "curve_pred": 17.88067821532198,
+     "z_above_coexpr": -0.24374256277280265
+    }
+   }
+  }
+ },
+ "verdict": "NOT beyond co-expression (best nuclear_vs_surface @ L04 = +2.4 sigma)"
+}

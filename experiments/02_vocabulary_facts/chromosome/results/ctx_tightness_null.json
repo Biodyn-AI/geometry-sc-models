@@ -1,0 +1,57 @@
+{
+ "taps": {
+  "L04": {
+   "power_tightness_rho": 0.43833367708548177,
+   "axes": {
+    "nuclear_vs_surface": {
+     "tightness": 0.004257531662005931,
+     "tightness_pctl": 0.3525,
+     "power": 5.243829250335693,
+     "curve_pred": 0.5993612886085481,
+     "z_above_tightness": 8.98470956473784
+    },
+    "mito_vs_cytoskeleton": {
+     "tightness": 0.007397320820018649,
+     "tightness_pctl": 0.3525,
+     "power": 2.480794668197632,
+     "curve_pred": 0.6467677396944506,
+     "z_above_tightness": 3.547919680423744
+    },
+    "transcription_vs_transport": {
+     "tightness": 0.006051777687389404,
+     "tightness_pctl": 0.3525,
+     "power": 2.0713045597076416,
+     "curve_pred": 0.6267053988678524,
+     "z_above_tightness": 2.7945728131975045
+    }
+   }
+  },
+  "L08": {
+   "power_tightness_rho": 0.615136782104888,
+   "axes": {
+    "nuclear_vs_surface": {
+     "tightness": 0.006582407397218049,
+     "tightness_pctl": 0.2975,
+     "power": 3.1705925464630127,
+     "curve_pred": 1.1655274051946258,
+     "z_above_tightness": 4.187341597426515
+    },
+    "mito_vs_cytoskeleton": {
+     "tightness": 0.015443942043930292,
+     "tightness_pctl": 0.2975,
+     "power": 1.789838194847107,
+     "curve_pred": 1.2968277139857691,
+     "z_above_tightness": 1.0295941273868066
+    },
+    "transcription_vs_transport": {
+     "tightness": 0.008578388311434537,
+     "tightness_pctl": 0.2975,
+     "power": 1.5091443061828613,
+     "curve_pred": 1.1958845647467296,
+     "z_above_tightness": 0.6542059502789036
+    }
+   }
+  }
+ },
+ "verdict": "strongest: L04/nuclear_vs_surface, +9.0 sigma above the representation-tightness curve. SURVIVES the tightness null too \u2014 the functional-axis modulation is not merely a consequence of the gene set being compact in representation space. Combined with the co-expression control, the functional structure survives both the data-structure and representation-structure matched nulls."
+}

@@ -1,0 +1,163 @@
+{
+ "note": "probe-capacity sweeps; chromosome = 22-class balanced accuracy, chance 0.0455",
+ "chromosome_linear_sweep_217M_18287genes": {
+  "logistic C=0.1 (paper baseline)": {
+   "random": 0.48518657928987013,
+   "group": 0.36811787188729733
+  },
+  "logistic C=1": {
+   "random": 0.471740164635397,
+   "group": 0.35282508935397633
+  },
+  "logistic C=0.01": {
+   "random": 0.49773058742942683,
+   "group": 0.37180357841366674
+  },
+  "LDA (Ledoit-Wolf shrinkage)": {
+   "random": 0.4770484401360285,
+   "group": 0.3534615778690752
+  },
+  "LinearSVC": {
+   "random": 0.506885273650398,
+   "group": 0.3972291956560078
+  },
+  "whitened(400) + logistic": {
+   "random": 0.25044889570100004,
+   "group": 0.16972116007379967
+  },
+  "whitened(400) + LDA": {
+   "random": 0.22394471370737418,
+   "group": 0.1429510497199758
+  },
+  "FULL-rank whitened + logistic C=1": {
+   "random": 0.471,
+   "group": 0.366
+  },
+  "FULL-rank whitened + LinearSVC": {
+   "random": 0.505,
+   "group": 0.399
+  },
+  "LinearSVC C=0.001": {
+   "random": 0.487,
+   "group": 0.384
+  }
+ },
+ "chromosome_nonlinear_sweep_217M_18287genes": {
+  "kNN k=1 (cosine)": {
+   "random": 0.10109151544329166,
+   "group": 0.051027360614053004,
+   "gap": 0.050064154829238657,
+   "minutes": 0.0
+  },
+  "kNN k=15 (cosine)": {
+   "random": 0.09705972489757397,
+   "group": 0.04848834834670528,
+   "gap": 0.04857137655086869,
+   "minutes": 0.1
+  },
+  "Nystroem RBF + SVC": {
+   "random": 0.07042335016265548,
+   "group": 0.051179541996255414,
+   "gap": 0.01924380816640007,
+   "minutes": 3.3
+  },
+  "MLP (256,)": {
+   "random": 0.5305231601657199,
+   "group": 0.4024278928082044,
+   "gap": 0.12809526735751547,
+   "minutes": 0.6
+  },
+  "MLP (512,128)": {
+   "random": 0.5716518051447326,
+   "group": 0.4566165194087507,
+   "gap": 0.11503528573598187,
+   "minutes": 2.0
+  },
+  "RandomForest(300)": {
+   "random": 0.06982699011508751,
+   "group": 0.04920739545289861,
+   "gap": 0.020619594662188906,
+   "minutes": 3.6
+  },
+  "HistGradientBoost": {
+   "random": 0.13563832036700646,
+   "group": 0.08679998302720783,
+   "gap": 0.04883833733979863,
+   "minutes": 12.1
+  }
+ },
+ "four_way_grid_15135genes": {
+  "MaxToki-217M | LinearSVC C=0.01": {
+   "table": "MaxToki-217M",
+   "probe": "LinearSVC C=0.01",
+   "width": 1232,
+   "random": 0.563784323800096,
+   "group": 0.4538653475883351
+  },
+  "MaxToki-217M | MLP (517, 129)": {
+   "table": "MaxToki-217M",
+   "probe": "MLP (517, 129)",
+   "width": 1232,
+   "random": 0.6096199406141136,
+   "group": 0.5061650058467506
+  },
+  "MaxToki-1B | LinearSVC C=0.01": {
+   "table": "MaxToki-1B",
+   "probe": "LinearSVC C=0.01",
+   "width": 2304,
+   "random": 0.9300180234350376,
+   "group": 0.8804211806875052
+  },
+  "MaxToki-1B | MLP (967, 241)": {
+   "table": "MaxToki-1B",
+   "probe": "MLP (967, 241)",
+   "width": 2304,
+   "random": 0.8935861331921601,
+   "group": 0.7882627744436639
+  }
+ },
+ "baselines_at_MLP_capacity_15135genes": {
+  "MaxToki-217M": {
+   "width": 1232,
+   "hidden": [
+    517,
+    129
+   ],
+   "random": 0.6096199406141136,
+   "group": 0.5061650058467506
+  },
+  "MaxToki-1B": {
+   "width": 2304,
+   "hidden": [
+    967,
+    241
+   ],
+   "random": 0.8935861331921601,
+   "group": 0.7882627744436639
+  },
+  "ESM2 (sequence)": {
+   "width": 5120,
+   "hidden": [
+    1536,
+    384
+   ],
+   "random": 0.09274934347796049,
+   "group": 0.0632872203115865
+  },
+  "co-expression (data)": {
+   "width": 8000,
+   "hidden": [
+    1536,
+    384
+   ],
+   "random": 0.0502751046377958,
+   "group": 0.03859264649304405
+  }
+ },
+ "position_pooled_18283genes": {
+  "ridge": 0.124,
+  "MLP(512,128)": 0.106,
+  "MLP(1024,256)": 0.116,
+  "note": "pooled/chromosome-centred; per-chromosome ridge is 0.412"
+ }
+}

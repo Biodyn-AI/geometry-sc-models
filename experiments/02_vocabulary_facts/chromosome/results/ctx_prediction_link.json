@@ -1,0 +1,12 @@
+{
+ "n_genes": 536,
+ "mean_context_benefit": 7.7084951068121565,
+ "raw_rho": -0.09304906055011843,
+ "partial_rho": -0.08681029666059095,
+ "partial_ci": [
+  -0.16809092917780694,
+  -0.004457416494593852
+ ],
+ "n_cells": 350,
+ "verdict": "Context helps prediction (mean benefit +7.71) but its per-gene strength does NOT track contextualisation once frequency is controlled (partial rho -0.087, CI [-0.168,-0.004]). Contextualisation and context-benefit are separate; do not claim the objective link."
+}

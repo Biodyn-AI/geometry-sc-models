@@ -1,0 +1,47 @@
+{
+ "topk": 2048,
+ "dims": 256,
+ "chance": 0.045454545454545456,
+ "reference": {
+  "maxtoki_217M_output": {
+   "random": 0.485,
+   "group": 0.368
+  },
+  "raw_coexpr_profile": {
+   "random": 0.054,
+   "group": 0.043
+  }
+ },
+ "coexpr_devel": {
+  "label": "fetal gut (normal, developmental)",
+  "n_genes": 15156,
+  "frequency_only(detection rate, 1-D)": {
+   "random": 0.045454545454545456,
+   "group": 0.04529796503609801
+  },
+  "LSA-SVD(256)": {
+   "random": 0.6106371983421611,
+   "group": 0.5506848612325441
+  },
+  "PPMI-SVD(256) [word2vec analogue]": {
+   "random": 0.459636077819067,
+   "group": 0.39833485299818816
+  }
+ },
+ "coexpr": {
+  "label": "Tabula Sapiens (normal, multi-tissue)",
+  "n_genes": 16405,
+  "frequency_only(detection rate, 1-D)": {
+   "random": 0.045565343139611275,
+   "group": 0.040779556852959725
+  },
+  "LSA-SVD(256)": {
+   "random": 0.11075718813730952,
+   "group": 0.08092820369221991
+  },
+  "PPMI-SVD(256) [word2vec analogue]": {
+   "random": 0.07656187257458456,
+   "group": 0.052991654671844655
+  }
+ }
+}

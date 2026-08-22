@@ -1,0 +1,22 @@
+{
+ "MaxToki-217M": {
+  "rho": 0.41189352613030566,
+  "n_chrom": 22
+ },
+ "MaxToki-1B": {
+  "rho": 0.6258537658754627,
+  "n_chrom": 22
+ },
+ "raw profile -- fetal gut": {
+  "rho": 0.05257842304909322,
+  "n_chrom": 21
+ },
+ "LSA-256 full corpus": {
+  "rho": 0.7614251625625238,
+  "n_chrom": 21
+ },
+ "LSA-512 full corpus": {
+  "rho": 0.775541750007937,
+  "n_chrom": 21
+ }
+}

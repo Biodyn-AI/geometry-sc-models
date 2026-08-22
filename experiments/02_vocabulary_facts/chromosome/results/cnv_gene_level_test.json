@@ -1,0 +1,34 @@
+{
+ "n_genes": 2500,
+ "n_chrom": 22,
+ "mean_true_prob": {
+  "model": 0.35090976975569793,
+  "K562 (aneuploid)": 0.31499118382355507,
+  "TS (normal)": 0.08721439680409968
+ },
+ "tests": {
+  "raw": {
+   "agree_model_k562": 0.2720664972906396,
+   "agree_model_ts": 0.3107979830396773,
+   "partial_k562_given_ts": 0.2142553579288573,
+   "partial_ts_given_k562": 0.26029286647885863,
+   "contrast": -0.04603750855000133,
+   "contrast_ci": [
+    -0.10569891017994701,
+    0.012418993790246729
+   ]
+  },
+  "within-chromosome": {
+   "agree_model_k562": 0.05558190610910498,
+   "agree_model_ts": 0.1423034884965582,
+   "partial_k562_given_ts": 0.048781205116992826,
+   "partial_ts_given_k562": 0.1400990009758402,
+   "contrast": -0.09131779585884736,
+   "contrast_ci": [
+    -0.15192366137713711,
+    -0.03261520373349297
+   ]
+  }
+ },
+ "verdict": "SUPPORTS THE CO-REGULATION ACCOUNT \u2014 the model's per-gene fingerprint resembles the NORMAL panel's beyond what the aneuploid panel explains, which is the opposite of what the CNV mechanism predicts."
+}

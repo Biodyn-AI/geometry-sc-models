@@ -1,0 +1,240 @@
+{
+ "maxtoki": {
+  "model": "maxtoki",
+  "n_src": 16,
+  "n_tfs": 601,
+  "drivers": {
+   "ery": [
+    "GATA1",
+    "KLF1",
+    "TAL1",
+    "GATA2",
+    "LMO2",
+    "NFE2"
+   ],
+   "myeloid": [
+    "SPI1",
+    "CEBPA",
+    "CEBPB",
+    "CEBPE",
+    "IRF8",
+    "RUNX1",
+    "KLF4",
+    "EGR1"
+   ],
+   "lymphoid": [
+    "EBF1",
+    "PAX5",
+    "IKZF1",
+    "FOXO1",
+    "GATA3",
+    "LEF1",
+    "TCF7"
+   ],
+   "mega": [
+    "FLI1",
+    "RUNX1",
+    "GATA1",
+    "NFE2",
+    "MEIS1",
+    "TAL1",
+    "GATA2"
+   ]
+  },
+  "normfrac_summary": {
+   "mean": 0.39929127786271285,
+   "min": 0.20475258665044543,
+   "max": 0.6724270268834612
+  },
+  "fates": {
+   "ery": {
+    "n_drivers": 6,
+    "auroc_raw": 0.23585434173669467,
+    "auroc_tangent": 0.226890756302521,
+    "p_tangent": 0.9880059970014993,
+    "auroc_neg_normfrac": 0.42521008403361343,
+    "auroc_gate": 0.24145658263305322,
+    "auroc_de": 0.984313725490196,
+    "auroc_tangent_resid_de": 0.09971988795518208,
+    "p_tangent_resid_de": 0.9995002498750625,
+    "auroc_de_plus_tangent": 0.8742296918767507,
+    "r_raw_tangent": 0.9983350785511151,
+    "q_tangent": 0.9880059970014993,
+    "q_tangent_resid_de": 0.9995002498750625
+   },
+   "myeloid": {
+    "n_drivers": 8,
+    "auroc_raw": 0.4624789207419899,
+    "auroc_tangent": 0.4725969645868465,
+    "p_tangent": 0.584207896051974,
+    "auroc_neg_normfrac": 0.4877740303541315,
+    "auroc_gate": 0.452150084317032,
+    "auroc_de": 0.987141652613828,
+    "auroc_tangent_resid_de": 0.4725969645868465,
+    "p_tangent_resid_de": 0.584207896051974,
+    "auroc_de_plus_tangent": 0.8922849915682968,
+    "r_raw_tangent": 0.9984523209525846,
+    "q_tangent": 0.7789438614026319,
+    "q_tangent_resid_de": 0.7789438614026319
+   },
+   "lymphoid": {
+    "n_drivers": 7,
+    "auroc_raw": 0.5057720057720058,
+    "auroc_tangent": 0.5040885040885041,
+    "p_tangent": 0.511744127936032,
+    "auroc_neg_normfrac": 0.2866762866762867,
+    "auroc_gate": 0.5004810004810005,
+    "auroc_de": 0.8012265512265512,
+    "auroc_tangent_resid_de": 0.5180375180375181,
+    "p_tangent_resid_de": 0.4642678660669665,
+    "auroc_de_plus_tangent": 0.7077922077922078,
+    "r_raw_tangent": 0.998770464702012,
+    "q_tangent": 0.7789438614026319,
+    "q_tangent_resid_de": 0.7789438614026319
+   },
+   "mega": {
+    "n_drivers": 7,
+    "auroc_raw": 0.6945646945646946,
+    "auroc_tangent": 0.6940836940836941,
+    "p_tangent": 0.04297851074462768,
+    "auroc_neg_normfrac": 0.4001924001924002,
+    "auroc_gate": 0.6863876863876864,
+    "auroc_de": 0.9523809523809523,
+    "auroc_tangent_resid_de": 0.7316017316017316,
+    "p_tangent_resid_de": 0.015492253873063468,
+    "auroc_de_plus_tangent": 0.9538239538239538,
+    "r_raw_tangent": 0.9990621827440719,
+    "q_tangent": 0.17191404297851073,
+    "q_tangent_resid_de": 0.06196901549225387
+   }
+  },
+  "verdict": {
+   "fates_tangent_beats_DE": [],
+   "fates_tangent_gt_raw": [],
+   "fates_sig_after_resid_bh": [],
+   "mean_auroc_raw": 0.47466749070384623,
+   "mean_auroc_tangent": 0.47441497976539143,
+   "mean_auroc_de": 0.9312657204278818,
+   "mean_auroc_neg_normfrac": 0.399963200314108
+  }
+ },
+ "state": {
+  "model": "state",
+  "n_src": 16,
+  "n_tfs": 603,
+  "drivers": {
+   "ery": [
+    "GATA1",
+    "KLF1",
+    "TAL1",
+    "GATA2",
+    "LMO2",
+    "NFE2"
+   ],
+   "myeloid": [
+    "SPI1",
+    "CEBPA",
+    "CEBPB",
+    "CEBPE",
+    "IRF8",
+    "RUNX1",
+    "KLF4",
+    "EGR1"
+   ],
+   "lymphoid": [
+    "EBF1",
+    "PAX5",
+    "IKZF1",
+    "FOXO1",
+    "GATA3",
+    "LEF1",
+    "TCF7"
+   ],
+   "mega": [
+    "FLI1",
+    "RUNX1",
+    "GATA1",
+    "NFE2",
+    "MEIS1",
+    "TAL1",
+    "GATA2"
+   ]
+  },
+  "normfrac_summary": {
+   "mean": 0.7276936959751765,
+   "min": 0.5334623598417267,
+   "max": 0.8950886917741325
+  },
+  "fates": {
+   "ery": {
+    "n_drivers": 6,
+    "auroc_raw": 0.48771635957565607,
+    "auroc_tangent": 0.49106644332774985,
+    "p_tangent": 0.5297351324337831,
+    "auroc_neg_normfrac": 0.7833612506979342,
+    "auroc_gate": 0.49050809603573425,
+    "auroc_de": 0.9835287548855388,
+    "auroc_tangent_resid_de": 0.4084310441094361,
+    "p_tangent_resid_de": 0.7726136931534233,
+    "auroc_de_plus_tangent": 0.9623115577889447,
+    "r_raw_tangent": 0.9948483434595873,
+    "q_tangent": 0.5297351324337831,
+    "q_tangent_resid_de": 0.7726136931534233
+   },
+   "myeloid": {
+    "n_drivers": 8,
+    "auroc_raw": 0.6478991596638656,
+    "auroc_tangent": 0.6331932773109243,
+    "p_tangent": 0.1024487756121939,
+    "auroc_neg_normfrac": 0.46911764705882353,
+    "auroc_gate": 0.6235294117647059,
+    "auroc_de": 0.9869747899159664,
+    "auroc_tangent_resid_de": 0.5531512605042017,
+    "p_tangent_resid_de": 0.3053473263368316,
+    "auroc_de_plus_tangent": 0.9321428571428572,
+    "r_raw_tangent": 0.9886353890486637,
+    "q_tangent": 0.4097951024487756,
+    "q_tangent_resid_de": 0.5903714809262036
+   },
+   "lymphoid": {
+    "n_drivers": 7,
+    "auroc_raw": 0.4829817833173538,
+    "auroc_tangent": 0.49760306807286675,
+    "p_tangent": 0.5022488755622189,
+    "auroc_neg_normfrac": 0.62823585810163,
+    "auroc_gate": 0.4712368168744008,
+    "auroc_de": 0.8033317353787153,
+    "auroc_tangent_resid_de": 0.5136625119846596,
+    "p_tangent_resid_de": 0.4427786106946527,
+    "auroc_de_plus_tangent": 0.7145254074784276,
+    "r_raw_tangent": 0.9820877562300183,
+    "q_tangent": 0.5297351324337831,
+    "q_tangent_resid_de": 0.5903714809262036
+   },
+   "mega": {
+    "n_drivers": 7,
+    "auroc_raw": 0.5918024928092043,
+    "auroc_tangent": 0.5776605944391179,
+    "p_tangent": 0.22938530734632684,
+    "auroc_neg_normfrac": 0.6013902205177373,
+    "auroc_gate": 0.6191275167785235,
+    "auroc_de": 0.9594918504314478,
+    "auroc_tangent_resid_de": 0.5263662511984659,
+    "p_tangent_resid_de": 0.3963018490754623,
+    "auroc_de_plus_tangent": 0.9199424736337488,
+    "r_raw_tangent": 0.9897457253104489,
+    "q_tangent": 0.4587706146926537,
+    "q_tangent_resid_de": 0.5903714809262036
+   }
+  },
+  "verdict": {
+   "fates_tangent_beats_DE": [],
+   "fates_tangent_gt_raw": [],
+   "fates_sig_after_resid_bh": [],
+   "mean_auroc_raw": 0.5525999488415199,
+   "mean_auroc_tangent": 0.5498808457876647,
+   "mean_auroc_de": 0.933331782652917,
+   "mean_auroc_neg_normfrac": 0.6205262440940312
+  }
+ }
+}

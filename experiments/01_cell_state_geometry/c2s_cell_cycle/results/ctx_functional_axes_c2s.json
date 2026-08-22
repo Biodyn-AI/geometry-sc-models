@@ -1,0 +1,371 @@
+{
+ "L00": {
+  "mito_vs_cytoskeleton": {
+   "validity_auc": 0.7443333918746564,
+   "power": 0.21310335222154436,
+   "power_resid": 0.20595837449420118,
+   "z_raw": 13.272818487957872,
+   "z_rank_controlled": 10.88719649337071,
+   "null_mean": 0.022096597730946604,
+   "null_resid_mean": 0.026563684734876993,
+   "poleA": 293,
+   "poleB": 144
+  },
+  "nuclear_vs_surface": {
+   "validity_auc": 0.7539647645053301,
+   "power": 0.13631889264102118,
+   "power_resid": 0.2078369856562418,
+   "z_raw": 7.09823093827347,
+   "z_rank_controlled": 10.360849322848381,
+   "null_mean": 0.02303076975109252,
+   "null_resid_mean": 0.026940421471332295,
+   "poleA": 820,
+   "poleB": 934
+  },
+  "cellcycle_vs_diff": {
+   "validity_auc": 0.576015651015651,
+   "power": 0.057655421282752015,
+   "power_resid": 0.06901393271414433,
+   "z_raw": 2.1727870916699805,
+   "z_rank_controlled": 2.410010922612492,
+   "null_mean": 0.023598404435980387,
+   "null_resid_mean": 0.027390067008285723,
+   "poleA": 62,
+   "poleB": 109
+  },
+  "transcription_vs_transport": {
+   "validity_auc": 0.7518245246816675,
+   "power": 0.05463572280354345,
+   "power_resid": 0.06276642535918056,
+   "z_raw": 2.4592734172583866,
+   "z_rank_controlled": 2.440620173922485,
+   "null_mean": 0.021736863035838366,
+   "null_resid_mean": 0.025508032002071645,
+   "poleA": 177,
+   "poleB": 66
+  }
+ },
+ "L01": {
+  "mito_vs_cytoskeleton": {
+   "validity_auc": 0.812027938606467,
+   "power": 0.3975589329261319,
+   "power_resid": 0.3782955823384489,
+   "z_raw": 23.442875610986775,
+   "z_rank_controlled": 19.932756921685602,
+   "null_mean": 0.027269862903183353,
+   "null_resid_mean": 0.03146495241643106,
+   "poleA": 293,
+   "poleB": 144
+  },
+  "nuclear_vs_surface": {
+   "validity_auc": 0.8169409534788808,
+   "power": 0.2544885034459759,
+   "power_resid": 0.38990592407349994,
+   "z_raw": 12.430522168349048,
+   "z_rank_controlled": 18.345885351111477,
+   "null_mean": 0.02731931034136166,
+   "null_resid_mean": 0.03096377055922758,
+   "poleA": 820,
+   "poleB": 934
+  },
+  "cellcycle_vs_diff": {
+   "validity_auc": 0.6214535464535464,
+   "power": 0.09475262740861479,
+   "power_resid": 0.1215407183259595,
+   "z_raw": 3.573856899959724,
+   "z_rank_controlled": 4.604697736570738,
+   "null_mean": 0.02904648927982801,
+   "null_resid_mean": 0.03249244888295003,
+   "poleA": 62,
+   "poleB": 109
+  },
+  "transcription_vs_transport": {
+   "validity_auc": 0.8215681144252572,
+   "power": 0.13528025106621785,
+   "power_resid": 0.16426437287190754,
+   "z_raw": 6.267143816290797,
+   "z_rank_controlled": 7.25615256484872,
+   "null_mean": 0.026745373635771265,
+   "null_resid_mean": 0.029681283029420556,
+   "poleA": 177,
+   "poleB": 66
+  }
+ },
+ "L02": {
+  "mito_vs_cytoskeleton": {
+   "validity_auc": 0.8463330579012072,
+   "power": 0.47852922899349615,
+   "power_resid": 0.46499026021712003,
+   "z_raw": 21.758445699310276,
+   "z_rank_controlled": 16.7143174224234,
+   "null_mean": 0.03275499886969301,
+   "null_resid_mean": 0.03988908317368067,
+   "poleA": 293,
+   "poleB": 144
+  },
+  "nuclear_vs_surface": {
+   "validity_auc": 0.8501699435227922,
+   "power": 0.4050000118068154,
+   "power_resid": 0.6341338405166247,
+   "z_raw": 15.669093725500499,
+   "z_rank_controlled": 21.32478740402724,
+   "null_mean": 0.033537777840354305,
+   "null_resid_mean": 0.040185503178695764,
+   "poleA": 820,
+   "poleB": 934
+  },
+  "cellcycle_vs_diff": {
+   "validity_auc": 0.6845154845154845,
+   "power": 0.14623361574543034,
+   "power_resid": 0.21208505237622358,
+   "z_raw": 5.014834421645381,
+   "z_rank_controlled": 6.67751884108758,
+   "null_mean": 0.03397269856473893,
+   "null_resid_mean": 0.04030453209289879,
+   "poleA": 62,
+   "poleB": 109
+  },
+  "transcription_vs_transport": {
+   "validity_auc": 0.8867660910518053,
+   "power": 0.2304739439295123,
+   "power_resid": 0.2941668417988767,
+   "z_raw": 8.796890488239102,
+   "z_rank_controlled": 10.128792846329508,
+   "null_mean": 0.032486852375006293,
+   "null_resid_mean": 0.037610457114934825,
+   "poleA": 177,
+   "poleB": 66
+  }
+ },
+ "L04": {
+  "mito_vs_cytoskeleton": {
+   "validity_auc": 0.8793435982184243,
+   "power": 1.1845277906149299,
+   "power_resid": 1.2115460802906026,
+   "z_raw": 15.550248782420878,
+   "z_rank_controlled": 12.047460813836787,
+   "null_mean": 0.09528670520564562,
+   "null_resid_mean": 0.12081346904845937,
+   "poleA": 293,
+   "poleB": 144
+  },
+  "nuclear_vs_surface": {
+   "validity_auc": 0.8905381392954865,
+   "power": 1.1790313047356455,
+   "power_resid": 1.7669900032097565,
+   "z_raw": 14.644114090039743,
+   "z_rank_controlled": 17.72355078991016,
+   "null_mean": 0.0944226717413882,
+   "null_resid_mean": 0.11955375843894539,
+   "poleA": 820,
+   "poleB": 934
+  },
+  "cellcycle_vs_diff": {
+   "validity_auc": 0.759915084915085,
+   "power": 0.4487630033218631,
+   "power_resid": 0.7592501888406785,
+   "z_raw": 5.6669963966203225,
+   "z_rank_controlled": 7.755172336753313,
+   "null_mean": 0.08778727088898103,
+   "null_resid_mean": 0.11127770063304084,
+   "poleA": 62,
+   "poleB": 109
+  },
+  "transcription_vs_transport": {
+   "validity_auc": 0.9438705738705739,
+   "power": 0.7424064735197572,
+   "power_resid": 0.9426561855465435,
+   "z_raw": 9.90656547360561,
+   "z_rank_controlled": 10.062036346687126,
+   "null_mean": 0.08937338871245142,
+   "null_resid_mean": 0.11047643605847705,
+   "poleA": 177,
+   "poleB": 66
+  }
+ },
+ "L06": {
+  "mito_vs_cytoskeleton": {
+   "validity_auc": 0.8783331845807913,
+   "power": 1.6882386329593568,
+   "power_resid": 1.6599888727434535,
+   "z_raw": 12.171317949231964,
+   "z_rank_controlled": 10.376351662531778,
+   "null_mean": 0.19797895450593492,
+   "null_resid_mean": 0.22039639662174623,
+   "poleA": 293,
+   "poleB": 144
+  },
+  "nuclear_vs_surface": {
+   "validity_auc": 0.8877073367076607,
+   "power": 1.5254765395525363,
+   "power_resid": 2.191522843394786,
+   "z_raw": 11.004290825146823,
+   "z_rank_controlled": 14.014709664705723,
+   "null_mean": 0.1951371023690061,
+   "null_resid_mean": 0.21671035737441946,
+   "poleA": 820,
+   "poleB": 934
+  },
+  "cellcycle_vs_diff": {
+   "validity_auc": 0.7634365634365634,
+   "power": 0.7211084370626241,
+   "power_resid": 1.118267448886024,
+   "z_raw": 4.839447325473447,
+   "z_rank_controlled": 6.859983522729387,
+   "null_mean": 0.18347387859695494,
+   "null_resid_mean": 0.20506552907197279,
+   "poleA": 62,
+   "poleB": 109
+  },
+  "transcription_vs_transport": {
+   "validity_auc": 0.9459689516832374,
+   "power": 0.9940231063560009,
+   "power_resid": 1.2614499746966341,
+   "z_raw": 6.4340502553569845,
+   "z_rank_controlled": 7.765433384970899,
+   "null_mean": 0.1897715150452784,
+   "null_resid_mean": 0.20492181645589172,
+   "poleA": 177,
+   "poleB": 66
+  }
+ },
+ "L09": {
+  "mito_vs_cytoskeleton": {
+   "validity_auc": 0.8512906922175549,
+   "power": 6.716047708687959,
+   "power_resid": 6.4129106631255,
+   "z_raw": 4.006623144142753,
+   "z_rank_controlled": 3.8605848207531004,
+   "null_mean": 2.036549251034128,
+   "null_resid_mean": 2.0090695619651444,
+   "poleA": 293,
+   "poleB": 144
+  },
+  "nuclear_vs_surface": {
+   "validity_auc": 0.8774879353071604,
+   "power": 5.622632581273121,
+   "power_resid": 5.7539757271430885,
+   "z_raw": 2.780807194902602,
+   "z_rank_controlled": 2.9292534420805496,
+   "null_mean": 1.994803475664781,
+   "null_resid_mean": 1.9713985429229985,
+   "poleA": 820,
+   "poleB": 934
+  },
+  "cellcycle_vs_diff": {
+   "validity_auc": 0.7684898434898436,
+   "power": 3.9632754174039575,
+   "power_resid": 4.395076215546029,
+   "z_raw": 1.6944509037523652,
+   "z_rank_controlled": 2.1033954775089136,
+   "null_mean": 1.9895918315224177,
+   "null_resid_mean": 1.9700232162272229,
+   "poleA": 62,
+   "poleB": 109
+  },
+  "transcription_vs_transport": {
+   "validity_auc": 0.9487179487179487,
+   "power": 3.5139301322059677,
+   "power_resid": 3.7901935618619724,
+   "z_raw": 1.1428452787833236,
+   "z_rank_controlled": 1.4100207614243154,
+   "null_mean": 2.0296468877621927,
+   "null_resid_mean": 1.997327643825963,
+   "poleA": 177,
+   "poleB": 66
+  }
+ },
+ "L13": {
+  "mito_vs_cytoskeleton": {
+   "validity_auc": 0.8176997290784348,
+   "power": 13.763519207615884,
+   "power_resid": 13.046951470965857,
+   "z_raw": 4.95840540720849,
+   "z_rank_controlled": 4.839170706875398,
+   "null_mean": 3.5104594525121895,
+   "null_resid_mean": 3.442647481288551,
+   "poleA": 293,
+   "poleB": 144
+  },
+  "nuclear_vs_surface": {
+   "validity_auc": 0.8673655142623531,
+   "power": 6.530744324217395,
+   "power_resid": 6.730850363251595,
+   "z_raw": 1.4345977029516428,
+   "z_rank_controlled": 1.5924686831987511,
+   "null_mean": 3.3771350365065285,
+   "null_resid_mean": 3.318748686779273,
+   "poleA": 820,
+   "poleB": 934
+  },
+  "cellcycle_vs_diff": {
+   "validity_auc": 0.7375790875790875,
+   "power": 5.228198997877618,
+   "power_resid": 5.553651537986781,
+   "z_raw": 0.8788265880413445,
+   "z_rank_controlled": 1.0967339865909111,
+   "null_mean": 3.387043037420174,
+   "null_resid_mean": 3.3271847419287313,
+   "poleA": 62,
+   "poleB": 109
+  },
+  "transcription_vs_transport": {
+   "validity_auc": 0.940563404849119,
+   "power": 5.225625592122986,
+   "power_resid": 5.4199853937273685,
+   "z_raw": 0.679932533735056,
+   "z_rank_controlled": 0.8224356753686477,
+   "null_mean": 3.562171056563365,
+   "null_resid_mean": 3.4823968784908956,
+   "poleA": 177,
+   "poleB": 66
+  }
+ },
+ "L17": {
+  "mito_vs_cytoskeleton": {
+   "validity_auc": 0.7674917154431051,
+   "power": 33.71615812050533,
+   "power_resid": 31.955965221922224,
+   "z_raw": 3.993231314056647,
+   "z_rank_controlled": 3.8379934628187677,
+   "null_mean": 10.028626603185845,
+   "null_resid_mean": 9.80361649612885,
+   "poleA": 293,
+   "poleB": 144
+  },
+  "nuclear_vs_surface": {
+   "validity_auc": 0.7960519248111233,
+   "power": 22.1031427936182,
+   "power_resid": 21.275891646169534,
+   "z_raw": 1.9724438771055306,
+   "z_rank_controlled": 1.916227356428358,
+   "null_mean": 9.852870855349353,
+   "null_resid_mean": 9.633464919502613,
+   "poleA": 820,
+   "poleB": 934
+  },
+  "cellcycle_vs_diff": {
+   "validity_auc": 0.6812354312354313,
+   "power": 14.700530488960469,
+   "power_resid": 14.449678059612811,
+   "z_raw": 0.743618956416709,
+   "z_rank_controlled": 0.7593655239583795,
+   "null_mean": 10.14986314288271,
+   "null_resid_mean": 9.9216703906006,
+   "poleA": 62,
+   "poleB": 109
+  },
+  "transcription_vs_transport": {
+   "validity_auc": 0.9033368219082506,
+   "power": 14.4341998036846,
+   "power_resid": 14.439204558717217,
+   "z_raw": 0.5688024475093634,
+   "z_rank_controlled": 0.6236180185360654,
+   "null_mean": 10.598053349337558,
+   "null_resid_mean": 10.34208548881129,
+   "poleA": 177,
+   "poleB": 66
+  }
+ },
+ "_verdict": "POSITIVE beyond random (nuclear_vs_surface @ L02, z_rank=+21.3)"
+}

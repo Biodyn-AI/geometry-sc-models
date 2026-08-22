@@ -1,0 +1,66 @@
+{
+ "n_hi": 5042,
+ "n_lo": 5042,
+ "tau_hi": 0.887215256690979,
+ "tau_lo": 0.3493534028530121,
+ "chance": 0.045454545454545456,
+ "cell_types_used": [
+  "stem cell",
+  "fibroblast",
+  "mesothelial cell",
+  "enteroendocrine cell",
+  "myofibroblast cell",
+  "mesodermal cell",
+  "enterocyte",
+  "pericyte",
+  "erythroblast",
+  "hematopoietic cell",
+  "interstitial cell of Cajal",
+  "enteric smooth muscle cell",
+  "vein endothelial cell",
+  "enteric neuron",
+  "neural crest cell",
+  "progenitor cell",
+  "colon epithelial cell",
+  "intestine goblet cell",
+  "endothelial cell of artery"
+ ],
+ "runs": {
+  "k=1 broad (fibroblast) | HIGH-spec": {
+   "chromosome": 0.16635059967013027,
+   "esm2_control": 0.052510049484243315,
+   "n_cells": 5225,
+   "n_genes": 5042
+  },
+  "k=1 broad (fibroblast) | LOW-spec": {
+   "chromosome": 0.49569887079436187,
+   "esm2_control": 0.08181370842837875,
+   "n_cells": 5225,
+   "n_genes": 5042
+  },
+  "k=1 narrow (erythroblast) | HIGH-spec": {
+   "chromosome": 0.04794906771057508,
+   "esm2_control": 0.05416159568244386,
+   "n_cells": 933,
+   "n_genes": 5042
+  },
+  "k=1 narrow (erythroblast) | LOW-spec": {
+   "chromosome": 0.10921690760496115,
+   "esm2_control": 0.07134925912570335,
+   "n_cells": 933,
+   "n_genes": 5042
+  },
+  "k=12 diverse | HIGH-spec": {
+   "chromosome": 0.23127594437934038,
+   "esm2_control": 0.07099463449338964,
+   "n_cells": 6000,
+   "n_genes": 5042
+  },
+  "k=12 diverse | LOW-spec": {
+   "chromosome": 0.5854956306230552,
+   "esm2_control": 0.09137470340839941,
+   "n_cells": 6000,
+   "n_genes": 5042
+  }
+ }
+}

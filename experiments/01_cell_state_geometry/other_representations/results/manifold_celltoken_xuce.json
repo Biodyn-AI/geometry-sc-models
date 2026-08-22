@@ -1,0 +1,218 @@
+{
+ "emb": {
+  "setty": {
+   "n": 5780,
+   "twonn_id": 35.802443610682296,
+   "participation_ratio": 27.655571896944572,
+   "pca_dim_90": 201,
+   "linear_r2": 0.7893599653012449,
+   "knn_r2": 0.8316067256348746,
+   "curvature": 0.04224676033362973,
+   "bilinear_gain": 0.09069471932735562,
+   "synth_curvature": -0.2422185402588234,
+   "curv_over_control": 0.2844653005924531,
+   "tangent_rotation_deg": 48.11707911289245
+  },
+  "lung": {
+   "n": 3600,
+   "twonn_id": 32.09572794088703,
+   "participation_ratio": 18.66847374703937,
+   "pca_dim_90": 201,
+   "linear_r2": 0.870363190045264,
+   "knn_r2": 0.910961268108003,
+   "curvature": 0.040598078062739074,
+   "bilinear_gain": 0.04879671758318638,
+   "synth_curvature": -0.2691385926136922,
+   "curv_over_control": 0.3097366706764313,
+   "tangent_rotation_deg": 84.21096419249618
+  },
+  "gut": {
+   "n": 4269,
+   "twonn_id": 35.35489502201627,
+   "participation_ratio": 24.647092012306423,
+   "pca_dim_90": 201,
+   "linear_r2": 0.4233530625254615,
+   "knn_r2": 0.4929550023824653,
+   "curvature": 0.0696019398570038,
+   "bilinear_gain": 0.10196592613649452,
+   "synth_curvature": -0.1421246584658823,
+   "curv_over_control": 0.2117265983228861,
+   "tangent_rotation_deg": 49.58366452350503
+  },
+  "pancreas": {
+   "n": 3696,
+   "twonn_id": 40.936096644962994,
+   "participation_ratio": 34.169039500483656,
+   "pca_dim_90": 201,
+   "linear_r2": 0.9232045409563822,
+   "knn_r2": 0.9056329643789686,
+   "curvature": -0.017571576577413595,
+   "bilinear_gain": 0.002094389289976961,
+   "synth_curvature": -0.27205310727715426,
+   "curv_over_control": 0.25448153069974067,
+   "tangent_rotation_deg": 70.78768779545139
+  },
+  "cellcycle": {
+   "n": 3000,
+   "twonn_id": 40.680572752920206,
+   "participation_ratio": 35.6041456405092,
+   "pca_dim_90": 201
+  },
+  "immune": {
+   "n": 8000,
+   "twonn_id": 23.2344857623361,
+   "participation_ratio": 17.42274795818822,
+   "pca_dim_90": 154,
+   "knn_bal_acc": 0.4364306623696108,
+   "knn_null": 0.030137926358717947,
+   "linear_acc": 0.8145926007532266,
+   "knn_acc": 0.8161248413776783,
+   "curvature_acc": 0.001532240624451675,
+   "synth_curvature": -0.3111424479453564
+  }
+ },
+ "cls": {
+  "setty": {
+   "n": 5780,
+   "twonn_id": 31.536081389388585,
+   "participation_ratio": 19.60057891850873,
+   "pca_dim_90": 201,
+   "linear_r2": 0.8285048056051328,
+   "knn_r2": 0.8823767925765625,
+   "curvature": 0.0538719869714297,
+   "bilinear_gain": 0.08110291993632246,
+   "synth_curvature": -0.22247554616498244,
+   "curv_over_control": 0.27634753313641214,
+   "tangent_rotation_deg": 58.13687229447614
+  },
+  "lung": {
+   "n": 3600,
+   "twonn_id": 26.35760503443872,
+   "participation_ratio": 13.853265121444258,
+   "pca_dim_90": 201,
+   "linear_r2": 0.9050080713157101,
+   "knn_r2": 0.940294550734587,
+   "curvature": 0.03528647941887686,
+   "bilinear_gain": 0.03962611897269552,
+   "synth_curvature": -0.28700392404317854,
+   "curv_over_control": 0.3222904034620554,
+   "tangent_rotation_deg": 81.10741334734904
+  },
+  "gut": {
+   "n": 4269,
+   "twonn_id": 33.43308067631505,
+   "participation_ratio": 28.713462708211285,
+   "pca_dim_90": 201,
+   "linear_r2": 0.5585993534204424,
+   "knn_r2": 0.6720230892677804,
+   "curvature": 0.113423735847338,
+   "bilinear_gain": 0.13176457621937943,
+   "synth_curvature": -0.1859370442197752,
+   "curv_over_control": 0.2993607800671132,
+   "tangent_rotation_deg": 40.400567886837926
+  },
+  "pancreas": {
+   "n": 3696,
+   "twonn_id": 35.50225209756508,
+   "participation_ratio": 14.548493822703572,
+   "pca_dim_90": 201,
+   "linear_r2": 0.9412437684552147,
+   "knn_r2": 0.8932629554249943,
+   "curvature": -0.04798081303022039,
+   "bilinear_gain": 0.00432585285401732,
+   "synth_curvature": -0.27317915550222893,
+   "curv_over_control": 0.22519834247200854,
+   "tangent_rotation_deg": 61.232785232868764
+  },
+  "cellcycle": {
+   "n": 3000,
+   "twonn_id": 34.994887250873376,
+   "participation_ratio": 18.755591900282834,
+   "pca_dim_90": 201
+  },
+  "immune": {
+   "n": 8000,
+   "twonn_id": 22.60216913374958,
+   "participation_ratio": 15.64052585745359,
+   "pca_dim_90": 141,
+   "knn_bal_acc": 0.4225025728479464,
+   "knn_null": 0.030579782240320468,
+   "linear_acc": 0.8156134144500344,
+   "knn_acc": 0.8230244125363658,
+   "curvature_acc": 0.0074109980863313885,
+   "synth_curvature": -0.3143387234320363
+  }
+ },
+ "xuce": {
+  "setty": {
+   "n": 5780,
+   "twonn_id": 29.274829108885438,
+   "participation_ratio": 8.564572732423564,
+   "pca_dim_90": 40,
+   "linear_r2": 0.8463178653079381,
+   "knn_r2": 0.888592701856994,
+   "curvature": 0.04227483654905595,
+   "bilinear_gain": 0.06905095183967969,
+   "synth_curvature": -0.23838687561761795,
+   "curv_over_control": 0.2806617121666739,
+   "tangent_rotation_deg": 50.962974986599185
+  },
+  "lung": {
+   "n": 3600,
+   "twonn_id": 17.765505001369352,
+   "participation_ratio": 6.203247101828748,
+   "pca_dim_90": 27,
+   "linear_r2": 0.9236592937995544,
+   "knn_r2": 0.9550144638460246,
+   "curvature": 0.03135517004647026,
+   "bilinear_gain": 0.03946946388681172,
+   "synth_curvature": -0.22827301972841296,
+   "curv_over_control": 0.2596281897748832,
+   "tangent_rotation_deg": 70.2211503445365
+  },
+  "gut": {
+   "n": 4269,
+   "twonn_id": 22.070904567826215,
+   "participation_ratio": 11.080375992765799,
+   "pca_dim_90": 29,
+   "linear_r2": 0.6754856288174031,
+   "knn_r2": 0.7492922072642075,
+   "curvature": 0.07380657844680438,
+   "bilinear_gain": 0.11041978165207333,
+   "synth_curvature": -0.19202643825325477,
+   "curv_over_control": 0.26583301670005915,
+   "tangent_rotation_deg": 54.90610055402944
+  },
+  "pancreas": {
+   "n": 3696,
+   "twonn_id": 29.832269610256308,
+   "participation_ratio": 3.830813284150423,
+   "pca_dim_90": 33,
+   "linear_r2": 0.9631584601218658,
+   "knn_r2": 0.9540393679728812,
+   "curvature": -0.009119092148984542,
+   "bilinear_gain": 0.003293841415236254,
+   "synth_curvature": -0.27662244351814735,
+   "curv_over_control": 0.2675033513691628,
+   "tangent_rotation_deg": 38.115358547919456
+  },
+  "cellcycle": {
+   "n": 3000,
+   "twonn_id": 28.290801819498927,
+   "participation_ratio": 6.8772142989574965,
+   "pca_dim_90": 37
+  },
+  "immune": {
+   "n": 8000,
+   "twonn_id": 22.70723422085303,
+   "participation_ratio": 15.823062750200231,
+   "pca_dim_90": 58,
+   "knn_bal_acc": 0.4511865482574617,
+   "knn_null": 0.02998817544911031,
+   "linear_acc": 0.8179143051832266,
+   "knn_acc": 0.8259642809053407,
+   "curvature_acc": 0.008049975722114078,
+   "synth_curvature": -0.2915902219284392
+  }
+ }
+}

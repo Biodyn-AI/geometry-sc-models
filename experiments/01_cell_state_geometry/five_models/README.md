@@ -1,0 +1,25 @@
+# Cell cycle across five prior models, and the stall theorem
+
+Section 3.1 and 5.3. Matched-dimensionality benchmarks over scGPT, Geneformer, STATE, UCE and MaxToki, plus the closed-loop steering theorem and its verification.
+
+11 scripts, 16 committed result files.
+
+Every script here needs assets this repository does not ship. See [`docs/DATA.md`](../../../docs/DATA.md) for what to download and where to point `GEOMSC_DATA` and `GEOMSC_MODELS`.
+
+| script | what it computes | supports | needs |
+|---|---|---|---|
+| `cc_common.py` | Shared substrate builder and circular-statistics toolkit: selects the 3,000 seed-42 Replogle K562 non-targeting controls, computes Tirosh S/G2M scores and the phase angle phi, and supplies wrap/circ_m | Sec 3.1 / Sec 3.2 substrate: the 3,000 K562 cells and the phase angle every circ-R^2 number is scored against | the 30 GB replogle_concat.h5ad; running it as __main__ writes data/cellcycle/k56 |
+| `adapt_cached.py` | Pairs already-cached K562 embeddings from four other models (Geneformer L11 .npy by reproducing the seed-42 draw, MaxToki-217M L8 by its own cell_idx, STATE-SE by row order, UCE-100M by cell_barcode j | Sec 5.3: supplies the Geneformer / MaxToki / STATE-SE / UCE rows of the stall table; Sec 3.1: supplies the fiv | four cached embedding files under data/ (route_manifold, maxtoki_acts, cellcycle |
+| `cc_benchmark.py` | Matched-dimensionality benchmark in the style of the L2H5 protocol: PCA each representation to k in {10,20,50}, fit a small probe, evaluate held-out, on three tasks (phase ordering circ-R^2, G1/S/G2M  | Sec 3.1 exactly: 'On matched-dimensionality benchmarks the models beat expression in 1 of 45 cells'. The store | all five per-model npz files under data/cellcycle plus the 30 GB replogle h5ad f |
+| `cc_decode.py` | Gene-level readout of the steered path through two decoders: scGPT's own pretrained MVC head (zero parameters fitted on K562) and a ridge decoder fitted on real train cells. Reports the native head as | Supports Sec 5.4 'Behaviour follows geometry' in spirit but is a negative on this substrate; the number the pa | scGPT checkpoint best_model.pt (for the MVC head matrix) + the scGPT cell-cycle  |
+| `cc_geometry.py` | Loop geometry against the only null that means anything on a closed curve: H_flat ('the loop lies in a fixed linear 2-plane'), tested by out-of-plane tangent rotation against a noise-calibrated synthe | Sec 3.2 'It is flat': out-of-plane rotation 22.7 deg vs planar null 25.6 +/- 2.3, p = 0.905; and 'Persistent h | one per-model npz from data/cellcycle; needs ripser and scikit-learn; no model,  |
+| `cc_mechanism.py` | Two follow-ups. Part A measures, cell by cell and with no judge, the angle between the constant direction w0 and the local phase tangent as the cell moves. Part B contrasts steering on the closed K562 | Sec 5.3: 'Measured cell by cell, the phase rate peaks exactly at the perpendicular crossing (90.7 deg), bankin | the scGPT cell-cycle npz plus data/branchpoint/scgptbin_setty.npz (part of a 1.8 |
+| `cc_steering.py` | The steering ladder and the core of the stall theorem: six arms (fixed, fixed_proj, local, local_proj, transport, oracle_phase) plus retraction variants in 20-D whitened PCA space, step h = 0.25*d0, a | Sec 5.3: 'in seven representations including raw expression with no model at all, fixed direction 0.01 to 0.36 | one per-model npz; numpy/scikit-learn only, CPU, no model |
+| `cc_summary.py` | Pure assembly: reads whatever cc_geometry_*.json and cc_steering_*.json exist and prints the five-row cross-model table. No computation, always safe to re-run. | Sec 5.3 Fig 6b: the bar values in the paper's figure script (scGPT 0.34/4.53, Geneformer 0.14/5.57, MaxToki 0. | only the JSON files already in results/ |
+| `cc_synthetic_check.py` | Ground-truth calibration with no model and no biology: a circle lying exactly in a linear 2-plane of a 60-D space, where H_flat is true by construction, run through the identical steering ladder. | Sec 5.3: 'On a synthetic zero-curvature circle, stall at 1.49 rad against the predicted pi/2 = 1.571, with the | nothing at all — pure numpy. This is the cheapest and best reproduction entrypoi |
+| `extract_scgpt_cc.py` | The single new forward pass of the whole route: scGPT whole-human L11 mean-pooled cell embeddings on the K562 substrate, under scGPT's own 51-bin quantile-binned input convention (MAX_SEQ=1200, descen | Sec 3.2 and Sec 5.3: produces the scGPT row (H_flat p=0.905, out-of-plane 22.7 deg; fixed_proj 0.34 laps vs lo | scGPT repo + whole-human checkpoint best_model.pt (205 MB) and vocab.json (1.3 M |
+| `make_expr.py` | Builds the model-free control: hands the analysis harness the raw 3000x6546 log1p expression matrix in place of a model embedding, with the identical phi. | Sec 3.2 and Sec 5.3: the 'raw expression, no model at all' row (circ-R^2 0.929, fixed 0.36 laps vs local 5.08  | the 30 GB replogle h5ad; writes a 79 MB npz |
+
+## Provenance
+
+These files were collected from the working tree in which the study was run. Paths to large assets have been parameterised; nothing else about the analysis logic was changed.

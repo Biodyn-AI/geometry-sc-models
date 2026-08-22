@@ -1,0 +1,55 @@
+{
+ "n_cells": 2182,
+ "n_rows": 2859775,
+ "seconds": 2232.737807750702,
+ "beta": 0.14551193413095467,
+ "se_beta": 0.023845224450657412,
+ "t_beta": 6.102351203783402,
+ "ci_beta": [
+  0.09877529420766615,
+  0.1922485740542432
+ ],
+ "gamma": 0.2550434098909126,
+ "se_gamma": 0.020512009947447427,
+ "t_gamma": 12.433857556833475,
+ "placebo_mean": -0.012693209349105979,
+ "placebo_sd": 0.08126797583650097,
+ "placebo_p": 0.03482587064676617,
+ "per_cluster_beta": {
+  "A": {
+   "beta": 0.055282860948705846,
+   "se": 0.039538135394370365,
+   "t": 1.3982161878877848,
+   "n_ident": 632828,
+   "n_cells": 1929
+  },
+  "B": {
+   "beta": 0.24806319901235926,
+   "se": 0.03582910125864216,
+   "t": 6.923511622988357,
+   "n_ident": 140019,
+   "n_cells": 716
+  },
+  "C": {
+   "beta": null,
+   "se": null,
+   "t": null,
+   "n_ident": 2664,
+   "n_cells": 16
+  },
+  "D": {
+   "beta": null,
+   "se": null,
+   "t": null,
+   "n_ident": 0,
+   "n_cells": 0
+  }
+ },
+ "delta": 0.06376085247272816,
+ "used": true,
+ "strong": true,
+ "placebo_clean": true,
+ "verdict": "USED \u2014 cluster is causally conditioned on (>=1/4 of paralog)",
+ "corr_match_parm": -0.11948843890329923,
+ "dataset": "agingmds"
+}

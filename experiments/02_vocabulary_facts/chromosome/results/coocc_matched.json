@@ -1,0 +1,70 @@
+{
+ "chance": 0.045454545454545456,
+ "null_cell_shuffle": {
+  "random": 0.04913978009077066,
+  "group": 0.04086493639094837
+ },
+ "null_label_shuffle": {
+  "random": 0.046437074112673615,
+  "group": 0.044432134594480505
+ },
+ "n_genes": 14769,
+ "rows": {
+  "MaxToki-217M output table (the model)": {
+   "dim": 1232,
+   "random": 0.5548013131634699,
+   "group": 0.43790217547050037
+  },
+  "MaxToki-1B output table (the model)": {
+   "dim": 2304,
+   "random": 0.9130335986324867,
+   "group": 0.7975411686409051
+  },
+  "raw expression profile -- fetal gut": {
+   "dim": 8000,
+   "random": 0.05721412349935209,
+   "group": 0.044317579491282684
+  },
+  "raw expression profile -- Tabula Sapiens": {
+   "dim": 7500,
+   "random": 0.08524836433673157,
+   "group": 0.06333771140566663
+  },
+  "LSA-64 -- fetal gut": {
+   "dim": 64,
+   "random": 0.5976710113165069,
+   "group": 0.5378953577795543,
+   "panel": "fetal gut"
+  },
+  "LSA-256 -- fetal gut": {
+   "dim": 256,
+   "random": 0.6213102023061782,
+   "group": 0.5549479446375459,
+   "panel": "fetal gut"
+  },
+  "LSA-1024 -- fetal gut": {
+   "dim": 1024,
+   "random": 0.5410007610172324,
+   "group": 0.4599101935728893,
+   "panel": "fetal gut"
+  },
+  "LSA-64 -- Tabula Sapiens": {
+   "dim": 64,
+   "random": 0.0875861887997188,
+   "group": 0.06328478959550521,
+   "panel": "Tabula Sapiens"
+  },
+  "LSA-256 -- Tabula Sapiens": {
+   "dim": 256,
+   "random": 0.11397248443889531,
+   "group": 0.08216194234323936,
+   "panel": "Tabula Sapiens"
+  },
+  "LSA-1024 -- Tabula Sapiens": {
+   "dim": 1024,
+   "random": 0.10744792112931144,
+   "group": 0.08440645008932951,
+   "panel": "Tabula Sapiens"
+  }
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "block_mb": 10.0,
+ "n_perm": 40,
+ "maxtoki_lmhead": {
+  "mean_obs": -0.21150713333502907,
+  "mean_null": -0.6075998092218959,
+  "mean_excess": 0.3960926758868668,
+  "mean_z": 21.40166749209717,
+  "n_chr_sig": 22,
+  "n_chr": 22
+ },
+ "maxtoki_we": {
+  "mean_obs": -0.28207927240975966,
+  "mean_null": -0.6063906619058997,
+  "mean_excess": 0.3243113894961401,
+  "mean_z": 17.15390869574032,
+  "n_chr_sig": 21,
+  "n_chr": 22
+ },
+ "geneformer_we": {
+  "mean_obs": -0.28617494786492936,
+  "mean_null": -0.6066772752231658,
+  "mean_excess": 0.32050232735823647,
+  "mean_z": 14.952106819326817,
+  "n_chr_sig": 19,
+  "n_chr": 22
+ },
+ "scgpt_we": {
+  "mean_obs": -0.3794326550456248,
+  "mean_null": -0.6468883419969702,
+  "mean_excess": 0.2674556869513455,
+  "mean_z": 13.870382519643458,
+  "n_chr_sig": 21,
+  "n_chr": 22
+ },
+ "coexpr_devel": {
+  "mean_obs": -0.5591374149197,
+  "mean_null": -0.6225854281929263,
+  "mean_excess": 0.06344801327322624,
+  "mean_z": 2.655576883724155,
+  "n_chr_sig": 11,
+  "n_chr": 21
+ },
+ "esm2": {
+  "mean_obs": -0.36741432228622756,
+  "mean_null": -0.620246814311533,
+  "mean_excess": 0.25283249202530533,
+  "mean_z": 12.042207690183472,
+  "n_chr_sig": 21,
+  "n_chr": 22
+ },
+ "verdict": {
+  "best_model": "maxtoki_lmhead",
+  "excess": 0.3960926758868668,
+  "refs": {
+   "coexpr_devel": 0.06344801327322624,
+   "esm2": 0.25283249202530533
+  },
+  "passes": true
+ }
+}

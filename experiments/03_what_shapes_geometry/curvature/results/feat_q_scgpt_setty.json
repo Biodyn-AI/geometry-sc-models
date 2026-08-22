@@ -1,0 +1,409 @@
+{
+ "model": "scgpt",
+ "dataset": "setty",
+ "n": 5780,
+ "n_alive_feats": 1604,
+ "r2_lin_atlas": 0.8730641350223147,
+ "r2_quad": 0.9023553019093268,
+ "delta_q": 0.029291166887012055,
+ "delta_q_ci": [
+  0.026170219249468826,
+  0.03272709032443893
+ ],
+ "modal_r": 16,
+ "modal_lam": 0.01,
+ "cfgs": [
+  [
+   8,
+   0.01
+  ],
+  [
+   32,
+   0.01
+  ],
+  [
+   16,
+   0.01
+  ],
+  [
+   2,
+   0.01
+  ],
+  [
+   16,
+   0.01
+  ]
+ ],
+ "rank_sweep": {
+  "1": 0.013401547118170543,
+  "2": 0.018010806250253975,
+  "4": 0.024094315663863553,
+  "8": 0.02933288057128225,
+  "16": 0.031228556760294457,
+  "32": 0.03155486797973672
+ },
+ "top_eigendirections": [
+  {
+   "rank": 1,
+   "eigenvalue": 1.6392713171907585,
+   "top_features": [
+    {
+     "feat": 997,
+     "loading": 0.14110244305777234,
+     "label": "f997[ASPA,MT-ND2,MT-CO1]"
+    },
+    {
+     "feat": 1248,
+     "loading": 0.12539119305888674,
+     "label": "f1248[MTCO3P12,MTCO2P12,IGKV1D-37]"
+    },
+    {
+     "feat": 348,
+     "loading": 0.11995156383203023,
+     "label": "f348[IGHV2-70,IGKV1-9,IGKV3D-20]"
+    },
+    {
+     "feat": 378,
+     "loading": 0.1108545203065482,
+     "label": "f378[MT-RNR2,MT-RNR1,MT-CYB]"
+    },
+    {
+     "feat": 1963,
+     "loading": 0.11057686177861151,
+     "label": "f1963[MT-ATP6,MT-ND3,MT-CO3]"
+    },
+    {
+     "feat": 1532,
+     "loading": 0.10551889969342945,
+     "label": "f1532[MALAT1,NEAT1,ETF1P3]"
+    },
+    {
+     "feat": 1196,
+     "loading": 0.10109304047141701,
+     "label": "f1196[MT-CYB,MT-CO2,LINC01934]"
+    },
+    {
+     "feat": 1905,
+     "loading": 0.10092664858023508,
+     "label": "f1905[MT-ND2,MT-ND1,MT-ND5]"
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "eigenvalue": -1.4612243856545297,
+   "top_features": [
+    {
+     "feat": 1732,
+     "loading": -0.10667151275799198,
+     "label": "f1732[Activation Of ATR In Response To Repli]"
+    },
+    {
+     "feat": 1248,
+     "loading": 0.10494351669315656,
+     "label": "f1248[MTCO3P12,MTCO2P12,IGKV1D-37]"
+    },
+    {
+     "feat": 1905,
+     "loading": 0.10019512727666223,
+     "label": "f1905[MT-ND2,MT-ND1,MT-ND5]"
+    },
+    {
+     "feat": 1605,
+     "loading": 0.09560490072857344,
+     "label": "f1605[HOPX,PEG10,PPP2R5A]"
+    },
+    {
+     "feat": 53,
+     "loading": 0.08594563561364145,
+     "label": "f53[MTATP6P1,MT-ND5,NTRK2]"
+    },
+    {
+     "feat": 1675,
+     "loading": -0.08450845024821518,
+     "label": "f1675[SAMHD1,BICC1,MCUB]"
+    },
+    {
+     "feat": 1963,
+     "loading": 0.08174160931364852,
+     "label": "f1963[MT-ATP6,MT-ND3,MT-CO3]"
+    },
+    {
+     "feat": 1087,
+     "loading": 0.08111423069264512,
+     "label": "f1087[PPDPF,FOXJ1,LY6E]"
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "eigenvalue": 1.3188926803235692,
+   "top_features": [
+    {
+     "feat": 1047,
+     "loading": -0.16530436015260153,
+     "label": "f1047[C12orf75,SEL1L3,LINC00937]"
+    },
+    {
+     "feat": 1688,
+     "loading": -0.12492979093323191,
+     "label": "f1688[POLR2L,NDUFB2,CCDC80]"
+    },
+    {
+     "feat": 1750,
+     "loading": -0.1169306037775734,
+     "label": "f1750[IGHA1,IGKC,IGLC2]"
+    },
+    {
+     "feat": 648,
+     "loading": -0.10128116231708172,
+     "label": "f648[ARL4C,IQGAP2,ZNF536]"
+    },
+    {
+     "feat": 1856,
+     "loading": -0.10053209675574011,
+     "label": "f1856[MARK1,RASGRF1,IGSF9B]"
+    },
+    {
+     "feat": 816,
+     "loading": -0.0914932613535125,
+     "label": "f816[Transport To Golgi And Subsequent Modi]"
+    },
+    {
+     "feat": 1267,
+     "loading": -0.09042579194148885,
+     "label": "f1267[HERPUD1,ERRFI1,BIRC3]"
+    },
+    {
+     "feat": 884,
+     "loading": -0.08764482655656072,
+     "label": "f884[LSP1,CORO1A,PLAC8]"
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "eigenvalue": 1.2736597537522187,
+   "top_features": [
+    {
+     "feat": 1110,
+     "loading": -0.11753710353096276,
+     "label": "f1110[TSPAN11,TIE1,ARHGEF15]"
+    },
+    {
+     "feat": 1928,
+     "loading": 0.11634827004866688,
+     "label": "f1928[S100A8,S100A9,TSPO]"
+    },
+    {
+     "feat": 442,
+     "loading": 0.08847927965016406,
+     "label": "f442[VCAN,BST1,SIRPB1]"
+    },
+    {
+     "feat": 331,
+     "loading": -0.08589683133873201,
+     "label": "f331[MXRA5,TNFRSF11B,PREX2]"
+    },
+    {
+     "feat": 60,
+     "loading": -0.08381621892338974,
+     "label": "f60[Generic Transcription Pathway]"
+    },
+    {
+     "feat": 1047,
+     "loading": -0.08311180932284122,
+     "label": "f1047[C12orf75,SEL1L3,LINC00937]"
+    },
+    {
+     "feat": 1672,
+     "loading": -0.08255591788912338,
+     "label": "f1672[HSPE1P14,PGLYRP4,SPTLC3]"
+    },
+    {
+     "feat": 884,
+     "loading": 0.08210828987185256,
+     "label": "f884[LSP1,CORO1A,PLAC8]"
+    }
+   ]
+  }
+ ],
+ "top_products": [
+  {
+   "feat_i": 1047,
+   "feat_j": 1750,
+   "q_ij": 0.04381768395785209,
+   "label_i": "f1047[C12orf75,SEL1L3,LINC00937]",
+   "label_j": "f1750[IGHA1,IGKC,IGLC2]"
+  },
+  {
+   "feat_i": 511,
+   "feat_j": 1110,
+   "q_ij": 0.03531479232957245,
+   "label_i": "f511[DAB2,FXYD2,MYL1]",
+   "label_j": "f1110[TSPAN11,TIE1,ARHGEF15]"
+  },
+  {
+   "feat_i": 1110,
+   "feat_j": 1812,
+   "q_ij": 0.034669117483714006,
+   "label_i": "f1110[TSPAN11,TIE1,ARHGEF15]",
+   "label_j": "f1812[PIK3R5,KYNU,BLK]"
+  },
+  {
+   "feat_i": 1248,
+   "feat_j": 1605,
+   "q_ij": -0.03321817938983651,
+   "label_i": "f1248[MTCO3P12,MTCO2P12,IGKV1D-37]",
+   "label_j": "f1605[HOPX,PEG10,PPP2R5A]"
+  },
+  {
+   "feat_i": 958,
+   "feat_j": 1110,
+   "q_ij": 0.0326562576212976,
+   "label_i": "f958[AQP1,DISP3,EDN3]",
+   "label_j": "f1110[TSPAN11,TIE1,ARHGEF15]"
+  },
+  {
+   "feat_i": 261,
+   "feat_j": 1110,
+   "q_ij": 0.031845893723563216,
+   "label_i": "f261[PLA1A,LINC00992,PAIP2B]",
+   "label_j": "f1110[TSPAN11,TIE1,ARHGEF15]"
+  },
+  {
+   "feat_i": 648,
+   "feat_j": 1047,
+   "q_ij": 0.03096292960336112,
+   "label_i": "f648[ARL4C,IQGAP2,ZNF536]",
+   "label_j": "f1047[C12orf75,SEL1L3,LINC00937]"
+  },
+  {
+   "feat_i": 1047,
+   "feat_j": 1706,
+   "q_ij": 0.030959440543842708,
+   "label_i": "f1047[C12orf75,SEL1L3,LINC00937]",
+   "label_j": "f1706[GPR183,TGFBR2,ARGFXP2]"
+  },
+  {
+   "feat_i": 997,
+   "feat_j": 1627,
+   "q_ij": 0.03080697312041302,
+   "label_i": "f997[ASPA,MT-ND2,MT-CO1]",
+   "label_j": "f1627[Phagocytosis]"
+  },
+  {
+   "feat_i": 348,
+   "feat_j": 997,
+   "q_ij": 0.030536920157457063,
+   "label_i": "f348[IGHV2-70,IGKV1-9,IGKV3D-20]",
+   "label_j": "f997[ASPA,MT-ND2,MT-CO1]"
+  },
+  {
+   "feat_i": 571,
+   "feat_j": 1047,
+   "q_ij": 0.02974866541812861,
+   "label_i": "f571[IGKV1OR2-118,IGHE,LMCD1]",
+   "label_j": "f1047[C12orf75,SEL1L3,LINC00937]"
+  },
+  {
+   "feat_i": 1248,
+   "feat_j": 1627,
+   "q_ij": 0.02925535277623636,
+   "label_i": "f1248[MTCO3P12,MTCO2P12,IGKV1D-37]",
+   "label_j": "f1627[Phagocytosis]"
+  },
+  {
+   "feat_i": 378,
+   "feat_j": 997,
+   "q_ij": 0.028827225889352572,
+   "label_i": "f378[MT-RNR2,MT-RNR1,MT-CYB]",
+   "label_j": "f997[ASPA,MT-ND2,MT-CO1]"
+  },
+  {
+   "feat_i": 1605,
+   "feat_j": 1963,
+   "q_ij": -0.028748844157072396,
+   "label_i": "f1605[HOPX,PEG10,PPP2R5A]",
+   "label_j": "f1963[MT-ATP6,MT-ND3,MT-CO3]"
+  },
+  {
+   "feat_i": 997,
+   "feat_j": 1605,
+   "q_ij": -0.028573278888141106,
+   "label_i": "f997[ASPA,MT-ND2,MT-CO1]",
+   "label_j": "f1605[HOPX,PEG10,PPP2R5A]"
+  },
+  {
+   "feat_i": 886,
+   "feat_j": 1110,
+   "q_ij": 0.028535928037470713,
+   "label_i": "f886[RPL6,RPL7,NACA]",
+   "label_j": "f1110[TSPAN11,TIE1,ARHGEF15]"
+  },
+  {
+   "feat_i": 1047,
+   "feat_j": 1688,
+   "q_ij": 0.0282583157728545,
+   "label_i": "f1047[C12orf75,SEL1L3,LINC00937]",
+   "label_j": "f1688[POLR2L,NDUFB2,CCDC80]"
+  },
+  {
+   "feat_i": 997,
+   "feat_j": 1489,
+   "q_ij": 0.028214731778393204,
+   "label_i": "f997[ASPA,MT-ND2,MT-CO1]",
+   "label_j": "f1489[B2M,HLA-B,HLA-C]"
+  },
+  {
+   "feat_i": 267,
+   "feat_j": 1047,
+   "q_ij": 0.02815697786960767,
+   "label_i": "f267[Vibrio cholerae infection]",
+   "label_j": "f1047[C12orf75,SEL1L3,LINC00937]"
+  },
+  {
+   "feat_i": 348,
+   "feat_j": 1248,
+   "q_ij": 0.02809342161721916,
+   "label_i": "f348[IGHV2-70,IGKV1-9,IGKV3D-20]",
+   "label_j": "f1248[MTCO3P12,MTCO2P12,IGKV1D-37]"
+  },
+  {
+   "feat_i": 571,
+   "feat_j": 1750,
+   "q_ij": 0.02804663227804428,
+   "label_i": "f571[IGKV1OR2-118,IGHE,LMCD1]",
+   "label_j": "f1750[IGHA1,IGKC,IGLC2]"
+  },
+  {
+   "feat_i": 816,
+   "feat_j": 1047,
+   "q_ij": 0.02790422931496286,
+   "label_i": "f816[Transport To Golgi And Subsequent Modi]",
+   "label_j": "f1047[C12orf75,SEL1L3,LINC00937]"
+  },
+  {
+   "feat_i": 1047,
+   "feat_j": 1856,
+   "q_ij": 0.027900098603834803,
+   "label_i": "f1047[C12orf75,SEL1L3,LINC00937]",
+   "label_j": "f1856[MARK1,RASGRF1,IGSF9B]"
+  },
+  {
+   "feat_i": 232,
+   "feat_j": 1627,
+   "q_ij": 0.02775428204195595,
+   "label_i": "f232[POSTN,IGHV2-70,CCL19]",
+   "label_j": "f1627[Phagocytosis]"
+  },
+  {
+   "feat_i": 710,
+   "feat_j": 1110,
+   "q_ij": 0.027641816788710583,
+   "label_i": "f710[WSCD2,PNRC1,LINC01208]",
+   "label_j": "f1110[TSPAN11,TIE1,ARHGEF15]"
+  }
+ ],
+ "seconds": 1008.8849730491638
+}

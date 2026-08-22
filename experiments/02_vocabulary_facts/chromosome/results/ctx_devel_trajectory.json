@@ -1,0 +1,184 @@
+{
+ "taps": {
+  "L02": {
+   "clusters": [
+    "HSC_1",
+    "HSC_2",
+    "Precursors",
+    "Mono_2",
+    "Ery_1",
+    "Mono_1",
+    "CLP",
+    "DCs"
+   ],
+   "pseudotime": [
+    0.10902894165823256,
+    0.34794857760036085,
+    0.4678215612132125,
+    0.5458513752406771,
+    0.5455423952065778,
+    0.5740513794859118,
+    0.626607609595517,
+    0.7383518794025097
+   ],
+   "axes": {
+    "nuclear_vs_surface": {
+     "validity_auc": 0.7003663031123175,
+     "split_half_reprod": 0.9523809523809524,
+     "n_fixed_genes": 367,
+     "rho_pseudotime": 0.19047619047619052,
+     "loading_by_cluster": {
+      "HSC_1": 0.018,
+      "HSC_2": 0.154,
+      "Precursors": -0.172,
+      "Mono_2": 0.351,
+      "Ery_1": 0.233,
+      "Mono_1": 0.341,
+      "CLP": -1.923,
+      "DCs": 0.231
+     },
+     "loading_by_lineage": {
+      "lymphoid": -1.923,
+      "myeloid": 0.308,
+      "stem": 0.0,
+      "erythroid": 0.233
+     }
+    },
+    "mito_vs_cytoskeleton": {
+     "validity_auc": 0.7912794102449274,
+     "split_half_reprod": 0.9761904761904763,
+     "n_fixed_genes": 367,
+     "rho_pseudotime": -0.04761904761904763,
+     "loading_by_cluster": {
+      "HSC_1": -0.499,
+      "HSC_2": -0.053,
+      "Precursors": 0.552,
+      "Mono_2": 0.473,
+      "Ery_1": 0.663,
+      "Mono_1": 0.319,
+      "CLP": -2.654,
+      "DCs": 0.177
+     },
+     "loading_by_lineage": {
+      "lymphoid": -2.654,
+      "myeloid": 0.323,
+      "stem": 0.0,
+      "erythroid": 0.663
+     }
+    },
+    "transcription_vs_transport": {
+     "validity_auc": 0.6775180072028812,
+     "split_half_reprod": 0.9761904761904763,
+     "n_fixed_genes": 367,
+     "rho_pseudotime": -0.04761904761904763,
+     "loading_by_cluster": {
+      "HSC_1": 0.214,
+      "HSC_2": 0.028,
+      "Precursors": -0.242,
+      "Mono_2": 0.004,
+      "Ery_1": -0.167,
+      "Mono_1": 0.06,
+      "CLP": -0.052,
+      "DCs": 0.054
+     },
+     "loading_by_lineage": {
+      "lymphoid": -0.052,
+      "myeloid": 0.039,
+      "stem": 0.0,
+      "erythroid": -0.167
+     }
+    }
+   }
+  },
+  "L04": {
+   "clusters": [
+    "HSC_1",
+    "HSC_2",
+    "Precursors",
+    "Mono_2",
+    "Ery_1",
+    "Mono_1",
+    "CLP",
+    "DCs"
+   ],
+   "pseudotime": [
+    0.10902894165823256,
+    0.34794857760036085,
+    0.4678215612132125,
+    0.5458513752406771,
+    0.5455423952065778,
+    0.5740513794859118,
+    0.626607609595517,
+    0.7383518794025097
+   ],
+   "axes": {
+    "nuclear_vs_surface": {
+     "validity_auc": 0.640661352676196,
+     "split_half_reprod": 1.0,
+     "n_fixed_genes": 367,
+     "rho_pseudotime": 0.0,
+     "loading_by_cluster": {
+      "HSC_1": -0.935,
+      "HSC_2": 0.101,
+      "Precursors": 0.834,
+      "Mono_2": 0.758,
+      "Ery_1": 0.989,
+      "Mono_1": 0.38,
+      "CLP": -4.495,
+      "DCs": 0.607
+     },
+     "loading_by_lineage": {
+      "lymphoid": -4.495,
+      "myeloid": 0.581,
+      "stem": 0.0,
+      "erythroid": 0.989
+     }
+    },
+    "mito_vs_cytoskeleton": {
+     "validity_auc": 0.771679469955332,
+     "split_half_reprod": 1.0,
+     "n_fixed_genes": 367,
+     "rho_pseudotime": -0.023809523809523815,
+     "loading_by_cluster": {
+      "HSC_1": -1.889,
+      "HSC_2": -0.203,
+      "Precursors": 2.092,
+      "Mono_2": 1.222,
+      "Ery_1": 2.001,
+      "Mono_1": 0.393,
+      "CLP": -4.986,
+      "DCs": 0.871
+     },
+     "loading_by_lineage": {
+      "lymphoid": -4.986,
+      "myeloid": 0.829,
+      "stem": -0.0,
+      "erythroid": 2.001
+     }
+    },
+    "transcription_vs_transport": {
+     "validity_auc": 0.644297719087635,
+     "split_half_reprod": 0.9761904761904763,
+     "n_fixed_genes": 367,
+     "rho_pseudotime": 0.1666666666666667,
+     "loading_by_cluster": {
+      "HSC_1": 0.048,
+      "HSC_2": 0.068,
+      "Precursors": -0.115,
+      "Mono_2": 0.334,
+      "Ery_1": -0.438,
+      "Mono_1": 0.545,
+      "CLP": -0.445,
+      "DCs": 0.269
+     },
+     "loading_by_lineage": {
+      "lymphoid": -0.445,
+      "myeloid": 0.383,
+      "stem": 0.0,
+      "erythroid": -0.438
+     }
+    }
+   }
+  }
+ }
+}

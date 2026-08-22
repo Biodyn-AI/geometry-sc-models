@@ -1,0 +1,67 @@
+{
+ "dataset": "LARRY_sp500",
+ "n_cells": 865,
+ "n_clones": 167,
+ "neu_biased_frac": 0.31213872832369943,
+ "min_late": 3,
+ "auroc": {
+  "position": 0.7669716775599128,
+  "cospar_mlp": 0.6997821350762528,
+  "geometry": 0.5398319327731093,
+  "fate_lean": 0.3696949891067538,
+  "position_plus_geometry": 0.7605353252412076,
+  "gain_over_position": -0.006436352318705207
+ },
+ "fate_lean": {
+  "auroc": 0.3696949891067538,
+  "clone_perm_p": 0.5632183908045977,
+  "null_mean": 0.3825743788325203,
+  "null_sd": 0.061095092152648335,
+  "corr_with_neu_fraction": 0.028258456611500022
+ },
+ "matched_stratum": {
+  "mean_within_bin_auroc": 0.48942087513462,
+  "per_bin": [
+   0.6939024390243902,
+   0.5050505050505051,
+   0.4038888888888889,
+   0.3224446786090622,
+   0.5762820512820512,
+   0.5729032258064516,
+   0.41742286751361163,
+   0.5202702702702703,
+   0.4547710976282405,
+   0.42727272727272725
+  ],
+  "per_bin_n": [
+   87,
+   86,
+   87,
+   86,
+   86,
+   87,
+   86,
+   87,
+   86,
+   87
+  ]
+ },
+ "richer_geometry": {
+  "auroc_tangent3": 0.6557173980703392,
+  "auroc_position_plus_tangent3": 0.7459632741985683,
+  "auroc_curvature": 0.419327731092437,
+  "corr_tangentproj_resid": -0.07484553893190277,
+  "corr_curvature_resid": 0.017057474678312385
+ },
+ "day2_only": {
+  "n": 143,
+  "auroc_pos": 0.7056303549571603,
+  "auroc_lean": 0.3663810689514484,
+  "auroc_both": 0.682578539371685
+ },
+ "verdict": {
+  "geometry_beats_chance": false,
+  "geometry_adds_over_position": false,
+  "hidden_variable_signature": false
+ }
+}

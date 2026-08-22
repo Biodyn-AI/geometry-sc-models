@@ -1,0 +1,46 @@
+{
+ "model": "uce_100m_L2",
+ "test": "cell_cycle_curvature",
+ "n_cells": 3000,
+ "n_markers": 87,
+ "reps": {
+  "raw_mean_all": {
+   "dim": 1280,
+   "n": 3000,
+   "linear_full_circ_r2": 0.7017368053949153,
+   "bilinear_circ_r2": 0.7164824343281155,
+   "bilinear_gain": 0.014745628933200194,
+   "linear_20d": 0.7987830941529481,
+   "knn_20d": 0.6717102116043112,
+   "curvature": -0.1270728825486369,
+   "loop_align_rho": 0.17539905574312806
+  },
+  "raw_mean_ctrl": {
+   "dim": 1280,
+   "n": 1000,
+   "linear_full_circ_r2": 0.530792034200371,
+   "bilinear_circ_r2": 0.25805646666071,
+   "bilinear_gain": -0.272735567539661,
+   "linear_20d": 0.7469255612520217,
+   "knn_20d": 0.5890976704813804,
+   "curvature": -0.1578278907706413,
+   "loop_align_rho": 0.3887818962839456
+  },
+  "synthetic_linear_control": {
+   "dim": 1280,
+   "n": 3000,
+   "linear_full_circ_r2": 0.9295110732133958,
+   "bilinear_circ_r2": 0.9490383262402025,
+   "bilinear_gain": 0.01952725302680669,
+   "linear_20d": 0.9684548573028368,
+   "knn_20d": 0.923766967449053,
+   "curvature": -0.0446878898537838,
+   "loop_align_rho": 0.9351130275218198
+  }
+ },
+ "verdict": {
+  "curvature_all": -0.1270728825486369,
+  "synthetic_control_curvature": -0.0446878898537838,
+  "curved": false
+ }
+}

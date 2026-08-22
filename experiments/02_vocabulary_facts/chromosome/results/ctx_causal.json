@@ -1,0 +1,44 @@
+{
+ "alphas_xResidNorm": [
+  0.25,
+  0.5,
+  1.0
+ ],
+ "site": 3,
+ "n_cells": 30,
+ "n_nuclear_tokens": 4844,
+ "n_surface_tokens": 5520,
+ "signed": {
+  "alpha_0.25": {
+   "spec_plus": 0.07485165678195276,
+   "spec_minus": -0.013211982062274174,
+   "func_swing": 0.08806363884422691,
+   "func_swing_sem": 0.018041100416640966,
+   "rand_swing": -0.010676947638826727,
+   "func_gt_rand": 23,
+   "n": 30,
+   "sign_p": 0.002611439675092697
+  },
+  "alpha_0.5": {
+   "spec_plus": 0.15965513010872492,
+   "spec_minus": -0.11175870961958165,
+   "func_swing": 0.27141383972830657,
+   "func_swing_sem": 0.04687465887021862,
+   "rand_swing": -0.015017147157761186,
+   "func_gt_rand": 24,
+   "n": 30,
+   "sign_p": 0.000715453177690506
+  },
+  "alpha_1.0": {
+   "spec_plus": 0.28466511121236,
+   "spec_minus": -0.5302101303582601,
+   "func_swing": 0.81487524157062,
+   "func_swing_sem": 0.08135414462773072,
+   "rand_swing": -0.02487152244545305,
+   "func_gt_rand": 28,
+   "n": 30,
+   "sign_p": 4.33996319770813e-07
+  }
+ },
+ "verdict": "at 0.5xResid: spec(+u)=+0.160, spec(-u)=-0.112, signed swing +0.2714 (random -0.0150), func>rand 24/30 p=7.2e-04. CAUSALLY USED \u2014 the readout FLIPS with the sign of the functional push (nuclear-gene logits rise toward +u, fall toward -u) at disjoint positions, dose-dependently, far beyond the sign-independent random control. Level 1 upgrades from 'represented' to 'represented AND causally used'."
+}

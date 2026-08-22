@@ -1,0 +1,33 @@
+{
+  "model": "vandijklab/C2S-Scale-Gemma-2-2B",
+  "layers": [
+    0,
+    1,
+    2,
+    4,
+    6,
+    9,
+    13,
+    17
+  ],
+  "nC": 12,
+  "nG": 4876,
+  "cap": 50,
+  "floor": 25,
+  "contexts": [
+    "AT1",
+    "AT2",
+    "Bcell",
+    "CD4T",
+    "CD8T",
+    "basal",
+    "cMono",
+    "capEndo",
+    "iMono",
+    "kidneyEpi",
+    "macrophage",
+    "neutrophil"
+  ],
+  "balanced_gene_ctx_at_cap": 10912,
+  "H": 2304
+}

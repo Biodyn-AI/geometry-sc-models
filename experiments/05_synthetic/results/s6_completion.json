@@ -1,0 +1,182 @@
+[
+ {
+  "gap_deg": 0.0,
+  "seed": 0,
+  "n_train": 20000,
+  "n_gap": 2000,
+  "val_corr": 0.7829051817038516,
+  "model_decode": {
+   "R_diff": 0.9939195789609496,
+   "median_err_deg": 4.116058101606319
+  },
+  "data_decode": {
+   "R_diff": 0.9976108098255283,
+   "median_err_deg": 2.6735807609067512
+  },
+  "model_bridge": 0.8368629790073555,
+  "data_bridge": 0.938129625725052,
+  "secs": 205.9
+ },
+ {
+  "gap_deg": 30.0,
+  "seed": 0,
+  "n_train": 20000,
+  "n_gap": 2646,
+  "val_corr": 0.7852150438367007,
+  "model_decode": {
+   "R_diff": 0.9943337227131362,
+   "median_err_deg": 4.102758166803881
+  },
+  "data_decode": {
+   "R_diff": 0.9977870400623041,
+   "median_err_deg": 2.5787013111439734
+  },
+  "model_bridge": 0.5740098280287774,
+  "data_bridge": 0.9428876653835763,
+  "secs": 204.1
+ },
+ {
+  "gap_deg": 60.0,
+  "seed": 0,
+  "n_train": 20000,
+  "n_gap": 5144,
+  "val_corr": 0.783436655988698,
+  "model_decode": {
+   "R_diff": 0.9910086410273101,
+   "median_err_deg": 5.166718982646628
+  },
+  "data_decode": {
+   "R_diff": 0.9974495423163896,
+   "median_err_deg": 2.803243494026418
+  },
+  "model_bridge": 0.5300050901324278,
+  "data_bridge": 0.7342380396932351,
+  "secs": 205.3
+ },
+ {
+  "gap_deg": 90.0,
+  "seed": 0,
+  "n_train": 20000,
+  "n_gap": 7634,
+  "val_corr": 0.7812401988428326,
+  "model_decode": {
+   "R_diff": 0.9872974701557152,
+   "median_err_deg": 7.8507941602250355
+  },
+  "data_decode": {
+   "R_diff": 0.9966729647529833,
+   "median_err_deg": 3.167861610288568
+  },
+  "model_bridge": 0.3691709389150906,
+  "data_bridge": 0.5032855450137873,
+  "secs": 206.8
+ },
+ {
+  "gap_deg": 120.0,
+  "seed": 0,
+  "n_train": 19852,
+  "n_gap": 10148,
+  "val_corr": 0.7847162486459869,
+  "model_decode": {
+   "R_diff": 0.9774389832984227,
+   "median_err_deg": 8.740428472734564
+  },
+  "data_decode": {
+   "R_diff": 0.9921299810358964,
+   "median_err_deg": 5.450660061064809
+  },
+  "model_bridge": 0.27050212698122467,
+  "data_bridge": 0.3478066616996904,
+  "secs": 211.2
+ },
+ {
+  "gap_deg": 0.0,
+  "seed": 1,
+  "n_train": 20000,
+  "n_gap": 2000,
+  "val_corr": 0.7791463731579984,
+  "model_decode": {
+   "R_diff": 0.9920124521092265,
+   "median_err_deg": 4.596289085526153
+  },
+  "data_decode": {
+   "R_diff": 0.997530461302087,
+   "median_err_deg": 2.7239709038106508
+  },
+  "model_bridge": 0.9626033779614152,
+  "data_bridge": 0.9370646509685134,
+  "secs": 221.6
+ },
+ {
+  "gap_deg": 30.0,
+  "seed": 1,
+  "n_train": 20000,
+  "n_gap": 2487,
+  "val_corr": 0.774140470867598,
+  "model_decode": {
+   "R_diff": 0.9935863065021798,
+   "median_err_deg": 4.401331399786443
+  },
+  "data_decode": {
+   "R_diff": 0.9975397693621438,
+   "median_err_deg": 2.700091270985894
+  },
+  "model_bridge": 0.8269158374276174,
+  "data_bridge": 0.9383237512818566,
+  "secs": 222.0
+ },
+ {
+  "gap_deg": 60.0,
+  "seed": 1,
+  "n_train": 20000,
+  "n_gap": 5019,
+  "val_corr": 0.7771439070249181,
+  "model_decode": {
+   "R_diff": 0.9904198106433388,
+   "median_err_deg": 6.124846040572494
+  },
+  "data_decode": {
+   "R_diff": 0.9974202015560609,
+   "median_err_deg": 2.7584102475310033
+  },
+  "model_bridge": 0.5865240049594659,
+  "data_bridge": 0.7333664141183988,
+  "secs": 224.9
+ },
+ {
+  "gap_deg": 90.0,
+  "seed": 1,
+  "n_train": 20000,
+  "n_gap": 7504,
+  "val_corr": 0.7752131725951039,
+  "model_decode": {
+   "R_diff": 0.9912163406447206,
+   "median_err_deg": 16.89246722583259
+  },
+  "data_decode": {
+   "R_diff": 0.9959694537519933,
+   "median_err_deg": 3.543436741509595
+  },
+  "model_bridge": 0.3491633475382891,
+  "data_bridge": 0.5109578011065955,
+  "secs": 232.0
+ },
+ {
+  "gap_deg": 120.0,
+  "seed": 1,
+  "n_train": 20000,
+  "n_gap": 9954,
+  "val_corr": 0.7794935811201442,
+  "model_decode": {
+   "R_diff": 0.9484739873016895,
+   "median_err_deg": 14.861254829857387
+  },
+  "data_decode": {
+   "R_diff": 0.9872936835545286,
+   "median_err_deg": 7.23077642935155
+  },
+  "model_bridge": 0.2847033678759426,
+  "data_bridge": 0.3511713793256762,
+  "secs": 235.0
+ }
+]

@@ -1,0 +1,18 @@
+{
+ "n_genes_matched": 18287,
+ "chance_chrom": 0.045454545454545456,
+ "maxtoki_217M": {
+  "dim": 1232,
+  "chromosome_random": 0.4852403723787781,
+  "chromosome_group": 0.36788072184296255,
+  "position_rho": 0.41189350456618806,
+  "n_chr_position": 22
+ },
+ "maxtoki_1B": {
+  "dim": 2304,
+  "chromosome_random": 0.8372278210877407,
+  "chromosome_group": 0.7034701003588991,
+  "position_rho": 0.6258537658754627,
+  "n_chr_position": 22
+ }
+}

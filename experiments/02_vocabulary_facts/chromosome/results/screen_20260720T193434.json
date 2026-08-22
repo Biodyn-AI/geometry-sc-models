@@ -1,0 +1,33 @@
+[
+ {
+  "name": "compartment_texture_resid",
+  "kind": "continuous",
+  "n_genes": 5000,
+  "meta": {
+   "source": "local compartment TEXTURE from UCE species_chrom coordinates. For each autosomal gene at coordinate-sorted index i: d1 = log1p(#gene starts in [start-1Mb, start+1Mb], self excluded); the TEXTURE label = std of d1 over all genes whose start is within +-5 Mb of gene i (self included, require >= 5 genes in the window else the gene is dropped), a contiguous slice under the coordinate sort so it is computed by cumulative-sum. LABEL = texture least-squares residualised WITHIN CHROMOSOME on [vander(position_rank, 6), d1, d1^2, rank(d1)] so the position channel and the local-density LEVEL channel (both already won) are removed, leaving a second-moment (variance-of-density) statistic. Chromosomes whose residual still exceeds |Spearman| 0.15 vs position OR vs d1 are DROPPED. Verified feasibility: n~18911 before the audit drop; residual |rho| vs position 0.027 mean / 0.086 max, vs d1 0.034 mean / 0.116 max; residual sd ~0.10. Distinct from the FAILED density_asymmetry_resid (signed gradient): residual corr with signed asymmetry only +0.038.",
+   "group_by": "chromosome",
+   "model_specificity_rule": "scgpt_we and geneformer_we are FAIR baselines in the gate; report maxtoki minus each. MaxToki-specific ONLY on a > 0.02 margin over BOTH. Otherwise reframe as an SCFM-GENERAL compartment-texture channel, not a MaxToki idiosyncrasy.",
+   "unfair_refs": [],
+   "unfair_reason": "NONE \u2014 deliberately empty, coexpr_k562 INCLUDED. The sibling chromosome/position hypotheses exclude k562 because whole-chromosome aneuploidy amplifies an entire chromosome, so same-chromosome genes co-vary through DNA DOSAGE and CHROMOSOME identity leaks. That excuse does NOT transfer to this label: (a) a uniform whole-chromosome dosage gain is a within-chromosome CONSTANT, absorbed by the per-chromosome residualisation intercept (vander(rank,6) carries the constant column); and (b) the label is a +-5 Mb VARIANCE of neighbour density counts, and a spatially uniform dosage adds the same offset everywhere in the window, leaving its dispersion unchanged \u2014 it cannot manufacture texture. So k562 stays IN the gate: a clean pass over it is positive evidence of chromatin-compartment structure rather than CNV dosage, and a k562 WIN here would be a RED FLAG about the label construction (an unidentified leak), not a nuisance to excuse.",
+   "expect": "UNCERTAIN, informative either way \u2014 a strictly harder ask than the +-1 Mb density-LEVEL family because it is a SECOND-MOMENT statistic. If it beats all fair baselines (with the > 0.02 SCFM margin), MaxToki carries a compartment-TEXTURE channel (interior-vs-edge homogeneity) separable from both position and the local density level it already won. If it collapses while nb_gene_density_resid passes, the model's density code carries the LEVEL but not its local dispersion \u2014 a clean negative, since the hard self-audit removes the 'position/d1 in disguise' escape hatch and the +0.038 correlation with signed asymmetry rules out a gradient re-detection."
+  },
+  "maxtoki_lmhead": 0.09115041699761715,
+  "maxtoki_we": 0.1061311862716052,
+  "coexpr": 0.1002868800801728,
+  "coexpr_devel": 0.09546547919868889,
+  "coexpr_k562": 0.1279352530856513,
+  "esm2": 0.10454221177091785,
+  "best_model_basis": "maxtoki_we",
+  "null_mean": 0.10860973290051827,
+  "null_sd": 0.013197869004297192,
+  "z": -0.18779898787501803,
+  "p_perm": 0.47619047619047616,
+  "p_floor": 0.047619047619047616,
+  "decodable": false,
+  "unfair_refs": [],
+  "margin_over_refs": -0.02180406681404609,
+  "margin_all_refs": -0.02180406681404609,
+  "model_specific": false,
+  "tie": false
+ }
+]

@@ -1,0 +1,24 @@
+{
+ "diagnostic": {
+  "tertile_cos": 0.04182754640095884,
+  "random_cos": 0.1320055014327983,
+  "n_chr": 22
+ },
+ "predictive": {
+  "ridge": 0.41189350456618806,
+  "local_linear": 0.3416279641830711,
+  "two_stage": 0.3617852196325288,
+  "drop_topPC": 0.31194216415996245,
+  "pls": 0.35593715928491637,
+  "concat": 0.40406998487290635
+ },
+ "n_chr": {
+  "ridge": 22,
+  "local_linear": 22,
+  "two_stage": 22,
+  "drop_topPC": 22,
+  "pls": 22,
+  "concat": 22
+ },
+ "model_1b_ridge": 0.6258537658754627
+}

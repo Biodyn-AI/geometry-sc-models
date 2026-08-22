@@ -1,0 +1,44 @@
+{
+ "alphas_xResidNorm": [
+  0.25,
+  0.5,
+  1.0
+ ],
+ "site": 3,
+ "n_cells": 30,
+ "n_nuclear_tokens": 873,
+ "n_surface_tokens": 334,
+ "signed": {
+  "alpha_0.25": {
+   "spec_plus": -0.001304958043194109,
+   "spec_minus": 0.07328942011343435,
+   "func_swing": -0.07459437815662846,
+   "func_swing_sem": 0.015351831754976925,
+   "rand_swing": -0.013911408813395703,
+   "func_gt_rand": 7,
+   "n": 30,
+   "sign_p": 0.9992845468223095
+  },
+  "alpha_0.5": {
+   "spec_plus": 0.017375748996222053,
+   "spec_minus": 0.24327004400476196,
+   "func_swing": -0.22589429500853989,
+   "func_swing_sem": 0.033942437610570676,
+   "rand_swing": -0.02874996735435697,
+   "func_gt_rand": 5,
+   "n": 30,
+   "sign_p": 0.99997026193887
+  },
+  "alpha_1.0": {
+   "spec_plus": 0.03334297379878397,
+   "spec_minus": 0.4559165355074617,
+   "func_swing": -0.4225735617086777,
+   "func_swing_sem": 0.05150997560720123,
+   "rand_swing": -0.04759039520589898,
+   "func_gt_rand": 3,
+   "n": 30,
+   "sign_p": 0.9999995660036802
+  }
+ },
+ "verdict": "at 0.5xResid: spec(+u)=+0.017, spec(-u)=+0.243, signed swing -0.2259 (random -0.0287), func>rand 5/30 p=1.0e+00. NOT cleanly causal \u2014 the readout does not flip with the sign of the functional direction beyond the random control, so the earlier apparent effect was the baseline nuclear/surface asymmetry under generic perturbation. Level 1 stands as a representation result only."
+}

@@ -1,0 +1,71 @@
+{
+ "phase_info": {
+  "n_cc_genes": 87,
+  "pc12_var_ratio": 0.3062231809973406
+ },
+ "layers": {
+  "L09": {
+   "normal": {
+    "circ_corr": 0.7366765597431639,
+    "median_err_deg": 26.355570258229264,
+    "z": 42.94937043573683
+   },
+   "radial": {
+    "radius_cv": 0.5769095176182698,
+    "frac_inside_half_median": 0.158,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   },
+   "nocc": {
+    "circ_corr": 0.6235652248202155,
+    "median_err_deg": 35.625138880360524,
+    "z": 50.68446646524727
+   },
+   "retention": 0.8464572634654886
+  },
+  "L15": {
+   "normal": {
+    "circ_corr": 0.8468719295053392,
+    "median_err_deg": 16.50092448368127,
+    "z": 32.082886182874006
+   },
+   "radial": {
+    "radius_cv": 0.47591879476046095,
+    "frac_inside_half_median": 0.145,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   },
+   "nocc": {
+    "circ_corr": 0.7851469562837635,
+    "median_err_deg": 21.34392780067711,
+    "z": 48.65398176973978
+   },
+   "retention": 0.9271141585026245
+  },
+  "L21": {
+   "normal": {
+    "circ_corr": 0.8976549798642899,
+    "median_err_deg": 12.432958855990133,
+    "z": 44.40302085700534
+   },
+   "radial": {
+    "radius_cv": 0.380400776924515,
+    "frac_inside_half_median": 0.108,
+    "calib_ring_radius_cv": 0.1488443723522642,
+    "calib_ring_frac_centre": 0.0,
+    "calib_disk_radius_cv": 0.3507760618456928,
+    "calib_disk_frac_centre": 0.12566666666666668
+   },
+   "nocc": {
+    "circ_corr": 0.8545755072774497,
+    "median_err_deg": 15.445213484435317,
+    "z": 53.808980492415635
+   },
+   "retention": 0.9520088747301273
+  }
+ }
+}

@@ -1,0 +1,97 @@
+{
+ "model": "state_st",
+ "n_perts": 131,
+ "n_src": 420,
+ "fates": [
+  "ery",
+  "myeloid",
+  "lymphoid",
+  "mega"
+ ],
+ "driver_coverage": {
+  "ery": [
+   "GATA1"
+  ],
+  "myeloid": [],
+  "lymphoid": [
+   "FOXO1"
+  ],
+  "mega": [
+   "GATA1"
+  ]
+ },
+ "gate": {
+  "mean_pairwise_cos": 0.224129340512541,
+  "eff_rank": 11.38713305293478,
+  "passed": true,
+  "delta_norm_median": 0.27569186268570883
+ },
+ "ranks": {
+  "ery": {
+   "GATA1": 111
+  },
+  "myeloid": {},
+  "lymphoid": {
+   "FOXO1": 64
+  },
+  "mega": {
+   "GATA1": 37
+  }
+ },
+ "top10": {
+  "ery": [
+   "BRIP1",
+   "FOXL2",
+   "HMGA1",
+   "TERF1",
+   "LDB1",
+   "FOXO1",
+   "GTF3A",
+   "KLF7",
+   "CTCF",
+   "BARD1"
+  ],
+  "myeloid": [
+   "YBX1",
+   "AATF",
+   "GABPA",
+   "PREB",
+   "ZNF143",
+   "TERF2",
+   "NF1",
+   "HMGA1",
+   "ILF3",
+   "ATF5"
+  ],
+  "lymphoid": [
+   "NFRKB",
+   "POLR1A",
+   "HOXC10",
+   "ZBTB17",
+   "STAT5B",
+   "DMAP1",
+   "CTCF",
+   "NELFCD",
+   "TERF1",
+   "CDC5L"
+  ],
+  "mega": [
+   "TSG101",
+   "HEXIM1",
+   "MED1",
+   "ZBTB14",
+   "TAF1",
+   "CLOCK",
+   "EHMT2",
+   "MCM5",
+   "URI1",
+   "ZBTB44"
+  ]
+ },
+ "H2_gata1_specificity": {
+  "ery": -0.43971164487233694,
+  "myeloid": 0.009363552071971093,
+  "lymphoid": -0.05109073302480098,
+  "mega": 0.2784393579316974
+ }
+}

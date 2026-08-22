@@ -1,0 +1,42 @@
+{
+ "model": "geneformer",
+ "dataset": "setty",
+ "n": 2519,
+ "d": 1152,
+ "quick": true,
+ "r2_lin": 0.8974815083435909,
+ "r2_quad": 0.9371235993769638,
+ "delta_q": 0.039642091033372906,
+ "delta_q_ci": [
+  0.03435975692277044,
+  0.044844532868369404
+ ],
+ "cfgs": [
+  [
+   16,
+   0.01
+  ],
+  [
+   32,
+   0.01
+  ],
+  [
+   16,
+   0.01
+  ],
+  [
+   32,
+   0.01
+  ],
+  [
+   32,
+   0.01
+  ]
+ ],
+ "modal_r": 32,
+ "modal_lam": 0.01,
+ "delta_q_no_abundance": null,
+ "r2_lin_no_abundance": null,
+ "rank_sweep": null,
+ "seconds": 332.11325693130493
+}

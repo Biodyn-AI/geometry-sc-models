@@ -1,0 +1,73 @@
+{
+ "real_radius": 0.8610499820924964,
+ "sets": {
+  "heldout_G1S": [
+   "ACVR1B",
+   "CCND1",
+   "CCND2",
+   "CDC7",
+   "CDKN1A",
+   "GPR132",
+   "HINFP",
+   "ID4",
+   "LATS2",
+   "PHF8",
+   "PIM2",
+   "PLK2",
+   "RHOU",
+   "SPDYA"
+  ],
+  "heldout_G2M": [
+   "ABCB1",
+   "CCDC57",
+   "CDK14",
+   "CDS1",
+   "CHEK2",
+   "FBXL17",
+   "FBXL7",
+   "FBXL8",
+   "TPD52L1",
+   "USH1C"
+  ],
+  "n_inpanel": [
+   33,
+   29
+  ],
+  "n_ctrl": 5401
+ },
+ "conds": {
+  "heldout_familiar": {
+   "mean_A": 189.3938362392207,
+   "mean_B": 192.90434933850955,
+   "separation_of_means": 3.5105130992888576,
+   "paired_sep_mean": 8.885789152798056,
+   "paired_sep_sem": 2.4449246807510616,
+   "shuffled": 5.593583578068603,
+   "radius": 0.7203705520828046,
+   "radius_vs_real": 0.8366187411469227,
+   "n": 24
+  },
+  "inpanel": {
+   "mean_A": 173.381400531307,
+   "mean_B": 207.08360551219718,
+   "separation_of_means": 33.70220498089017,
+   "paired_sep_mean": 35.00881941355218,
+   "paired_sep_sem": 9.917615201258412,
+   "shuffled": 31.03181199598228,
+   "radius": 0.6257526233246061,
+   "radius_vs_real": 0.7267320554422658,
+   "n": 24
+  },
+  "matched_random": {
+   "mean_A": 195.2354897308214,
+   "mean_B": 189.15709271066336,
+   "separation_of_means": 6.078397020158036,
+   "paired_sep_mean": 7.644583711051697,
+   "paired_sep_sem": 1.9592237730854316,
+   "shuffled": 0.4336597913063258,
+   "radius": 0.7596656576527662,
+   "radius_vs_real": 0.8822550066218581,
+   "n": 24
+  }
+ }
+}

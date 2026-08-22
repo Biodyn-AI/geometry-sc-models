@@ -1,0 +1,43 @@
+{
+ "model": "uce_100m_L2",
+ "test": "cell_type_curvature",
+ "tissue": "immune",
+ "n_cells": 8000,
+ "n_types": 43,
+ "celltype_knn": {
+  "bal_acc": 0.4329125641855759,
+  "null": 0.030725206051713073,
+  "margin": 0.4021873581338628,
+  "n": 7978
+ },
+ "curvature": {
+  "dim": 20,
+  "chance": 0.16943521594684385,
+  "linear_acc": 0.8106310210177126,
+  "linear_f1": 0.5550363775504511,
+  "quad_acc": 0.809864492673791,
+  "quad_f1": 0.5974963152884729,
+  "knn_acc": 0.821619641013714,
+  "knn_f1": 0.514906889568161,
+  "curvature_acc": 0.010988619996001425,
+  "quad_gain_acc": -0.0007665283439215465
+ },
+ "synthetic_linear_control": {
+  "dim": 20,
+  "chance": 0.09685663174035267,
+  "linear_acc": 0.94301004982067,
+  "linear_f1": 0.9198589219942992,
+  "quad_acc": 0.868132153305669,
+  "quad_f1": 0.8304757102763167,
+  "knn_acc": 0.6331428641376863,
+  "knn_f1": 0.5476723967953283,
+  "curvature_acc": -0.30986718568298377,
+  "quad_gain_acc": -0.0748778965150011
+ },
+ "verdict": {
+  "celltype_recovered": true,
+  "curvature_acc": 0.010988619996001425,
+  "synthetic_control_curvature": -0.30986718568298377,
+  "curved": false
+ }
+}

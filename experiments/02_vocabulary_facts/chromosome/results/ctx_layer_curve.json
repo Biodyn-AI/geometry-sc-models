@@ -1,0 +1,36 @@
+{
+ "layers": {
+  "L00": {
+   "excess": 0.6191871166229248,
+   "ci": [
+    0.6138064533472061,
+    0.6247365429997445
+   ],
+   "main_effect_replication": 0.9364181054489953,
+   "n_pairs": 28,
+   "top_dim_share": 0.00880383886396885
+  },
+  "L04": {
+   "excess": 0.7084202170372009,
+   "ci": [
+    0.7029326662421227,
+    0.7135565474629402
+   ],
+   "main_effect_replication": 0.9370136388710567,
+   "n_pairs": 28,
+   "top_dim_share": 0.009706779383122921
+  },
+  "L08": {
+   "excess": 0.6737761497497559,
+   "ci": [
+    0.6684017360210419,
+    0.6791267901659012
+   ],
+   "main_effect_replication": 0.9185087228459972,
+   "n_pairs": 28,
+   "top_dim_share": 0.02042163535952568
+  }
+ },
+ "peak_layer": "L04",
+ "verdict": "gene-specific context response peaks at L04 (EXCESS +0.708); L0 is the context-free embedding (~0 by construction), the response rises through the early layers and decays toward the output."
+}

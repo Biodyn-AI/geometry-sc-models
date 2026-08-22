@@ -1,0 +1,32 @@
+{
+ "far_mb": 20.0,
+ "n_common": 15135,
+ "bases": {
+  "MaxToki-1B": {
+   "auroc_all": 0.5406578306854016,
+   "auroc_far": 0.5290783951923477,
+   "n_far": 47445
+  },
+  "MaxToki-217M": {
+   "auroc_all": 0.5376139099611763,
+   "auroc_far": 0.5287094295505272,
+   "n_far": 47445
+  },
+  "co-expression (raw)": {
+   "auroc_all": 0.4999262810737087,
+   "auroc_far": 0.5023569184572902,
+   "n_far": 47445
+  },
+  "ESM2 (sequence)": {
+   "auroc_all": 0.5066960711265336,
+   "auroc_far": 0.5035039010676022,
+   "n_far": 47445
+  },
+  "shallow LSA-256": {
+   "auroc_all": 0.5712363030131612,
+   "auroc_far": 0.5652545289834853,
+   "n_far": 47445
+  }
+ },
+ "verdict_1b_minus_lsa_far": -0.0361761337911376
+}

@@ -1,0 +1,33 @@
+{
+ "window_mb": 20.0,
+ "n_bins": 96,
+ "n_cells": 30,
+ "alpha": 0.5,
+ "native": {
+  "d_bin": 0.004945368718146406,
+  "d_sham": -3.221627041006695e-05,
+  "specific": 0.004977584988556474,
+  "ci": [
+   0.0037205561730373426,
+   0.006399461997270032
+  ],
+  "works": true,
+  "n_pos": 92
+ },
+ "dest_agreement": {
+  "bins": 0.43184210526315786,
+  "shams": 0.44595760233918125
+ },
+ "mechanism": {
+  "n_units": 96,
+  "matched": 0.03928745327926017,
+  "mismatched": 0.023624988500896716,
+  "gap": 0.015662464778363454,
+  "p_corr": 0.0038498075096245186,
+  "argmax": 0.0,
+  "p_argmax": 1.0,
+  "enrich_distinct": 10,
+  "enrich_modal_share": 0.3645833333333333,
+  "verdict": "INCONCLUSIVE: significant but tiny and/or degenerate enrichment"
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "n_genes": 15135,
+ "chance": 0.045454545454545456,
+ "grid": {
+  "MaxToki-217M | LinearSVC C=0.01": {
+   "table": "MaxToki-217M",
+   "probe": "LinearSVC C=0.01",
+   "width": 1232,
+   "random": 0.563784323800096,
+   "group": 0.4538653475883351
+  },
+  "MaxToki-217M | MLP (517, 129)": {
+   "table": "MaxToki-217M",
+   "probe": "MLP (517, 129)",
+   "width": 1232,
+   "random": 0.6096199406141136,
+   "group": 0.5061650058467506
+  },
+  "MaxToki-1B | LinearSVC C=0.01": {
+   "table": "MaxToki-1B",
+   "probe": "LinearSVC C=0.01",
+   "width": 2304,
+   "random": 0.9300180234350376,
+   "group": 0.8804211806875052
+  },
+  "MaxToki-1B | MLP (967, 241)": {
+   "table": "MaxToki-1B",
+   "probe": "MLP (967, 241)",
+   "width": 2304,
+   "random": 0.8935861331921601,
+   "group": 0.7882627744436639
+  }
+ }
+}

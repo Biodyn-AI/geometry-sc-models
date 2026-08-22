@@ -1,0 +1,260 @@
+{
+ "alpha": 0.5,
+ "n_cells": 58,
+ "runs": [
+  {
+   "tag": "all chromosome genes",
+   "n_chrom": 22,
+   "n_types": 18,
+   "matched_corr": -0.029523705357550414,
+   "mismatched_corr": -0.046975763079799955,
+   "gap": 0.01745205772224954,
+   "p_corr": 0.015999200039998,
+   "argmax_agreement": 0.0,
+   "argmax_null": 0.0021318181818181818,
+   "p_argmax": 1.0,
+   "enrich_distinct_top": 4,
+   "enrich_modal_share": 0.8181818181818182,
+   "verdict": "INCONCLUSIVE: gap is significant but tiny and/or the enrichment side is degenerate -- not evidence for the mechanism",
+   "per_chrom": {
+    "1": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.10190523484832242
+    },
+    "10": {
+     "steer": "enteric neuron",
+     "data": "enterocyte",
+     "r": 0.023978667897713704
+    },
+    "11": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.16435735205895002
+    },
+    "12": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.09303714384299937
+    },
+    "13": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.06392925872057656
+    },
+    "14": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.09172256786990922
+    },
+    "15": {
+     "steer": "colon epithelial cell",
+     "data": "mesothelial cell",
+     "r": 0.15019628814549368
+    },
+    "16": {
+     "steer": "myofibroblast cell",
+     "data": "endothelial cell of artery",
+     "r": 0.015990293931391068
+    },
+    "17": {
+     "steer": "hematopoietic cell",
+     "data": "mesothelial cell",
+     "r": -0.12275080724447385
+    },
+    "18": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": 0.04092186215632351
+    },
+    "19": {
+     "steer": "myofibroblast cell",
+     "data": "mesothelial cell",
+     "r": -0.027383025530253718
+    },
+    "2": {
+     "steer": "progenitor cell",
+     "data": "mesothelial cell",
+     "r": 0.0846475534940722
+    },
+    "20": {
+     "steer": "intestine goblet cell",
+     "data": "colon epithelial cell",
+     "r": 0.1418725000032487
+    },
+    "21": {
+     "steer": "enteric smooth muscle cell",
+     "data": "enterocyte",
+     "r": -0.10964472209819431
+    },
+    "22": {
+     "steer": "intestine goblet cell",
+     "data": "mesothelial cell",
+     "r": 0.05434900594775354
+    },
+    "3": {
+     "steer": "progenitor cell",
+     "data": "mesothelial cell",
+     "r": -0.10434033406612464
+    },
+    "4": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": 0.029897434593524674
+    },
+    "5": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.009196348629651668
+    },
+    "6": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.06619792538138453
+    },
+    "7": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.08077747756329898
+    },
+    "8": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.07261529841518305
+    },
+    "9": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.08351762776630786
+    }
+   }
+  },
+  {
+   "tag": "top-150 direction genes",
+   "n_chrom": 22,
+   "n_types": 18,
+   "matched_corr": -0.02871675304420149,
+   "mismatched_corr": -0.045855477666349266,
+   "gap": 0.017138724622147775,
+   "p_corr": 0.11489425528723564,
+   "argmax_agreement": 0.0,
+   "argmax_null": 0.006088636363636364,
+   "p_argmax": 1.0,
+   "enrich_distinct_top": 5,
+   "enrich_modal_share": 0.45454545454545453,
+   "verdict": "NOT SUPPORTED: no matched-pair signal",
+   "per_chrom": {
+    "1": {
+     "steer": "mesodermal cell",
+     "data": "endothelial cell of artery",
+     "r": -0.06907555621558574
+    },
+    "10": {
+     "steer": "enteric neuron",
+     "data": "endothelial cell of artery",
+     "r": -0.04242435785489724
+    },
+    "11": {
+     "steer": "mesodermal cell",
+     "data": "enterocyte",
+     "r": -0.08979477542534733
+    },
+    "12": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.056692729850426365
+    },
+    "13": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.009471600633016932
+    },
+    "14": {
+     "steer": "mesodermal cell",
+     "data": "endothelial cell of artery",
+     "r": -0.08955833271387219
+    },
+    "15": {
+     "steer": "colon epithelial cell",
+     "data": "mesothelial cell",
+     "r": 0.10896382058967574
+    },
+    "16": {
+     "steer": "myofibroblast cell",
+     "data": "endothelial cell of artery",
+     "r": -0.008427092606260102
+    },
+    "17": {
+     "steer": "hematopoietic cell",
+     "data": "endothelial cell of artery",
+     "r": -0.2529782879434485
+    },
+    "18": {
+     "steer": "mesodermal cell",
+     "data": "endothelial cell of artery",
+     "r": 0.03990380877080107
+    },
+    "19": {
+     "steer": "myofibroblast cell",
+     "data": "mesothelial cell",
+     "r": -0.004083069891155362
+    },
+    "2": {
+     "steer": "progenitor cell",
+     "data": "endothelial cell of artery",
+     "r": 0.1013908902515108
+    },
+    "20": {
+     "steer": "intestine goblet cell",
+     "data": "mesothelial cell",
+     "r": 0.12217640429072242
+    },
+    "21": {
+     "steer": "enteric smooth muscle cell",
+     "data": "enterocyte",
+     "r": -0.1272849417759105
+    },
+    "22": {
+     "steer": "intestine goblet cell",
+     "data": "endothelial cell of artery",
+     "r": 0.012021026132307891
+    },
+    "3": {
+     "steer": "progenitor cell",
+     "data": "endothelial cell of artery",
+     "r": -0.09348660758592431
+    },
+    "4": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": 0.02025867650791909
+    },
+    "5": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": 0.005769242646821488
+    },
+    "6": {
+     "steer": "mesodermal cell",
+     "data": "colon epithelial cell",
+     "r": -0.09764129774802581
+    },
+    "7": {
+     "steer": "mesodermal cell",
+     "data": "endothelial cell of artery",
+     "r": 0.038268000204826035
+    },
+    "8": {
+     "steer": "mesodermal cell",
+     "data": "mesothelial cell",
+     "r": -0.018714217955131632
+    },
+    "9": {
+     "steer": "mesodermal cell",
+     "data": "intestine goblet cell",
+     "r": -0.1208875681680153
+    }
+   }
+  }
+ ]
+}

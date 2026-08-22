@@ -1,0 +1,253 @@
+{
+ "n_total": 6000,
+ "dims": 256,
+ "chance": 0.045454545454545456,
+ "n_genes": 15156,
+ "ladder": {
+  "1": [
+   {
+    "chromosome": 0.3246082207536503,
+    "esm2_control": 0.0722985525708018,
+    "n_cells": 797,
+    "types": [
+     "mesothelial cell"
+    ]
+   },
+   {
+    "chromosome": 0.43323379696615305,
+    "esm2_control": 0.08899233258022564,
+    "n_cells": 5225,
+    "types": [
+     "fibroblast"
+    ]
+   },
+   {
+    "chromosome": 0.09266841068123495,
+    "esm2_control": 0.07084322150473957,
+    "n_cells": 933,
+    "types": [
+     "erythroblast"
+    ]
+   }
+  ],
+  "2": [
+   {
+    "chromosome": 0.5029891140008347,
+    "esm2_control": 0.0909644748553189,
+    "n_cells": 6000,
+    "types": [
+     "enteric smooth muscle cell",
+     "fibroblast"
+    ]
+   },
+   {
+    "chromosome": 0.48951176135936797,
+    "esm2_control": 0.0912038709072454,
+    "n_cells": 5013,
+    "types": [
+     "colon epithelial cell",
+     "progenitor cell"
+    ]
+   },
+   {
+    "chromosome": 0.440300139323935,
+    "esm2_control": 0.08807337629529992,
+    "n_cells": 4222,
+    "types": [
+     "fibroblast",
+     "pericyte"
+    ]
+   }
+  ],
+  "3": [
+   {
+    "chromosome": 0.44715174571999533,
+    "esm2_control": 0.09689760723903394,
+    "n_cells": 3534,
+    "types": [
+     "enteric neuron",
+     "erythroblast",
+     "mesothelial cell"
+    ]
+   },
+   {
+    "chromosome": 0.4836389076045106,
+    "esm2_control": 0.09199234107365396,
+    "n_cells": 3953,
+    "types": [
+     "myofibroblast cell",
+     "hematopoietic cell",
+     "stem cell"
+    ]
+   },
+   {
+    "chromosome": 0.3649476367125922,
+    "esm2_control": 0.08219790392532787,
+    "n_cells": 3437,
+    "types": [
+     "intestine goblet cell",
+     "mesodermal cell",
+     "erythroblast"
+    ]
+   }
+  ],
+  "5": [
+   {
+    "chromosome": 0.4906768744602919,
+    "esm2_control": 0.0925917154490569,
+    "n_cells": 5552,
+    "types": [
+     "mesodermal cell",
+     "pericyte",
+     "interstitial cell of Cajal",
+     "fibroblast",
+     "colon epithelial cell"
+    ]
+   },
+   {
+    "chromosome": 0.4634949895615266,
+    "esm2_control": 0.09195501319512887,
+    "n_cells": 4186,
+    "types": [
+     "intestine goblet cell",
+     "interstitial cell of Cajal",
+     "myofibroblast cell",
+     "erythroblast",
+     "mesothelial cell"
+    ]
+   },
+   {
+    "chromosome": 0.5388850866373583,
+    "esm2_control": 0.09544339941469052,
+    "n_cells": 5801,
+    "types": [
+     "vein endothelial cell",
+     "enteric smooth muscle cell",
+     "fibroblast",
+     "enterocyte",
+     "stem cell"
+    ]
+   }
+  ],
+  "8": [
+   {
+    "chromosome": 0.5261986127863192,
+    "esm2_control": 0.09774495915081664,
+    "n_cells": 5754,
+    "types": [
+     "intestine goblet cell",
+     "enteric smooth muscle cell",
+     "mesodermal cell",
+     "vein endothelial cell",
+     "mesothelial cell",
+     "neural crest cell",
+     "erythroblast",
+     "enterocyte"
+    ]
+   },
+   {
+    "chromosome": 0.5351425650282474,
+    "esm2_control": 0.1001140050745041,
+    "n_cells": 5754,
+    "types": [
+     "fibroblast",
+     "stem cell",
+     "intestine goblet cell",
+     "enteric smooth muscle cell",
+     "pericyte",
+     "neural crest cell",
+     "enteric neuron",
+     "interstitial cell of Cajal"
+    ]
+   },
+   {
+    "chromosome": 0.5151718199751959,
+    "esm2_control": 0.093989359799824,
+    "n_cells": 5754,
+    "types": [
+     "mesodermal cell",
+     "interstitial cell of Cajal",
+     "neural crest cell",
+     "myofibroblast cell",
+     "progenitor cell",
+     "fibroblast",
+     "intestine goblet cell",
+     "enteric smooth muscle cell"
+    ]
+   }
+  ],
+  "12": [
+   {
+    "chromosome": 0.5183986254869661,
+    "esm2_control": 0.10496128180042552,
+    "n_cells": 6000,
+    "types": [
+     "myofibroblast cell",
+     "interstitial cell of Cajal",
+     "hematopoietic cell",
+     "mesodermal cell",
+     "stem cell",
+     "progenitor cell",
+     "fibroblast",
+     "vein endothelial cell",
+     "enterocyte",
+     "enteric neuron",
+     "erythroblast",
+     "pericyte"
+    ]
+   },
+   {
+    "chromosome": 0.5219406213911033,
+    "esm2_control": 0.10160223271520494,
+    "n_cells": 6000,
+    "types": [
+     "enteric neuron",
+     "mesodermal cell",
+     "vein endothelial cell",
+     "interstitial cell of Cajal",
+     "pericyte",
+     "progenitor cell",
+     "hematopoietic cell",
+     "neural crest cell",
+     "stem cell",
+     "fibroblast",
+     "erythroblast",
+     "myofibroblast cell"
+    ]
+   },
+   {
+    "chromosome": 0.5315625902013656,
+    "esm2_control": 0.10206560186403811,
+    "n_cells": 6000,
+    "types": [
+     "hematopoietic cell",
+     "myofibroblast cell",
+     "fibroblast",
+     "vein endothelial cell",
+     "mesothelial cell",
+     "erythroblast",
+     "colon epithelial cell",
+     "progenitor cell",
+     "stem cell",
+     "enteric neuron",
+     "mesodermal cell",
+     "interstitial cell of Cajal"
+    ]
+   }
+  ]
+ },
+ "rescue": {
+  "CD34+ marrow": {
+   "n_cells": 3000,
+   "chromosome": 0.06369944299731713
+  },
+  "lung airway": {
+   "n_cells": 3000,
+   "chromosome": 0.07787383374379947
+  },
+  "CD34+ marrow + lung airway pooled": {
+   "n_cells": 6000,
+   "chromosome": 0.09735173790697066
+  }
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "n_shared_genes": 5028,
+ "n_source": 3000,
+ "n_target": 4000,
+ "model": {
+  "within": 0.8982214114976637,
+  "within_median_err_deg": 12.483337625377354,
+  "transfer": -0.3341825002291372,
+  "transfer_median_err_deg": 132.4548682223757,
+  "retention": -0.37204913616071644
+ },
+ "expression": {
+  "within": 0.8500659889099973,
+  "within_median_err_deg": 15.29202693721055,
+  "transfer": -0.4660954313913827,
+  "transfer_median_err_deg": 109.84526072174617,
+  "retention": -0.5483049992253993
+ },
+ "transfer_winner": "MODEL",
+ "transfer_margin": 0.1319129311622455,
+ "_RETRACTED": "VOID \u2014 setty CD34 target. Two independent defects: the run used unoriented cc_phase.phase_angle whose SVD handedness is per-dataset arbitrary (source flipped, target not), AND setty's phase tracks lineage not cycle (18/94 markers; per-cell-type concentration 0.95-0.98). Do not salvage; rerun if ever needed."
+}

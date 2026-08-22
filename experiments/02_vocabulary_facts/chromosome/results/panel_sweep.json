@@ -1,0 +1,71 @@
+{
+ "n_cells": 3500,
+ "topk": 2048,
+ "dim": 256,
+ "chance": 0.045454545454545456,
+ "panels": {
+  "fetal gut": {
+   "random": 0.48261516281872013,
+   "group": 0.41270856527901356,
+   "stage": "fetal",
+   "cycling": "proliferative",
+   "n_cells": 3500,
+   "n_genes": 10806,
+   "prolif_index": 0.0
+  },
+  "adult gut": {
+   "random": 0.6037106081026917,
+   "group": 0.5242976666341937,
+   "stage": "adult",
+   "cycling": "quiescent",
+   "n_cells": 3500,
+   "n_genes": 10336,
+   "prolif_index": 0.0
+  },
+  "adult CD34+ marrow": {
+   "random": 0.1361099869150886,
+   "group": 0.11320101696270854,
+   "stage": "adult",
+   "cycling": "proliferative",
+   "n_cells": 3500,
+   "n_genes": 9645,
+   "prolif_index": 0.0
+  },
+  "adult lung airway": {
+   "random": 0.12074684433308149,
+   "group": 0.09864493528536876,
+   "stage": "adult",
+   "cycling": "quiescent",
+   "n_cells": 3500,
+   "n_genes": 10697,
+   "prolif_index": 0.0
+  },
+  "aged marrow": {
+   "random": 0.34567966813219525,
+   "group": 0.29812141329492853,
+   "stage": "aged",
+   "cycling": "quiescent",
+   "n_cells": 3500,
+   "n_genes": 10645,
+   "prolif_index": 0.0
+  },
+  "TS kidney": {
+   "random": 0.10591516724465566,
+   "group": 0.08602163885372417,
+   "stage": "adult",
+   "cycling": "quiescent",
+   "n_cells": 3500,
+   "n_genes": 10889,
+   "prolif_index": 0.0
+  },
+  "TS lung": {
+   "random": 0.10384083973525247,
+   "group": 0.08123254377787324,
+   "stage": "adult",
+   "cycling": "quiescent",
+   "n_cells": 3500,
+   "n_genes": 11015,
+   "prolif_index": 0.0
+  }
+ }
+}
