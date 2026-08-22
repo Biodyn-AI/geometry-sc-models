@@ -58,7 +58,7 @@ python paper/make_figures.py
 | [`01_cell_state_geometry/five_models`](experiments/01_cell_state_geometry/five_models) | §3.1, §5.3 | yes |
 | [`01_cell_state_geometry/developmental`](experiments/01_cell_state_geometry/developmental) | §3.3 | yes |
 | [`01_cell_state_geometry/other_representations`](experiments/01_cell_state_geometry/other_representations) | §3, §6 | yes |
-| [`01_cell_state_geometry/supporting_arms`](experiments/01_cell_state_geometry/supporting_arms) | Supp F | yes |
+| [`01_cell_state_geometry/supporting_arms`](experiments/01_cell_state_geometry/supporting_arms) | supporting, withdrawn arms | yes |
 | [`02_vocabulary_facts/chromosome`](experiments/02_vocabulary_facts/chromosome) | §4.1 | yes |
 | [`03_what_shapes_geometry/steering_operator`](experiments/03_what_shapes_geometry/steering_operator) | §5.4 | yes |
 | [`03_what_shapes_geometry/curvature`](experiments/03_what_shapes_geometry/curvature) | §5.5 | yes |

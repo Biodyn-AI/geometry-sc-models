@@ -35,9 +35,9 @@ Results are written to `results/` as JSON. Set `GEOMSC_RESULTS` to write elsewhe
 | `s4e_is_the_table_used.py` | Is the table load-bearing? Zeroed, row-shuffled, and frozen at random initialisation. | §5.2, Supp D.3 |
 | `s4g_steering_matched_null.py` | **A failed experiment, kept deliberately.** Three successive nulls all failed, and a null-versus-null floor exceeded the signal. No steering claim is reportable from it. | Supp D.4 |
 | `s6_completion.py` | Delete an arc of a circular trajectory from training. Does the model bridge the hole better than raw data? It does not. | §3.1, Supp B.3 |
-| `s0_local_resolution.py` | **A failed instrument, kept deliberately.** The first attempt at measuring local resolution had no power: phase explains only R² = 0.02 of ambient pairwise distance. | Supp F.2 |
-| `s0b_plane_resolution.py` | The rebuilt instrument, in a fitted phase plane with uniform-ring and planted-stretch controls. | Supp F.2 |
-| `s0c_contrast_ci.py` | Confidence intervals for the S0b contrasts. | Supp F.2 |
+| `s0_local_resolution.py` | **A failed instrument, kept deliberately.** The first attempt at measuring local resolution had no power: phase explains only R² = 0.02 of ambient pairwise distance. | withdrawn arm |
+| `s0b_plane_resolution.py` | The rebuilt instrument, in a fitted phase plane with uniform-ring and planted-stretch controls. | withdrawn arm |
+| `s0c_contrast_ci.py` | Confidence intervals for the S0b contrasts. | withdrawn arm |
 | `s3b_real_c2s_null.py` | The real-data counterpart of S3, on cached C2S activations. **Needs external assets**, see `docs/DATA.md`. | §5.1 |
 
 `synth_lib.py` holds the corpus generators (`ring_corpus`, `group_corpus`), tokenisation, the
@@ -65,8 +65,7 @@ signs, orderings and significance in `S3_RESULTS.md` should reproduce; the third
 
 `synth_lib.train` computes the masked loss with an explicit multiply-and-sum rather than boolean
 indexing. This is not stylistic. On MPS, `pred[mask]` and `val[mask]` with the *same* mask returned
-different element counts at scale (3243 against 40), silently corrupting the loss. Supplement F.2
-records it. Do not "simplify" that line back.
+different element counts at scale (3243 against 40), silently corrupting the loss. That fault is why the line is written the way it is. Do not "simplify" that line back.
 
 ## Result files
 

@@ -1,10 +1,12 @@
 # Manifold fitting, clonal fate, and a withdrawn result
 
-Supporting arms and Supplement F. Includes the LARRY clonal-fate negative and the aging result that its own held-out test withdrew.
+Supporting and withdrawn arms. Includes the LARRY clonal-fate negative and the aging result that its own held-out test withdrew.
 
 12 scripts, 8 committed result files.
 
 Every script here needs assets this repository does not ship. See [`docs/DATA.md`](../../../docs/DATA.md) for what to download and where to point `GEOMSC_DATA` and `GEOMSC_MODELS`.
+
+*A note on section F.* Earlier drafts of the paper carried a supplement section F recording retractions, instruments that failed, and analyses that did not work. That section was removed from the paper. The code and result files for those analyses are still here, because the reasoning in the published sections rests on them; rows that used to point at F are marked *withdrawn arm* below.
 
 | script | what it computes | supports | needs |
 |---|---|---|---|

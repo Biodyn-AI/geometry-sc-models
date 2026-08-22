@@ -59,6 +59,6 @@ Check in this order.
 
 Several results in this paper are **negative**, and a few are **retractions of our own earlier
 claims**. Reproducing those means reproducing the absence of an effect, which is sensitive to the
-null you use. Supplement F lists six cases where a large z against a permutation null went to
+null you use. Section 6 of the paper records six cases where a large z against a permutation null went to
 approximately zero against a competitor built from the same cells. If you are checking one of those,
 build the competitor, not the permutation.
