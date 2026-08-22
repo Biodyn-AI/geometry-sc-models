@@ -47,8 +47,7 @@ training loop, and the two readouts (`cell_embeddings`, `gene_table`).
 
 `s0_local_resolution.py` and `s4g_steering_matched_null.py` did not produce a usable result. They are
 in the repository because the paper's argument depends on knowing when an instrument is not
-trustworthy, and because a reader checking Supplement F should be able to see the code that produced
-the failure. `s4g` in particular is the experiment whose *null-versus-null floor* (−0.489) turned out
+trustworthy, and because a reader should be able to see the code that produced the failure. `s4g` in particular is the experiment whose *null-versus-null floor* (−0.489) turned out
 larger than its signal (−0.227), which is the concrete case behind test 5 of the paper's protocol.
 
 ## Reproducing the headline numbers
