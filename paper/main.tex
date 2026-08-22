@@ -872,8 +872,16 @@ model is such a setting, and \S\ref{sec:controls} is our answer to that question
 these models as a controlled place in which claims about representational geometry can be tested more
 cheaply and more decisively, with the conclusions carried back.
 
-\paragraph{Code and data.} All analysis code, result files, figure scripts and the full control battery
-are released with the paper.
+\paragraph{Code and data.} Everything is at
+\url{https://github.com/Biodyn-AI/geometry-sc-models}: the analysis code organised by the section it
+supports, an index mapping every claim to the script that produced it, the figure scripts, and about
+280 result files committed beside the code that wrote them, so any number here can be checked without
+rerunning anything. The synthetic programme of \S\ref{sec:warp} and \S\ref{sec:table} runs end to
+end with no external assets. Model checkpoints and datasets are third-party and are not
+redistributed; the repository documents each one and where to obtain it. The steering operator of
+\S\ref{sec:operator} is released as a standalone tool requiring only a cell-by-gene matrix.
+Experiments that failed, including the two whose instruments proved untrustworthy, are included
+deliberately.
 
 \bibliographystyle{unsrtnat}
 \bibliography{refs}
