@@ -6,8 +6,7 @@ Contents:
 **B** Cell-state geometry in full ·
 **C** Vocabulary-level facts in full ·
 **D** Synthetic experiments in full ·
-**E** A worked negative: the extracted-operator battery ·
-**F** Retractions, instrument failures and things that did not work
+**E** A worked negative: the extracted-operator battery
 
 ---
 
@@ -31,7 +30,7 @@ Contents:
 therefore cannot be asked questions about learned gene identity, since they are the sequence control, not a
 model arm, for any vocabulary-level question.
 
-**Construct caveat, stated because it is load-bearing.** There is no cell vector in any of these
+**Construct caveat.** There is no cell vector in any of these
 models. Every "cell representation" is a mean-pool over gene-token residuals at one layer, i.e.
 approximately a context-corrected bag of genes. Part of the measured redundancy with raw expression is
 therefore built into the construction rather than discovered, and this should be borne in mind
@@ -56,7 +55,7 @@ Validated independently: phase-cluster circular means at G2M 20.3°, G1 150.4°,
 order), concentrations 0.79–0.94, S and G2M score peaks in quadrature (109° ≈ 90°). Discrete
 composition G1 747 / S 1,208 / G2M 1,045.
 
-**Circularity, stated up front.** φ and the phase call are *derived from marker expression*, so the
+**Circularity.** φ and the phase call are *derived from marker expression*, so the
 expression baseline is circularly advantaged on every cell-cycle comparison. A model that beats it
 anyway is meaningfully better; an expression win is partly definitional. The cell cycle is a
 **degenerate testbed at the cell level** and an excellent one at the gene level, where the input can be
@@ -174,7 +173,7 @@ baseline, all negative:
 
 Expression + nonlinear ceilings: 0.977 / 0.983 / 0.921 / 0.987. A symmetric version (model given the
 same nonlinear probe) is also 0/20. Against a *linear* expression probe at k ≥ 100 the models win
-66/180, which an earlier k ≤ 50 cap concealed; that correction is recorded in §F.
+66/180, which an earlier k ≤ 50 cap concealed.
 
 **Steering, constrained advance at τ = 1.3:**
 
@@ -530,7 +529,8 @@ the model is novel. 20,000 training cells, 1,000 genes, 3,000 steps, val_corr 0.
 
 **Why an unremarkable model.** These experiments need many corpora, not one large model;
 and a bespoke architecture would let any result be attributed to its unusual components rather than to
-transformers in general. 
+transformers in general. (An earlier version of this programme used a non-standard architecture, and
+three of four findings differed.)
 
 ## D.2 The metric-warp law
 
@@ -599,7 +599,7 @@ model's 0.85). Not a baseline mismatch (PPMI restricted to the model's own top-1
 probe by 0.003 while val_corr rises 0.801 → 0.857; note the trap: `corr(log steps, acc) = +0.96`,
 perfectly monotone and entirely inside chance). Not probe linearity.
 
-## D.4 The steering arm, and why it is excluded
+## D.4 Why the steering arm is excluded
 
 The group direction is built from real embedding rows, `mean(W_E[group == c]) − mean(W_E)`. Three
 successive nulls failed:
@@ -629,7 +629,7 @@ experiment.** The synthetic work therefore establishes readability and beyond-ba
 table and is **silent on causal use** there. The real-model causal evidence (§C.1) is a separate
 measurement with its own controls.
 
-## D.5 The stall theorem, verified
+## D.5 The stall theorem
 
 Synthetic circle lying exactly in a linear 2-plane of a 60-D space (flat by construction):
 
@@ -681,7 +681,7 @@ reverses**: gain from locality +2.09 (scGPT), +4.66 (MaxToki) against gain from 
 +0.06. The general operator is local direction + projection + retraction, and topology decides which
 term matters.
 
-**Why the global quadratic failed, measured rather than inferred:** Q's own gradient field rotates only
+**Why the global quadratic failed:** Q's own gradient field rotates only
 12–96° early→late against a measured true tangent rotation of 48–113°. One global quadratic
 under-rotates by roughly half and cannot express the direction discontinuity at a bifurcation.
 
@@ -752,89 +752,3 @@ equivalently, so the gain cannot be attributed to learned structure.
 We report this in full because every individual check the original performed was passed. The failure
 lies in the choice of checks: none of them was a matched random operator or an information-matched
 baseline.
-
----
-
-# F. Retractions, instrument failures, and things that did not work
-
-## F.1 Claims we withdrew
-
-| withdrawn | replaced by |
-|---|---|
-| "Chromosome *and* within-chromosome position beat co-expression" | The control was a raw per-gene expression profile, which sits at chance and excludes nothing. A proper factorisation of the identical cells reaches 0.720, which beats the 217M outright and takes *position* away from both models (ρ +0.762 vs +0.622 / +0.374). **Two claims retracted from one methodological error.** |
-| "A global quadratic gradient field steers better than a constant direction" | Refuted 16/16. Best real gap +0.206, sign unstable, synthetic-linear control ≈ 0. |
-| "The GATA1↔PU.1 saddle is a mutual-repression geometry" | Refuted twice: representationally (product R² −0.004 vs s_ery² +0.114) and in the biology (correlation among undecided progenitors −0.050 against a −0.15 threshold). |
-| "The cell-cycle manifold is a low-dimensional ring" | A **filled disk**; the earlier statistic was computed on 12 bin centroids and is void as single-cell dimensionality. |
-| "C2S sharpens phase ~3× over its own input" | The comparison used a `1/rank` weighting that collapsed the baseline's PCA onto a few genes. A faithful encoding gives 0.868–0.882, level with the model at 0.875. |
-| "Compute, not relay: 95% retention after deleting markers" | Not model-specific: a matched baseline retains 0.94 under the identical ablation. |
-| "Human curved, mouse flat" | Significance tracks linear-decoder headroom (partial corr −0.858 vs −0.091 for species). |
-| "Steering the manifold is retired: there is no curved arc to ride" | *Global* steering fails; local-tangent projection works. |
-| "Projection is the whole story" | True on trees, false on loops (§D.6). |
-| "16/180: models are useless on pseudotime" | An artefact of an inherited k ≤ 50 cap; 66/180 at k ≥ 100. The correct verdict is 0/20 against a *nonlinear* expression baseline. |
-| Aging/HSC headline | Withdrawn by its own held-out test: disease donors sit inside the healthy range (p = 0.23) and the winning lineage flips between runs. What survives is a "real, small, and on current evidence useless" direction-vs-position signal. |
-
-## F.2 Instruments that broke
-
-- **θ_far must not be used on periodic manifolds.** On a circle the first and last bins are adjacent, so
-  a perfect circle scores ≈ 0; the real loop scores *below* its own flat-circle null in every model.
-- **The decodability gap (kNN − linear) is not a curvature statistic.** It is structurally
-  headroom-limited and correlates −0.926 with linear R². Deprecated.
-- **Circular correlation is degenerate against uniform variables.** It uses sin(a − circmean(a)), so a
-  constant rotation cancels and the null equals the real value exactly; and it returns r = +0.804 at
-  p = 0.0005 for an arm that travelled **zero** laps. Replaced by decoded winding and a time-shift null.
-- **Full-space kNN breaks at high dimension** (curvature −0.457 at d = 2048).
-- **A whitening bug** made the first nonlinear expression baseline return R² = −2.583, and **the broken
-  version would have confirmed a model win**.
-- **Permutation-floor p-values** (1/13, 1/21, 1/41, 1/201) were quoted as evidence in several places.
-- **Small-n leave-one-out is degenerate:** pure noise scores |ρ| = 0.736 at n = 9.
-- **A saturated test cannot distinguish present from absent:** perturbation identity decodes at 1.000
-  from a *random-init* model because the label is an injected input.
-- **MPS boolean indexing** returned mismatched element counts for the same mask (3243 vs 40) at scale;
-  removed from the hot path.
-
-## F.3 Nulls that were wrong, and the general lesson
-
-Six documented cases where a large z against a permutation null went to ≈ 0 against a competitor built
-from the same cells: attention z +4.18 → +0.17; the functional-context axis +20σ random-partition, +9σ
-tightness, **+1.16σ co-expression**; paralogy beats co-expression and loses to sequence; C2S phase
-0.898 against a broken input encoding and parity against a faithful one; cross-model consensus survives
-every hygiene attack until a matched co-expression neighbourhood scalar recovers ρ 0.458–0.581; and a
-label made of **pure sampling noise** scoring 0.447 at z = 35.8, higher than the real biological label
-at 0.357, z = 24.9.
-
-## F.4 Things that did not work
-
-- **Perturbation inversion.** Negative in 4/4 models including the perturbation-trained one. AUROC
-  0.487–0.707; 0/4 fates significant; residualised on differential expression all q ≥ 0.26. A model
-  trained on a CRISPRi vocabulary passes its validity gate yet ranks the canonical erythroid regulator
-  111/131 **with the sign backwards**. *Caveat:* the differential-expression-matched stratum test cannot
-  run (0–2 known drivers fall in the low-|DE| half), so the negative is "no signal beyond DE", not
-  "provably no regulatory knowledge".
-- **Hidden clonal fate (LARRY `\citep{weinreb2020larry}`{=latex}).** A well-powered negative: expression position AUROC 0.767, geometry
-  0.540 ≈ its clone-permutation null 0.383 ± 0.061, combined gain −0.006.
-- **Reconstructing a deleted intermediate.** Held-out peak r = +0.545, rank 5/10, path running through
-  the wrong lineage. Steering interpolates; it does not generate.
-- **Commitment as a discrete geometric step.** No cliff (sigmoid transition width 0.27–0.83 of the
-  pseudotime range), and a counts baseline wins in 3/4 models.
-- **Label-free `transport` steering.** Fails in all five substrates, ‖D‖ collapse ratio exactly 1.0000.
-- **Irreducible topology.** No loops or holes anywhere. In-plane H1 null in five substrates including
-  raw expression (all p ≥ 0.27); out-of-plane excess negative in 5/5; lineage-tree H0 z = −6.81
-  (branches *tighter* than a matched Gaussian).
-- **Bilinear/interaction machinery generally.** Supervised bilinear CP probes lose to linear (−0.060);
-  SAE dictionaries `\citep{kendiukhov2026sae}`{=latex} are 73–99.7% redundant with linear ones and order-4 is worse than order-2; and
-  third-order combinatorial ablation finds **0.00% superadditive interactions over ~2,980 targets**.
-- **Scale.** 5× parameters changes rotation excess by −11.1° and Δρ by 0.00; at matched SAE capacity a
-  13× larger model has 31× more dead features and 19 points lower annotation.
-
-## F.6 Open questions we consider most important
-
-1. **A neighbourhood-co-regulation baseline for chromosome.** Every existing baseline is a per-gene
-   profile or a global factorisation; neither models *local* co-regulation. Scoring against Hi-C A/B
-   compartments and replication timing decides whether the strongest positive survives.
-2. **What makes a token table a map rather than an index**: architecture, corpus scale, vocabulary
-   size, or a separately-used output head.
-3. **Cell cycle × attention**, the last empty cell in the coverage grid.
-4. **A causal test for token-table facts under a calibrated null**, given §D.4.
-5. **The output-change law on a non-cyclic manifold.**
-6. **Correcting the two extraction defects** across all affected analyses (§A.3).
-

@@ -6,8 +6,7 @@ Contents:
 \textbf{B} Cell-state geometry in full \(\cdot\)
 \textbf{C} Vocabulary-level facts in full \(\cdot\)
 \textbf{D} Synthetic experiments in full \(\cdot\)
-\textbf{E} A worked negative: the extracted-operator battery \(\cdot\)
-\textbf{F} Retractions, instrument failures and things that did not work
+\textbf{E} A worked negative: the extracted-operator battery
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -54,7 +53,7 @@ ESM-2 \citep{lin2023esm2} & protein LM & amino-acid sequence & frozen gene embed
 therefore cannot be asked questions about learned gene identity, since they are the sequence control, not a
 model arm, for any vocabulary-level question.
 
-\textbf{Construct caveat, stated because it is load-bearing.} There is no cell vector in any of these
+\textbf{Construct caveat.} There is no cell vector in any of these
 models. Every ``cell representation'' is a mean-pool over gene-token residuals at one layer, i.e.
 approximately a context-corrected bag of genes. Part of the measured redundancy with raw expression is
 therefore built into the construction rather than discovered, and this should be borne in mind
@@ -95,7 +94,7 @@ Validated independently: phase-cluster circular means at G2M 20.3\(^{\circ}\), G
 order), concentrations 0.79--0.94, S and G2M score peaks in quadrature (109\(^{\circ}\) \(\approx\) 90\(^{\circ}\)). Discrete
 composition G1 747 / S 1,208 / G2M 1,045.
 
-\textbf{Circularity, stated up front.} \(\varphi\) and the phase call are \emph{derived from marker expression}, so the
+\textbf{Circularity.} \(\varphi\) and the phase call are \emph{derived from marker expression}, so the
 expression baseline is circularly advantaged on every cell-cycle comparison. A model that beats it
 anyway is meaningfully better; an expression win is partly definitional. The cell cycle is a
 \textbf{degenerate testbed at the cell level} and an excellent one at the gene level, where the input can be
@@ -327,7 +326,7 @@ pancreas & \(-\)0.013 & \(-\)0.032 & \(-\)0.022 & \(-\)0.015 & \(-\)0.056 \\
 
 Expression + nonlinear ceilings: 0.977 / 0.983 / 0.921 / 0.987. A symmetric version (model given the
 same nonlinear probe) is also 0/20. Against a \emph{linear} expression probe at k \(\ge\) 100 the models win
-66/180, which an earlier k \(\le\) 50 cap concealed; that correction is recorded in \S\,F.
+66/180, which an earlier k \(\le\) 50 cap concealed.
 
 \textbf{Steering, constrained advance at \(\tau\) = 1.3:}
 
@@ -900,7 +899,8 @@ the model is novel. 20,000 training cells, 1,000 genes, 3,000 steps, \texttt{val
 
 \textbf{Why an unremarkable model.} These experiments need many corpora, not one large model;
 and a bespoke architecture would let any result be attributed to its unusual components rather than to
-transformers in general.
+transformers in general. (An earlier version of this programme used a non-standard architecture, and
+three of four findings differed.)
 
 \hypertarget{d.2-the-metric-warp-law}{%
 \subsection{D.2 The metric-warp law}\label{d.2-the-metric-warp-law}}
@@ -1030,8 +1030,8 @@ model's 0.85). Not a baseline mismatch (PPMI restricted to the model's own top-1
 probe by 0.003 while \texttt{val\_corr} rises 0.801 \(\rightarrow\) 0.857; note the trap: \texttt{corr(log\ steps,\ acc)\ =\ +0.96},
 perfectly monotone and entirely inside chance). Not probe linearity.
 
-\hypertarget{d.4-the-steering-arm-and-why-it-is-excluded}{%
-\subsection{D.4 The steering arm, and why it is excluded}\label{d.4-the-steering-arm-and-why-it-is-excluded}}
+\hypertarget{d.4-why-the-steering-arm-is-excluded}{%
+\subsection{D.4 Why the steering arm is excluded}\label{d.4-why-the-steering-arm-is-excluded}}
 
 The group direction is built from real embedding rows, \texttt{mean(W\_E{[}group\ ==\ c{]})\ -\ mean(W\_E)}. Three
 successive nulls failed:
@@ -1083,8 +1083,8 @@ experiment.} The synthetic work therefore establishes readability and beyond-bas
 table and is \textbf{silent on causal use} there. The real-model causal evidence (\S\,C.1) is a separate
 measurement with its own controls.
 
-\hypertarget{d.5-the-stall-theorem-verified}{%
-\subsection{D.5 The stall theorem, verified}\label{d.5-the-stall-theorem-verified}}
+\hypertarget{d.5-the-stall-theorem}{%
+\subsection{D.5 The stall theorem}\label{d.5-the-stall-theorem}}
 
 Synthetic circle lying exactly in a linear 2-plane of a 60-D space (flat by construction):
 
@@ -1200,7 +1200,7 @@ reverses}: gain from locality +2.09 (scGPT), +4.66 (MaxToki) against gain from p
 +0.06. The general operator is local direction + projection + retraction, and topology decides which
 term matters.
 
-\textbf{Why the global quadratic failed, measured rather than inferred:} Q's own gradient field rotates only
+\textbf{Why the global quadratic failed:} Q's own gradient field rotates only
 12--96\(^{\circ}\) early\(\rightarrow\)late against a measured true tangent rotation of 48--113\(^{\circ}\). One global quadratic
 under-rotates by roughly half and cannot express the direction discontinuity at a bifurcation.
 
@@ -1272,139 +1272,3 @@ equivalently, so the gain cannot be attributed to learned structure.
 We report this in full because every individual check the original performed was passed. The failure
 lies in the choice of checks: none of them was a matched random operator or an information-matched
 baseline.
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{f.-retractions-instrument-failures-and-things-that-did-not-work}{%
-\section{F. Retractions, instrument failures, and things that did not work}\label{f.-retractions-instrument-failures-and-things-that-did-not-work}}
-
-\hypertarget{f.1-claims-we-withdrew}{%
-\subsection{F.1 Claims we withdrew}\label{f.1-claims-we-withdrew}}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-withdrawn
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-replaced by
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-``Chromosome \emph{and} within-chromosome position beat co-expression'' & The control was a raw per-gene expression profile, which sits at chance and excludes nothing. A proper factorisation of the identical cells reaches 0.720, which beats the 217M outright and takes \emph{position} away from both models (\(\rho\) +0.762 vs +0.622 / +0.374). \textbf{Two claims retracted from one methodological error.} \\
-``A global quadratic gradient field steers better than a constant direction'' & Refuted 16/16. Best real gap +0.206, sign unstable, synthetic-linear control \(\approx\) 0. \\
-``The GATA1\(\leftrightarrow\)PU.1 saddle is a mutual-repression geometry'' & Refuted twice: representationally (product \(R^2\) \(-\)0.004 vs \(s_{\mathrm{ery}}^{2}\) +0.114) and in the biology (correlation among undecided progenitors \(-\)0.050 against a \(-\)0.15 threshold). \\
-``The cell-cycle manifold is a low-dimensional ring'' & A \textbf{filled disk}; the earlier statistic was computed on 12 bin centroids and is void as single-cell dimensionality. \\
-``C2S sharpens phase \textasciitilde3\(\times\) over its own input'' & The comparison used a \texttt{1/rank} weighting that collapsed the baseline's PCA onto a few genes. A faithful encoding gives 0.868--0.882, level with the model at 0.875. \\
-``Compute, not relay: 95\% retention after deleting markers'' & Not model-specific: a matched baseline retains 0.94 under the identical ablation. \\
-``Human curved, mouse flat'' & Significance tracks linear-decoder headroom (partial corr \(-\)0.858 vs \(-\)0.091 for species). \\
-``Steering the manifold is retired: there is no curved arc to ride'' & \emph{Global} steering fails; local-tangent projection works. \\
-``Projection is the whole story'' & True on trees, false on loops (\S\,D.6). \\
-``16/180: models are useless on pseudotime'' & An artefact of an inherited k \(\le\) 50 cap; 66/180 at k \(\ge\) 100. The correct verdict is 0/20 against a \emph{nonlinear} expression baseline. \\
-Aging/HSC headline & Withdrawn by its own held-out test: disease donors sit inside the healthy range (p = 0.23) and the winning lineage flips between runs. What survives is a ``real, small, and on current evidence useless'' direction-vs-position signal. \\
-\end{longtable}
-
-\hypertarget{f.2-instruments-that-broke}{%
-\subsection{F.2 Instruments that broke}\label{f.2-instruments-that-broke}}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{\(\theta_{\mathrm{far}}\) must not be used on periodic manifolds.} On a circle the first and last bins are adjacent, so
-  a perfect circle scores \(\approx\) 0; the real loop scores \emph{below} its own flat-circle null in every model.
-\item
-  \textbf{The decodability gap (kNN \(-\) linear) is not a curvature statistic.} It is structurally
-  headroom-limited and correlates \(-\)0.926 with linear \(R^2\). Deprecated.
-\item
-  \textbf{Circular correlation is degenerate against uniform variables.} It uses sin(a \(-\) circmean(a)), so a
-  constant rotation cancels and the null equals the real value exactly; and it returns r = +0.804 at
-  p = 0.0005 for an arm that travelled \textbf{zero} laps. Replaced by decoded winding and a time-shift null.
-\item
-  \textbf{Full-space kNN breaks at high dimension} (curvature \(-\)0.457 at d = 2048).
-\item
-  \textbf{A whitening bug} made the first nonlinear expression baseline return \(R^2 = -2.583\), and \textbf{the broken
-  version would have confirmed a model win}.
-\item
-  \textbf{Permutation-floor p-values} (1/13, 1/21, 1/41, 1/201) were quoted as evidence in several places.
-\item
-  \textbf{Small-n leave-one-out is degenerate:} pure noise scores \textbar{}\(\rho\)\textbar{} = 0.736 at n = 9.
-\item
-  \textbf{A saturated test cannot distinguish present from absent:} perturbation identity decodes at 1.000
-  from a \emph{random-init} model because the label is an injected input.
-\item
-  \textbf{MPS boolean indexing} returned mismatched element counts for the same mask (3243 vs 40) at scale;
-  removed from the hot path.
-\end{itemize}
-
-\hypertarget{f.3-nulls-that-were-wrong-and-the-general-lesson}{%
-\subsection{F.3 Nulls that were wrong, and the general lesson}\label{f.3-nulls-that-were-wrong-and-the-general-lesson}}
-
-Six documented cases where a large z against a permutation null went to \(\approx\) 0 against a competitor built
-from the same cells: attention z +4.18 \(\rightarrow\) +0.17; the functional-context axis +20\(\sigma\) random-partition, +9\(\sigma\)
-tightness, \textbf{+1.16\(\sigma\) co-expression}; paralogy beats co-expression and loses to sequence; C2S phase
-0.898 against a broken input encoding and parity against a faithful one; cross-model consensus survives
-every hygiene attack until a matched co-expression neighbourhood scalar recovers \(\rho\) 0.458--0.581; and a
-label made of \textbf{pure sampling noise} scoring 0.447 at z = 35.8, higher than the real biological label
-at 0.357, z = 24.9.
-
-\hypertarget{f.4-things-that-did-not-work}{%
-\subsection{F.4 Things that did not work}\label{f.4-things-that-did-not-work}}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Perturbation inversion.} Negative in 4/4 models including the perturbation-trained one. AUROC
-  0.487--0.707; 0/4 fates significant; residualised on differential expression all q \(\ge\) 0.26. A model
-  trained on a CRISPRi vocabulary passes its validity gate yet ranks the canonical erythroid regulator
-  111/131 \textbf{with the sign backwards}. \emph{Caveat:} the differential-expression-matched stratum test cannot
-  run (0--2 known drivers fall in the low-\textbar DE\textbar{} half), so the negative is ``no signal beyond DE'', not
-  ``provably no regulatory knowledge''.
-\item
-  \textbf{Hidden clonal fate (LARRY \citep{weinreb2020larry}).} A well-powered negative: expression position AUROC 0.767, geometry
-  0.540 \(\approx\) its clone-permutation null 0.383 \(\pm\) 0.061, combined gain \(-\)0.006.
-\item
-  \textbf{Reconstructing a deleted intermediate.} Held-out peak r = +0.545, rank 5/10, path running through
-  the wrong lineage. Steering interpolates; it does not generate.
-\item
-  \textbf{Commitment as a discrete geometric step.} No cliff (sigmoid transition width 0.27--0.83 of the
-  pseudotime range), and a counts baseline wins in 3/4 models.
-\item
-  \textbf{Label-free \texttt{transport} steering.} Fails in all five substrates, \(\lVert D\rVert\) collapse ratio exactly 1.0000.
-\item
-  \textbf{Irreducible topology.} No loops or holes anywhere. In-plane H1 null in five substrates including
-  raw expression (all p \(\ge\) 0.27); out-of-plane excess negative in 5/5; lineage-tree H0 z = \(-\)6.81
-  (branches \emph{tighter} than a matched Gaussian).
-\item
-  \textbf{Bilinear/interaction machinery generally.} Supervised bilinear CP probes lose to linear (\(-\)0.060);
-  SAE dictionaries \citep{kendiukhov2026sae} are 73--99.7\% redundant with linear ones and order-4 is worse than order-2; and
-  third-order combinatorial ablation finds \textbf{0.00\% superadditive interactions over \textasciitilde2,980 targets}.
-\item
-  \textbf{Scale.} 5\(\times\) parameters changes rotation excess by \(-\)11.1\(^{\circ}\) and \(\Delta\)\(\rho\) by 0.00; at matched SAE capacity a
-  13\(\times\) larger model has 31\(\times\) more dead features and 19 points lower annotation.
-\end{itemize}
-
-\hypertarget{f.6-open-questions-we-consider-most-important}{%
-\subsection{F.6 Open questions we consider most important}\label{f.6-open-questions-we-consider-most-important}}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \textbf{A neighbourhood-co-regulation baseline for chromosome.} Every existing baseline is a per-gene
-  profile or a global factorisation; neither models \emph{local} co-regulation. Scoring against Hi-C A/B
-  compartments and replication timing decides whether the strongest positive survives.
-\item
-  \textbf{What makes a token table a map rather than an index}: architecture, corpus scale, vocabulary
-  size, or a separately-used output head.
-\item
-  \textbf{Cell cycle \(\times\) attention}, the last empty cell in the coverage grid.
-\item
-  \textbf{A causal test for token-table facts under a calibrated null}, given \S\,D.4.
-\item
-  \textbf{The output-change law on a non-cyclic manifold.}
-\item
-  \textbf{Correcting the two extraction defects} across all affected analyses (\S\,A.3).
-\end{enumerate}
