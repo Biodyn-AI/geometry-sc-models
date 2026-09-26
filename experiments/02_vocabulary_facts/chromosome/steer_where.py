@@ -1,7 +1,7 @@
-"""WHERE do the classifier's predictions GO when you push the chromosome variable? (Ihor, 2026-07-18)
+"""WHERE do the classifier's predictions GO when you push the chromosome variable?
 
-steer_classifier.py measured HOW FAR each head's predicted distribution moves (total variation). Ihor's
-question: that says a distance, not a destination. What LITERALLY happens to the predictions?
+steer_classifier.py measured HOW FAR each head's predicted distribution moves (total variation). This
+measures a distance, not a destination. What LITERALLY happens to the predictions?
 
 Three qualitatively different things could produce the same TV, and they mean opposite things:
   (1) DIFFUSE DEGRADATION -- the distribution just flattens; the model becomes uncertain. Entropy rises, the

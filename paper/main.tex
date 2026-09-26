@@ -17,13 +17,8 @@
 
 \title{\bfseries The geometry of single-cell foundation models:\\
 what they inherit, what they add, and what shapes it}
-\author[1,2]{Ihor Kendiukhov}
-\author[3]{Logan Riggs Smith}
-\author[4]{Thomas Dooms}
-\affil[1]{Institute of Medical Genetics and Applied Genomics, University of T\"ubingen}
-\affil[2]{Pivotal Research}
-\affil[3]{Cambridge Boston Alignment Initiative}
-\affil[4]{Goodfire}
+\author{Anonymous authors}
+\hypersetup{pdfauthor={}}
 \renewcommand\Authands{ and }
 \date{}
 
@@ -764,7 +759,7 @@ raises pseudotime decodability by $0.109$ and linear fit by $0.210$, and \emph{l
 curvature gap by $0.075$. And in one widely used cached developmental dataset, differentiated cells sit
 \emph{below} stem cells in pseudotime.
 
-These tests are not gentle, and the first result we put through them was one of our own. A
+We apply these tests to a previously reported result. A
 previously reported developmental representation extracted from a frozen model
 \citep{kendiukhov2026hematopoietic}, benchmarked against scVI \citep{lopez2018scvi}, Palantir
 \citep{setty2019palantir}, DPT \citep{haghverdi2016dpt}, CellTypist \citep{dominguezconde2022celltypist},
@@ -808,7 +803,7 @@ separate these effects in realistic settings, is the question \S\ref{sec:control
 
 \textbf{Geometry in biological foundation models.} Low-dimensional cell-state structure is reported by
 the model papers themselves \citep{cui2024scgpt,theodoris2023geneformer,rosen2026uce} and analysed
-spectrally in our earlier work \citep{kendiukhov2026spectral}, generally as encoding results without a
+spectrally in earlier work \citep{kendiukhov2026spectral}, generally as encoding results without a
 causal test, and generally without a competitor built from the same data. Reports of gene embeddings
 reflecting genomic organisation are local, pairwise and correlational, without neighbourhood holdout or
 intervention. Our reading of that literature is the one stated in \S\ref{sec:controls}: absent a
@@ -872,8 +867,7 @@ model is such a setting, and \S\ref{sec:controls} is our answer to that question
 these models as a controlled place in which claims about representational geometry can be tested more
 cheaply and more decisively, with the conclusions carried back.
 
-\paragraph{Code and data.} Everything is at
-\url{https://github.com/Biodyn-AI/geometry-sc-models}: the analysis code organised by the section it
+\paragraph{Code and data.} The accompanying code repository contains the analysis code organised by the section it
 supports, an index mapping every claim to the script that produced it, the figure scripts, and about
 280 result files committed beside the code that wrote them, so any number here can be checked without
 rerunning anything. The synthetic programme of \S\ref{sec:warp} and \S\ref{sec:table} runs end to

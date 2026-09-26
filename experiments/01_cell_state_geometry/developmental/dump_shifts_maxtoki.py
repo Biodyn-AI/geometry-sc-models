@@ -7,7 +7,7 @@ front if it is not expressed. That is exactly Theodoris et al.'s in-silico activ
 analogue of what perturb_invert.py does to scGPT.
 
 Only DUMPS embeddings; all statistics are done uniformly across models by score_shifts.py (which runs in the
-biotensor .venv). This keeps the cross-model comparison honest -- one scorer, three models.
+project .venv). This keeps the cross-model comparison honest -- one scorer, three models.
 
 Note: the INDIRECT score (pool excluding the perturbed token) is not computed here. In scGPT it was numerically
 indistinguishable from the direct score (0.707/0.707, 0.701/0.694, ...) because the perturbed token is ~1/1200
@@ -33,9 +33,9 @@ PROJ = f"{_DATA}"
 SETTY = f"{PROJ}/data/hematopoiesis/setty19_cd34_bm.h5ad"
 EMB = f"{PROJ}/data/maxtoki_acts/maxtoki_setty.npz"
 OUT = f"{PROJ}/data/branchpoint/shifts_maxtoki_setty.npz"
-NAME_ID_PKL = (f"{_DATA}/biodyn-nmi-paper/src/02_cssi_method/"
+NAME_ID_PKL = (f"{_DATA}/analysis-data/src/02_cssi_method/"
                "crispri_validation/data/gene_name_id_dict_gc104M.pkl")
-TF_DB = (f"{_DATA}/biodyn-work/network_inference/data/"
+TF_DB = (f"{_DATA}/research-data/network_inference/data/"
          "dorothea_trrust_union_immune.tsv")
 
 LAYER_HS, MAX_LEN, SEED, BATCH = 8, 2048, 0, 8

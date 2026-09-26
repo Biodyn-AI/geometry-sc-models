@@ -1,6 +1,6 @@
-"""GENE SWAP — the assumption-free CEILING for Ihor's operator objection (2026-07-20).
+"""GENE SWAP — the assumption-free CEILING for the concern about the steering operator.
 
-THE OBJECTION AND WHERE IT STANDS. Ihor: chromosome is a CLUSTERING with non-parallel offsets (§5), so adding
+THE OBJECTION AND WHERE IT STANDS. Chromosome is a CLUSTERING with non-parallel offsets (§5), so adding
 one global vector d_C may be the wrong operation. `steer_relative.py` tested the source-relative fix
 (d[g] = centroid(C) − centroid(chrom of g)) and it did NOT beat global (+0.0129 vs +0.0147 destination gap).
 But BOTH assume the blobs are related by LINEAR ARITHMETIC. If that assumption is itself wrong, both operators

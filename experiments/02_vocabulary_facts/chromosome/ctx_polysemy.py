@@ -1,6 +1,6 @@
 """DOES A GENE RESPOND TO CELLULAR CONTEXT IN A GENE-SPECIFIC WAY? (the real test)
 
-THE QUESTION. Ihor's: can we track how a gene's representation changes with the genes around it, and is the
+THE QUESTION. Can we track how a gene's representation changes with the genes around it, and is the
 change biologically meaningful? Everything hinges on separating a real effect from the AVERAGING NULL --
 attention pools over the cell, so every gene in a macrophage drifts the same way, and a gene will "look
 metabolic" in a metabolic cell for no interesting reason.

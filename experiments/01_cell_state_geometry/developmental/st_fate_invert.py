@@ -72,7 +72,7 @@ SETTY = f"{PROJ}/data/hematopoiesis/setty19_cd34_bm.h5ad"
 SE_NPZ = f"{PROJ}/data/branchpoint/state_setty.npz"          # defines WHICH Setty cells we use
 XSTATE = f"{PROJ}/data/branchpoint/setty_xstate.h5ad"        # cached X_state (2058-d) for those cells
 RESULTS = HERE / "results"
-TF_DB = (f"{_DATA}/biodyn-work/network_inference/data/"
+TF_DB = (f"{_DATA}/research-data/network_inference/data/"
          "dorothea_trrust_union_immune.tsv")
 S, N_SENT, B_SENT = 64, 8, 8                                  # sentence len, sentences per pert, batch
 

@@ -1,6 +1,6 @@
 """Re-test the antipodal hypothesis PROPERLY: in a subspace, not in the full space.
 
-Ihor's objection, and it is correct: run_contextfree.py measured cos(W[GATA1], W[SPI1]) over ALL dimensions.
+The problem with the previous test: run_contextfree.py measured cos(W[GATA1], W[SPI1]) over ALL dimensions.
 If two TFs share a big common component -- "I am a transcription factor", "I am a blood gene", plus whatever
 generic axes (token frequency, embedding norm) dominate a gene table -- that shared mass swamps any
 anti-alignment living in a small lineage subspace. The ESM2 numbers demonstrate exactly this failure: +0.66 to

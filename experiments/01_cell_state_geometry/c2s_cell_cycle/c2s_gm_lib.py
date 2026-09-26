@@ -1,7 +1,7 @@
 """c2s_gm_lib — route_genemanifold Thread-A machinery, ported to C2S-Scale-Gemma-2.
 
 FIDELITY NOTE. The STATISTICS (order/circle/grid/antipodal/margin_boot and their nulls) are copied
-VERBATIM from biotensor/codebase/route_genemanifold/gm_lib.py — they encode the mandated discipline:
+VERBATIM from experiments/02_vocabulary_facts/chromosome/gm_lib.py — they encode the mandated discipline:
 NEVER feature-shuffle; the null PERMUTES THE ANNOTATION over the same genes (holds gene set,
 co-expression, abundance fixed). Do not "improve" them.
 

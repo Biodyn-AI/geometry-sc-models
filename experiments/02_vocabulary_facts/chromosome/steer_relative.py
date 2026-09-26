@@ -1,6 +1,6 @@
-"""IS THE STEERING OPERATOR ITSELF WRONG? global vs SOURCE-RELATIVE push (Ihor's objection, 2026-07-20).
+"""IS THE STEERING OPERATOR ITSELF WRONG? global vs SOURCE-RELATIVE push.
 
-IHOR'S POINT. Chromosome is stored as a CLUSTERING, not an ordered axis: §5 TEST 1 showed the cluster label is
+THE CONCERN. Chromosome is stored as a CLUSTERING, not an ordered axis: §5 TEST 1 showed the cluster label is
 invariant to random re-coding (unordered blobs), and §5 TEST 2 showed the blob-to-blob offsets are only ~0.2
 aligned where a genuine grid needs ~1.0. If that is right, then "add one global vector d_C to every pushed
 gene" is the WRONG OPERATION. d_C = centroid(C) - global_centroid. Adding it to a gene already in C's blob
@@ -13,13 +13,13 @@ genes to actually behave like specific C genes). So the null may be a fact about
 
 THE TEST. Same cells, same targets, same magnitude, three operators:
   global    d[g] = centroid(C) - centroid(all)                 <- what every previous run used
-  relative  d[g] = centroid(C) - centroid(chromosome of g)     <- Ihor's operator: source-dependent
+  relative  d[g] = centroid(C) - centroid(chromosome of g)     <- source-dependent operator
   sham      d[g] = centroid(random gene set) - centroid(all)   <- the usual in-manifold, meaning-free control
 All are unit-normalised per gene and applied at the same alpha, so magnitude is held fixed and only the
 GEOMETRY of the operation differs. Read both readouts:
   NATIVE   softmax mass on target-C HELD-OUT genes at UNSTEERED positions (split-half; must cross attention)
   DEST     the 18-class cell_type head on the pooled final state, scored against real expression enrichment
-If Ihor is right: relative >= global on NATIVE, and clearly better on the destination alignment.
+If this hypothesis is right: relative >= global on NATIVE, and clearly better on the destination alignment.
 
 Run: ../../.venv_state/bin/python -u steer_relative.py [n_cells] [alpha]
 Out: results/steer_relative.json

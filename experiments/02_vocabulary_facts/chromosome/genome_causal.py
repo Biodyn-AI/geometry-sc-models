@@ -1,4 +1,4 @@
-"""IS CHROMOSOME *USED* BY THE MODEL, OR ONLY READABLE IN THE TABLE? — the causal steering test (Ihor).
+"""IS CHROMOSOME *USED* BY THE MODEL, OR ONLY READABLE IN THE TABLE? — the causal steering test.
 
 RESULTS.md section 12 shows the INPUT embedding table linearly encodes a gene's chromosome. That is a fact
 about the static table. It does NOT show the model's COMPUTATION uses chromosome -- exactly the distinction

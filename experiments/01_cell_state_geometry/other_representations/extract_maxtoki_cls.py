@@ -35,7 +35,7 @@ from maxtoki_adapter import MaxTokiTokenizer, MaxTokiAttentionExtractor  # noqa:
 PROJ = f"{_DATA}"
 SETTY = os.environ.get("BP_H5AD", f"{PROJ}/data/hematopoiesis/setty19_cd34_bm.h5ad")
 OUT = os.environ.get("BP_OUT", f"{PROJ}/data/celltoken/maxtoki_setty.npz")
-BIOM = f"{_DATA}/biodyn-nmi-paper/src/02_cssi_method/crispri_validation/data"
+BIOM = f"{_DATA}/analysis-data/src/02_cssi_method/crispri_validation/data"
 NAME_ID_PKL = f"{BIOM}/gene_name_id_dict_gc104M.pkl"
 
 LAYER_HS = 8

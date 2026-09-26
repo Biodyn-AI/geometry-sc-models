@@ -1,5 +1,5 @@
 """IS THE GENE-LEVEL CELL-CYCLE GEOMETRY A CIRCLE, OR AN AXIS? — the diagnostic that explains the steering
-negative (Ihor, 2026-07-18).
+negative.
 
 WHY. `cellcycle_steer.py` found NO phase tracking at any dose (best circ_corr +0.18, random ~0). A negative is
 worthless until you show the instrument could have detected a positive, and until you know WHICH link failed.

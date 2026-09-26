@@ -1,4 +1,4 @@
-"""HOW FAR DOES A LOCAL PUSH REACH? — the decay curve (Ihor, 2026-07-20).
+"""HOW FAR DOES A LOCAL PUSH REACH? — the decay curve.
 
 THE QUESTION, and why it is the right one. Every previous readout summed the response into a single
 chromosome-level number, which cannot distinguish two very different models of what the variable IS:

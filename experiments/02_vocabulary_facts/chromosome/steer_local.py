@@ -1,4 +1,4 @@
-"""LOCAL GENOMIC DOMAINS — the fine-grained version of the failed mechanism test (Ihor, 2026-07-18).
+"""LOCAL GENOMIC DOMAINS — the fine-grained version of the failed mechanism test.
 
 WHY. steer_mechanism.py asked "does chr-C steering send cells to the cell type that over-expresses chr-C
 genes?" and the answer was NO (0/22 argmax; the sharpened version p=0.115). But a whole chromosome is a
@@ -246,7 +246,7 @@ def main(n_cells=30, window_mb=5.0, n_bins=48, alpha=0.5, model="217m"):
     print(f"  effect size: gap {gap:+.4f} ({size});  enrichment {'DEGENERATE' if degenerate else 'ok'}")
     print(f"  VERDICT: {verdict}")
 
-    # ---- 4. TARGETED test: "does it steer in the INTENDED direction?" (Ihor, 2026-07-20)
+    # ---- 4. TARGETED test: "does it steer in the INTENDED direction?"
     # The profile correlation above is aggregate and indirect. The direct question: for each domain B, take the
     # cell type T_B that the DATA says most over-expresses B's genes, and ask whether steering toward B raises
     # p(T_B) -- in probability units. The control is the SAME T_B under MISMATCHED domains, which subtracts off

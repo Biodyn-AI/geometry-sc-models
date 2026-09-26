@@ -1,4 +1,4 @@
-"""THE TOKEN-ID LEAK, DONE HONESTLY — and does the genome-wide chromosome signal survive it? (Ihor, 2026-07-17)
+"""THE TOKEN-ID LEAK, DONE HONESTLY — and does the genome-wide chromosome signal survive it?
 
 WHY THIS EXISTS. My first leak check (scratch) used a LINEAR probe on token_id and got 0.0455 = chance, and
 RESULTS.md section 4 dismissed token-ID leakage for HOX by checking token-id RANGE. Both are INVALID for the

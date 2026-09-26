@@ -1,6 +1,6 @@
 """DOES MAXTOKI'S COMPUTATION *USE* THE HOX CLUSTER STRUCTURE, OR ONLY CARRY IT AS A READABLE CORRELATE?
-(Ihor, 2026-07-17 — "ablate the axis, don't just read it", the recommendation the paper (materials/paper.pdf)
-and this route jointly arrive at.)
+The recommendation from the paper (materials/paper.pdf) and this analysis is to
+ablate the axis, rather than only measure its correlation with annotations.
 
 The HEADLINE (RESULTS.md) is read entirely off the WEIGHTS: lm_head's HOX rows separate the four genomic
 clusters at held-out 4-class acc 0.884 (217M). That is a statement about what is DECODABLE, not about what the

@@ -29,7 +29,7 @@ from concurrent.futures import ThreadPoolExecutor
 HERE = os.path.dirname(os.path.abspath(__file__))
 XLSX = sys.argv[1] if len(sys.argv) > 1 else str(_DATA / "media-1.xlsx")   # see docs/DATA.md
 MAILTO = _os.environ.get("CROSSREF_MAILTO", "")   # Crossref polite-pool contact          # CrossRef "polite pool" -- identifies the caller, gets better service
-UA = f"biomi-automation-corpus-audit/1.0 (mailto:{MAILTO})"
+UA = f"geometry-corpus-audit/1.0 (mailto:{MAILTO})"
 
 # Broad, substring-matched. Over-calling is intentional (see docstring).
 CANCER = ["tumor", "tumour", "cancer", "carcinoma", "malign", "neoplas", "leukemi", "leukaemi", "lymphoma",

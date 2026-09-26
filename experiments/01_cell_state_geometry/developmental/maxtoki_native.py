@@ -57,7 +57,7 @@ DATA = f"{_DATA}/branchpoint"
 SETUP = f"{_DATA}/maxtoki/setup"
 CKPT = os.path.join(SETUP, "MaxToki-217M-HF", "model.safetensors")
 TOKEN_DICT = os.path.join(SETUP, "token_dictionary.json")
-NAME_ID_PKL = (f"{_DATA}/biodyn-nmi-paper/src/02_cssi_method/"
+NAME_ID_PKL = (f"{_DATA}/analysis-data/src/02_cssi_method/"
                "crispri_validation/data/gene_name_id_dict_gc104M.pkl")
 TISSUE = "setty"
 

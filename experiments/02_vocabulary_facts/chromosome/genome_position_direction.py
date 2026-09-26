@@ -1,4 +1,4 @@
-"""IS POSITION A LINEAR DIRECTION? non-linear? curved? — concrete mechanistic characterisation (Ihor).
+"""IS POSITION A LINEAR DIRECTION? non-linear? curved? — concrete mechanistic characterisation.
 
 For MaxToki lm_head, within each chromosome, all leakage-clean (near-duplicate genes removed by embedding
 cosine, random 5-fold out-of-fold), we ask:

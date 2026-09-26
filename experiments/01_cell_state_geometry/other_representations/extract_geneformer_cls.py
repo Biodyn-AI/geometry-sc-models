@@ -27,7 +27,7 @@ import numpy as np
 import h5py
 import torch
 
-TOK_DIR = f"{_DATA}/biodyn-nmi-paper/src/02_cssi_method/crispri_validation/data"
+TOK_DIR = f"{_DATA}/analysis-data/src/02_cssi_method/crispri_validation/data"
 ROOT = f"{_DATA}"
 SETTY = os.environ.get("BP_H5AD", os.path.join(ROOT, "data/hematopoiesis/setty19_cd34_bm.h5ad"))
 OUT = os.environ.get("BP_OUT", os.path.join(ROOT, "data/celltoken/geneformer_setty.npz"))

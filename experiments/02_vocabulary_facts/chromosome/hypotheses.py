@@ -25,7 +25,7 @@ import gm_lib as G
 from genome_wide import coords, AUTOSOMES
 
 GENE2GO = f"{_DATA}/perturb/gene2go_all.pkl"
-DOROTHEA = f"{_DATA}/biodyn-work/single_cell_mechinterp/external/networks/dorothea_human.tsv"
+DOROTHEA = f"{_DATA}/research-data/single_cell_mechinterp/external/networks/dorothea_human.tsv"
 MIN_PER_CLASS = 40
 _cache = {}
 
@@ -199,8 +199,8 @@ _gwc = {}                      # batch-local cache; keeps out of _cache's key sp
 DEVEL_CELLS = 2500             # cell subsample for the fetal-gut panel (195 MB float32 vs gm_lib's 1.25 GB f64)
 NEIGH_K, NEIGH_SPAN, NEIGH_MIN = 10, 2_000_000, 8
 DETREND_W = 101
-TRRUST = f"{_DATA}/biodyn-work/single_cell_mechinterp/external/networks/trrust_human.tsv"
-OMNIPATH = f"{_DATA}/biodyn-work/network_inference/data/omnipath_interactions.tsv"
+TRRUST = f"{_DATA}/research-data/single_cell_mechinterp/external/networks/trrust_human.tsv"
+OMNIPATH = f"{_DATA}/research-data/network_inference/data/omnipath_interactions.tsv"
 DEVEL_NPZ = os.path.join(G.CACHE, "coexpr_devel.npz")
 
 

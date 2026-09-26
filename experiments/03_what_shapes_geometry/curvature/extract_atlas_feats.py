@@ -35,14 +35,14 @@ import torch
 HERE = os.path.dirname(os.path.abspath(__file__))
 RES = os.path.join(HERE, "results"); os.makedirs(RES, exist_ok=True)
 
-MI = f"{_DATA}/biodyn-work/single_cell_mechinterp"
+MI = f"{_DATA}/research-data/single_cell_mechinterp"
 SCGPT_REPO = os.path.join(MI, "external", "scGPT")
 SCGPT_CKPT = os.path.join(MI, "external", "scGPT_checkpoints", "whole-human", "best_model.pt")
 SCGPT_VOCAB = os.path.join(MI, "external", "scGPT_checkpoints", "whole-human", "vocab.json")
-SAE_DIR = (f"{_DATA}/biodyn-work/"
+SAE_DIR = (f"{_DATA}/research-data/"
            "subproject_42_sparse_autoencoder_biological_map/experiments/scgpt_atlas/"
            "sae_models/layer11_x4_k32")
-BIO_SAE_SRC = f"{_DATA}/biomi_automation/repos/bio-sae/src"
+BIO_SAE_SRC = f"{_DATA}/workspace/repos/bio-sae/src"
 SETTY = f"{_DATA}/hematopoiesis/setty19_cd34_bm.h5ad"
 CACHED = f"{_DATA}/branchpoint/scgpt_setty.npz"
 OUT = os.path.join(RES, "atlas_feats_scgpt_setty.npz")

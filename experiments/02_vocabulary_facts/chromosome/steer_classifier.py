@@ -1,6 +1,6 @@
-"""steer_classifier — the SHARED MULTI-HEAD readout, and the SPECIFICITY test (Ihor, 2026-07-18).
+"""steer_classifier — the SHARED MULTI-HEAD readout, and the SPECIFICITY test.
 
-WHY A SHARED CLASSIFIER (Ihor's design). One lightweight classifier on top of the model's pooled final cell
+WHY A SHARED CLASSIFIER. One lightweight classifier on top of the model's pooled final cell
 embedding, with MANY heads predicting MANY properties at once. Its job is NOT to re-measure what the native
 logit readout already measures. Its job is **SPECIFICITY**:
 

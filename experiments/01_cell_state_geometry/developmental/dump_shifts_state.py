@@ -39,7 +39,7 @@ PROJ = f"{_DATA}"
 SETTY = f"{PROJ}/data/hematopoiesis/setty19_cd34_bm.h5ad"
 EMB = f"{PROJ}/data/branchpoint/state_setty.npz"
 OUT = f"{PROJ}/data/branchpoint/shifts_state_setty.npz"
-TF_DB = (f"{_DATA}/biodyn-work/network_inference/data/"
+TF_DB = (f"{_DATA}/research-data/network_inference/data/"
          "dorothea_trrust_union_immune.tsv")
 LAYER, SEED = int(os.environ.get("STATE_LAYER", "11")), 0
 BATCH = int(os.environ.get("STATE_BATCH", "8"))

@@ -17,6 +17,24 @@ Both default to `./data` and `./models` inside the repository, which are gitigno
 cannot find an asset raises immediately with the path it wanted, rather than failing part way
 through a long run.
 
+### Asset directory names
+
+Some scripts expect additional directory trees under `GEOMSC_DATA`. The directory names in this
+release are generic; arrange existing local assets under these names or provide local symlinks:
+
+| directory under `GEOMSC_DATA` | contents |
+|---|---|
+| `research-data/` | expression data, network annotations and cached model activations |
+| `analysis-data/src/02_cssi_method/crispri_validation/data/` | Replogle data and gene-token dictionaries |
+| `workspace/repos/` | external UCE and bio-sae source checkouts |
+| `project-data/research-data/` | atlas activations and expression panels read by `chromosome/gm_lib.py` |
+
+The two real-data checks in `experiments/05_synthetic/s0_local_resolution.py` and
+`s3b_real_c2s_null.py` also read `GEOMSC_PROJECT_ROOT` and `GEOMSC_C2S`. Set the former to the
+directory containing `data/cellcycle/` and the latter to the directory containing C2S
+`data/act_k562/` and `results/manifold_knots_cc.npz`. These checks write their results under
+`GEOMSC_PROJECT_ROOT/manifolds/synthetic/results/`.
+
 ---
 
 ## Models

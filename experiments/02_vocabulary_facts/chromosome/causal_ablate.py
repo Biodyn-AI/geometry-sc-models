@@ -1,6 +1,6 @@
 """CAUSAL USE of the secretory axis — the only test that can make the survivor a "manifold" in Goodfire's sense.
 
-WHY THIS EXISTS. Ihor's decisive point: Engels et al. never claimed the days-of-the-week circle was
+WHY THIS EXISTS. Engels et al. never claimed the days-of-the-week circle was
 statistically significant over 7 points. Their evidence is CAUSAL -- intervene on the circular subspace and the
 model's modular-arithmetic answers change -- so the n is thousands of prompts, not 7 tokens. Our whole battery
 was a geometric-fit-plus-permutation machine, which correctly reported that it has no power at n=20-46 genes.

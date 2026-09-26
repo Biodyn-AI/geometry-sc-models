@@ -1,4 +1,4 @@
-"""steer_propagation — the split-half causal-propagation test, for ANY categorical gene property (Ihor).
+"""steer_propagation — the split-half causal-propagation test, for ANY categorical gene property.
 
 Generalises `genome_causal.py` (chromosome-specific, single alpha, one seed) into a reusable experiment on top
 of `steer_lib`, and closes the two controls that script left owed: an ALPHA-SWEEP (dose-response) and a SECOND

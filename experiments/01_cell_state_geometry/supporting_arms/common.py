@@ -1,7 +1,7 @@
 """Shared paths + helpers for Tier-B manifold-geometry build (route_manifold).
 
 READ-ONLY w.r.t. route_b / route_geometry. Heavy external caches go OUTSIDE the repo under
-projects/biotensor/data/route_manifold/ (gitignored). CPU-only, capped threads (co-tenant with STATE-ST).
+data/route_manifold/ (gitignored). CPU-only, capped threads (co-tenant with STATE-ST).
 """
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
@@ -31,9 +31,9 @@ N_THREADS = max(1, min(4, (os.cpu_count() or 4) - 2))
 torch.set_num_threads(N_THREADS)
 
 # ---- external drive roots ----
-EXP = (f"{_DATA}/biodyn-work/"
+EXP = (f"{_DATA}/research-data/"
        "subproject_42_sparse_autoencoder_biological_map/experiments")
-MI = f"{_DATA}/biodyn-work/single_cell_mechinterp"
+MI = f"{_DATA}/research-data/single_cell_mechinterp"
 RAW = os.path.join(MI, "data", "raw")
 SCGPT_REPO = os.path.join(MI, "external", "scGPT")
 SCGPT_CKPT = os.path.join(MI, "external", "scGPT_checkpoints", "whole-human", "best_model.pt")

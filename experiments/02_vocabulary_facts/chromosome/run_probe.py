@@ -2,8 +2,8 @@
 
 WHY. run_contextfree/run_scale asked "does the annotated order appear in the top 3 PCs of the gene subset?"
 That is UNSUPERVISED: it throws the annotation away, demands the structure occupy a top principal plane, and it
-had no power at n=46 (every margin CI spanned +-0.4). Ihor's cosine objection exposed the same disease in the
-antipodal test -- a full-space measure was dominated by shared mass, and the hypothesis came back to life the
+had no power at n=46 (every margin CI spanned +-0.4). The concern about cosine similarity exposed the same
+problem in the antipodal test -- a full-space measure was dominated by shared mass, and the hypothesis came back to life the
 moment we asked the question in the right subspace with a MARKER-DEFINED (i.e. supervised) axis.
 
 Generalise that. The right question is not "is the order in PC1-3" but:

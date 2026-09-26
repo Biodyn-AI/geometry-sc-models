@@ -57,7 +57,7 @@ Check in this order.
 
 ## A note on what "reproduce" means here
 
-Several results in this paper are **negative**, and a few are **retractions of our own earlier
+Several results in this paper are **negative**, and a few **reassess earlier
 claims**. Reproducing those means reproducing the absence of an effect, which is sensitive to the
 null you use. Section 6 of the paper records six cases where a large z against a permutation null went to
 approximately zero against a competitor built from the same cells. If you are checking one of those,

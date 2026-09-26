@@ -53,7 +53,7 @@ import os
 import numpy as np
 
 ROOT = f"{_DATA}"
-REPLOGLE = (f"{_DATA}/biodyn-nmi-paper/src/02_cssi_method/"
+REPLOGLE = (f"{_DATA}/analysis-data/src/02_cssi_method/"
             "crispri_validation/data/replogle_concat.h5ad")
 DATA = os.path.join(ROOT, "data", "cellcycle")
 os.makedirs(DATA, exist_ok=True)

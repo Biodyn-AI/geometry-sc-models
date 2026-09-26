@@ -1,4 +1,4 @@
-"""CAN WE IMPROVE THE POSITION READ-OUT? — Ihor's "different linear directions at different intervals" + others.
+"""CAN WE IMPROVE THE POSITION READ-OUT? — test different linear directions at different intervals, alongside other approaches.
 
 Baseline: one global ridge on the OUTPUT table (lm_head), leakage-clean (near-duplicate genes removed by
 embedding cosine, random 5-fold), mean signed Spearman over the 22 autosomes = 0.412.

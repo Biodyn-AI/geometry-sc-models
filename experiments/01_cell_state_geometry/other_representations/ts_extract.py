@@ -24,7 +24,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "route_state"))
 from state_loader import load_state_se, load_protein_embeds  # noqa: E402
 
-TS_DIR = f"{_DATA}/biodyn-work/subproject_09_causal_mediation_circuit_map/implementation/results/preprocessed"
+TS_DIR = f"{_DATA}/research-data/subproject_09_causal_mediation_circuit_map/implementation/results/preprocessed"
 TISSUES = {"immune": "tabula_sapiens_immune_subset_20000_processed.h5ad",
            "kidney": "tabula_sapiens_kidney_processed.h5ad",
            "lung": "tabula_sapiens_lung_processed.h5ad"}

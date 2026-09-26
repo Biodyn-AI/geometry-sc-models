@@ -26,8 +26,8 @@ import json
 import os
 import numpy as np
 
-BASE = f"{_DATA}/biodyn-work/subproject_42_sparse_autoencoder_biological_map/experiments"
-REPLOGLE = f"{_DATA}/biodyn-nmi-paper/src/02_cssi_method/crispri_validation/data/replogle_concat.h5ad"
+BASE = f"{_DATA}/research-data/subproject_42_sparse_autoencoder_biological_map/experiments"
+REPLOGLE = f"{_DATA}/analysis-data/src/02_cssi_method/crispri_validation/data/replogle_concat.h5ad"
 OUT = os.path.join(os.path.dirname(__file__), "results")
 
 # Tirosh et al. 2016 cell-cycle gene sets (standard S / G2M markers).

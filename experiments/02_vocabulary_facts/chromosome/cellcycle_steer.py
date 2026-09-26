@@ -1,4 +1,4 @@
-"""CAN YOU MOVE AROUND THE CELL-CYCLE CIRCLE? — steering a CYCLIC coordinate (Ihor, 2026-07-18).
+"""CAN YOU MOVE AROUND THE CELL-CYCLE CIRCLE? — steering a CYCLIC coordinate.
 
 THE TARGET. §7 demoted the cell-cycle circle to "not a manifold" because persistent homology found no
 IRREDUCIBLE loop (H1 z ≈ −0.08, at the covariance-matched floor). But that null asks "is there a hole not

@@ -1,5 +1,5 @@
 """synth_sweep — CONSTRUCTIVE test of the cell-cycle manifold: build inputs at a target phase and see where
-the representation lands. (Ihor's design, 2026-07-24.)
+the representation lands.
 
 WHY. The manifold discovery in RESULTS_manifold.md is OBSERVATIONAL: real cells in, phase label computed from
 those same cells, correlation with activations. The only input-side intervention was a DELETION (remove the 87

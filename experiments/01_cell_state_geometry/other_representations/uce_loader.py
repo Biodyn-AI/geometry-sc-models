@@ -33,7 +33,7 @@ import torch
 import torch.nn as nn
 
 # ---- pinned locations -------------------------------------------------------------------------
-REPO = f"{_DATA}/biomi_automation/repos/UCE"
+REPO = f"{_DATA}/workspace/repos/UCE"
 _HF_HUB = _os.path.join(_os.environ.get(
     "HF_HOME", _os.path.join(_os.path.expanduser("~"), ".cache", "huggingface")), "hub")
 MISC = _os.path.join(

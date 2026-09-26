@@ -1,6 +1,6 @@
 """cc_benchmark_c2s — put C2S-Scale into the EXISTING cell-cycle benchmark, apples-to-apples.
 
-WHY. `biotensor/codebase/route_cellcycle` already ran the cell-cycle manifold on scGPT, Geneformer, MaxToki,
+WHY. `experiments/01_cell_state_geometry/five_models` already ran the cell-cycle manifold on scGPT, Geneformer, MaxToki,
 STATE-SE and UCE and found the models beat an expression baseline in **1 of 45** (model x k x task) cells --
 "the data carries everything". None of the C2S manifold work in this folder used that protocol, so C2S has never
 been placed on the same ruler. This script does exactly that, on the IDENTICAL substrate (the canonical 3,000

@@ -1,8 +1,8 @@
-"""DOES THE STEERING DESTINATION MATCH REAL BIOLOGY? — closing the mechanism loop (Ihor, 2026-07-18).
+"""DOES THE STEERING DESTINATION MATCH REAL BIOLOGY? — closing the mechanism loop.
 
 THE QUESTION. steer_where.py showed that pushing the chromosome variable CONFIDENTLY RELABELS cells, and that
 the destination depends on WHICH chromosome you push (destination agreement 0.35 for chromosomes vs 0.49 for
-meaningless shams). The obvious mechanistic hypothesis, and Ihor's question:
+meaningless shams). The mechanistic hypothesis to test:
 
     chr-C steering sends cells toward cell type T *because* T genuinely over-expresses chr-C genes.
 

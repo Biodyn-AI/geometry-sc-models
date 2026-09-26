@@ -31,7 +31,7 @@ import torch
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from cc_common import build_substrate, REPLOGLE, DATA, _load_categorical  # noqa: E402
 
-MI = f"{_DATA}/biodyn-work/single_cell_mechinterp"
+MI = f"{_DATA}/research-data/single_cell_mechinterp"
 SCGPT_REPO = os.path.join(MI, "external", "scGPT")
 SCGPT_CKPT = os.path.join(MI, "external", "scGPT_checkpoints", "whole-human", "best_model.pt")
 SCGPT_VOCAB = os.path.join(MI, "external", "scGPT_checkpoints", "whole-human", "vocab.json")

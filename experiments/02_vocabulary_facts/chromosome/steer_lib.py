@@ -1,4 +1,4 @@
-"""steer_lib — a general activation-STEERING harness for MaxToki (Ihor, 2026-07-17).
+"""steer_lib — a general activation-STEERING harness for MaxToki.
 
 WHY THIS EXISTS. route_genemanifold has established, via DECODABILITY (probes on the gene table) and one
 OBSERVATIONAL causal test (§6B: regress the model's own logits on a context annotation, controlling for gene
@@ -18,7 +18,7 @@ later. And every steering run is meaningless without its CONTROLS:
     - dose      : sweep alpha; a real causal channel is monotone, not a step.
     - specificity: (with the multi-head classifier) steering feature F moves F's head, not unrelated heads.
 
-TWO INTERVENTION SITES (both supported, per Ihor 2026-07-17):
+TWO INTERVENTION SITES (both supported):
     site="embed"  -> add alpha*d to embed_tokens output at chosen positions (perturb a gene's INPUT embedding;
                      this is where route_genemanifold's findings physically live, so it is the most direct test).
     site=L (int)  -> add alpha*d to the residual stream AFTER decoder layer L (feature as re-represented mid-

@@ -1,6 +1,6 @@
 """gm_lib — shared machinery for the GENE-TOKEN manifold hunt.
 
-The question (Ihor, 2026-07-17), after the pooled cell manifolds were shown redundant with expression
+The question, after the pooled cell manifolds were shown redundant with expression
 (`route_utility/RESULTS.md`, 0/20): forget cells. Do the GENE TOKENS carry geometric structure — a circle, an
 ordered curve, a grid — the way days-of-the-week form a circle in an LLM (Engels et al. / Goodfire)?
 
@@ -49,9 +49,9 @@ sys.path.insert(0, os.path.join(ROOT, "codebase", "route_a", "scgpt", "weightpap
 CACHE = os.path.join(ROOT, "data", "genemanifold")
 os.makedirs(CACHE, exist_ok=True)
 
-ATLAS = (f"{BASE}/biomechinterp/biodyn-work/subproject_42_sparse_autoencoder_biological_map/"
+ATLAS = (f"{BASE}/project-data/research-data/subproject_42_sparse_autoencoder_biological_map/"
          "experiments/scgpt_atlas/activations")
-TS_RAW = f"{BASE}/biomechinterp/biodyn-work/single_cell_mechinterp/data/raw"
+TS_RAW = f"{BASE}/project-data/research-data/single_cell_mechinterp/data/raw"
 TS_FILES = ["tabula_sapiens_kidney.h5ad", "tabula_sapiens_lung.h5ad", "tabula_sapiens_immune_subset_20000.h5ad"]
 MT_ST = f"{ROOT}/../maxtoki/setup/MaxToki-217M-HF/model.safetensors"
 MT_TOK = f"{ROOT}/../maxtoki/setup/token_dictionary.json"

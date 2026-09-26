@@ -1,4 +1,4 @@
-"""IS THE HOX FINDING A TANDEM-ARRAY QUIRK, OR DOES THE TABLE KNOW THE GENOME? (Ihor, 2026-07-17)
+"""IS THE HOX FINDING A TANDEM-ARRAY QUIRK, OR DOES THE TABLE KNOW THE GENOME?
 
 WHY THIS AND NOT THE UCE TEST I PROPOSED. The plan was "UCE has no learned gene table, so locus could only
 appear in its ACTIVATIONS -- if it does, the mechanism is contextual inference from expression." **That test is

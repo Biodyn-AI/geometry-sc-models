@@ -15,7 +15,7 @@ import json, sys
 import numpy as np
 from sklearn.decomposition import PCA
 
-BT = os.environ.get("GEOMSC_BIOTENSOR", "")   # see docs/DATA.md
+BT = os.environ.get("GEOMSC_PROJECT_ROOT", "")   # see docs/DATA.md
 C2S = os.environ.get("GEOMSC_C2S", "")        # see docs/DATA.md
 SEED, N_BINS, N_REPEATS = 0, 12, 50
 NEAR_DEG, FAR_LO, FAR_HI = 3.0, 10.0, 20.0

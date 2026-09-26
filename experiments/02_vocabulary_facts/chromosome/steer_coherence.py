@@ -1,4 +1,4 @@
-"""ARE THE DOMAINS THAT WORK THE REAL ONES? (Ihor, 2026-07-20)
+"""ARE THE DOMAINS THAT WORK THE REAL ONES?
 
 THE OBSERVATION. `steer_local.py` section 4: steering toward a 5 Mb domain raises the probability of the cell
 type that genuinely over-expresses that domain's genes -- mean +0.026, CI excludes 0 -- BUT only 26 of 96

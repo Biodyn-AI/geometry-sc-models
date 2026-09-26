@@ -1,7 +1,7 @@
-"""IS THE MODEL'S CHROMOSOME ADVANTAGE USEFUL STRUCTURE, OR MEMORISATION? (Ihor, 2026-07-20)
+"""IS THE MODEL'S CHROMOSOME ADVANTAGE USEFUL STRUCTURE, OR MEMORISATION?
 
 THE QUESTION. The 1B beats the strong LSA co-occurrence baseline at supervised chromosome decoding (0.880 vs
-0.720, group-split fair). Ihor: is that +0.16 *usable* genome-organisation structure, or did the model just
+0.720, group-split fair). Is that +0.16 *usable* genome-organisation structure, or did the model just
 memorise more per-gene facts? The distinction decides whether this is a tool (infer genome layout from
 expression where coordinates are UNKNOWN -- non-model organisms, unannotated genomes) or only a scientific
 curiosity about a human genome whose coordinates are already a lookup.

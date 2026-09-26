@@ -1,4 +1,4 @@
-"""IS IT LOCUS KNOWLEDGE, OR DUPLICATE LEAKAGE? — the decisive control (Ihor, 2026-07-17).
+"""IS IT LOCUS KNOWLEDGE, OR DUPLICATE LEAKAGE? — the decisive control.
 
 THE THREAT. A random 5-fold split puts HOXA9 in train and HOXA10 in test. They are tandem duplicates with
 near-identical embeddings, so the probe can score "chr7" by memorising the twin, not by knowing the genome.

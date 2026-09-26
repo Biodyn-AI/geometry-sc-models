@@ -1,4 +1,4 @@
-"""DOES THE GENOMIC COORDINATE LIVE ONLY IN THE STATIC TABLE, OR ALSO IN THE INTERNAL, CONTEXTUAL LAYERS? (Ihor)
+"""DOES THE GENOMIC COORDINATE LIVE ONLY IN THE STATIC TABLE, OR ALSO IN THE INTERNAL, CONTEXTUAL LAYERS?
 
 Everything so far decodes chromosome/position from the STATIC per-gene tables (context-free: one vector per gene).
 This tests the CONTEXTUAL internal representation: a gene token's hidden state at each transformer layer, given

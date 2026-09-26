@@ -44,7 +44,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import ctx_position_confound as CP
 RES = os.path.join(HERE, "results")
 NAME_ID = f"{_MODELS}/Geneformer/geneformer/gene_name_id_dict_gc104M.pkl"
-NET = f"{_DATA}/biodyn-work/single_cell_mechinterp/external/networks"
+NET = f"{_DATA}/research-data/single_cell_mechinterp/external/networks"
 TS = CP.TS; PANELS = CP.PANELS
 TAPS = [4, 8]
 MIN_CTX = 9

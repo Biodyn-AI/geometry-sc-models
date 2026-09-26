@@ -72,7 +72,7 @@ from cc_steering import (CircJudge, local_phase_field, project_constant, retract
                          loop_circumference, K_LOCAL, M_TANGENT, SEED, N_SRC, TAU)  # noqa: E402
 
 RESULTS = os.path.join(HERE, "results"); os.makedirs(RESULTS, exist_ok=True)
-MI = f"{_DATA}/biodyn-work/single_cell_mechinterp"
+MI = f"{_DATA}/research-data/single_cell_mechinterp"
 SCGPT_CKPT = os.path.join(MI, "external", "scGPT_checkpoints", "whole-human", "best_model.pt")
 SCGPT_VOCAB = os.path.join(MI, "external", "scGPT_checkpoints", "whole-human", "vocab.json")
 N_HVG, N_RAND, TWO_PI = 1500, 5, 2.0 * np.pi

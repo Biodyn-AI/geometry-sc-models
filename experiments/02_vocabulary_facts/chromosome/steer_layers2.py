@@ -1,4 +1,4 @@
-"""DEPTH PROFILE, DONE PROPERLY: a chromosome direction derived NATIVELY AT EACH LAYER (Ihor, 2026-07-20).
+"""DEPTH PROFILE, DONE PROPERLY: a chromosome direction derived NATIVELY AT EACH LAYER.
 
 WHY steer_layers.py IS NOT ENOUGH. That script injects the EMBED-SPACE chromosome direction
 (centroid of chr-C's embed_tokens rows minus the global centroid) at every depth, and finds the effect only at

@@ -1,4 +1,4 @@
-"""CAUSAL STEERING OF LINEAGE BISTABLE SWITCHES — are the antagonistic-TF axes movable, and RECIPROCAL? (Ihor)
+"""CAUSAL STEERING OF LINEAGE BISTABLE SWITCHES — are the antagonistic-TF axes movable, and RECIPROCAL?
 
 route_genemanifold shelved the antipodal lineage axes (RORC/FOXP3 Th17-Treg, GATA1/SPI1 ery-myeloid, ...) as
 "decodable, model-specific directions" (§8, antipodal_subspace.py) but NEVER steered them. The bigger-picture

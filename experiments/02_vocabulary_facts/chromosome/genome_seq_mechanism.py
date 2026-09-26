@@ -1,4 +1,4 @@
-"""WHY DOES PROTEIN SEQUENCE (esm2) PREDICT CHROMOSOME AT ALL — and why not for HOX? (Ihor, 2026-07-17)
+"""WHY DOES PROTEIN SEQUENCE (esm2) PREDICT CHROMOSOME AT ALL — and why not for HOX?
 
 esm2 scores ~0.19 on genome-wide 22-class chromosome (genome_wide.py) but 0.023 on the HOX 4-class cluster
 (section 3). Those look contradictory until you name the mechanism: TANDEM DUPLICATION. Gene families arise by

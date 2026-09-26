@@ -59,11 +59,11 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from tangent_diagnostic import zscore, unit, SEED, DIM  # noqa: E402
 from local_steering import project_constant  # noqa: E402
 
-MI = f"{_DATA}/biodyn-work/single_cell_mechinterp"
+MI = f"{_DATA}/research-data/single_cell_mechinterp"
 SCGPT_REPO = os.path.join(MI, "external", "scGPT")
 SCGPT_CKPT = os.path.join(MI, "external", "scGPT_checkpoints", "whole-human", "best_model.pt")
 SCGPT_VOCAB = os.path.join(MI, "external", "scGPT_checkpoints", "whole-human", "vocab.json")
-TF_DB = (f"{_DATA}/biodyn-work/network_inference/data/"
+TF_DB = (f"{_DATA}/research-data/network_inference/data/"
          "dorothea_trrust_union_immune.tsv")
 ROOT = f"{_DATA}"
 SETTY = os.path.join(ROOT, "data/hematopoiesis/setty19_cd34_bm.h5ad")

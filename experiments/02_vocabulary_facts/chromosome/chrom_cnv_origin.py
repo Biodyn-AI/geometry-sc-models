@@ -1,4 +1,4 @@
-"""DID THE MODEL LEARN CHROMOSOME FROM COPY-NUMBER VARIATION? (Ihor, 2026-07-20)
+"""DID THE MODEL LEARN CHROMOSOME FROM COPY-NUMBER VARIATION?
 
 THE HYPOTHESIS ([[cnv-alternative-mechanism]], still the sharpest open threat). The model may have learned
 "which chromosome" not from chromatin biology but from DOSAGE: in aneuploid cells (cancer lines, and a lot of

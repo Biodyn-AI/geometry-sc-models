@@ -1,4 +1,4 @@
-"""DO GENES MOVE ALONG FUNCTIONALLY MEANINGFUL DIRECTIONS IN CONTEXT? (Ihor's actual question)
+"""DO GENES MOVE ALONG FUNCTIONALLY MEANINGFUL DIRECTIONS IN CONTEXT?
 
 `ctx_polysemy.py` established the phenomenon is REAL: a gene's representation shifts in a gene-specific,
 reproducible way across cell contexts (EXCESS +0.73 at L4), and it is not rank position. But "genes move

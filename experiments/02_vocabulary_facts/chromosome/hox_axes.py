@@ -1,4 +1,4 @@
-"""INTERPRETING THE HOX ANALOGY AXES (Ihor, 2026-07-21).
+"""INTERPRETING THE HOX ANALOGY AXES.
 
 The analogy HOXA9 - HOXA1 + HOXB1 ~ HOXB9 works (hox_analogy_null.py). If it works, the grid must decompose into
 two consistent directions: a PARALOG (anterior-posterior body-axis, 1..13) offset and a CLUSTER (genomic locus,

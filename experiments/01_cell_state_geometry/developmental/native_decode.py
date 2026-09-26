@@ -54,7 +54,7 @@ from local_steering import project_constant  # noqa: E402
 from gene_decode import PANEL, N_HVG, load_expression  # noqa: E402
 
 RESULTS = os.path.join(HERE, "results"); os.makedirs(RESULTS, exist_ok=True)
-MI = f"{_DATA}/biodyn-work/single_cell_mechinterp"
+MI = f"{_DATA}/research-data/single_cell_mechinterp"
 SCGPT_CKPT = os.path.join(MI, "external", "scGPT_checkpoints", "whole-human", "best_model.pt")
 SCGPT_VOCAB = os.path.join(MI, "external", "scGPT_checkpoints", "whole-human", "vocab.json")
 

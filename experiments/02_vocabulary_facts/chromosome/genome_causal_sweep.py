@@ -1,4 +1,4 @@
-"""ROBUSTNESS for the causal steering result (genome_causal.py): intensity sweep + multiple seeds (Ihor).
+"""ROBUSTNESS for the causal steering result (genome_causal.py): intensity sweep + multiple seeds.
 
 genome_causal.py showed one point: at a push of ALPHA=4x the mean token norm, seed 0, steering a cell's context
 toward chromosome C raises chr-C mass at UNSTEERED positions by +0.055 (vs random -0.0004; 18/22 chr positive).

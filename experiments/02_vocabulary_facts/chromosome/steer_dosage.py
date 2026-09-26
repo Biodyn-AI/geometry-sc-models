@@ -1,4 +1,4 @@
-"""DOSAGE OR PROGRAM? — the shape of the steering response along the chromosome (Ihor, 2026-07-20).
+"""DOSAGE OR PROGRAM? — the shape of the steering response along the chromosome.
 
 WHY THIS QUESTION. Every steering readout so far collapsed the response into ONE number (total softmax mass on
 chr-C). That throws away the entire spatial profile, which is exactly where the two competing mechanisms differ:

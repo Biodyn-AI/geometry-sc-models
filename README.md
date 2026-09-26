@@ -1,7 +1,7 @@
 # The geometry of single-cell foundation models
 
 Code, results and the paper for **"The geometry of single-cell foundation models: what they inherit,
-what they add, and what shapes it"** (Kendiukhov, Smith and Dooms, 2026).
+what they add, and what shapes it"** (anonymous review copy, 2026).
 
 The paper asks three questions of the representational geometry of single-cell foundation models,
 across nine representations plus a model-free control: what does it look like, is any of it the
@@ -20,9 +20,9 @@ If you want to check one thing yourself, check the synthetic experiments. They a
 this work that runs end to end with no external assets: no model weights, no datasets, no cached
 activations. A laptop is enough.
 
+Download and extract the repository, then run these commands from its root directory:
+
 ```bash
-git clone https://github.com/Biodyn-AI/geometry-sc-models
-cd geometry-sc-models
 pip install -r requirements.txt
 
 PYTHONPATH=src python -m pytest tests/ -q          # 78 tests, ~1 second
@@ -88,8 +88,8 @@ behind test 5 of the paper's protocol.
 
 ## Scope of the paper in this repository
 
-The copy of the paper here omits the co-author email addresses that appear in the submitted version.
-Nothing else differs: the text, figures, tables and bibliography are identical.
+The paper source and PDF here omit author names, affiliations, contact details and the identifying
+repository link. References to prior work retain their bibliographic attribution.
 
 Every synthetic result in this repository was produced with the plain standard transformer in
 [`experiments/05_synthetic/vanilla_model.py`](experiments/05_synthetic/vanilla_model.py): softmax

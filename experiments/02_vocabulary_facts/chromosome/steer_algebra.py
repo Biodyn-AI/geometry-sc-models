@@ -1,4 +1,4 @@
-"""IS THE CHROMOSOME CHANNEL A LINEAR AXIS? bidirectionality, additivity, cross-talk (Ihor, 2026-07-20).
+"""IS THE CHROMOSOME CHANNEL A LINEAR AXIS? bidirectionality, additivity, cross-talk.
 
 Everything so far pushes ONE chromosome in ONE direction and asks whether the effect exists. This asks what
 KIND of object the channel is, which constrains what it can be used for:

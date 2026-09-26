@@ -1,4 +1,4 @@
-"""ANALOGY: the MISSING NULL + the per-cluster breakdown. (Ihor, 2026-07-17)
+"""ANALOGY: the MISSING NULL + the per-cluster breakdown.
 
 WHY THIS EXISTS. `hox_analogy.py` promises, in its own docstring, "a RANDOM null (shuffle which gene sits at
 each grid cell) to calibrate what the grid's own structure gives for free" -- and never implements it. There is

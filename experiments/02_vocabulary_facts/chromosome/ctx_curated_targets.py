@@ -34,7 +34,7 @@ import ctx_position_confound as CP
 from ctx_coexpr_null import coexpr_matrix
 RES = os.path.join(HERE, "results")
 NAME_ID = f"{_MODELS}/Geneformer/geneformer/gene_name_id_dict_gc104M.pkl"
-NET = f"{_DATA}/biodyn-work/single_cell_mechinterp/external/networks"
+NET = f"{_DATA}/research-data/single_cell_mechinterp/external/networks"
 TAPS = [4, 8]
 MIN_TF_CTX = 6         # TF must be count-balanced in >= this many contexts
 MIN_TARGETS = 15       # ... with at least this many measurable curated targets

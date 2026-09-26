@@ -1,10 +1,10 @@
-"""WITHIN-CLUSTER PARALOG — does the curve exist outside PC1? (Ihor, 2026-07-17)
+"""WITHIN-CLUSTER PARALOG — does the curve exist outside PC1?
 
 WHY THIS EXISTS. `hox_shape.py` TEST 3 asked "is paralog a 1-D curve?" by correlating paralog with **PC1 only**
 (`pc1 = (U * s)[:, 0]`). PC1 carries ~26% of the variance, so 74% of the space was never looked at, and HOXB's
 0.030 was read as "HOXB has no paralog order". That is the exact instrument RESULTS.md section 1 condemns:
-unsupervised, discards the annotation, and demands the structure sit in a top principal plane. Ihor's objection:
-maybe the order lives in some OTHER direction. This runs the supervised probe there instead.
+unsupervised, discards the annotation, and demands the structure sit in a top principal plane. The concern is
+that the order may live in some OTHER direction. This runs the supervised probe there instead.
 
 THREE TESTS.
   T1  per-cluster LOO ridge probe, FULL space, + permutation null.

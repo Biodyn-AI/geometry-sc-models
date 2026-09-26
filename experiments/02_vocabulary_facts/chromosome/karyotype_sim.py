@@ -1,4 +1,4 @@
-"""CAN STEERING SIMULATE A REAL KARYOTYPE? (Ihor, 2026-07-20)
+"""CAN STEERING SIMULATE A REAL KARYOTYPE?
 
 WHY THIS, AND WHY NOW. `steer_algebra.py` showed the channel is bidirectional in all 22 chromosomes but
 ASYMMETRIC -- suppression is 2.1x stronger than enhancement (-6.48 vs +3.07 Δlogit). So the model is best at

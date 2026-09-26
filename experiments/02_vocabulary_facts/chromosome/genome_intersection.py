@@ -1,4 +1,4 @@
-"""GENOME-WIDE CHROMOSOME, SCORED ON A COMMON GENE SET (Ihor, 2026-07-17).
+"""GENOME-WIDE CHROMOSOME, SCORED ON A COMMON GENE SET.
 
 WHY THIS EXISTS. genome_wide.py scores every basis on its OWN intersection with the coordinate table (n ranges
 15,156-18,864). Comparing balanced accuracy across DIFFERENT gene sets is exactly the error RESULTS.md section

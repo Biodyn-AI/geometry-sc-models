@@ -24,9 +24,9 @@ import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 NAME_ID = f"{_MODELS}/Geneformer/geneformer/gene_name_id_dict_gc104M.pkl"
-ATLAS = (f"{_DATA}/biodyn-work/subproject_42_sparse_autoencoder_biological_map/"
+ATLAS = (f"{_DATA}/research-data/subproject_42_sparse_autoencoder_biological_map/"
          "experiments/scgpt_atlas/activations")
-META = (f"{_DATA}/biodyn-work/subproject_42_sparse_autoencoder_biological_map/"
+META = (f"{_DATA}/research-data/subproject_42_sparse_autoencoder_biological_map/"
         "experiments/phase3_multitissue/ts_activations/extraction_metadata.json")
 TAPS = [int(x) for x in os.environ.get("TAPS", "0,4,8").split(",")]
 MIN_CELLS = 100
